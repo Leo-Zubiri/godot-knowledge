@@ -1,0 +1,36 @@
+---
+id: godot-index
+type: index
+domain: godot
+summary: Map of content for the Godot knowledge base — entry point to the seeded scripting, architecture, and versioning notes.
+related:
+  - relates-to: "[[godot-version-policy]]"   # read this first to understand version scoping
+created: 2026-11-06
+updated: 2026-11-06
+created_by_type: agent
+---
+
+## Godot knowledge — map of content
+A navigational entry point (MOC). It only links and groups notes; it makes **no claims of its own**. Start here, then
+open the 1–3 notes you actually need. All claim-bearing notes are currently `proposed`/`unreviewed` (agent-authored,
+awaiting human verification — see [`AGENTS.md`](../AGENTS.md)).
+
+### Start here
+- [[godot-version-policy]] — which Godot version this base targets (4.7.2) and how version-dependent claims are scoped.
+
+### GDScript
+- [[gdscript-static-typing]] — explicit & inferred static types, and why to use them.
+- [[gdscript-signals]] — signals as Godot's decoupling / observer mechanism.
+
+### Nodes & scene architecture
+- [[node-lifecycle-callbacks]] — `_enter_tree` / `_ready` / `_process` / `_exit_tree` order and use.
+- [[node-vs-resource-vs-autoload]] — choosing where shared state/behavior lives.
+
+### Global state & patterns
+- [[autoload-singletons]] — the disciplined use of global singletons.
+- [[god-autoload]] — the anti-pattern of an ever-growing global (and the fix).
+
+### Preserved sources
+Official Godot 4.7 documentation is preserved under [`sources/`](../sources/) and cited by the notes above
+(`src-gd-static-typing`, `src-gd-signals`, `src-godot-notifications`, `src-singletons-autoload`, `src-release-policy`,
+`src-upgrading-godot-4`).
