@@ -30,7 +30,7 @@ updated: 2026-11-08
 created_by_type: agent
 ---
 
-> **Evidence status:** derived from a *reference architecture* (Claude-Code-Game-Studios, MIT) studied for patterns only — not adopted, not copied, not a dependency. Claims are repo-**documented (D)** or **project-reported (P)**; none were tested by us. Our design rationale below is *proposal*, pending human review. Reusable skills/tooling belong in `godot-ai-toolkit`, not here.
+> **Evidence status:** derived from a *reference architecture* (Claude-Code-Game-Studios, MIT) studied for patterns only — not adopted, not copied, not a dependency. Claims are repo-**documented (D)** or **project-reported (P)**; none were tested by us. Our design rationale below is *proposal*, pending human review.
 
 
 ## Scope and licence
@@ -61,8 +61,8 @@ MIT (copyright holder "Donchitos 2026"); the licence text does not address third
 | "A still does not prove feel" | adopt | Same note |
 | Model-judged visual inspection as pass criterion | unverified | Reliability unmeasured |
 
-## Repo split
-`godot-knowledge` keeps principles, patterns, decisions and this comparison. Concrete skills (smoke-check, visual-evidence, gate-check), the deny-list/protection scripts, the checkpoint helper and a config schema belong in `godot-ai-toolkit`, reimplemented from these paraphrased designs — no CCGS code copied, no mandatory dependency.
+## Scope of this repo
+`godot-knowledge` keeps the principles, patterns, decisions and this comparison. Concrete implementations (skills, scripts, config schema) are out of scope here; if built elsewhere they should be reimplemented from these paraphrased designs — no CCGS code copied, no mandatory dependency.
 
 ## Open
 Agent definitions, individual skills, rules (other than test standards), roster path (404 at the guessed location), `workflow-catalog.yaml`, whether the repo's tests run anywhere, star-count anomaly.

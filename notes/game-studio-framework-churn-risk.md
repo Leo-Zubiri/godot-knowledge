@@ -22,7 +22,7 @@ updated: 2026-11-08
 created_by_type: agent
 ---
 
-> **Evidence status:** derived from a *reference architecture* (Claude-Code-Game-Studios, MIT) studied for patterns only — not adopted, not copied, not a dependency. Claims are repo-**documented (D)** or **project-reported (P)**; none were tested by us. Our design rationale below is *proposal*, pending human review. Reusable skills/tooling belong in `godot-ai-toolkit`, not here.
+> **Evidence status:** derived from a *reference architecture* (Claude-Code-Game-Studios, MIT) studied for patterns only — not adopted, not copied, not a dependency. Claims are repo-**documented (D)** or **project-reported (P)**; none were tested by us. Our design rationale below is *proposal*, pending human review.
 
 
 ## Signals seen (documented in releases; interpretation is ours)
