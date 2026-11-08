@@ -37,6 +37,9 @@ Instruction files are advisory context, not enforcement. Enforce rules with CI, 
 ## No extra framework
 No evidence was found that an additional orchestration framework is needed; a task runner (Makefile/`just`) plus AGENTS.md is the proposed baseline (`unverified`, to be tested in an authorized experiment).
 
+## Platform status recording
+See [[game-studio-platform-portability-matrix]] for how to record per-platform support with result records.
+
 ## See also
 - [[game-studio-multiagent-topology]] — role topology (reference study)
 - [[game-studio-path-scoped-safety]] — advisory vs enforced controls

@@ -2,7 +2,7 @@
 id: game-studio-index
 type: index
 domain: game-studio
-summary: Map of content for the game-studio domain: agent-driven 2D+3D Godot production architecture, tool evaluations, decisions and workflows.
+summary: "Map of content for the game-studio domain: agent-driven 2D+3D Godot production architecture, tool evaluations, decisions and workflows."
 related:
   - relates-to: "[[godot-index]]"   # parent Godot knowledge map
 created: 2026-11-08
@@ -32,6 +32,11 @@ Navigational only; no claims. All claim-bearing notes are `proposed` (agent-auth
 - [[game-studio-path-scoped-safety]] · [[game-studio-session-lifecycle]] · [[game-studio-token-efficient-workflows]] · [[game-studio-framework-churn-risk]]
 - [[game-studio-evidence-driven-visual-qa]] · [[game-studio-automated-vs-player-quality]]
 
+### Reference architecture study 2 (GodotPrompter; patterns only, not a dependency)
+- [[game-studio-gp-reference-comparison]] — classification of patterns
+- [[game-studio-godot-skill-taxonomy]] · [[game-studio-progressive-disclosure-routing]] · [[game-studio-skill-validation-architecture]] · [[game-studio-godot-example-verification]]
+- [[game-studio-platform-portability-matrix]] · [[game-studio-version-aware-godot-knowledge]] · [[game-studio-third-party-addon-knowledge]] · [[game-studio-skill-eval-design]]
+
 ### Standards and workflows
 - [[game-studio-asset-conventions]] · [[game-studio-acceptance-criteria]] · [[game-studio-workflows]]
 
@@ -39,4 +44,4 @@ Navigational only; no claims. All claim-bearing notes are `proposed` (agent-auth
 - [[gs-adr-blender-primary-3d]] · [[gs-adr-mcp-optional]] · [[gs-adr-no-extra-orchestration-framework]] · [[gs-adr-godot-final-ui-authority]] · [[gs-adr-artcraft-role]] · [[gs-adr-interchange-formats]]
 
 ### Preserved sources
-Twenty-three `sources/src-gs-*` notes (18 tools/docs + 5 `src-gs-ccgs-*`) (paraphrased extractions with provenance; re-fetch before verification).
+Twenty-eight `sources/src-gs-*` notes (18 tools/docs + 5 `src-gs-ccgs-*` + 5 `src-gs-gp-*`) (paraphrased extractions with provenance; re-fetch before verification).

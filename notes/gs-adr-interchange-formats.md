@@ -3,7 +3,7 @@ id: gs-adr-interchange-formats
 type: decision
 domain: game-studio
 status: proposed
-summary: Proposed: prefer open interchange formats (GLB/glTF, PNG, WAV, OGG, SVG) without forcing one format where a specialised source format fits.
+summary: "Proposed: prefer open interchange formats (GLB/glTF, PNG, WAV, OGG, SVG) without forcing one format where a specialised source format fits."
 sources:
   - claim: "Godot imports WAV/Ogg/MP3 and glTF with documented options"
     ref: src-gs-audio-import-and-tools

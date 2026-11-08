@@ -3,7 +3,7 @@ id: game-studio-blender-pipeline
 type: reference
 domain: game-studio
 status: proposed
-summary: Recommended Blender automation architecture for agents: headless bpy scripts as the source of truth, MCP only for exploration, GLB into Godot with import hints.
+summary: "Recommended Blender automation architecture for agents: headless bpy scripts as the source of truth, MCP only for exploration, GLB into Godot with import hints."
 sources:
   - claim: "Blender 5.2 LTS, bpy wheel constraints, unconfirmed headless limits"
     ref: src-gs-blender-releases-bpy

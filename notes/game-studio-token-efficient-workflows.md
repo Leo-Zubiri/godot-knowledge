@@ -5,6 +5,9 @@ domain: game-studio
 status: proposed
 summary: Mechanisms that cut unnecessary agent work (default-minimal process, scripts instead of reading docs, files as memory, subagent summaries, read guards) versus those that add overhead.
 sources:
+  - claim: "Skill size caps, references folder, session card, generated index"
+    ref: src-gs-gp-skill-architecture
+    retrieved: 2026-11-08
   - claim: "Reference context strategies, budgets, read guard and subagent summaries"
     ref: src-gs-ccgs-safety-and-session
     retrieved: 2026-11-08
@@ -12,6 +15,7 @@ sources:
     ref: src-gs-ccgs-workflow-rigor-and-gates
     retrieved: 2026-11-08
 related:
+  - relates-to: "[[game-studio-progressive-disclosure-routing]]"   # skill-loading layers and size caps
   - relates-to: "[[game-studio-configurable-rigor]]"   # process weight
   - relates-to: "[[game-studio-session-lifecycle]]"   # state in files
   - relates-to: "[[game-studio-hardware-and-cost]]"   # cost metrics are not measured
@@ -35,6 +39,9 @@ created_by_type: agent
 
 ## Overhead (documented or inferred)
 Standard/full documentation sets, per-step gates, large skill/agent catalogs, hook output, and a large command registry loaded into context.
+
+## Skill-loading levers (second reference: GodotPrompter, documented)
+Capped skill bodies with overflow to on-demand references, a small gated routing card, a generated index, and trigger-style descriptions reduce what is always loaded; mentor mode, a large agent roster and manual wiring add recurring overhead. Details and caveats (description-only routing was unreliable for some skills) in [[game-studio-progressive-disclosure-routing]]. Token cost remains *not measured*.
 
 ## Proposal for us
 Prefer scripts + small skills; measure before claiming savings (tokens, API cost, time, human intervention, retry rate — all *not measured* here).

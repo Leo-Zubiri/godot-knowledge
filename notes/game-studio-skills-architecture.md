@@ -34,5 +34,8 @@ game-art-direction · 3d-modeling · 3d-character-creation · 3d-texturing · pr
 ## Rules
 Use only `name`/`description`/`license`/`compatibility`/`metadata`; avoid Claude hooks, `context: fork`, Codex `openai.yaml` in shared skills; one skill location with copies/symlinks per agent if needed; keep skills small to limit context.
 
+## Godot-specific refinement
+A second reference study refines the skills layer for Godot: [[game-studio-godot-skill-taxonomy]], [[game-studio-progressive-disclosure-routing]], [[game-studio-skill-validation-architecture]].
+
 ## See also
 - [[game-studio-asset-conventions]]

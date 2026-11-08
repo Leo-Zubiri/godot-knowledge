@@ -3,7 +3,7 @@ id: gs-adr-artcraft-role
 type: decision
 domain: game-studio
 status: proposed
-summary: Proposed: ArtCraft apps are Experimental/Complementary per app, not primary departments, until end-to-end tests and tagged releases exist.
+summary: "Proposed: ArtCraft apps are Experimental/Complementary per app, not primary departments, until end-to-end tests and tagged releases exist."
 sources:
   - claim: "Per-app ArtCraft evidence and self-reported maturity"
     ref: src-gs-artcraft-suite

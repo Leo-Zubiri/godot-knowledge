@@ -3,7 +3,7 @@ id: game-studio-godot-integration
 type: reference
 domain: game-studio
 status: proposed
-summary: Godot as the integration and final authority: CLI/headless operations, testing, screenshot limits, and where MCP servers fit.
+summary: "Godot as the integration and final authority: CLI/headless operations, testing, screenshot limits, and where MCP servers fit."
 sources:
   - claim: "Godot CLI flags, headless, export, write-movie"
     ref: src-gs-godot-cli

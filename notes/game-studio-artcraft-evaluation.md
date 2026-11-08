@@ -3,7 +3,7 @@ id: game-studio-artcraft-evaluation
 type: reference
 domain: game-studio
 status: proposed
-summary: Per-app evaluation of ArtCraft Crafting Apps (PhotoCraft, TextureCraft, MaterialCraft, FigCraft, SoundCraft, VectorCraft, EffectCraft): what exists, licences, claimed automation, maturity.
+summary: "Per-app evaluation of ArtCraft Crafting Apps (PhotoCraft, TextureCraft, MaterialCraft, FigCraft, SoundCraft, VectorCraft, EffectCraft): what exists, licences, claimed automation, maturity."
 sources:
   - claim: "ArtCraft org, per-app READMEs, licences, CLI/JSON/MCP claims, self-reported maturity, anomalies"
     ref: src-gs-artcraft-suite

@@ -30,6 +30,9 @@ created_by_type: agent
 - Skill count 72 vs 74 and hook count 15 vs 18 files across documents; ~37k stars for a solo-author repo under nine months old (anomaly; manipulation not checked); no CI workflows in the repository.
 - The project does ship a skill-quality rubric and test command — useful idea (**adapt**) — but whether it runs automatically is unverified.
 
+## Counter-example signals (GodotPrompter)
+A second reference shows the opposite discipline: release workflow blocks on version drift across manifests and runs a validator self-test; install by tag is documented for OpenCode. It still has gaps (a README claim that examples were compiled has no repeatable check found) — see [[game-studio-skill-validation-architecture]].
+
 ## Proposal
 Treat such frameworks as *references*, not dependencies. If any component is ever used, pin by commit, test skills after each upgrade, and keep our architecture independent of it.
 

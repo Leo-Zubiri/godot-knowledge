@@ -3,7 +3,7 @@ id: game-studio-2d-ui-audio-materials
 type: reference
 domain: game-studio
 status: proposed
-summary: Preliminary stacks for materials, 2D art, UI design-to-Godot and audio: documented automation of Material Maker, Krita, Inkscape, Penpot, audio tools, and Godot audio import rules.
+summary: "Preliminary stacks for materials, 2D art, UI design-to-Godot and audio: documented automation of Material Maker, Krita, Inkscape, Penpot, audio tools, and Godot audio import rules."
 sources:
   - claim: "Material Maker, Krita, Inkscape, Penpot, ArmorPaint, Pixelorama, Aseprite facts"
     ref: src-gs-2d-ui-tools
