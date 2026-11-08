@@ -41,6 +41,9 @@ awaiting human verification — see [`AGENTS.md`](../AGENTS.md)).
 - [[knowledge-availability-vs-application]] — available ≠ retrieved ≠ better code; measure mediation; provenance can
   improve while quality does not.
 
+### Game studio (agent-driven 2D+3D production)
+- [[game-studio-index]] — tool architecture, evaluations, decisions and workflows for AI-agent game production around Godot (all `proposed`).
+
 ### Preserved sources
 Official Godot 4.7 documentation is preserved under [`sources/`](../sources/) and cited by the notes above
 (`src-gd-static-typing`, `src-gd-signals`, `src-godot-notifications`, `src-singletons-autoload`, `src-release-policy`,
