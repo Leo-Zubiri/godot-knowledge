@@ -5,6 +5,13 @@
 .obsidian/workspace*.json
 .obsidian/cache
 .obsidian/plugins/*/data.json
+# Personal Obsidian preferences and optional community plugins (not shared)
+.obsidian/app.json
+.obsidian/appearance.json
+.obsidian/graph.json
+.obsidian/community-plugins.json
+.obsidian/plugins/
+.trash/
 # If you prefer not to share ANY Obsidian config across clones, ignore the whole folder:
 # .obsidian/
 
@@ -25,3 +32,6 @@ Thumbs.db
 # --- Scratch ---
 *.tmp
 .tmp/
+
+# Local Claude Code settings (may hold secrets like MCP keys) — never commit
+.claude/settings.local.json
