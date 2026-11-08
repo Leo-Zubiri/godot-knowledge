@@ -21,10 +21,15 @@ awaiting human verification — see [`AGENTS.md`](../AGENTS.md)).
 ### GDScript
 - [[gdscript-static-typing]] — explicit & inferred static types, and why to use them.
 - [[gdscript-signals]] — signals as Godot's decoupling / observer mechanism.
+- [[input-handling]] — InputMap actions + the Input singleton (poll vs event callbacks).
 
 ### Nodes & scene architecture
 - [[node-lifecycle-callbacks]] — `_enter_tree` / `_ready` / `_process` / `_exit_tree` order and use.
 - [[node-vs-resource-vs-autoload]] — choosing where shared state/behavior lives.
+
+### 2D gameplay
+- [[characterbody2d-movement]] — code-driven movement with `CharacterBody2D` + `move_and_slide()`.
+- [[area2d-detection]] — overlap detection (pickups/hitboxes/triggers) via `Area2D` signals + layers/masks.
 
 ### Global state & patterns
 - [[autoload-singletons]] — the disciplined use of global singletons.
@@ -33,4 +38,4 @@ awaiting human verification — see [`AGENTS.md`](../AGENTS.md)).
 ### Preserved sources
 Official Godot 4.7 documentation is preserved under [`sources/`](../sources/) and cited by the notes above
 (`src-gd-static-typing`, `src-gd-signals`, `src-godot-notifications`, `src-singletons-autoload`, `src-release-policy`,
-`src-upgrading-godot-4`).
+`src-upgrading-godot-4`, `src-characterbody2d`, `src-area2d`, `src-input`).
