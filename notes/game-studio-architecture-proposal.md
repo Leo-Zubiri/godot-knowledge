@@ -34,6 +34,9 @@ What is the smallest reliable toolchain that lets AI agents produce a complete G
 ## Departments → proposals
 See [[game-studio-tool-matrix]]. Detail notes: [[game-studio-godot-integration]], [[game-studio-blender-pipeline]], [[game-studio-2d-ui-audio-materials]], [[game-studio-level-design]], [[game-studio-ai-generation]], [[game-studio-artcraft-evaluation]], [[game-studio-agent-orchestration]], [[game-studio-skills-architecture]], [[game-studio-asset-conventions]], [[game-studio-acceptance-criteria]], [[game-studio-workflows]], [[game-studio-licensing-risks]], [[game-studio-hardware-and-cost]].
 
+## Reference architecture study
+Claude-Code-Game-Studios was studied for patterns only (not adopted, not a dependency): see [[game-studio-ccgs-reference-comparison]]. Adopted-in-principle (proposal): default-minimal rigor, solo/lean/full review with "not assessed ≠ pass", deny-list safety, checkpoint-file session memory, rendered-capture visual evidence. Rejected: large role roster, 30-document default flow.
+
 ## Blender vs ArtCraft (summary)
 Blender: mature LTS, documented Python API/CLI, but no verified agent-readiness. ArtCraft: purpose-built agent interfaces (CLI/JSON/MCP per README) but weeks old and self-described incomplete; TextureCraft/MaterialCraft lack Godot-specific export. Blender stays central; ArtCraft is evaluated per app ([[gs-adr-artcraft-role]]).
 

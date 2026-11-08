@@ -47,4 +47,6 @@ Geometry/topology suitable for its role · UV validity (no unintended overlap, w
 Visual/animation quality, art direction, licence/provenance sign-off.
 
 ## See also
+- [[game-studio-evidence-driven-visual-qa]] — visual-evidence gate and result states
+- [[game-studio-review-modes-and-verdicts]] — verdict vocabulary
 - [[game-studio-asset-conventions]] — report format

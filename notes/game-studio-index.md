@@ -26,6 +26,12 @@ Navigational only; no claims. All claim-bearing notes are `proposed` (agent-auth
 - [[game-studio-godot-integration]] · [[game-studio-blender-pipeline]] · [[game-studio-level-design]]
 - [[game-studio-2d-ui-audio-materials]] · [[game-studio-ai-generation]]
 
+### Reference architecture study (Claude-Code-Game-Studios; patterns only, not a dependency)
+- [[game-studio-ccgs-reference-comparison]] — classification of patterns (adopt/adapt/reference-only/reject/unverified)
+- [[game-studio-multiagent-topology]] · [[game-studio-delegation-boundaries]] · [[game-studio-configurable-rigor]] · [[game-studio-review-modes-and-verdicts]]
+- [[game-studio-path-scoped-safety]] · [[game-studio-session-lifecycle]] · [[game-studio-token-efficient-workflows]] · [[game-studio-framework-churn-risk]]
+- [[game-studio-evidence-driven-visual-qa]] · [[game-studio-automated-vs-player-quality]]
+
 ### Standards and workflows
 - [[game-studio-asset-conventions]] · [[game-studio-acceptance-criteria]] · [[game-studio-workflows]]
 
@@ -33,4 +39,4 @@ Navigational only; no claims. All claim-bearing notes are `proposed` (agent-auth
 - [[gs-adr-blender-primary-3d]] · [[gs-adr-mcp-optional]] · [[gs-adr-no-extra-orchestration-framework]] · [[gs-adr-godot-final-ui-authority]] · [[gs-adr-artcraft-role]] · [[gs-adr-interchange-formats]]
 
 ### Preserved sources
-Eighteen `sources/src-gs-*` notes (paraphrased extractions with provenance; re-fetch before verification).
+Twenty-three `sources/src-gs-*` notes (18 tools/docs + 5 `src-gs-ccgs-*`) (paraphrased extractions with provenance; re-fetch before verification).

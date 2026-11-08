@@ -50,6 +50,8 @@ Under `--headless` the rendering server is Dummy; screenshots reportedly fail (f
 - hi-godot/godot-ai: live editor plugin (Godot 4.7+). Coding-Solo/godot-mcp: console output only for runtime. Workbench: new, few stars.
 - All can run arbitrary GDScript; use a dedicated project folder/sandbox. Most have no tagged releases — pin by commit hash.
 
+A reference architecture (Claude-Code-Game-Studios) documents the windowed `--write-movie` + `--quit-after` capture as its visual-evidence method and forbids `--headless` for it; this is documented there but **untested by us** — see [[game-studio-evidence-driven-visual-qa]].
+
 ## Godot as final authority
 Scenes, `.tres` resources, Control/Theme UI and animation integration live in Godot text formats (git-diffable). External tools produce assets/specs only. Imported 3D content is shaped by the documented suffix hints and `EditorScenePostImport` (see [[game-studio-blender-pipeline]]).
 
