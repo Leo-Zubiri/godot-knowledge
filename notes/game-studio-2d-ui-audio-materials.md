@@ -44,5 +44,8 @@ Godot Control nodes + Theme resources are authored directly as text (`.tscn`/`.t
 - ffmpeg/sox are the expected batch route (WAV→Ogg, loudness, trimming) but were **not researched** (gap). Ardour headless Lua is possible but needs a session; Audacity's pipe needs a live GUI and is brittle (not recommended). SoundCraft cannot write Ogg/MP3.
 - AI audio: Stable Audio open weights fall under the Stability Community Licence (not OSI); AudioCraft/MusicGen reportedly non-commercial (`unverified`).
 
+## Existing assets first
+For icons, sprites, textures and audio, check [[game-studio-asset-source-catalog]] before creating or generating.
+
 ## See also
 - [[game-studio-artcraft-evaluation]] — ArtCraft per app

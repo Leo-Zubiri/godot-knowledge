@@ -45,6 +45,9 @@ created_by_type: agent
 ## Generation ≠ production asset
 No official model page documents Blender integration, topology quality or a Godot-ready export. A generated mesh needs (general practice, `unverified` against these models): retopology/decimation, UV validity, PBR map checks (TRELLIS.2 exports opacity as OPAQUE by default), scale/pivot, normals/manifold checks, collision, scripted Godot import test, and a licence+provenance record. See [[game-studio-acceptance-criteria]].
 
+## Generate last
+Generation is the fallback after asset discovery finds no adequate, legally usable existing asset: see [[game-studio-reuse-vs-generation-decision-framework]]. Restricted assets (e.g. Sonniss, NoAI-tagged) must not be used as generative inputs ([[game-studio-asset-license-and-provenance-policy]]).
+
 ## Position in the minimum toolchain
 Not required. Use for concept art or prop prototypes behind a human review gate.
 

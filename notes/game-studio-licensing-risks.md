@@ -66,6 +66,9 @@ ComfyUI "partner/API nodes" and Mixar's backend are paid, proprietary, hosted; M
 ## Consequences for planning
 Prefer Apache/MIT image models for commercial concept art; treat Hunyuan3D and Stability weights as conditional on territory/revenue; record licence + provenance per generated asset.
 
+## Third-party asset licences
+Asset licences (CC0/BY/BY-SA/NC, custom marketplace terms, restrictions on redistributing originals and on AI use) are covered separately in [[game-studio-asset-license-and-provenance-policy]] and the provider catalog [[game-studio-asset-source-catalog]].
+
 ## See also
 - [[game-studio-tool-matrix]] — where each tool sits
 - [[game-studio-ai-generation]] — generation stack

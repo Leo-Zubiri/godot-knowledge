@@ -39,6 +39,9 @@ Claude-Code-Game-Studios was studied for patterns only (not adopted, not a depen
 
 A second reference study (GodotPrompter) informs how Godot knowledge/skills are structured, validated and versioned: see [[game-studio-gp-reference-comparison]]. Proposal-level takeaways: standard-only skills with capped bodies, generated index, layered validation with a self-test, real parse/compile of examples against a pinned Godot, dated platform-status records, and evals that prioritise recent version-specific knowledge. Its nine agents remain unproven.
 
+## Asset discovery, reuse and licensing (cross-cutting)
+Agents should evaluate existing, legally usable assets before generating or modeling: [[game-studio-asset-discovery-and-reuse-workflow]], [[game-studio-asset-license-and-provenance-policy]], [[game-studio-asset-source-catalog]], [[game-studio-asset-registry-and-manifest-conventions]], [[game-studio-reuse-vs-generation-decision-framework]], [[game-studio-godot-asset-format-and-import-compatibility]]. Automation of acquisition is limited (few documented APIs; most downloads need a human), and licence terms must be verified per asset.
+
 ## Blender vs ArtCraft (summary)
 Blender: mature LTS, documented Python API/CLI, but no verified agent-readiness. ArtCraft: purpose-built agent interfaces (CLI/JSON/MCP per README) but weeks old and self-described incomplete; TextureCraft/MaterialCraft lack Godot-specific export. Blender stays central; ArtCraft is evaluated per app ([[gs-adr-artcraft-role]]).
 

@@ -37,6 +37,11 @@ Navigational only; no claims. All claim-bearing notes are `proposed` (agent-auth
 - [[game-studio-godot-skill-taxonomy]] · [[game-studio-progressive-disclosure-routing]] · [[game-studio-skill-validation-architecture]] · [[game-studio-godot-example-verification]]
 - [[game-studio-platform-portability-matrix]] · [[game-studio-version-aware-godot-knowledge]] · [[game-studio-third-party-addon-knowledge]] · [[game-studio-skill-eval-design]]
 
+### Asset discovery, reuse and licensing (cross-cutting)
+- [[game-studio-asset-discovery-and-reuse-workflow]] — find/acquire/register before generating
+- [[game-studio-asset-license-and-provenance-policy]] · [[game-studio-asset-source-catalog]] · [[game-studio-asset-registry-and-manifest-conventions]]
+- [[game-studio-reuse-vs-generation-decision-framework]] · [[game-studio-godot-asset-format-and-import-compatibility]]
+
 ### Standards and workflows
 - [[game-studio-asset-conventions]] · [[game-studio-acceptance-criteria]] · [[game-studio-workflows]]
 
@@ -44,4 +49,4 @@ Navigational only; no claims. All claim-bearing notes are `proposed` (agent-auth
 - [[gs-adr-blender-primary-3d]] · [[gs-adr-mcp-optional]] · [[gs-adr-no-extra-orchestration-framework]] · [[gs-adr-godot-final-ui-authority]] · [[gs-adr-artcraft-role]] · [[gs-adr-interchange-formats]]
 
 ### Preserved sources
-Twenty-eight `sources/src-gs-*` notes (18 tools/docs + 5 `src-gs-ccgs-*` + 5 `src-gs-gp-*`) (paraphrased extractions with provenance; re-fetch before verification).
+Thirty-four `sources/src-gs-*` notes (18 tools/docs + 5 `src-gs-ccgs-*` + 5 `src-gs-gp-*` + 6 `src-gs-asset-*`) (paraphrased extractions with provenance; re-fetch before verification).

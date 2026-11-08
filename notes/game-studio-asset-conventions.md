@@ -33,5 +33,8 @@ created_by_type: agent
 - **Naming:** lowercase snake_case, type prefix, version in manifest not filename; Godot node-name hints (`-col`, `-navmesh`…) are part of the Blender naming contract.
 - **Versioning:** Git; pin tool versions (Godot 4.7.x, Blender 5.2 LTS) in the manifest.
 
+## Provenance and licence extension
+Assets obtained from third parties carry licence and provenance fields and a repo policy (which originals may be committed). See [[game-studio-asset-registry-and-manifest-conventions]] and [[game-studio-asset-license-and-provenance-policy]].
+
 ## See also
 - [[game-studio-acceptance-criteria]] — what reports contain
