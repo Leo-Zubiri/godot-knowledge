@@ -53,3 +53,4 @@ Not required. Use for concept art or prop prototypes behind a human review gate.
 
 ## See also
 - [[game-studio-licensing-risks]] — model terms in detail
+- [[game-studio-hardware-and-cost]] — VRAM figures

@@ -44,3 +44,4 @@ created_by_type: agent
 
 ## See also
 - [[game-studio-godot-integration]] — Godot-side import and tests
+- [[gs-adr-blender-primary-3d]] — this is the architecture that decision implies

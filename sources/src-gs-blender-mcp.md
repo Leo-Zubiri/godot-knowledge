@@ -3,10 +3,16 @@ id: src-gs-blender-mcp
 type: source
 domain: game-studio
 source:
-  url: "https://www.blender.org/lab/mcp-server/ ; https://projects.blender.org/lab/blender_mcp ; https://github.com/ahujasid/blender-mcp"
+  url: "https://www.blender.org/lab/mcp-server/"
+  urls:
+    - "https://www.blender.org/lab/mcp-server/"
+    - "https://projects.blender.org/lab/blender_mcp"
+    - "https://github.com/ahujasid/blender-mcp"
   title: "Blender MCP: official Blender Lab and community (ahujasid)"
   retrieved: 2026-11-08
   version: "official add-on v1.0.3 (dates unverified); community repo recency unverified"
+  capture: paraphrased
+  retrieved_via: "fetch-time summarizer (WebFetch) and research-subagent extraction; not verbatim"
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent

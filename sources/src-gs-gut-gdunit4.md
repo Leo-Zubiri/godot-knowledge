@@ -3,10 +3,17 @@ id: src-gs-gut-gdunit4
 type: source
 domain: game-studio
 source:
-  url: "https://github.com/bitwes/Gut ; https://github.com/MikeSchulze/gdUnit4 ; https://gut.readthedocs.io/en/latest/Command-Line.html ; https://godot-gdunit-labs.github.io/gdUnit4/latest/advanced_testing/cmd/"
+  url: "https://github.com/bitwes/Gut"
+  urls:
+    - "https://github.com/bitwes/Gut"
+    - "https://github.com/MikeSchulze/gdUnit4"
+    - "https://gut.readthedocs.io/en/latest/Command-Line.html"
+    - "https://godot-gdunit-labs.github.io/gdUnit4/latest/advanced_testing/cmd/"
   title: "GUT and gdUnit4 repos + command-line docs"
   retrieved: 2026-11-08
   version: "GUT 9.7.1 (Godot 4.7.x); gdUnit4 master v7.0.0 (tag unverified)"
+  capture: paraphrased
+  retrieved_via: "fetch-time summarizer (WebFetch) and research-subagent extraction; not verbatim"
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent

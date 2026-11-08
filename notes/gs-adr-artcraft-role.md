@@ -26,3 +26,4 @@ Possible later adoption (e.g. MaterialCraft or SoundCraft) after hands-on author
 
 ## See also
 - [[game-studio-architecture-proposal]] — overall proposal
+- [[game-studio-artcraft-evaluation]] — evidence

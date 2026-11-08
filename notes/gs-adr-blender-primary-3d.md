@@ -32,3 +32,4 @@ Pin Blender/bpy versions; legal check on GPL when distributing bpy-based tools; 
 
 ## See also
 - [[game-studio-architecture-proposal]] — overall proposal
+- [[game-studio-blender-pipeline]] — architecture implementing this

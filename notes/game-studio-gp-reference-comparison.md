@@ -65,3 +65,4 @@ Eight of nine agents, most skills, `hooks/session-start`, `plugin-scan.yml`, the
 
 ## See also
 - [[game-studio-ccgs-reference-comparison]] — the other reference study
+- [[game-studio-architecture-proposal]] — feeds the overall proposal

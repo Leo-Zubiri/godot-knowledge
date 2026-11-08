@@ -3,10 +3,19 @@ id: src-gs-2d-ui-tools
 type: source
 domain: game-studio
 source:
-  url: "https://rodzill4.github.io/material-maker/doc/command_line.html ; https://github.com/RodZill4/material-maker ; https://docs.krita.org/en/reference_manual/linux_command_line.html ; https://inkscape.org (man page via mirrors manpath.be, mankier.com/1/inkscape) ; https://github.com/penpot/penpot ; https://github.com/armory3d/armortools"
+  url: "https://rodzill4.github.io/material-maker/doc/command_line.html"
+  urls:
+    - "https://rodzill4.github.io/material-maker/doc/command_line.html"
+    - "https://github.com/RodZill4/material-maker"
+    - "https://docs.krita.org/en/reference_manual/linux_command_line.html"
+    - "https://inkscape.org (man page via mirrors manpath.be, mankier.com/1/inkscape)"
+    - "https://github.com/penpot/penpot"
+    - "https://github.com/armory3d/armortools"
   title: "Material Maker, Krita, Inkscape, Penpot, ArmorPaint (CLI/automation facts)"
   retrieved: 2026-11-08
   version: "as of 2026-11-08; Inkscape official man page blocked (403)"
+  capture: paraphrased
+  retrieved_via: "fetch-time summarizer (WebFetch) and research-subagent extraction; not verbatim"
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent

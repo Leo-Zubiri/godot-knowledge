@@ -26,3 +26,4 @@ Revisit only with measured evidence of coordination failures. Advisory instructi
 
 ## See also
 - [[game-studio-architecture-proposal]] — overall proposal
+- [[game-studio-agent-orchestration]] — evidence and caveats

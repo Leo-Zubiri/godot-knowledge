@@ -51,3 +51,6 @@ A knowledge base influences generated output through a **chain**, and each link 
 From a **single, exploratory N=5 experiment** (preserved source `src-h06-platformer-experiment`; generator and evaluator
 both Anthropic models). Directional, not significant, and not generalized beyond that task. `proposed` pending human
 review.
+
+## See also
+- [[godot-index]] — related

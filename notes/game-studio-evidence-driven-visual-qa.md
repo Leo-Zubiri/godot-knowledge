@@ -36,3 +36,4 @@ Model-judged inspection of the frame is itself unmeasured (`unverified`); human 
 
 ## See also
 - [[game-studio-acceptance-criteria]] — where the gate is recorded
+- [[game-studio-automated-vs-player-quality]] — what a still cannot prove

@@ -3,10 +3,17 @@ id: src-gs-asset-cc-licenses
 type: source
 domain: game-studio
 source:
-  url: "https://creativecommons.org/publicdomain/zero/1.0/ ; https://creativecommons.org/licenses/by/4.0/ ; https://creativecommons.org/licenses/by-sa/4.0/ ; https://creativecommons.org/licenses/by-nc/4.0/"
+  url: "https://creativecommons.org/publicdomain/zero/1.0/"
+  urls:
+    - "https://creativecommons.org/publicdomain/zero/1.0/"
+    - "https://creativecommons.org/licenses/by/4.0/"
+    - "https://creativecommons.org/licenses/by-sa/4.0/"
+    - "https://creativecommons.org/licenses/by-nc/4.0/"
   title: "Creative Commons deeds: CC0 1.0, CC BY 4.0, CC BY-SA 4.0, CC BY-NC 4.0"
   retrieved: 2026-11-08
   version: "deeds as of 2026-11-08"
+  capture: paraphrased
+  retrieved_via: "fetch-time summarizer (WebFetch) and research-subagent extraction; not verbatim"
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent

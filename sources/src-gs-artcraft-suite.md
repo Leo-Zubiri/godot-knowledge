@@ -3,10 +3,20 @@ id: src-gs-artcraft-suite
 type: source
 domain: game-studio
 source:
-  url: "https://github.com/storytold ; https://getartcraft.com/apps ; https://github.com/storytold/photocraft ; https://github.com/storytold/texturecraft ; https://github.com/storytold/materialcraft ; https://github.com/storytold/figcraft ; https://github.com/storytold/soundcraft"
+  url: "https://github.com/storytold"
+  urls:
+    - "https://github.com/storytold"
+    - "https://getartcraft.com/apps"
+    - "https://github.com/storytold/photocraft"
+    - "https://github.com/storytold/texturecraft"
+    - "https://github.com/storytold/materialcraft"
+    - "https://github.com/storytold/figcraft"
+    - "https://github.com/storytold/soundcraft"
   title: "ArtCraft / Crafting Apps org, site, and per-app READMEs"
   retrieved: 2026-11-08
   version: "apps shipped ~Oct 2026; launcher v0.15.0 per apps page"
+  capture: paraphrased
+  retrieved_via: "fetch-time summarizer (WebFetch) and research-subagent extraction; not verbatim"
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent

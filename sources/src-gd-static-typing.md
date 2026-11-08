@@ -7,6 +7,7 @@ source:
   title: "Static typing in GDScript — Godot Engine 4.7 documentation"
   retrieved: 2026-11-06
   version: "4.7"
+  capture: paraphrased
 created: 2026-11-06
 updated: 2026-11-06
 ---

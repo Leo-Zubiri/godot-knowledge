@@ -3,10 +3,15 @@ id: src-gs-mixar
 type: source
 domain: game-studio
 source:
-  url: "https://github.com/Mixar-AI/mixar-app ; https://hermes-agent.nousresearch.com/docs/plugins/mixar"
+  url: "https://github.com/Mixar-AI/mixar-app"
+  urls:
+    - "https://github.com/Mixar-AI/mixar-app"
+    - "https://hermes-agent.nousresearch.com/docs/plugins/mixar"
   title: "Mixar (Blender fork with AI agent) repo and integration doc"
   retrieved: 2026-11-08
   version: "version numbers conflict (2.0.0 / 2.1.1 / 4.2.1); no releases seen"
+  capture: paraphrased
+  retrieved_via: "fetch-time summarizer (WebFetch) and research-subagent extraction; not verbatim"
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent

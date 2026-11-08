@@ -78,3 +78,5 @@ When two options satisfy the requirement, prefer the more libre-open tier; use g
 
 ## See also
 - [[game-studio-asset-source-catalog]] — asset providers by licence scope
+- [[game-studio-licensing-risks]] — licence detail
+- [[game-studio-tool-matrix]] — tool ratings

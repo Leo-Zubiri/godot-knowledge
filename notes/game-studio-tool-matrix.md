@@ -122,3 +122,4 @@ Confirmed on official pages (see [[game-studio-cost-and-openness-classification]
 ## See also
 - [[game-studio-readiness-classification]] — meaning of the flags
 - [[game-studio-licensing-risks]] — licence axes in detail
+- [[game-studio-hardware-and-cost]] — hardware detail per tool

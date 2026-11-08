@@ -34,3 +34,4 @@ No mechanism was found for detecting contradictory advice between skills; duplic
 
 ## See also
 - [[game-studio-skills-architecture]] — skills vs adapters vs standards
+- [[godot-index]] — existing Godot knowledge map

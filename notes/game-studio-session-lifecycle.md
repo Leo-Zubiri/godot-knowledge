@@ -29,3 +29,4 @@ Plain Markdown is portable across Claude Code, Codex and OpenCode; automatic rel
 
 ## See also
 - [[game-studio-token-efficient-workflows]]
+- [[game-studio-agent-orchestration]] — portable instruction base

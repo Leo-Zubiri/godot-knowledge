@@ -26,3 +26,4 @@ Design-to-engine drift must be checked by runtime tests; Godot Theme docs still 
 
 ## See also
 - [[game-studio-architecture-proposal]] — overall proposal
+- [[game-studio-2d-ui-audio-materials]] — UI section

@@ -33,3 +33,5 @@ created_by_type: agent
 
 ## See also
 - [[game-studio-agent-orchestration]] — advisory vs enforced
+- [[gs-adr-mcp-optional]] — MCP/GUI servers are another arbitrary-code surface
+- [[game-studio-godot-integration]] — Godot-specific protected paths

@@ -3,10 +3,17 @@ id: src-gs-ccgs-workflow-rigor-and-gates
 type: source
 domain: game-studio
 source:
-  url: "https://github.com/Donchitos/Claude-Code-Game-Studios/blob/main/.claude/docs/workflow-modes.md ; https://github.com/Donchitos/Claude-Code-Game-Studios/blob/main/.claude/docs/director-gates.md ; https://github.com/Donchitos/Claude-Code-Game-Studios/blob/main/.claude/docs/skills-reference.md ; https://github.com/Donchitos/Claude-Code-Game-Studios/blob/main/studio-tests/quality-rubric.md"
+  url: "https://github.com/Donchitos/Claude-Code-Game-Studios/blob/main/.claude/docs/workflow-modes.md"
+  urls:
+    - "https://github.com/Donchitos/Claude-Code-Game-Studios/blob/main/.claude/docs/workflow-modes.md"
+    - "https://github.com/Donchitos/Claude-Code-Game-Studios/blob/main/.claude/docs/director-gates.md"
+    - "https://github.com/Donchitos/Claude-Code-Game-Studios/blob/main/.claude/docs/skills-reference.md"
+    - "https://github.com/Donchitos/Claude-Code-Game-Studios/blob/main/studio-tests/quality-rubric.md"
   title: "CCGS workflow modes, director gates, skills reference, skill quality rubric"
   retrieved: 2026-11-08
   version: "v1.2.0; main@05ad7c8"
+  capture: paraphrased
+  retrieved_via: "fetch-time summarizer (WebFetch) and research-subagent extraction; not verbatim"
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent

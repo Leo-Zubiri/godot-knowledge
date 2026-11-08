@@ -36,3 +36,5 @@ Addon eval gains were small (+0.11 on two addon cases, P) and several were at ce
 
 ## See also
 - [[game-studio-licensing-risks]] — licence axes
+- [[game-studio-godot-skill-taxonomy]] — addon skills are a distinct kind
+- [[game-studio-version-aware-godot-knowledge]] — same versioning discipline

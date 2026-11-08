@@ -3,10 +3,15 @@ id: src-gs-ccgs-agent-topology
 type: source
 domain: game-studio
 source:
-  url: "https://github.com/Donchitos/Claude-Code-Game-Studios/blob/main/.claude/docs/coordination-rules.md ; https://github.com/Donchitos/Claude-Code-Game-Studios/blob/main/.claude/docs/model-tiers.md"
+  url: "https://github.com/Donchitos/Claude-Code-Game-Studios/blob/main/.claude/docs/coordination-rules.md"
+  urls:
+    - "https://github.com/Donchitos/Claude-Code-Game-Studios/blob/main/.claude/docs/coordination-rules.md"
+    - "https://github.com/Donchitos/Claude-Code-Game-Studios/blob/main/.claude/docs/model-tiers.md"
   title: "CCGS coordination rules and model tiers"
   retrieved: 2026-11-08
   version: "v1.2.0; main@05ad7c8"
+  capture: paraphrased
+  retrieved_via: "fetch-time summarizer (WebFetch) and research-subagent extraction; not verbatim"
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent

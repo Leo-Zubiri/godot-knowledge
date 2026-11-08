@@ -52,3 +52,5 @@ For icons, sprites, textures and audio, check [[game-studio-asset-source-catalog
 
 ## See also
 - [[game-studio-artcraft-evaluation]] — ArtCraft per app
+- [[game-studio-tool-matrix]] — ratings
+- [[gs-adr-godot-final-ui-authority]] — UI authority decision

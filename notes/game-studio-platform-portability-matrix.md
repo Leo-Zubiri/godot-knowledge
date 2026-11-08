@@ -48,3 +48,5 @@ Keep a matrix for Claude Code, Codex and OpenCode with **dated result entries** 
 
 ## See also
 - [[game-studio-agent-orchestration]] — shared instruction base
+- [[game-studio-readiness-classification]] — evidence-based flags
+- [[game-studio-skill-validation-architecture]] — metadata checks

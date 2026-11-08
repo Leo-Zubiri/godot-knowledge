@@ -3,10 +3,16 @@ id: src-gs-ccgs-safety-and-session
 type: source
 domain: game-studio
 source:
-  url: "https://github.com/Donchitos/Claude-Code-Game-Studios/blob/main/.claude/settings.json ; https://github.com/Donchitos/Claude-Code-Game-Studios/blob/main/.claude/docs/hooks-reference.md ; https://github.com/Donchitos/Claude-Code-Game-Studios/blob/main/.claude/docs/context-management.md"
+  url: "https://github.com/Donchitos/Claude-Code-Game-Studios/blob/main/.claude/settings.json"
+  urls:
+    - "https://github.com/Donchitos/Claude-Code-Game-Studios/blob/main/.claude/settings.json"
+    - "https://github.com/Donchitos/Claude-Code-Game-Studios/blob/main/.claude/docs/hooks-reference.md"
+    - "https://github.com/Donchitos/Claude-Code-Game-Studios/blob/main/.claude/docs/context-management.md"
   title: "CCGS settings, hooks reference, context management"
   retrieved: 2026-11-08
   version: "v1.2.0; main@05ad7c8"
+  capture: paraphrased
+  retrieved_via: "fetch-time summarizer (WebFetch) and research-subagent extraction; not verbatim"
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent

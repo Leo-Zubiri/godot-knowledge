@@ -7,6 +7,7 @@ source:
   title: "H06 exp-h06-platformer-pickup — A/A'/B knowledge-benefit experiment (godot-lab, protocol v2)"
   retrieved: 2026-11-08
   version: "protocol v2; knowledge pin godot-knowledge@91250e6"
+  capture: paraphrased
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent

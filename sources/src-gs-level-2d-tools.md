@@ -3,10 +3,15 @@ id: src-gs-level-2d-tools
 type: source
 domain: game-studio
 source:
-  url: "https://github.com/heygleeson/godot-ldtk-importer ; https://github.com/mapeditor/tiled/releases"
+  url: "https://github.com/heygleeson/godot-ldtk-importer"
+  urls:
+    - "https://github.com/heygleeson/godot-ldtk-importer"
+    - "https://github.com/mapeditor/tiled/releases"
   title: "LDtk importer for Godot and Tiled releases"
   retrieved: 2026-11-08
   version: "Tiled 1.12.2 (2026-05-27); importer dates unverified"
+  capture: paraphrased
+  retrieved_via: "fetch-time summarizer (WebFetch) and research-subagent extraction; not verbatim"
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent

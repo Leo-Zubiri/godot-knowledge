@@ -3,10 +3,18 @@ id: src-gs-free-godot-ecosystem
 type: source
 domain: game-studio
 source:
-  url: "https://godotengine.org/license/ ; https://github.com/godotengine/godot-asset-library ; https://github.com/godotengine/godot-asset-library/blob/master/API.md ; https://docs.godotengine.org/en/stable/community/asset_library/submitting_to_assetlib.html ; https://godotshaders.com/license/"
+  url: "https://godotengine.org/license/"
+  urls:
+    - "https://godotengine.org/license/"
+    - "https://github.com/godotengine/godot-asset-library"
+    - "https://github.com/godotengine/godot-asset-library/blob/master/API.md"
+    - "https://docs.godotengine.org/en/stable/community/asset_library/submitting_to_assetlib.html"
+    - "https://godotshaders.com/license/"
   title: "Godot engine licence page, Godot Asset Library (API, licence field, submission rules) and Godot Shaders licence"
   retrieved: 2026-11-08
   version: "as of 2026-11-08"
+  capture: paraphrased
+  retrieved_via: "fetch-time summarizer (WebFetch) and research-subagent extraction; not verbatim"
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent

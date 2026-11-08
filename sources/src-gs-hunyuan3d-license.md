@@ -3,10 +3,15 @@ id: src-gs-hunyuan3d-license
 type: source
 domain: game-studio
 source:
-  url: "https://raw.githubusercontent.com/Tencent-Hunyuan/Hunyuan3D-2.1/main/LICENSE ; https://github.com/Tencent-Hunyuan/Hunyuan3D-2.1"
+  url: "https://raw.githubusercontent.com/Tencent-Hunyuan/Hunyuan3D-2.1/main/LICENSE"
+  urls:
+    - "https://raw.githubusercontent.com/Tencent-Hunyuan/Hunyuan3D-2.1/main/LICENSE"
+    - "https://github.com/Tencent-Hunyuan/Hunyuan3D-2.1"
   title: "Hunyuan3D-2.1 Community License and repo"
   retrieved: 2026-11-08
   version: "released 2025-06-13"
+  capture: paraphrased
+  retrieved_via: "fetch-time summarizer (WebFetch) and research-subagent extraction; not verbatim"
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent

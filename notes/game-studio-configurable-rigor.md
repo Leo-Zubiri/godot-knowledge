@@ -40,3 +40,5 @@ Adopt *default-minimal* and the *single dial with overridable knobs*; reject the
 
 ## See also
 - [[game-studio-review-modes-and-verdicts]] — the review knob in detail
+- [[game-studio-token-efficient-workflows]] — lower rigor = less documentation overhead
+- [[game-studio-workflows]] — where rigor would apply

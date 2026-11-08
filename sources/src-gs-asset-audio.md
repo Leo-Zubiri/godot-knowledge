@@ -3,10 +3,20 @@ id: src-gs-asset-audio
 type: source
 domain: game-studio
 source:
-  url: "https://freesound.org/help/faq/ ; https://freesound.org/help/tos_api/ ; https://freesound.org/docs/api/resources_apiv2.html ; https://sonniss.com/gameaudiogdc/ ; https://sonniss.com/gdc-bundle-license/ ; https://incompetech.com/music/royalty-free/faq.html ; https://pixabay.com/service/license-summary/"
+  url: "https://freesound.org/help/faq/"
+  urls:
+    - "https://freesound.org/help/faq/"
+    - "https://freesound.org/help/tos_api/"
+    - "https://freesound.org/docs/api/resources_apiv2.html"
+    - "https://sonniss.com/gameaudiogdc/"
+    - "https://sonniss.com/gdc-bundle-license/"
+    - "https://incompetech.com/music/royalty-free/faq.html"
+    - "https://pixabay.com/service/license-summary/"
   title: "Audio providers: Freesound (FAQ, API terms, API), Sonniss GDC bundles, incompetech, Pixabay"
   retrieved: 2026-11-08
   version: "as of 2026-11-08"
+  capture: paraphrased
+  retrieved_via: "fetch-time summarizer (WebFetch) and research-subagent extraction; not verbatim"
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent

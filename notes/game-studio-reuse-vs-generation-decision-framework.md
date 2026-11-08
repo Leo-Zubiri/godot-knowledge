@@ -46,3 +46,5 @@ The project prefers free, gratis and open-source assets ([[gs-adr-free-and-open-
 
 ## See also
 - [[game-studio-asset-source-catalog]]
+- [[game-studio-asset-discovery-and-reuse-workflow]] — steps 3 and 11
+- [[game-studio-asset-license-and-provenance-policy]] — licence gate

@@ -3,10 +3,20 @@ id: src-gs-asset-marketplaces
 type: source
 domain: game-studio
 source:
-  url: "https://www.fab.com/eula ; https://sketchfab.com/developers/download-api/guidelines ; https://sketchfab.com/developers/terms ; https://itch.io/docs/legal/terms ; https://www.cgtrader.com ; https://opengameart.org/content/faq ; https://helpx.adobe.com/creative-cloud/faq/mixamo-faq.html"
+  url: "https://www.fab.com/eula"
+  urls:
+    - "https://www.fab.com/eula"
+    - "https://sketchfab.com/developers/download-api/guidelines"
+    - "https://sketchfab.com/developers/terms"
+    - "https://itch.io/docs/legal/terms"
+    - "https://www.cgtrader.com"
+    - "https://opengameart.org/content/faq"
+    - "https://helpx.adobe.com/creative-cloud/faq/mixamo-faq.html"
   title: "Marketplace and community providers: Fab, Sketchfab, itch.io, CGTrader, OpenGameArt, Mixamo"
   retrieved: 2026-11-08
   version: "as of 2026-11-08; two pages returned 403"
+  capture: paraphrased
+  retrieved_via: "fetch-time summarizer (WebFetch) and research-subagent extraction; not verbatim"
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent

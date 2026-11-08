@@ -7,6 +7,8 @@ source:
   title: "Godot command line tutorial"
   retrieved: 2026-11-08
   version: "4.7 (4.7.2-stable, 2026-08-18)"
+  capture: paraphrased
+  retrieved_via: "fetch-time summarizer (WebFetch) and research-subagent extraction; not verbatim"
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent

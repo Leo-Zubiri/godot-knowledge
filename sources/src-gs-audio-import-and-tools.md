@@ -3,10 +3,17 @@ id: src-gs-audio-import-and-tools
 type: source
 domain: game-studio
 source:
-  url: "https://docs.godotengine.org/en/stable/tutorials/assets_pipeline/importing_audio_samples.html ; https://manual.audacityteam.org/man/scripting.html ; https://manual.ardour.org/lua-scripting/ ; https://stability.ai/news-updates/meet-stable-audio-3-the-model-family-built-for-artistic-experimentation-with-open-weight-models"
+  url: "https://docs.godotengine.org/en/stable/tutorials/assets_pipeline/importing_audio_samples.html"
+  urls:
+    - "https://docs.godotengine.org/en/stable/tutorials/assets_pipeline/importing_audio_samples.html"
+    - "https://manual.audacityteam.org/man/scripting.html"
+    - "https://manual.ardour.org/lua-scripting/"
+    - "https://stability.ai/news-updates/meet-stable-audio-3-the-model-family-built-for-artistic-experimentation-with-open-weight-models"
   title: "Godot audio import; Audacity scripting; Ardour Lua; Stable Audio 3"
   retrieved: 2026-11-08
   version: "Godot stable docs, 2026-11-08"
+  capture: paraphrased
+  retrieved_via: "fetch-time summarizer (WebFetch) and research-subagent extraction; not verbatim"
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent

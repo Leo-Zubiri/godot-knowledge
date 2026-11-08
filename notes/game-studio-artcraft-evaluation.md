@@ -42,3 +42,4 @@ Interface design (one registry → CLI/JSON/MCP) is the most agent-friendly seen
 
 ## See also
 - [[game-studio-tool-matrix]] — alternatives (Material Maker, Krita, Inkscape, ffmpeg)
+- [[gs-adr-artcraft-role]] — decision derived from this

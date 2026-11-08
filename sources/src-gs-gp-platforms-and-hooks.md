@@ -3,10 +3,19 @@ id: src-gs-gp-platforms-and-hooks
 type: source
 domain: game-studio
 source:
-  url: "https://github.com/jame581/GodotPrompter/blob/master/tests/agent-integration/host-smoke-matrix.json ; https://github.com/jame581/GodotPrompter/blob/master/tests/agent-integration/TEST_PLAN.md ; https://github.com/jame581/GodotPrompter/blob/master/tests/agent-integration/RESULTS.md ; https://github.com/jame581/GodotPrompter/blob/master/hooks/hooks.json ; https://github.com/jame581/GodotPrompter/blob/master/.codex/INSTALL.md ; https://github.com/jame581/GodotPrompter/blob/master/.opencode/INSTALL.md"
+  url: "https://github.com/jame581/GodotPrompter/blob/master/tests/agent-integration/host-smoke-matrix.json"
+  urls:
+    - "https://github.com/jame581/GodotPrompter/blob/master/tests/agent-integration/host-smoke-matrix.json"
+    - "https://github.com/jame581/GodotPrompter/blob/master/tests/agent-integration/TEST_PLAN.md"
+    - "https://github.com/jame581/GodotPrompter/blob/master/tests/agent-integration/RESULTS.md"
+    - "https://github.com/jame581/GodotPrompter/blob/master/hooks/hooks.json"
+    - "https://github.com/jame581/GodotPrompter/blob/master/.codex/INSTALL.md"
+    - "https://github.com/jame581/GodotPrompter/blob/master/.opencode/INSTALL.md"
   title: "GodotPrompter cross-platform matrix, test plan, results, hooks and install docs"
   retrieved: 2026-11-08
   version: "master@d7b26cd"
+  capture: paraphrased
+  retrieved_via: "fetch-time summarizer (WebFetch) and research-subagent extraction; not verbatim"
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent

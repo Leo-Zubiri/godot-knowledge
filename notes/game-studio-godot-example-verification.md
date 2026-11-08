@@ -40,3 +40,4 @@ The project's own fact-checking found real mistakes in skills (a claim that omit
 
 ## See also
 - [[game-studio-skill-validation-architecture]] — where this layer fits
+- [[godot-version-policy]] — pin the engine version used for checks

@@ -47,3 +47,5 @@ frontmatter and link checks, size budgets, reasoned exemption markers, generated
 
 ## See also
 - [[game-studio-godot-example-verification]] — closing the compile/parse gap
+- [[game-studio-readiness-classification]] — readiness flags distinguish available from production-ready
+- [[game-studio-framework-churn-risk]] — tests as a response to churn

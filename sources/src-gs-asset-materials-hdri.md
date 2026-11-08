@@ -3,10 +3,19 @@ id: src-gs-asset-materials-hdri
 type: source
 domain: game-studio
 source:
-  url: "https://polyhaven.com/license ; https://github.com/Poly-Haven/Public-API ; https://docs.ambientcg.com/license/ ; https://docs.ambientcg.com/api/ ; https://www.texturecan.com/terms/ ; https://www.blendkit.com/docs/licenses/"
+  url: "https://polyhaven.com/license"
+  urls:
+    - "https://polyhaven.com/license"
+    - "https://github.com/Poly-Haven/Public-API"
+    - "https://docs.ambientcg.com/license/"
+    - "https://docs.ambientcg.com/api/"
+    - "https://www.texturecan.com/terms/"
+    - "https://www.blendkit.com/docs/licenses/"
   title: "Poly Haven, ambientCG, TextureCan, BlenderKit (materials, textures, HDRIs, models)"
   retrieved: 2026-11-08
   version: "as of 2026-11-08"
+  capture: paraphrased
+  retrieved_via: "fetch-time summarizer (WebFetch) and research-subagent extraction; not verbatim"
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent

@@ -3,10 +3,23 @@ id: src-gs-free-fonts-icons-audio-sources
 type: source
 domain: game-studio
 source:
-  url: "https://github.com/google/fonts ; https://github.com/fontsource/fontsource ; https://github.com/twbs/icons ; https://github.com/tailwindlabs/heroicons ; https://github.com/google/material-design-icons ; https://game-icons.net/about.html ; https://ccmixter.org/terms ; https://mixkit.co/license/ ; https://github.com/grumdrig/jsfxr ; https://github.com/increpare/bfxr2"
+  url: "https://github.com/google/fonts"
+  urls:
+    - "https://github.com/google/fonts"
+    - "https://github.com/fontsource/fontsource"
+    - "https://github.com/twbs/icons"
+    - "https://github.com/tailwindlabs/heroicons"
+    - "https://github.com/google/material-design-icons"
+    - "https://game-icons.net/about.html"
+    - "https://ccmixter.org/terms"
+    - "https://mixkit.co/license/"
+    - "https://github.com/grumdrig/jsfxr"
+    - "https://github.com/increpare/bfxr2"
   title: "Free fonts, icon sets, music/SFX sources and sfxr-style generators"
   retrieved: 2026-11-08
   version: "as of 2026-11-08"
+  capture: paraphrased
+  retrieved_via: "fetch-time summarizer (WebFetch) and research-subagent extraction; not verbatim"
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent

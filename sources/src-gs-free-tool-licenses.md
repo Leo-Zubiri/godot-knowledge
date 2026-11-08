@@ -3,10 +3,27 @@ id: src-gs-free-tool-licenses
 type: source
 domain: game-studio
 source:
-  url: "https://github.com/godotengine/godot/blob/master/LICENSE.txt ; https://github.com/Scony/godot-gdscript-toolkit ; https://invent.kde.org/graphics/krita/-/blob/master/COPYING ; https://gitlab.com/inkscape/inkscape/-/blob/master/COPYING ; https://github.com/Ardour/ardour/blob/master/COPYING ; https://ffmpeg.org/legal.html ; https://sourceforge.net/projects/sox/ ; https://github.com/audacity/audacity ; https://github.com/LMMS/lmms ; https://github.com/hydrogen-music/hydrogen ; https://github.com/Orama-Interactive/Pixelorama ; https://github.com/LibreSprite/LibreSprite ; https://github.com/Aseprite/aseprite/blob/main/EULA.txt ; https://github.com/armory3d/armortools/blob/main/license.md"
+  url: "https://github.com/godotengine/godot/blob/master/LICENSE.txt"
+  urls:
+    - "https://github.com/godotengine/godot/blob/master/LICENSE.txt"
+    - "https://github.com/Scony/godot-gdscript-toolkit"
+    - "https://invent.kde.org/graphics/krita/-/blob/master/COPYING"
+    - "https://gitlab.com/inkscape/inkscape/-/blob/master/COPYING"
+    - "https://github.com/Ardour/ardour/blob/master/COPYING"
+    - "https://ffmpeg.org/legal.html"
+    - "https://sourceforge.net/projects/sox/"
+    - "https://github.com/audacity/audacity"
+    - "https://github.com/LMMS/lmms"
+    - "https://github.com/hydrogen-music/hydrogen"
+    - "https://github.com/Orama-Interactive/Pixelorama"
+    - "https://github.com/LibreSprite/LibreSprite"
+    - "https://github.com/Aseprite/aseprite/blob/main/EULA.txt"
+    - "https://github.com/armory3d/armortools/blob/main/license.md"
   title: "Licences of open-source production tools (Godot, gdtoolkit, Krita, Inkscape, Ardour, ffmpeg, sox, Audacity, LMMS, Hydrogen, Pixelorama, LibreSprite, ArmorPaint) and the Aseprite EULA"
   retrieved: 2026-11-08
   version: "as of 2026-11-08; release dates mostly not confirmed"
+  capture: paraphrased
+  retrieved_via: "fetch-time summarizer (WebFetch) and research-subagent extraction; not verbatim"
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent

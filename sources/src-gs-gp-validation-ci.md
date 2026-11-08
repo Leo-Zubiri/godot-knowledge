@@ -3,10 +3,17 @@ id: src-gs-gp-validation-ci
 type: source
 domain: game-studio
 source:
-  url: "https://github.com/jame581/GodotPrompter/blob/master/scripts/README.md ; https://github.com/jame581/GodotPrompter/blob/master/.github/workflows/validate.yml ; https://github.com/jame581/GodotPrompter/blob/master/.github/workflows/release.yml ; https://github.com/jame581/GodotPrompter/blob/master/scripts/validate-skills.mjs"
+  url: "https://github.com/jame581/GodotPrompter/blob/master/scripts/README.md"
+  urls:
+    - "https://github.com/jame581/GodotPrompter/blob/master/scripts/README.md"
+    - "https://github.com/jame581/GodotPrompter/blob/master/.github/workflows/validate.yml"
+    - "https://github.com/jame581/GodotPrompter/blob/master/.github/workflows/release.yml"
+    - "https://github.com/jame581/GodotPrompter/blob/master/scripts/validate-skills.mjs"
   title: "GodotPrompter validation scripts and CI workflows"
   retrieved: 2026-11-08
   version: "master@d7b26cd"
+  capture: paraphrased
+  retrieved_via: "fetch-time summarizer (WebFetch) and research-subagent extraction; not verbatim"
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent

@@ -35,3 +35,4 @@ Never describe "tests pass" or "screenshot captured" as "good game feel"; keep a
 
 ## See also
 - [[game-studio-evidence-driven-visual-qa]]
+- [[game-studio-acceptance-criteria]] — human gates

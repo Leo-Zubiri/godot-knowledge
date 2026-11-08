@@ -45,3 +45,4 @@ Agent tokens, API cost, execution time, human intervention, retry rate. In this 
 
 ## See also
 - [[game-studio-tool-matrix]] — flags applied per tool
+- [[game-studio-index]] — entry point

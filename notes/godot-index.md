@@ -44,8 +44,11 @@ awaiting human verification — see [`AGENTS.md`](../AGENTS.md)).
 ### Game studio (agent-driven 2D+3D production)
 - [[game-studio-index]] — tool architecture, evaluations, decisions and workflows for AI-agent game production around Godot (all `proposed`).
 
+### Game studio sources
+- [[game-studio-sources-index]] — hub of the game-studio sources.
+
 ### Preserved sources
 Official Godot 4.7 documentation is preserved under [`sources/`](../sources/) and cited by the notes above
-(`src-gd-static-typing`, `src-gd-signals`, `src-godot-notifications`, `src-singletons-autoload`, `src-release-policy`,
-`src-upgrading-godot-4`, `src-characterbody2d`, `src-area2d`, `src-input`). The **H06 experiment** itself is preserved as
-a reproducible source (`src-h06-platformer-experiment` → `godot-lab@9aa96dd`), cited by the two methodology notes above.
+([[src-gd-static-typing]], [[src-gd-signals]], [[src-godot-notifications]], [[src-singletons-autoload]], [[src-release-policy]],
+[[src-upgrading-godot-4]], [[src-characterbody2d]], [[src-area2d]], [[src-input]]). The **H06 experiment** itself is preserved as
+a reproducible source ([[src-h06-platformer-experiment]] → `godot-lab@9aa96dd`), cited by the two methodology notes above.

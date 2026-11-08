@@ -41,3 +41,4 @@ Procedural-generation tools not investigated (no evidence of advantage). Genre o
 
 ## See also
 - [[game-studio-blender-pipeline]] — 3D asset export
+- [[game-studio-godot-integration]] — Godot scenes are the target

@@ -3,10 +3,17 @@ id: src-gs-comfyui-core
 type: source
 domain: game-studio
 source:
-  url: "https://github.com/Comfy-Org/ComfyUI/blob/master/LICENSE ; https://github.com/Comfy-Org/ComfyUI/releases ; https://docs.comfy.org/development/comfyui-server/comms_routes ; https://github.com/Comfy-Org/ComfyUI-Manager"
+  url: "https://github.com/Comfy-Org/ComfyUI/blob/master/LICENSE"
+  urls:
+    - "https://github.com/Comfy-Org/ComfyUI/blob/master/LICENSE"
+    - "https://github.com/Comfy-Org/ComfyUI/releases"
+    - "https://docs.comfy.org/development/comfyui-server/comms_routes"
+    - "https://github.com/Comfy-Org/ComfyUI-Manager"
   title: "ComfyUI license, releases, server routes, Manager"
   retrieved: 2026-11-08
   version: "v0.44.0 (2026-11-04, year inferred)"
+  capture: paraphrased
+  retrieved_via: "fetch-time summarizer (WebFetch) and research-subagent extraction; not verbatim"
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent

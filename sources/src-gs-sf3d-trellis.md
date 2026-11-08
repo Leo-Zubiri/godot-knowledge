@@ -3,10 +3,17 @@ id: src-gs-sf3d-trellis
 type: source
 domain: game-studio
 source:
-  url: "https://raw.githubusercontent.com/Stability-AI/stable-fast-3d/main/LICENSE.md ; https://github.com/Stability-AI/stable-fast-3d ; https://github.com/microsoft/TRELLIS ; https://github.com/microsoft/TRELLIS.2"
+  url: "https://raw.githubusercontent.com/Stability-AI/stable-fast-3d/main/LICENSE.md"
+  urls:
+    - "https://raw.githubusercontent.com/Stability-AI/stable-fast-3d/main/LICENSE.md"
+    - "https://github.com/Stability-AI/stable-fast-3d"
+    - "https://github.com/microsoft/TRELLIS"
+    - "https://github.com/microsoft/TRELLIS.2"
   title: "Stable Fast 3D, TRELLIS, TRELLIS.2 repos and licenses"
   retrieved: 2026-11-08
   version: "SF3D / TRELLIS last dated update 2025-03-25; TRELLIS.2 date unverified"
+  capture: paraphrased
+  retrieved_via: "fetch-time summarizer (WebFetch) and research-subagent extraction; not verbatim"
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent

@@ -57,3 +57,4 @@ Scenes, `.tres` resources, Control/Theme UI and animation integration live in Go
 
 ## See also
 - [[game-studio-acceptance-criteria]] — what to validate after import
+- [[game-studio-readiness-classification]] — readiness flags used

@@ -47,3 +47,6 @@ Use the Asset Library API for *discovery* of libre addons (filter by licence lab
 
 ## See also
 - [[game-studio-asset-source-catalog]] — other asset providers
+- [[game-studio-asset-license-and-provenance-policy]] — policy that applies to these assets
+- [[gs-adr-free-and-open-source-first]] — libre-open resources
+- [[godot-index]] — Godot knowledge map

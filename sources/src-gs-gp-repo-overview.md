@@ -3,10 +3,17 @@ id: src-gs-gp-repo-overview
 type: source
 domain: game-studio
 source:
-  url: "https://github.com/jame581/GodotPrompter ; https://github.com/jame581/GodotPrompter/blob/master/README.md ; https://github.com/jame581/GodotPrompter/blob/master/LICENSE ; https://github.com/jame581/GodotPrompter/releases"
+  url: "https://github.com/jame581/GodotPrompter"
+  urls:
+    - "https://github.com/jame581/GodotPrompter"
+    - "https://github.com/jame581/GodotPrompter/blob/master/README.md"
+    - "https://github.com/jame581/GodotPrompter/blob/master/LICENSE"
+    - "https://github.com/jame581/GodotPrompter/releases"
   title: "GodotPrompter: repo overview, README, licence, releases"
   retrieved: 2026-11-08
   version: "v1.16.0 (2026-10-22); master@d7b26cd"
+  capture: paraphrased
+  retrieved_via: "fetch-time summarizer (WebFetch) and research-subagent extraction; not verbatim"
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent

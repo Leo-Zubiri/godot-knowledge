@@ -3,10 +3,15 @@ id: src-gs-comfyui-mcp
 type: source
 domain: game-studio
 source:
-  url: "https://github.com/Comfy-Org/comfy-mcp ; https://github.com/joenorton/comfyui-mcp-server"
+  url: "https://github.com/Comfy-Org/comfy-mcp"
+  urls:
+    - "https://github.com/Comfy-Org/comfy-mcp"
+    - "https://github.com/joenorton/comfyui-mcp-server"
   title: "ComfyUI MCP servers"
   retrieved: 2026-11-08
   version: "Beta; last-commit dates not shown"
+  capture: paraphrased
+  retrieved_via: "fetch-time summarizer (WebFetch) and research-subagent extraction; not verbatim"
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent

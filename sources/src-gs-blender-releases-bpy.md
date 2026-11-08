@@ -3,10 +3,16 @@ id: src-gs-blender-releases-bpy
 type: source
 domain: game-studio
 source:
-  url: "https://www.blender.org/download/releases/ ; https://pypi.org/project/bpy/ ; https://docs.blender.org/api/current/"
+  url: "https://www.blender.org/download/releases/"
+  urls:
+    - "https://www.blender.org/download/releases/"
+    - "https://pypi.org/project/bpy/"
+    - "https://docs.blender.org/api/current/"
   title: "Blender releases, pip bpy wheel, Python API docs"
   retrieved: 2026-11-08
   version: "Blender 5.2 LTS (2026-07-14); bpy 5.2.3 (2026-10-22)"
+  capture: paraphrased
+  retrieved_via: "fetch-time summarizer (WebFetch) and research-subagent extraction; not verbatim"
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent

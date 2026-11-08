@@ -3,10 +3,17 @@ id: src-gs-godot-mcp-servers
 type: source
 domain: game-studio
 source:
-  url: "https://github.com/Erodenn/godot-mcp-runtime ; https://github.com/hi-godot/godot-ai ; https://github.com/Coding-Solo/godot-mcp ; https://github.com/ZemDen/godot-ai-workbench"
+  url: "https://github.com/Erodenn/godot-mcp-runtime"
+  urls:
+    - "https://github.com/Erodenn/godot-mcp-runtime"
+    - "https://github.com/hi-godot/godot-ai"
+    - "https://github.com/Coding-Solo/godot-mcp"
+    - "https://github.com/ZemDen/godot-ai-workbench"
   title: "Godot MCP server repos (README + GitHub API metadata)"
   retrieved: 2026-11-08
   version: "as of 2026-11-08; no tagged releases seen"
+  capture: paraphrased
+  retrieved_via: "fetch-time summarizer (WebFetch) and research-subagent extraction; not verbatim"
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent

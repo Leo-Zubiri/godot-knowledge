@@ -3,10 +3,18 @@ id: src-gs-asset-icons-fonts
 type: source
 domain: game-studio
 source:
-  url: "https://lucide.dev/license ; https://github.com/phosphor-icons/core ; https://tabler.io/icons ; https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/LICENSE.txt ; https://openfontlicense.org/"
+  url: "https://lucide.dev/license"
+  urls:
+    - "https://lucide.dev/license"
+    - "https://github.com/phosphor-icons/core"
+    - "https://tabler.io/icons"
+    - "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/LICENSE.txt"
+    - "https://openfontlicense.org/"
   title: "Icon and font libraries: Lucide, Phosphor, Tabler, Font Awesome Free, SIL OFL"
   retrieved: 2026-11-08
   version: "as of 2026-11-08"
+  capture: paraphrased
+  retrieved_via: "fetch-time summarizer (WebFetch) and research-subagent extraction; not verbatim"
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent

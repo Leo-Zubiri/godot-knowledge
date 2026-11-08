@@ -42,3 +42,5 @@ Keep layers 1, 2 and 4; make the index generated and checked; give the card a po
 
 ## See also
 - [[game-studio-token-efficient-workflows]] — wider token levers
+- [[game-studio-skill-validation-architecture]] — caps and index are enforced by validators
+- [[game-studio-godot-skill-taxonomy]] — what gets routed

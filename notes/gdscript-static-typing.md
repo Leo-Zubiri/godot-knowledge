@@ -60,3 +60,4 @@ var enemies: Array[Enemy] = []
 ## See also
 - [[gdscript-signals]] — typed signal handlers (`-> void`) are idiomatic
 - [[godot-version-policy]] — how this repo scopes version-dependent claims
+- [[node-lifecycle-callbacks]] — typed signatures on lifecycle callbacks (-> void) are idiomatic

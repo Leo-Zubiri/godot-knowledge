@@ -44,3 +44,4 @@ See [[game-studio-platform-portability-matrix]] for how to record per-platform s
 - [[game-studio-multiagent-topology]] — role topology (reference study)
 - [[game-studio-path-scoped-safety]] — advisory vs enforced controls
 - [[game-studio-skills-architecture]] — skill/adapter/standard split
+- [[gs-adr-no-extra-orchestration-framework]] — decision derived from this

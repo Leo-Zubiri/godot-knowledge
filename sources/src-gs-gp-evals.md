@@ -7,6 +7,8 @@ source:
   title: "GodotPrompter skill evals (with/without-skill ablation)"
   retrieved: 2026-11-08
   version: "master@d7b26cd"
+  capture: paraphrased
+  retrieved_via: "fetch-time summarizer (WebFetch) and research-subagent extraction; not verbatim"
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent

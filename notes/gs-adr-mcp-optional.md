@@ -32,3 +32,4 @@ Reproducible, CI-friendly runs; slightly less interactive exploration; MCP serve
 
 ## See also
 - [[game-studio-architecture-proposal]] — overall proposal
+- [[game-studio-readiness-classification]] — integration preference order

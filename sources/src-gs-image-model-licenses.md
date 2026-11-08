@@ -3,10 +3,18 @@ id: src-gs-image-model-licenses
 type: source
 domain: game-studio
 source:
-  url: "https://huggingface.co/black-forest-labs/FLUX.1-schnell ; https://huggingface.co/black-forest-labs/FLUX.1-dev ; https://huggingface.co/black-forest-labs/FLUX.2-dev ; https://huggingface.co/Qwen/Qwen-Image ; https://huggingface.co/stabilityai/stable-diffusion-3.5-large"
+  url: "https://huggingface.co/black-forest-labs/FLUX.1-schnell"
+  urls:
+    - "https://huggingface.co/black-forest-labs/FLUX.1-schnell"
+    - "https://huggingface.co/black-forest-labs/FLUX.1-dev"
+    - "https://huggingface.co/black-forest-labs/FLUX.2-dev"
+    - "https://huggingface.co/Qwen/Qwen-Image"
+    - "https://huggingface.co/stabilityai/stable-diffusion-3.5-large"
   title: "Image model cards: FLUX.1/FLUX.2, Qwen-Image, SD 3.5 Large"
   retrieved: 2026-11-08
   version: "model cards as of 2026-11-08"
+  capture: paraphrased
+  retrieved_via: "fetch-time summarizer (WebFetch) and research-subagent extraction; not verbatim"
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent

@@ -59,3 +59,5 @@ Common steps: isolated workspace → generate with committed script → write ma
 
 ## See also
 - [[game-studio-acceptance-criteria]]
+- [[game-studio-blender-pipeline]] — 3D steps
+- [[game-studio-godot-integration]] — Godot steps

@@ -56,3 +56,5 @@ created_by_type: agent
 
 ## See also
 - [[game-studio-licensing-risks]] — model and tool licences
+- [[game-studio-asset-discovery-and-reuse-workflow]] — workflow applies this policy
+- [[game-studio-asset-registry-and-manifest-conventions]] — fields record these permissions

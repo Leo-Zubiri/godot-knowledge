@@ -3,10 +3,16 @@ id: src-gs-godot-3d-import
 type: source
 domain: game-studio
 source:
-  url: "https://docs.godotengine.org/en/stable/tutorials/assets_pipeline/importing_3d_scenes/node_type_customization.html ; https://docs.godotengine.org/en/stable/tutorials/assets_pipeline/importing_3d_scenes/import_configuration.html ; https://docs.godotengine.org/en/stable/tutorials/assets_pipeline/retargeting_3d_skeletons.html"
+  url: "https://docs.godotengine.org/en/stable/tutorials/assets_pipeline/importing_3d_scenes/node_type_customization.html"
+  urls:
+    - "https://docs.godotengine.org/en/stable/tutorials/assets_pipeline/importing_3d_scenes/node_type_customization.html"
+    - "https://docs.godotengine.org/en/stable/tutorials/assets_pipeline/importing_3d_scenes/import_configuration.html"
+    - "https://docs.godotengine.org/en/stable/tutorials/assets_pipeline/retargeting_3d_skeletons.html"
   title: "Godot 3D scene import: node-type suffixes, import configuration, skeleton retargeting"
   retrieved: 2026-11-08
   version: "Godot stable docs, 2026-11-08"
+  capture: paraphrased
+  retrieved_via: "fetch-time summarizer (WebFetch) and research-subagent extraction; not verbatim"
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent

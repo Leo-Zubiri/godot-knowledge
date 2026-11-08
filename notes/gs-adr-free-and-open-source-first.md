@@ -38,3 +38,5 @@ Prefer libre-open tools, models and assets. Use gratis-restricted ones only afte
 
 ## See also
 - [[game-studio-architecture-proposal]] — overall proposal
+- [[game-studio-reuse-vs-generation-decision-framework]] — applies the preference when choosing assets
+- [[gs-adr-blender-primary-3d]] — consistent: Blender and Godot are libre-open

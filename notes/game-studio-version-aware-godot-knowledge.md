@@ -36,3 +36,5 @@ The evidence for the recency edge is one project's evals and not independently v
 
 ## See also
 - [[godot-version-policy]] — our version scoping
+- [[game-studio-skill-eval-design]] — how the 'recency edge' was measured
+- [[knowledge-availability-vs-application]] — available knowledge is not applied knowledge

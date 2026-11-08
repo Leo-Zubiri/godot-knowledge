@@ -38,3 +38,4 @@ Treat such frameworks as *references*, not dependencies. If any component is eve
 
 ## See also
 - [[game-studio-artcraft-evaluation]] — comparable maturity caution
+- [[gs-adr-no-extra-orchestration-framework]] — no mandatory framework dependency

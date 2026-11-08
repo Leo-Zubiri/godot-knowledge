@@ -45,3 +45,5 @@ Traceability, licence audits, attribution generation, update checks (re-verify `
 
 ## See also
 - [[game-studio-asset-conventions]] — workspace layout and base manifest
+- [[game-studio-asset-license-and-provenance-policy]] — fields encode the seven permissions
+- [[game-studio-asset-discovery-and-reuse-workflow]] — written at step 10

@@ -78,3 +78,4 @@ Pick the right tool and interface for a task without re-researching. Rule of thu
 
 ## See also
 - [[game-studio-index]] — all game-studio notes
+- [[game-studio-architecture-proposal]] — overall decision document

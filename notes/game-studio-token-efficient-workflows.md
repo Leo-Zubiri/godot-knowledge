@@ -48,3 +48,5 @@ Prefer scripts + small skills; measure before claiming savings (tokens, API cost
 
 ## See also
 - [[game-studio-hardware-and-cost]] — metric definitions
+- [[game-studio-configurable-rigor]] — process weight
+- [[game-studio-session-lifecycle]] — state in files

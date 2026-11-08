@@ -3,10 +3,17 @@ id: src-gs-gp-skill-architecture
 type: source
 domain: game-studio
 source:
-  url: "https://github.com/jame581/GodotPrompter/blob/master/CONTRIBUTING.md ; https://github.com/jame581/GodotPrompter/blob/master/skills/index.json ; https://github.com/jame581/GodotPrompter/blob/master/skills/state-machine/SKILL.md ; https://github.com/jame581/GodotPrompter/blob/master/agents/godot-game-dev.md"
+  url: "https://github.com/jame581/GodotPrompter/blob/master/CONTRIBUTING.md"
+  urls:
+    - "https://github.com/jame581/GodotPrompter/blob/master/CONTRIBUTING.md"
+    - "https://github.com/jame581/GodotPrompter/blob/master/skills/index.json"
+    - "https://github.com/jame581/GodotPrompter/blob/master/skills/state-machine/SKILL.md"
+    - "https://github.com/jame581/GodotPrompter/blob/master/agents/godot-game-dev.md"
   title: "GodotPrompter skill format, addon policy, index, sample skill and agent"
   retrieved: 2026-11-08
   version: "master@d7b26cd"
+  capture: paraphrased
+  retrieved_via: "fetch-time summarizer (WebFetch) and research-subagent extraction; not verbatim"
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent

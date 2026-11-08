@@ -3,10 +3,18 @@ id: src-gs-ccgs-repo-overview
 type: source
 domain: game-studio
 source:
-  url: "https://github.com/Donchitos/Claude-Code-Game-Studios ; https://github.com/Donchitos/Claude-Code-Game-Studios/blob/main/LICENSE ; https://github.com/Donchitos/Claude-Code-Game-Studios/releases ; https://github.com/Donchitos/Claude-Code-Game-Studios/blob/main/project.yaml ; https://github.com/Donchitos/Claude-Code-Game-Studios/blob/main/.claude/docs/config-resolution.md"
+  url: "https://github.com/Donchitos/Claude-Code-Game-Studios"
+  urls:
+    - "https://github.com/Donchitos/Claude-Code-Game-Studios"
+    - "https://github.com/Donchitos/Claude-Code-Game-Studios/blob/main/LICENSE"
+    - "https://github.com/Donchitos/Claude-Code-Game-Studios/releases"
+    - "https://github.com/Donchitos/Claude-Code-Game-Studios/blob/main/project.yaml"
+    - "https://github.com/Donchitos/Claude-Code-Game-Studios/blob/main/.claude/docs/config-resolution.md"
   title: "Claude-Code-Game-Studios: README, LICENSE, releases, project.yaml, config resolution"
   retrieved: 2026-11-08
   version: "v1.2.0 (2026-10-19); main@05ad7c8"
+  capture: paraphrased
+  retrieved_via: "fetch-time summarizer (WebFetch) and research-subagent extraction; not verbatim"
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent

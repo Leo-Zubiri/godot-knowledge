@@ -3,10 +3,17 @@ id: src-gs-asset-packs-3d-2d
 type: source
 domain: game-studio
 source:
-  url: "https://kenney.nl/support ; https://kenney.nl/assets ; https://quaternius.com/license.html ; https://kaylousberg.com/game-assets"
+  url: "https://kenney.nl/support"
+  urls:
+    - "https://kenney.nl/support"
+    - "https://kenney.nl/assets"
+    - "https://quaternius.com/license.html"
+    - "https://kaylousberg.com/game-assets"
   title: "Kenney, Quaternius (QAL v1.0) and KayKit asset provider terms"
   retrieved: 2026-11-08
   version: "as of 2026-11-08"
+  capture: paraphrased
+  retrieved_via: "fetch-time summarizer (WebFetch) and research-subagent extraction; not verbatim"
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent

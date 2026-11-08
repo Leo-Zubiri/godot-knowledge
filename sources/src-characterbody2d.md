@@ -7,6 +7,7 @@ source:
   title: "Using CharacterBody2D / CharacterBody2D class — Godot Engine 4.7 docs"
   retrieved: 2026-11-08
   version: "4.7"
+  capture: paraphrased
 created: 2026-11-08
 updated: 2026-11-08
 ---

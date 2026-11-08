@@ -29,3 +29,4 @@ Need generation scripts and manifests to keep sources and exports in sync.
 
 ## See also
 - [[game-studio-architecture-proposal]] — overall proposal
+- [[game-studio-asset-conventions]] — conventions

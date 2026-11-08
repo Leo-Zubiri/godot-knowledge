@@ -89,3 +89,5 @@ The project prefers free, gratis and open-source resources ([[gs-adr-free-and-op
 
 ## See also
 - [[game-studio-asset-license-and-provenance-policy]] — policy behind the classes
+- [[game-studio-asset-discovery-and-reuse-workflow]] — providers searched in step 2
+- [[game-studio-godot-asset-format-and-import-compatibility]] — formats and import

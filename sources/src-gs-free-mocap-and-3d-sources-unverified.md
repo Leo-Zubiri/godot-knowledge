@@ -3,10 +3,18 @@ id: src-gs-free-mocap-and-3d-sources-unverified
 type: source
 domain: game-studio
 source:
-  url: "http://mocap.cs.cmu.edu ; https://www.rokoko.com/resources ; https://poly.pizza ; https://www.si.edu/openaccess ; https://sketchfab.com/blogs/community/sketchfab-launches-public-domain-dedication-for-3d-cultural-heritage"
+  url: "http://mocap.cs.cmu.edu"
+  urls:
+    - "http://mocap.cs.cmu.edu"
+    - "https://www.rokoko.com/resources"
+    - "https://poly.pizza"
+    - "https://www.si.edu/openaccess"
+    - "https://sketchfab.com/blogs/community/sketchfab-launches-public-domain-dedication-for-3d-cultural-heritage"
   title: "Free mocap and 3D sources whose official terms could not be read (CMU Mocap, Rokoko, Poly Pizza, Smithsonian Open Access)"
   retrieved: 2026-11-08
   version: "as of 2026-11-08; all official pages blocked or unavailable"
+  capture: paraphrased
+  retrieved_via: "fetch-time summarizer (WebFetch) and research-subagent extraction; not verbatim"
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent

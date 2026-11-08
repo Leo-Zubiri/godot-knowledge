@@ -38,3 +38,4 @@ Assets obtained from third parties carry licence and provenance fields and a rep
 
 ## See also
 - [[game-studio-acceptance-criteria]] — what reports contain
+- [[game-studio-skills-architecture]] — standards layer

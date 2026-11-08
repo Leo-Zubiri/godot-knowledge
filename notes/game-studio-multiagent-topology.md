@@ -42,3 +42,4 @@ A Godot-specific plugin ships nine specialized agents (general implementer, C#, 
 ## See also
 - [[game-studio-delegation-boundaries]] — responsibility and escalation
 - [[game-studio-ccgs-reference-comparison]] — all classifications
+- [[gs-adr-no-extra-orchestration-framework]] — same minimalism principle

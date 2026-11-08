@@ -39,3 +39,4 @@ Boundaries written as prose are advisory; enforce with checks and review ([[game
 
 ## See also
 - [[game-studio-multiagent-topology]] — how many roles
+- [[game-studio-skills-architecture]] — skills vs adapters vs standards split

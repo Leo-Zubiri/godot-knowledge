@@ -51,4 +51,7 @@ Navigational only; no claims. All claim-bearing notes are `proposed` (agent-auth
 - [[gs-adr-free-and-open-source-first]] · [[gs-adr-blender-primary-3d]] · [[gs-adr-mcp-optional]] · [[gs-adr-no-extra-orchestration-framework]] · [[gs-adr-godot-final-ui-authority]] · [[gs-adr-artcraft-role]] · [[gs-adr-interchange-formats]]
 
 ### Preserved sources
-Thirty-eight `sources/src-gs-*` notes (18 tools/docs + 5 `src-gs-ccgs-*` + 5 `src-gs-gp-*` + 6 `src-gs-asset-*` + 4 `src-gs-free-*`) (paraphrased extractions with provenance; re-fetch before verification).
+- [[game-studio-sources-index]] — all 38 `src-gs-*` sources by theme, with the notes that cite them (paraphrased extractions with provenance; re-fetch before verification).
+
+## See also
+- [[godot-index]] — parent Godot knowledge map

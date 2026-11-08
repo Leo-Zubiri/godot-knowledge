@@ -50,3 +50,7 @@ the "knowledge" condition reads. Runs that read the note copy `300`; runs withou
 Based on a **single, exploratory N=5 experiment** (preserved source `src-h06-platformer-experiment`); not statistically
 significant and not generalized. The methodological lesson is widely applicable, but this note remains `proposed`
 pending human review and corroboration.
+
+## See also
+- [[characterbody2d-movement]] — the note whose SPEED:=300 constant the test happened to assert
+- [[knowledge-availability-vs-application]] — this false signal vs. what blind evaluation actually measured

@@ -3,10 +3,19 @@ id: src-gs-agent-instructions-portability
 type: source
 domain: game-studio
 source:
-  url: "https://agentskills.io/specification ; https://code.claude.com/docs/en/memory ; https://code.claude.com/docs/en/skills ; https://docs.opencode.ai/docs/rules/ ; https://docs.opencode.ai/docs/skills/ ; https://learn.chatgpt.com/docs/agent-configuration/agents-md"
+  url: "https://agentskills.io/specification"
+  urls:
+    - "https://agentskills.io/specification"
+    - "https://code.claude.com/docs/en/memory"
+    - "https://code.claude.com/docs/en/skills"
+    - "https://docs.opencode.ai/docs/rules/"
+    - "https://docs.opencode.ai/docs/skills/"
+    - "https://learn.chatgpt.com/docs/agent-configuration/agents-md"
   title: "Agent instruction/skill portability: Agent Skills spec, Claude Code, OpenCode, Codex AGENTS.md"
   retrieved: 2026-11-08
   version: "docs as of 2026-11-08"
+  capture: paraphrased
+  retrieved_via: "fetch-time summarizer (WebFetch) and research-subagent extraction; not verbatim"
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent
