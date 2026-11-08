@@ -6,7 +6,7 @@ summary: Map of content for the Godot knowledge base — entry point to the seed
 related:
   - relates-to: "[[godot-version-policy]]"   # read this first to understand version scoping
 created: 2026-11-06
-updated: 2026-11-06
+updated: 2026-11-08
 created_by_type: agent
 ---
 
@@ -35,7 +35,14 @@ awaiting human verification — see [`AGENTS.md`](../AGENTS.md)).
 - [[autoload-singletons]] — the disciplined use of global singletons.
 - [[god-autoload]] — the anti-pattern of an ever-growing global (and the fix).
 
+### Experiment-derived methodology (from the godot-lab H06 experiment)
+- [[benchmark-leakage-assertions]] — why asserting an exact implementation constant that also lives in the knowledge
+  under test produces a false "knowledge helps" signal (and the fix).
+- [[knowledge-availability-vs-application]] — available ≠ retrieved ≠ better code; measure mediation; provenance can
+  improve while quality does not.
+
 ### Preserved sources
 Official Godot 4.7 documentation is preserved under [`sources/`](../sources/) and cited by the notes above
 (`src-gd-static-typing`, `src-gd-signals`, `src-godot-notifications`, `src-singletons-autoload`, `src-release-policy`,
-`src-upgrading-godot-4`, `src-characterbody2d`, `src-area2d`, `src-input`).
+`src-upgrading-godot-4`, `src-characterbody2d`, `src-area2d`, `src-input`). The **H06 experiment** itself is preserved as
+a reproducible source (`src-h06-platformer-experiment` → `godot-lab@9aa96dd`), cited by the two methodology notes above.
