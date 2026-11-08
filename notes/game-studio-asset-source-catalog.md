@@ -59,5 +59,8 @@ Classes: **approved-candidate** (clear provider-wide licence; still confirm the 
 
 **Not evaluated:** other mocap/animation repositories, ccMixter, VFX/particle sources, SVG/pixel-art libraries beyond icons.
 
+## Cost and openness (free/libre-first)
+The project prefers free, gratis and open-source resources ([[gs-adr-free-and-open-source-first]]). Mapping of this catalog to tiers: **libre-open** — Kenney, Poly Haven, ambientCG, TextureCan (CC0), Lucide/Phosphor/Tabler (ISC/MIT); **gratis-restricted** — Quaternius (QAL), Sonniss, Pixabay, Freesound (per sound), incompetech (CC BY), Font Awesome Free, OFL fonts (per family), BlenderKit Royalty Free, per-creator itch.io/OpenGameArt/Sketchfab content; **paid/closed** — paid Fab/itch.io/CGTrader listings, Mixamo (free with an Adobe ID; terms unverified). Details: [[game-studio-cost-and-openness-classification]].
+
 ## See also
 - [[game-studio-asset-license-and-provenance-policy]] — policy behind the classes

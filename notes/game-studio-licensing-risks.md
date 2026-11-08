@@ -69,6 +69,9 @@ Prefer Apache/MIT image models for commercial concept art; treat Hunyuan3D and S
 ## Third-party asset licences
 Asset licences (CC0/BY/BY-SA/NC, custom marketplace terms, restrictions on redistributing originals and on AI use) are covered separately in [[game-studio-asset-license-and-provenance-policy]] and the provider catalog [[game-studio-asset-source-catalog]].
 
+## Free/libre-first
+See [[game-studio-cost-and-openness-classification]] and [[gs-adr-free-and-open-source-first]] for the project's preference for free, gratis and open-source resources.
+
 ## See also
 - [[game-studio-tool-matrix]] — where each tool sits
 - [[game-studio-ai-generation]] — generation stack

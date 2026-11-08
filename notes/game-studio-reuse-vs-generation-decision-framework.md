@@ -12,6 +12,7 @@ sources:
     ref: src-gs-asset-marketplaces
     retrieved: 2026-11-08
 related:
+  - relates-to: "[[gs-adr-free-and-open-source-first]]"   # free/libre-first preference
   - relates-to: "[[game-studio-asset-discovery-and-reuse-workflow]]"   # steps 3 and 11
   - relates-to: "[[game-studio-ai-generation]]"   # generated assets are the fallback and need cleanup/licence checks
   - relates-to: "[[game-studio-asset-license-and-provenance-policy]]"   # licence gate
@@ -41,7 +42,7 @@ created_by_type: agent
 | Licence/technical/visual failure | **Reject** and record why |
 
 ## Cost note
-Do not optimise only for free assets: a paid asset with a suitable licence can beat generating or hand-making an inferior one. Quality of the trade-off is unmeasured here.
+The project prefers free, gratis and open-source assets ([[gs-adr-free-and-open-source-first]]): libre-open first, gratis-restricted after the licence check, paid only as a recorded exception. It is a preference, not a ban: a paid asset with a suitable licence can still beat generating or hand-making an inferior one, and the justification is recorded. The trade-off is unmeasured here.
 
 ## See also
 - [[game-studio-asset-source-catalog]]

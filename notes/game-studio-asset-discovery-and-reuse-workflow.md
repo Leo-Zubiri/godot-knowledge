@@ -34,7 +34,7 @@ Avoid producing assets from scratch when a legally and technically suitable exis
 
 ## Steps
 1. **Specify** the asset: type, style, technical spec (format, poly/texture budget, rig), intended use.
-2. **Search approved sources** ([[game-studio-asset-source-catalog]]) starting with provider-wide permissive licences.
+2. **Search approved sources** ([[game-studio-asset-source-catalog]]) starting with free, provider-wide permissive licences (libre-open tier first, per [[gs-adr-free-and-open-source-first]]).
 3. **Compare candidates:** visual quality, style fit, technical suitability, licence ([[game-studio-reuse-vs-generation-decision-framework]]).
 4. **Verify the individual asset's licence and provenance** (per-asset providers: Sketchfab, Freesound, BlenderKit, itch.io, OpenGameArt; per-pack files for Kenney).
 5. **Human approval** when licence, source reliability or ShareAlike/NC/unknown terms are unclear.

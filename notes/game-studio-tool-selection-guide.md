@@ -31,6 +31,9 @@ created_by_type: agent
 
 > **Evidence status:** preliminary routing from documentary research (2026-11-08); nothing was executed. Defaults are *proposals*, not approved standards. `?` = unverified, see the linked note before relying on it.
 
+## Cost preference
+Prefer free/libre/open-source options; gratis-restricted need a licence check; paid/closed only as a recorded exception ([[gs-adr-free-and-open-source-first]], [[game-studio-cost-and-openness-classification]]).
+
 ## Goal
 Pick the right tool and interface for a task without re-researching. Rule of thumb: **CLI/script first → native API → MCP only if it adds value → GUI last**; Godot is the final authority; every output must pass [[game-studio-acceptance-criteria]].
 

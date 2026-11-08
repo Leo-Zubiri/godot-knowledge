@@ -106,6 +106,9 @@ Legend — flags: **A**vailable / **D**ocumented / **R**eady (agent-ready) / **P
 | Stable Fast 3D | Stability Community | CLI script | y/y/?/n | Experimental (revenue cap) |
 | Hunyuan3D-2.1 | Tencent community | Python/Gradio (`?`) | y/?/?/n | Experimental (territory/MAU limits) |
 
+## Cost and openness
+A free/libre/open-source-first reading of this matrix (tiers libre-open / gratis-restricted / paid-closed) is in [[game-studio-cost-and-openness-classification]], following [[gs-adr-free-and-open-source-first]]. Notably paid/closed or credit-based: Mixar backend, Aseprite, ArmorPaint prebuilt binaries, ComfyUI partner/API nodes.
+
 ## Caveats
 - No tool was run; "agent-ready" is not demonstrated anywhere. ArtCraft readiness comes only from each README's own claims.
 - `?` entries need re-fetching before human verification (see each source note).

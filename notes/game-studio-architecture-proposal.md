@@ -20,6 +20,9 @@ created_by_type: agent
 > **Evidence status:** documentary research only (2026-11-08); nothing was installed or executed. Items marked `unverified` were not confirmed on an official page. Everything here is a *proposal* pending human review.
 
 
+## Guiding preference
+The studio prioritizes free, gratis and open-source tools, models and assets; paid/closed only as a justified exception ([[gs-adr-free-and-open-source-first]], [[game-studio-cost-and-openness-classification]]).
+
 ## Central question
 What is the smallest reliable toolchain that lets AI agents produce a complete Godot game (2D and 3D) with reproducible results and reasonable human supervision?
 

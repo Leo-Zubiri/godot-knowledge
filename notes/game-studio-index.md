@@ -19,6 +19,7 @@ Navigational only; no claims. All claim-bearing notes are `proposed` (agent-auth
 - [[game-studio-readiness-classification]] — how tools are judged.
 
 ### Evaluation and risk
+- [[game-studio-cost-and-openness-classification]] — free/libre/open-source-first tiers
 - [[game-studio-tool-matrix]] · [[game-studio-licensing-risks]] · [[game-studio-hardware-and-cost]] · [[game-studio-artcraft-evaluation]]
 
 ### Department architecture
@@ -46,7 +47,7 @@ Navigational only; no claims. All claim-bearing notes are `proposed` (agent-auth
 - [[game-studio-asset-conventions]] · [[game-studio-acceptance-criteria]] · [[game-studio-workflows]]
 
 ### Decisions (proposed)
-- [[gs-adr-blender-primary-3d]] · [[gs-adr-mcp-optional]] · [[gs-adr-no-extra-orchestration-framework]] · [[gs-adr-godot-final-ui-authority]] · [[gs-adr-artcraft-role]] · [[gs-adr-interchange-formats]]
+- [[gs-adr-free-and-open-source-first]] · [[gs-adr-blender-primary-3d]] · [[gs-adr-mcp-optional]] · [[gs-adr-no-extra-orchestration-framework]] · [[gs-adr-godot-final-ui-authority]] · [[gs-adr-artcraft-role]] · [[gs-adr-interchange-formats]]
 
 ### Preserved sources
 Thirty-four `sources/src-gs-*` notes (18 tools/docs + 5 `src-gs-ccgs-*` + 5 `src-gs-gp-*` + 6 `src-gs-asset-*`) (paraphrased extractions with provenance; re-fetch before verification).
