@@ -5,6 +5,9 @@ domain: game-studio
 status: proposed
 summary: "Preliminary stacks for materials, 2D art, UI design-to-Godot and audio: documented automation of Material Maker, Krita, Inkscape, Penpot, audio tools, and Godot audio import rules."
 sources:
+  - claim: "Second-pass confirmation of tool licences (Pixelorama, LibreSprite, ffmpeg, sox, Krita, Inkscape, Ardour)"
+    ref: src-gs-free-tool-licenses
+    retrieved: 2026-11-08
   - claim: "Material Maker, Krita, Inkscape, Penpot, ArmorPaint, Pixelorama, Aseprite facts"
     ref: src-gs-2d-ui-tools
     retrieved: 2026-11-08
@@ -33,7 +36,7 @@ created_by_type: agent
 
 ## 2D art (pixel and non-pixel)
 - **Krita**: `krita in --export --export-filename out.png` documented; Python API exists but headless scripting `unverified`. **Inkscape**: `--export-type`, `-o`, `--export-id`, `--actions` (via man-page mirrors). Both Primary for export/conversion.
-- Pixel art: Pixelorama has no documented CLI (not recommended for automation); Aseprite `--batch --sheet … --data …` is documented but proprietary (reference only); LibreSprite not researched (gap). Since the project targets 2D *and* 3D, a pixel-art authoring decision remains open.
+- Pixel art: Pixelorama is MIT (D), exports PNG/APNG/spritesheet/GIF/video and claims command-line scripted export for bulk work (syntax not read) — a libre-open candidate, automation unverified; Aseprite `--batch --sheet … --data …` is documented but proprietary (reference only); LibreSprite is GPL-2.0 (a fork of the last GPLv2 Aseprite, no documented CLI, scripting docs unread). Since the project targets 2D *and* 3D, a pixel-art authoring decision remains open.
 - PhotoCraft/VectorCraft: Experimental.
 
 ## UI/UX
@@ -41,7 +44,7 @@ Godot Control nodes + Theme resources are authored directly as text (`.tscn`/`.t
 
 ## Audio
 - Godot imports WAV, Ogg Vorbis, MP3. Short SFX → WAV (cheap CPU, large); music/long → Ogg (smallest, highest CPU); MP3 less CPU than Ogg. Ogg/MP3 loop only forward with a start offset; WAV supports loop modes and sample loop points. Effects belong on audio buses at runtime.
-- ffmpeg/sox are the expected batch route (WAV→Ogg, loudness, trimming) but were **not researched** (gap). Ardour headless Lua is possible but needs a session; Audacity's pipe needs a live GUI and is brittle (not recommended). SoundCraft cannot write Ogg/MP3.
+- ffmpeg/sox are the expected batch route (WAV→Ogg, loudness, trimming); their CLI behaviour was **not researched** (gap), but licences are confirmed: ffmpeg LGPL 2.1+ by default (GPL if optional parts are enabled — record the build configuration), sox GPLv2/LGPLv2 with low maintenance. Ardour headless Lua is possible but needs a session; Audacity's pipe needs a live GUI and is brittle (not recommended). SoundCraft cannot write Ogg/MP3.
 - AI audio: Stable Audio open weights fall under the Stability Community Licence (not OSI); AudioCraft/MusicGen reportedly non-commercial (`unverified`).
 
 ## Existing assets first

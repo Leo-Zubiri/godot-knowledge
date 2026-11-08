@@ -41,6 +41,7 @@ Navigational only; no claims. All claim-bearing notes are `proposed` (agent-auth
 ### Asset discovery, reuse and licensing (cross-cutting)
 - [[game-studio-asset-discovery-and-reuse-workflow]] — find/acquire/register before generating
 - [[game-studio-asset-license-and-provenance-policy]] · [[game-studio-asset-source-catalog]] · [[game-studio-asset-registry-and-manifest-conventions]]
+- [[game-studio-godot-ecosystem-free-resources]] — Asset Library, Godot Shaders, Godot MIT notice
 - [[game-studio-reuse-vs-generation-decision-framework]] · [[game-studio-godot-asset-format-and-import-compatibility]]
 
 ### Standards and workflows
@@ -50,4 +51,4 @@ Navigational only; no claims. All claim-bearing notes are `proposed` (agent-auth
 - [[gs-adr-free-and-open-source-first]] · [[gs-adr-blender-primary-3d]] · [[gs-adr-mcp-optional]] · [[gs-adr-no-extra-orchestration-framework]] · [[gs-adr-godot-final-ui-authority]] · [[gs-adr-artcraft-role]] · [[gs-adr-interchange-formats]]
 
 ### Preserved sources
-Thirty-four `sources/src-gs-*` notes (18 tools/docs + 5 `src-gs-ccgs-*` + 5 `src-gs-gp-*` + 6 `src-gs-asset-*`) (paraphrased extractions with provenance; re-fetch before verification).
+Thirty-eight `sources/src-gs-*` notes (18 tools/docs + 5 `src-gs-ccgs-*` + 5 `src-gs-gp-*` + 6 `src-gs-asset-*` + 4 `src-gs-free-*`) (paraphrased extractions with provenance; re-fetch before verification).

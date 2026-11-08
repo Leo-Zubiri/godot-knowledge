@@ -61,6 +61,7 @@ Pick the right tool and interface for a task without re-researching. Rule of thu
 | Concept art / reference images | ComfyUI + Apache-2.0 image models | HTTP API script | check licence per model | [[game-studio-ai-generation]] |
 | Image→3D prototype | TRELLIS / SF3D / Hunyuan (all Experimental) | Python/CLI | licence + VRAM limits; never ship uncleaned | [[game-studio-ai-generation]], [[game-studio-licensing-risks]] |
 | Find an existing asset instead of making one | provider catalog + licence check | [[game-studio-asset-discovery-and-reuse-workflow]]; human login for most downloads | NC/unknown licences; committing non-CC0 originals; scraping | [[game-studio-asset-source-catalog]], [[game-studio-asset-license-and-provenance-policy]] |
+| Find a Godot addon or shader | Godot Asset Library API; Godot Shaders | read-only REST (`GET /asset`), then read the repo LICENSE | licence label is only a hint; GPL v3 shaders need review | [[game-studio-godot-ecosystem-free-resources]] |
 | Share skills across Claude/Codex/OpenCode | AGENTS.md + standard SKILL.md | symlink/copy | hooks/fork not portable | [[game-studio-agent-orchestration]] |
 | Asset metadata/validation records | manifest + validation report | JSON files | — | [[game-studio-asset-conventions]] |
 

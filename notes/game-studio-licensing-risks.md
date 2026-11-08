@@ -5,6 +5,9 @@ domain: game-studio
 status: proposed
 summary: Licensing and commercial-use risks per tool, keeping application code, open-weight models and hosted services separate.
 sources:
+  - claim: "Second-pass tool licence confirmation"
+    ref: src-gs-free-tool-licenses
+    retrieved: 2026-11-08
   - claim: "Hunyuan3D-2.1 territory, MAU, output-use and disclosure terms"
     ref: src-gs-hunyuan3d-license
     retrieved: 2026-11-08
@@ -68,6 +71,9 @@ Prefer Apache/MIT image models for commercial concept art; treat Hunyuan3D and S
 
 ## Third-party asset licences
 Asset licences (CC0/BY/BY-SA/NC, custom marketplace terms, restrictions on redistributing originals and on AI use) are covered separately in [[game-studio-asset-license-and-provenance-policy]] and the provider catalog [[game-studio-asset-source-catalog]].
+
+## Tool licences confirmed (second pass)
+Krita GPL-3.0; Inkscape GPL v2+ / v3+; Ardour GPL-2 (plugin clarification); Audacity GPLv3; LMMS GPL-2.0; Hydrogen GPLv2+; ffmpeg LGPL 2.1+ (GPL if optional parts enabled); sox GPLv2/LGPLv2; Pixelorama MIT; LibreSprite GPL-2.0; ArmorPaint zlib (binaries paid); Aseprite proprietary. Practical risks: ffmpeg builds that enable GPL/nonfree parts change redistribution obligations (record the build configuration); GPL v3 shaders from Godot Shaders can raise copyleft questions for a shipped game; shipping the Godot engine requires including its MIT notice ([[game-studio-godot-ecosystem-free-resources]]); output licences of sfxr-style generators and LMMS are not stated. Sources: [[game-studio-cost-and-openness-classification]].
 
 ## Free/libre-first
 See [[game-studio-cost-and-openness-classification]] and [[gs-adr-free-and-open-source-first]] for the project's preference for free, gratis and open-source resources.

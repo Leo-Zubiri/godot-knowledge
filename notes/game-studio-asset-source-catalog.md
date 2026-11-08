@@ -5,6 +5,15 @@ domain: game-studio
 status: proposed
 summary: "Preliminary catalog of asset providers by type with licence scope, automation access and a proposed class (approved-candidate, conditional, avoid, not evaluated)."
 sources:
+  - claim: "CMU, Rokoko, Poly Pizza, Smithsonian: official terms unreadable (record of what remains to verify)"
+    ref: src-gs-free-mocap-and-3d-sources-unverified
+    retrieved: 2026-11-08
+  - claim: "Fonts, icons, ccMixter, Mixkit, sfxr-style generators"
+    ref: src-gs-free-fonts-icons-audio-sources
+    retrieved: 2026-11-08
+  - claim: "Godot Asset Library and Godot Shaders"
+    ref: src-gs-free-godot-ecosystem
+    retrieved: 2026-11-08
   - claim: "Kenney, Quaternius, KayKit"
     ref: src-gs-asset-packs-3d-2d
     retrieved: 2026-11-08
@@ -58,6 +67,22 @@ Classes: **approved-candidate** (clear provider-wide licence; still confirm the 
 | Fonts | Google Fonts (OFL) | per family; FAQ unreadable | download | conditional |
 
 **Not evaluated:** other mocap/animation repositories, ccMixter, VFX/particle sources, SVG/pixel-art libraries beyond icons.
+
+## Additional libre-first sources (second pass)
+| Type | Source | Licence and scope (read unless noted) | Class (prelim.) |
+|---|---|---|---|
+| Godot addons/templates | Godot Asset Library | per asset; label must match repo LICENSE; documented read API | approved-candidate for discovery ([[game-studio-godot-ecosystem-free-resources]]) |
+| Shaders | Godot Shaders | per shader CC0/MIT/GPL v3, code only | approved-candidate (avoid GPL v3 without review) |
+| Fonts | Google Fonts repo; Fontsource | OFL 1.1 mostly, some Apache/UFL; per-family licence file | approved-candidate (check each family; skip the `cc-by-sa` directory unless read) |
+| Icons | Bootstrap Icons, Heroicons (MIT); Material Symbols (Apache 2.0) | provider-wide | approved-candidate |
+| Icons | game-icons.net | CC BY 3.0, per-author credit, no bulk download | conditional |
+| Music | ccMixter | per track CC BY / BY-NC / CC0; API under same terms | conditional (CC0 or CC BY only) |
+| Audio | Mixkit | per-type "Free License"; text unreadable | conditional (human read first) |
+| SFX generators | jsfxr (Unlicense), Bfxr2 (MIT) | code licensed; **generated-sound licence not stated** | conditional |
+| Mocap, 3D | CMU Mocap, Rokoko free moves, Poly Pizza, Smithsonian Open Access | official pages unreadable; secondary claims only | conditional / `unverified` — read before use |
+| Audio | Zapsplat, Free Music Archive, Internet Archive; OpenGameArt | terms unread / blocked | conditional / avoid until read |
+
+Still **gaps** with no libre source identified: a free humanoid animation library with a clear libre licence (Mixamo has no confirmed libre equivalent), particle/VFX sprite sheets, tilesets/pixel-art libraries, free UI kits.
 
 ## Cost and openness (free/libre-first)
 The project prefers free, gratis and open-source resources ([[gs-adr-free-and-open-source-first]]). Mapping of this catalog to tiers: **libre-open** — Kenney, Poly Haven, ambientCG, TextureCan (CC0), Lucide/Phosphor/Tabler (ISC/MIT); **gratis-restricted** — Quaternius (QAL), Sonniss, Pixabay, Freesound (per sound), incompetech (CC BY), Font Awesome Free, OFL fonts (per family), BlenderKit Royalty Free, per-creator itch.io/OpenGameArt/Sketchfab content; **paid/closed** — paid Fab/itch.io/CGTrader listings, Mixamo (free with an Adobe ID; terms unverified). Details: [[game-studio-cost-and-openness-classification]].

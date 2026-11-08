@@ -5,6 +5,9 @@ domain: game-studio
 status: proposed
 summary: Preliminary per-department comparison of candidate tools with licence, CLI/API/MCP/headless status, readiness flags and recommendation class.
 sources:
+  - claim: "Second-pass licence confirmation of open-source tools"
+    ref: src-gs-free-tool-licenses
+    retrieved: 2026-11-08
   - claim: "Godot CLI flags and headless behaviour"
     ref: src-gs-godot-cli
     retrieved: 2026-11-08
@@ -58,7 +61,7 @@ Legend — flags: **A**vailable / **D**ocumented / **R**eady (agent-ready) / **P
 ## Orchestration, Godot, QA
 | Tool | Licence (code) | CLI / headless | MCP | A/D/R/P | Class |
 |---|---|---|---|---|---|
-| Godot 4.7.x | MIT (`?`) | yes; `--headless`, `--import`, `--export-*`, `--script --check-only` | via third-party servers | y/y/p/y(engine) | Primary |
+| Godot 4.7.x | MIT (D) | yes; `--headless`, `--import`, `--export-*`, `--script --check-only` | via third-party servers | y/y/p/y(engine) | Primary |
 | gdUnit4 | MIT | yes; JUnit + HTML; exit 0/100/101 | n/a | y/y/y/? | Primary |
 | GUT | MIT | yes; JUnit; exit 0/1 | n/a | y/y/p/? | Complementary |
 | gdtoolkit (gdlint/gdformat) | MIT | yes | n/a | y/y/?/? (4.7 syntax `?`) | Complementary |
@@ -84,16 +87,16 @@ Legend — flags: **A**vailable / **D**ocumented / **R**eady (agent-ready) / **P
 | Material Maker | MIT | `--export-material --target godot` | none found | y/p/y(batch)/probable | Primary (preliminary) |
 | MaterialCraft, TextureCraft | MIT OR Apache-2.0 | CLI + JSON control (README) | yes | y/y/plausible/n | Experimental |
 | ArmorPaint | `?` (paid binaries) | not documented | none | n/n/n/? | Not recommended |
-| Krita | `?` | `krita in --export` | none found | CLI y; Python needs GUI | Primary (export path) |
-| Inkscape | `?` | `--export-type`, `--actions` | none found | y/y/y/y | Primary |
+| Krita | GPL-3.0 (D) | `krita in --export` | none found | CLI y; Python needs GUI | Primary (export path) |
+| Inkscape | GPL v2+ source / v3+ binaries (D) | `--export-type`, `--actions` | none found | y/y/y/y | Primary |
 | PhotoCraft / VectorCraft | MIT OR Apache-2.0 | README / unverified | yes / `?` | y/y/plausible/n | Experimental |
 | Penpot | MPL-2.0 | REST, plugins | official MCP needs browser plugin | y/p/experimental/y | Complementary |
 | FigCraft | MIT OR Apache-2.0 | CLI + JSON | yes | y/y/plausible/n | Experimental |
-| ffmpeg, sox | `?` (not researched) | yes (general knowledge, `?`) | no | `?` | Primary (preliminary, needs research) |
-| Ardour (Lua) | `?` | headless Lua, needs session | no | y/y/p/? | Complementary |
+| ffmpeg, sox | ffmpeg LGPL 2.1+ (GPL if optional parts enabled); sox GPLv2/LGPLv2, low maintenance (D) | yes (general knowledge, `?`) | no | `?` (CLI behaviour not researched) | Primary (preliminary; record ffmpeg build config) |
+| Ardour (Lua) | GPL-2 + plugin clarification (D) | headless Lua, needs session | no | y/y/p/? | Complementary |
 | SoundCraft | MIT OR Apache-2.0 | CLI, headless bounce | yes | y/y/plausible/n | Experimental |
-| Audacity pipe | `?` | live GUI only | no | y/y/n/n/a | Not recommended |
-| Pixelorama | — | no documented CLI | no | n | Not recommended (automation) |
+| Audacity pipe | GPLv3 (D) | live GUI only | no | y/y/n/n/a | Not recommended |
+| Pixelorama | MIT (D) | command-line scripted export claimed (syntax not read) | no | y/p/?/? | Complementary (libre-open sprite editor; CLI unverified) |
 | Aseprite | proprietary EULA | `--batch` | third-party | y/y/?/? | Reference only |
 
 ## AI generation
@@ -108,6 +111,9 @@ Legend — flags: **A**vailable / **D**ocumented / **R**eady (agent-ready) / **P
 
 ## Cost and openness
 A free/libre/open-source-first reading of this matrix (tiers libre-open / gratis-restricted / paid-closed) is in [[game-studio-cost-and-openness-classification]], following [[gs-adr-free-and-open-source-first]]. Notably paid/closed or credit-based: Mixar backend, Aseprite, ArmorPaint prebuilt binaries, ComfyUI partner/API nodes.
+
+## Licence confirmation update (second pass, 2026-11-08)
+Confirmed on official pages (see [[game-studio-cost-and-openness-classification]]): Godot MIT; Krita GPL-3.0; Inkscape GPL v2+ source / v3+ binaries; Ardour GPL-2 with a plugin clarification; Audacity GPLv3; LMMS GPL-2.0; Hydrogen GPLv2+; ffmpeg LGPL 2.1+ by default (GPL if optional parts are enabled); sox GPLv2/LGPLv2; gdtoolkit MIT; Pixelorama MIT; LibreSprite GPL-2.0; ArmorPaint zlib. Aseprite is proprietary (EULA).
 
 ## Caveats
 - No tool was run; "agent-ready" is not demonstrated anywhere. ArtCraft readiness comes only from each README's own claims.
