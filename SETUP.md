@@ -28,6 +28,11 @@ layering** — the repo already works as plain Markdown + Git.
 5. **(Optional) Web Clipper** — install the browser extension; import
    [`meta/web-clipper-template.json`](meta/web-clipper-template.json) (drag it into the clipper's template area) and set
    its destination folder to `inbox/`. (Adjust fields to your clipper version — see [`meta/obsidian.md`](meta/obsidian.md).)
+6. **(Optional) Studio layer for your game projects** — run the commands in [`studio/INSTALL.md`](studio/INSTALL.md)
+   once per machine: they symlink `studio/skills` and `studio/agents` into `~/.claude/`, add a user rule that imports
+   `studio/PLAYBOOK.md`, and register the read-only Obsidian MCP at user scope. This touches your personal `~/.claude/`
+   config, so it is **your** step (an agent is not allowed to modify it). Verify with `/skills`, `/agents`, `/mcp`
+   inside any repo that has a `project.godot`.
 
 ## Then
 Feed it ([intake](meta/workflows/intake.md)) → review & verify in Git ([git-governance](meta/workflows/git-governance.md))

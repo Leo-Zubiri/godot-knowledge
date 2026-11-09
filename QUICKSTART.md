@@ -29,6 +29,11 @@ For guided help (Obsidian, MCP, intake, retrieval), see the provider-neutral spe
 [`meta/specialist.md`](meta/specialist.md). In Claude Code/Codex it's packaged as the `knowledge-ops` skill
 (`.claude/skills/knowledge-ops/`). It advises and prepares changes; **it never marks knowledge `verified`.**
 
+## 4b. (Optional) Let the base act on your game projects
+Install the capped procedural layer once per machine with [`studio/INSTALL.md`](studio/INSTALL.md) (user-level
+symlinks + a rule importing [`studio/PLAYBOOK.md`](studio/PLAYBOOK.md)). A game repo then needs only a ≤ 10-line
+`AGENTS.md` pointing here and a `docs/project-profile.md`. Decision and limits: `notes/gs-adr-studio-layer.md`.
+
 ## 5. Feed it (structured intake)
 Add material to [`inbox/`](inbox/) (optionally via [`meta/templates/capture.md`](meta/templates/capture.md)), then run
 the intake loop in [`meta/workflows/intake.md`](meta/workflows/intake.md): triage → preserve originals to

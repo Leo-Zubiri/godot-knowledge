@@ -19,6 +19,8 @@ you're an agent.
 - **Map of content:** [`notes/godot-index.md`](notes/godot-index.md) — the entry point to the seeded notes.
 - **How knowledge is organized & trusted:** [`OVERVIEW.md`](OVERVIEW.md), [`meta/`](meta/).
 - **Retrieve / contribute (filesystem-first):** [`meta/workflows/`](meta/workflows/).
+- **Let the base act on your games (optional, capped):** [`studio/README.md`](studio/README.md) — playbook, roles,
+  skills, checklists, templates; one-time user-level install in [`studio/INSTALL.md`](studio/INSTALL.md).
 
 ## Trust status (important)
 All claim-bearing seed notes are currently **`proposed`** or **`unreviewed`** — they were drafted by an agent and are
