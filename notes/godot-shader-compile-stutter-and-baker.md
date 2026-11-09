@@ -12,6 +12,9 @@ sources:
   - claim: "Pipeline compilations page and Shader Baker notes"
     ref: src-gd-particles-shaders-performance
     retrieved: 2026-11-08
+  - claim: "Visual shaders page read for 4.7"
+    ref: src-gd-projectsettings-subemitters-visualshaders
+    retrieved: 2026-11-08
 related:
   - relates-to: "[[godot-performance-workflow]]"   # profiling first
   - relates-to: "[[godot-renderer-feature-matrix]]"   # renderer differences
@@ -29,7 +32,7 @@ created_by_type: agent
 - **Habits:** enable features early with a simple scene; do not change MSAA or shadow depth precision mid-game; keep a hidden instance of dynamically spawned effects.
 - **Shader Baker (4.5+):** export option storing compiled intermediate shaders in the PCK; shortens first launch, does **not** remove stutter; Forward+/Mobile only, not web or headless exports; must match `rendering/rendering_device/driver`.
 - **Compatibility renderer:** ubershaders/precompilation do not apply; show materials/particles in view for at least one frame while loading.
-- **Visual shaders and style (UNV partially):** graph converts to a script shader; the shaders style guide mandates tabs, lines <100 chars, snake_case, a fixed declaration order, and has no performance guidance.
+- **Visual shaders (page read, 4.7):** the graph is converted to script code you can view; visual shaders do not expose every script feature; Mesh Emitter works only in Particles mode and only with OBJ meshes; Expression-node errors show in the Output tab. **Style guide (earlier read):** the shaders style guide mandates tabs, lines <100 chars, snake_case, a fixed declaration order, and has no performance guidance.
 
 ## See also
 - [[godot-performance-workflow]] — profiling first

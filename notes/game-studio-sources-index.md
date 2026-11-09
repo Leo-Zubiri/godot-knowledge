@@ -87,6 +87,7 @@ Navigational only; no claims. Every preserved `src-gs-*` source, grouped by them
 ### Gap-closure round (2026-11-08)
 - [[src-gd-particles-shaders-performance]] — Godot 3D particles, shader compilation, CPU/GPU/servers/threads (`paraphrased`) · cited by: [[godot-3d-particles-trails-attractors-collision]], [[godot-shader-compile-stutter-and-baker]], [[godot-cpu-gpu-optimization-servers-and-threads]]
 - [[src-gd-2d-tilemap-audio-import-i18n]] — TileMapLayer, Camera2D, import process, CSV translations (`paraphrased`) · cited by: [[godot-tilemaplayer-and-2d-camera-notes]], [[godot-import-process-and-csv-translations]]
+- [[src-gd-projectsettings-subemitters-visualshaders]] — ProjectSettings class XML (vram_compression, stretch, filter), sub-emitters and visual shaders pages, 4.7 (`paraphrased`) · cited by: [[godot-3d-particles-trails-attractors-collision]], [[godot-shader-compile-stutter-and-baker]], [[godot-import-process-and-csv-translations]], [[godot-tilemaplayer-and-2d-camera-notes]]
 - [[src-gd-skeleton-gdscript-fsm-demo]] — Skeleton3D, GDScript style/exports/warnings, FSM demo (`paraphrased`) · cited by: [[godot-skeleton3d-modifiers-and-gdscript-style]]
 - [[src-gs-design-progression-balance]] — Lost Garden, DDA (Hamlet pp. 1-5), balance pointers (`paraphrased`) · cited by: [[game-studio-progression-loops-and-dda]]
 - [[src-gs-design-art-readability-animation]] — TF2 NPAR paper (pp. 1-4), animation principles (`paraphrased`) · cited by: [[game-studio-art-readability-silhouette-and-animation-principles]]
