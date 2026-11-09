@@ -16,6 +16,7 @@ related:
   - relates-to: "[[godot-logging-and-crash-evidence]]"   # crash evidence inside the game
   - relates-to: "[[game-studio-delivery-platforms-and-fees]]"   # store rules
   - relates-to: "[[gs-adr-free-and-open-source-first]]"   # libre-first preference
+  - relates-to: "[[godot-error-crash-reporting-and-enriched-logging]]"   # the in-game client/module that feeds these release-side dashboards
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent
@@ -39,3 +40,4 @@ An agent can draft bug-report templates (version, platform, steps, expected vs a
 - [[godot-logging-and-crash-evidence]] — crash evidence inside the game
 - [[game-studio-delivery-platforms-and-fees]] — store rules
 - [[gs-adr-free-and-open-source-first]] — libre-first preference
+- [[godot-error-crash-reporting-and-enriched-logging]] — the in-game client/module that feeds these release-side dashboards

@@ -16,6 +16,7 @@ related:
   - relates-to: "[[game-studio-acceptance-criteria]]"   # logs as evidence
   - relates-to: "[[game-studio-evidence-driven-visual-qa]]"   # other evidence kinds
   - relates-to: "[[godot-build-metadata-and-feature-tags]]"   # debug vs release behaviour
+  - relates-to: "[[godot-error-crash-reporting-and-enriched-logging]]"   # the in-game module that writes the logs this note reads forensically
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent
@@ -38,3 +39,4 @@ created_by_type: agent
 - [[game-studio-acceptance-criteria]] — where log evidence is recorded
 - [[game-studio-evidence-driven-visual-qa]] — other evidence kinds
 - [[godot-build-metadata-and-feature-tags]] — debug vs release behaviour
+- [[godot-error-crash-reporting-and-enriched-logging]] — the in-game module that writes the logs this note reads forensically
