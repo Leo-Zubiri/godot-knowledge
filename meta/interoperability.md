@@ -93,5 +93,10 @@ see ../../meta/workflows/source-preservation.md . Do not restate the steps here;
 Keep the procedure in one place (`meta/workflows/`); the skill is only a trigger + pointer. Note the relative path
 only resolves inside this checkout — skills here are an in-repo convenience, not portable packages.
 
+**Amendment (2026-11-08):** this repo now ships an optional, capped procedural layer `studio/` (playbook, conventions,
+roles, ≤ 4 agent adapters, ≤ 7 thin skills, checklists, templates) installed at *user level* by symlink so it serves
+every game project without per-repo copies — see `notes/gs-adr-studio-layer.md` and `studio/INSTALL.md`. The
+methodology above is unchanged: skills remain pointers, never restatements.
+
 *All claims above verified 2026-11-05 against the cited official docs. `[UNVERIFIED]` items are surface/behavior that
 the official docs do not pin down — treat them as conditional and test in your environment.*

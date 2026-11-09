@@ -81,6 +81,10 @@ See [`meta/workflows/git-governance.md`](meta/workflows/git-governance.md). The 
   - `accepted` (decision) = adopted — **not** a claim-verification state.
 - Make changes on a **branch** and leave them as a reviewable **Git diff / PR**. Canonical knowledge enters `main`
   only through human review. **Git is the record of who-changed-what** — do not add a `last_modified_by` field.
+  - **Owner exception (2026-11-08):** when an agent works from one of the owner's *local* game projects (see
+    `studio/PLAYBOOK.md`), it may commit `proposed`/`unreviewed` knowledge **directly on local `main`**, one commit
+    per note, without pushing. Everything else above still holds: entry states only, never `verified`, nothing
+    project-specific, human review before promotion.
 - Keep `sources/` intact; corrections to synthesis go in `notes/`, not by rewriting a preserved source.
 
 ### Honesty about enforcement (important)
