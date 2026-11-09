@@ -1,70 +1,32 @@
-# Install the studio layer for Claude Code (user level, once per machine)
+# Install the studio layer for Claude Code (one command, once per machine)
 
-Goal: every project on this machine gets the skills, agents, playbook and the read-only Obsidian MCP **without
-adding files to the project**. Mechanisms below are documented by Claude Code (skills symlinks, `~/.claude/rules/`
-imports, user-scope MCP, user settings); agent symlinks are **not documented** — see step 2.
-
-Set the checkout path once:
 ```bash
-export BRAIN="$HOME/Documents/GODOT/godot-knowledge"
+bash ~/Documents/GODOT/godot-knowledge/studio/install.sh          # install or update (idempotent)
+bash ~/Documents/GODOT/godot-knowledge/studio/install.sh --check  # show status, change nothing
+bash ~/Documents/GODOT/godot-knowledge/studio/install.sh --uninstall
 ```
 
-## 1. Skills (documented: a personal skill entry may be a symlink)
-```bash
-mkdir -p ~/.claude/skills
-for s in scope-game plan-phase tune-config package-module consult-knowledge write-back-knowledge review-acceptance; do
-  ln -sfn "$BRAIN/studio/skills/$s" ~/.claude/skills/$s
-done
-```
+Requirements: `bash`, `python3` (for the JSON merge), and optionally the `claude` CLI on `PATH` for the MCP step.
+The Obsidian key is read from `OBSIDIAN_API_KEY` in your environment or from this repo's
+`.claude/settings.local.json`; without it the MCP step is skipped and everything else still installs.
 
-## 2. Agents (symlinks not documented — verify with `/agents`; fall back to copies)
-```bash
-mkdir -p ~/.claude/agents
-for a in studio-planner godot-engineer godot-qa knowledge-librarian; do
-  ln -sfn "$BRAIN/studio/agents/$a.md" ~/.claude/agents/$a.md
-done
-# if /agents does not list them: cp instead of ln, and re-copy after editing the brain.
-```
+Then open Claude Code inside any repo that has a `project.godot` and check `/skills` (7), `/agents` (4) and `/mcp`
+(`obsidian`, read tools only). If `/agents` does not list the roles, re-run with `STUDIO_COPY_AGENTS=1` (agent
+symlinks are not documented by Claude Code; copies always work — re-run the script after editing an agent).
 
-## 3. Playbook as a user rule (loads in every project, no approval dialog)
-```bash
-mkdir -p ~/.claude/rules
-cat > ~/.claude/rules/godot-studio.md <<'EOF'
-# Godot studio (applies only when the working directory contains a `project.godot`)
-@~/Documents/GODOT/godot-knowledge/studio/PLAYBOOK.md
-EOF
-```
-Why not a project `CLAUDE.md` import: an `@` import that resolves outside the repo triggers a per-project approval
-dialog; user-scope rules do not.
+Everything lands under `~/.claude/`; no file is added to any game repo. Game repos only need the contract in
+[`README.md`](README.md) (a ≤ 10-line `AGENTS.md` + `docs/project-profile.md`).
 
-## 4. Obsidian MCP at user scope (read-only)
-Obsidian must be open with the *Local REST API with MCP* plugin (≥ 5.5.2); put the key in your shell profile as
-`OBSIDIAN_API_KEY`.
-```bash
-claude mcp add --transport http --scope user obsidian "http://127.0.0.1:27123/mcp/" \
-  --header "Authorization: Bearer ${OBSIDIAN_API_KEY}"
-```
-Then in `~/.claude/settings.json` (merge; do not replace other keys):
-```json
-{
-  "permissions": {
-    "allow": ["mcp__obsidian__vault_read", "mcp__obsidian__vault_list", "mcp__obsidian__vault_get_document_map",
-              "mcp__obsidian__search_simple", "mcp__obsidian__search_query", "mcp__obsidian__tag_list"],
-    "deny":  ["mcp__obsidian__vault_write", "mcp__obsidian__vault_append", "mcp__obsidian__vault_patch",
-              "mcp__obsidian__vault_move", "mcp__obsidian__vault_copy", "mcp__obsidian__vault_delete",
-              "mcp__obsidian__command_execute", "mcp__obsidian__command_list"]
-  }
-}
-```
-
-## 5. Verify (inside any game repo)
-`/skills` lists the seven skills · `/agents` lists the four roles · `/mcp` shows `obsidian` with read tools only ·
-ask "which skill would you use to add a feature?" → `scope-game` (feature variant).
-
-## Uninstall
-Remove the symlinks, `~/.claude/rules/godot-studio.md`, and `claude mcp remove --scope user obsidian`.
+## What the script does (so you can audit it)
+1. Symlinks `studio/skills/*` → `~/.claude/skills/<name>` (documented: a personal skill entry may be a symlink).
+2. Symlinks (or copies) `studio/agents/*.md` → `~/.claude/agents/`.
+3. Writes `~/.claude/rules/godot-studio.md` with `@<brain>/studio/PLAYBOOK.md` — user-scope rules load in every
+   project without the approval dialog that a project-level import of an external path would trigger.
+4. `claude mcp add --scope user obsidian http://127.0.0.1:27123/mcp/` with the bearer key (Obsidian must be open with
+   the *Local REST API with MCP* plugin ≥ 5.5.2).
+5. Merges read-only allow / write deny rules for `mcp__obsidian__*` into `~/.claude/settings.json` (backup
+   `settings.json.bak`).
 
 ## Other agents (Codex, OpenCode)
-No discovery needed: their `AGENTS.md` in the game says "read `$GODOT_KNOWLEDGE_PATH/studio/PLAYBOOK.md`". Skill
-discovery paths differ per agent (see `../meta/interoperability.md`); symlink `studio/skills/*` into the path each
-agent documents, if any.
+No install needed: the game's `AGENTS.md` says "read `$GODOT_KNOWLEDGE_PATH/studio/PLAYBOOK.md`". If an agent has a
+documented skills path, symlink `studio/skills/*` there (see `../meta/interoperability.md`).

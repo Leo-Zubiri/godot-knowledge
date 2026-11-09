@@ -30,8 +30,8 @@ For guided help (Obsidian, MCP, intake, retrieval), see the provider-neutral spe
 (`.claude/skills/knowledge-ops/`). It advises and prepares changes; **it never marks knowledge `verified`.**
 
 ## 4b. (Optional) Let the base act on your game projects
-Install the capped procedural layer once per machine with [`studio/INSTALL.md`](studio/INSTALL.md) (user-level
-symlinks + a rule importing [`studio/PLAYBOOK.md`](studio/PLAYBOOK.md)). A game repo then needs only a ≤ 10-line
+Install the capped procedural layer once per machine: `bash studio/install.sh` (user-level symlinks + a rule
+importing [`studio/PLAYBOOK.md`](studio/PLAYBOOK.md) + read-only MCP; see [`studio/INSTALL.md`](studio/INSTALL.md)). A game repo then needs only a ≤ 10-line
 `AGENTS.md` pointing here and a `docs/project-profile.md`. Decision and limits: `notes/gs-adr-studio-layer.md`.
 
 ## 5. Feed it (structured intake)

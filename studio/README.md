@@ -17,7 +17,7 @@ specs, Claude Code adapters (agents + skills), checklists and templates. Decisio
 | Path | Purpose |
 |---|---|
 | [`PLAYBOOK.md`](PLAYBOOK.md) | entry point when acting on a game: read profile → pick skill → cite notes → write only project facts into the game |
-| [`INSTALL.md`](INSTALL.md) | one-time user-level install for Claude Code (symlinks, rules file, user-scope MCP) |
+| [`install.sh`](install.sh) · [`INSTALL.md`](INSTALL.md) | one command (`bash studio/install.sh`, `--check`, `--uninstall`) for the user-level install; INSTALL.md explains what it does |
 | [`conventions.md`](conventions.md) | generic GDScript / architecture / git / safety conventions |
 | [`roles.md`](roles.md) | portable role spec (planner, engineer, qa, librarian) |
 | `agents/` | Claude Code subagent adapters of the roles |
