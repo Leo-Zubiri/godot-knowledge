@@ -58,6 +58,9 @@ Notes carry optional facet tags (controlled vocabulary in [`meta/methodology/tag
 ### Preserved sources
 - [[game-studio-sources-index]] — all 50 `src-gs-*` sources by theme (including agent-ops and design sources), with the notes that cite them (paraphrased extractions with provenance; re-fetch before verification).
 
+### Delivery: Steam, stores, privacy (gap closure)
+- [[game-studio-delivery-steam-store-privacy-notes]]
+
 ## See also
 - [[godot-index]] — parent Godot knowledge map
 - [[agent-ops-index]] — agent operations

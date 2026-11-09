@@ -1,0 +1,35 @@
+---
+id: godot-import-process-and-csv-translations
+type: reference
+domain: godot
+status: proposed
+summary: "Godot 4.7 import process (.import files, .godot/imported, reimport triggers, image compression options) and CSV translation rules including 4.6 plural/context columns."
+tags: [dept/game-dev, tool/godot, dept/delivery]
+applies-to:
+  min: "4.0"
+  tested: "4.7 (documentation only; not run in the engine)"
+sources:
+  - claim: "Import process, image import options and CSV spreadsheet translation pages"
+    ref: src-gd-2d-tilemap-audio-import-i18n
+    retrieved: 2026-11-08
+related:
+  - relates-to: "[[godot-localization-workflow]]"   # localization workflow
+  - relates-to: "[[godot-project-hygiene]]"   # what to commit
+  - relates-to: "[[godot-3d-import-options-and-export-hygiene]]"   # 3D side
+created: 2026-11-08
+updated: 2026-11-08
+created_by_type: agent
+---
+
+
+> **Evidence status:** distilled from the official Godot documentation as extracted on 2026-11-08 (paraphrased, see the cited source). Nothing was run in the engine: *documented*, not *experimentally validated*. Items marked UNV were not read on an official page. Status `proposed`.
+
+- **Import:** commit `.import` files; do not commit `res://.godot/imported/`; reimport triggers are the Import dock, resource-type change, source MD5 change or deleting cached files; use `ResourceLoader` (raw `FileAccess` breaks after export); `.gdignore` hides folders. **The page does not cover command-line/headless import.**
+- **Images:** Lossless (2D default), Lossy, VRAM Compressed (3D default), VRAM Uncompressed, Basis Universal; `high_quality` needs Forward+/Mobile; `mipmaps/limit` currently has no effect; pixel art stays Lossless. The `vram_compression` project-setting keys were not found on the stable page (UNV).
+- **CSV translations:** first column keys, others locale codes, `_`-prefixed columns are comments; **since 4.6 `?plural` and `?context` columns** exist but need manual `tr_n()`/`tr()`; UTF-8 without BOM; quote fields with commas/newlines/quotes (double inner quotes); imported translations must still be registered in settings.
+- **Compatibility renderer (UNV, search summary):** widest hardware, web renderer; no compute shaders, limited post-processing, no HDR; test low-end hardware.
+
+## See also
+- [[godot-localization-workflow]] — localization workflow
+- [[godot-project-hygiene]] — what to commit
+- [[godot-3d-import-options-and-export-hygiene]] — 3D side

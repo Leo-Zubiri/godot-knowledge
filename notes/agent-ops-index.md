@@ -36,6 +36,9 @@ Navigational only; no claims. Knowledge about running AI coding agents safely an
 - [[game-studio-version-aware-godot-knowledge]] · [[game-studio-third-party-addon-knowledge]] · [[game-studio-game-project-profile]]
 - Evaluating knowledge: [[benchmark-leakage-assertions]] · [[knowledge-availability-vs-application]]
 
+### Vendor facts for pipelines
+- [[game-studio-claude-code-headless-subagents-and-model-pinning]] · [[game-studio-agent-eval-and-context-guidance]]
+
 ### Reference-architecture studies (patterns only, not dependencies)
 - [[game-studio-ccgs-reference-comparison]] · [[game-studio-gp-reference-comparison]] · [[game-studio-framework-churn-risk]]
 

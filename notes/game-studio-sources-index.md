@@ -84,6 +84,15 @@ Navigational only; no claims. Every preserved `src-gs-*` source, grouped by them
 - [[src-gs-delivery-platforms]] — Distribution platforms: itch.io, Steam, Google Play, Apple, F-Droid, Flathub (fees and rules as written on 2026-11-08) (`paraphrased`) · cited by: [[game-studio-delivery-platforms-and-fees]], [[game-studio-post-release-and-crash-reporting]], [[game-studio-versioning-and-changelog]]
 - [[src-gs-delivery-versioning-hygiene]] — Versioning and release hygiene: SemVer, Keep a Changelog, CC attribution best practices, IARC pointer, bug-triage pointers, Sentry self-hosted licence (`paraphrased`) · cited by: [[game-studio-post-release-and-crash-reporting]], [[game-studio-release-credits-and-ratings]], [[game-studio-versioning-and-changelog]]
 
+### Gap-closure round (2026-11-08)
+- [[src-gd-particles-shaders-performance]] — Godot 3D particles, shader compilation, CPU/GPU/servers/threads (`paraphrased`) · cited by: [[godot-3d-particles-trails-attractors-collision]], [[godot-shader-compile-stutter-and-baker]], [[godot-cpu-gpu-optimization-servers-and-threads]]
+- [[src-gd-2d-tilemap-audio-import-i18n]] — TileMapLayer, Camera2D, import process, CSV translations (`paraphrased`) · cited by: [[godot-tilemaplayer-and-2d-camera-notes]], [[godot-import-process-and-csv-translations]]
+- [[src-gd-skeleton-gdscript-fsm-demo]] — Skeleton3D, GDScript style/exports/warnings, FSM demo (`paraphrased`) · cited by: [[godot-skeleton3d-modifiers-and-gdscript-style]]
+- [[src-gs-design-progression-balance]] — Lost Garden, DDA (Hamlet pp. 1-5), balance pointers (`paraphrased`) · cited by: [[game-studio-progression-loops-and-dda]]
+- [[src-gs-design-art-readability-animation]] — TF2 NPAR paper (pp. 1-4), animation principles (`paraphrased`) · cited by: [[game-studio-art-readability-silhouette-and-animation-principles]]
+- [[src-gs-agent-ops-subagents-headless-evals]] — Claude Code/OpenCode docs, Anthropic engineering posts (`paraphrased`) · cited by: [[game-studio-claude-code-headless-subagents-and-model-pinning]], [[game-studio-agent-eval-and-context-guidance]]
+- [[src-gs-delivery-steam-store-privacy]] — Steam, Microsoft, Apple, COPPA/GDPR, ESRB/PEGI, packaging, GlitchTip (`paraphrased`) · cited by: [[game-studio-delivery-steam-store-privacy-notes]]
+
 ## See also
 - [[game-studio-index]] — map of the game-studio notes
 - [[godot-index]] — Godot knowledge map (older sources listed there)

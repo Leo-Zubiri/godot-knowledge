@@ -1,0 +1,31 @@
+---
+id: src-gd-skeleton-gdscript-fsm-demo
+type: source
+domain: godot
+source:
+  url: "https://docs.godotengine.org/en/stable/classes/class_skeleton3d.html"
+  urls:
+    - "https://docs.godotengine.org/en/stable/classes/class_skeleton3d.html"
+    - "https://docs.godotengine.org/en/stable/classes/class_skeletonmodifier3d.html"
+    - "https://docs.godotengine.org/en/stable/classes/class_boneattachment3d.html"
+    - "https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_styleguide.html"
+    - "https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_basics.html"
+    - "https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_exports.html"
+    - "https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/warning_system.html"
+    - "https://github.com/godotengine/godot-demo-projects/tree/master/2d/finite_state_machine"
+  title: "Godot 4.7: Skeleton3D and modifiers, GDScript style guide, basics, exports, warnings; official FSM demo pointer"
+  retrieved: 2026-11-08
+  version: "headers not reported for these pages; demo project.godot declares config/features 4.7"
+  capture: paraphrased
+  retrieved_via: "fetch-time summarizer (WebFetch) and research-subagent extraction; not verbatim"
+created: 2026-11-08
+updated: 2026-11-08
+created_by_type: agent
+---
+
+> Preserved pointer + key points (conventionally immutable). **Basis:** pages fetched on 2026-11-08 by research subagents and summarized by a fetch-time summarizer — a **paraphrased extraction, not verbatim text**; PDFs marked 'read by the main agent' were read from downloaded page images. Fees, defaults and policies are recorded only as written on that date; UNV/unverified items were not read on an official page (404, blocked, snippet-only). Godot page versions: 'header not reported' means the fetch tool did not show the version (the URL is the `stable` path). Not legal advice. Re-fetch before promoting dependent notes to `verified`.
+
+- **Skeleton3D:** `modifier_callback_mode_process` (0 physics, 1 idle default, 2 manual via `advance()`), `show_rest_only`, `motion_scale`; `get_bone_pose`/`set_bone_pose`, `get_bone_global_pose`/`set_bone_global_pose` (setting global can be costly — batch), rest methods, `find_bone` (−1 if absent), `get_version`; signals `skeleton_updated`, `pose_updated` (does not fire during modifier processing); `get_bone_pose` returns pre-modifier values, so read final results from `SkeletonModifier3D.modification_processed`. **Deprecated (versions not stated):** `set_bone_global_pose_override`, `get_bone_global_pose_override`, `get_bone_global_pose_no_override`, `clear_bones_global_pose_override`, the `physical_bones_*` methods, `animate_physical_bones`, `force_update_all_bone_transforms`. **SkeletonModifier3D:** a node under a Skeleton3D that modifies bones after any AnimationMixer; `active`, `influence` (Skeleton3D applies influence, modifiers must not); `_process_modification()` deprecated for `_process_modification_with_delta()`; inherited by 12 classes: BoneConstraint3D, BoneTwistDisperser3D, IKModifier3D, LimitAngularVelocityModifier3D, LookAtModifier3D, ModifierBoneTarget3D, PhysicalBoneSimulator3D, RetargetModifier3D, SkeletonIK3D, SpringBoneSimulator3D, XRBodyModifier3D, XRHandModifier3D. **BoneAttachment3D:** `bone_name`, `bone_idx`, `override_pose` (default false; the page warns it may misbehave with SkeletonModifier3D), `use_external_skeleton`, `external_skeleton`.
+- **GDScript style guide:** LF, UTF-8 no BOM, tabs; lines < 100 characters; `and`/`or`/`not` over symbols; double quotes; snake_case files/functions/variables/signals (signals past tense); PascalCase classes/nodes; CONSTANT_CASE constants; underscore prefix for virtuals/private; order: annotations (`@tool`, `@icon`, `@static_unload`), `class_name`, `extends`, doc comment (`@abstract` before `class_name`), signals, enums, constants, static vars, exports, vars, `@onready` vars, `_static_init`, static methods, virtual callbacks (`_init`, `_enter_tree`, `_ready`, `_process`, `_physics_process`), other methods, inner classes. It mentions **no formatter or linter**; no official statement of a built-in 4.6/4.7 formatter or linter was found (UNV for 4.7).
+- **GDScript reference essentials:** `class_name`, `extends` (default `RefCounted`), `@icon`, `@tool`, `@onready`, `@abstract` (4.5), `@static_unload`; `@onready` with `@export` triggers `ONREADY_WITH_EXPORT` (an error by default); **variadic functions (`...args`) and abstract classes/methods were added in 4.5** (per the page); lambdas capture locals by value, must `return` explicitly, call with `.call()`; `await` makes the caller a coroutine; `match` is stricter than `==` (1 does not match 1.0); `static var` cannot be `@export` or `@onready`. **Exports:** annotation list `@export`, `@export_storage`, `@export_custom`, `@export_tool_button`, `@export_range`, `@export_exp_easing`, `@export_file`, `@export_dir`, `@export_global_file/dir`, `@export_node_path`, `@export_multiline`, `@export_enum`, `@export_flags`, `@export_flags_2d/3d_physics/render/navigation`, `@export_color_no_alpha`, `@export_group/subgroup/category`; pitfalls — reading in `_init()` gives the default (read in `_ready()`), `@tool` changes need `notify_property_list_changed()`, nested typed arrays like `Array[Array[float]]` unsupported, groups cannot be nested, exported resources load with the scene (use `@export_file` for on-demand), `@export_storage` values are copied by `duplicate()`. **Warning system:** configured in Project Settings (GDScript, Advanced Settings); suppress with `@warning_ignore("name")` and regions with `@warning_ignore_start`/`@warning_ignore_restore`; warnings can be treated as errors per warning; the page does not describe Ignore/Warn/Error levels, `exclude_addons` or command-line behaviour.
+- **Official FSM demo (supplementary, not guidance):** `godot-demo-projects/2d/finite_state_machine` (files `Demo.tscn`, `README.md`, `player/`, `state_machine/`, `debug/`); its README describes a hierarchical state machine with a pushdown automaton using the state pattern, in GDScript with the Compatibility renderer; scripts not read. The 4.7 docs have no dedicated FSM page.

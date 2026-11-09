@@ -66,6 +66,10 @@ awaiting human verification — see [`AGENTS.md`](../AGENTS.md)).
 ### Godot 4.7 documentation sources (delivery and quality)
 [[src-gd-export-and-platforms]] · [[src-gd-accessibility-logging-debug]]
 
+### Gap-closure additions (documented, proposed)
+[[godot-3d-particles-trails-attractors-collision]] · [[godot-shader-compile-stutter-and-baker]] · [[godot-cpu-gpu-optimization-servers-and-threads]] · [[godot-tilemaplayer-and-2d-camera-notes]] · [[godot-import-process-and-csv-translations]] · [[godot-skeleton3d-modifiers-and-gdscript-style]]
+Sources: [[src-gd-particles-shaders-performance]] · [[src-gd-2d-tilemap-audio-import-i18n]] · [[src-gd-skeleton-gdscript-fsm-demo]]
+
 ### Preserved sources
 Official Godot 4.7 documentation is preserved under [`sources/`](../sources/) and cited by the notes above
 ([[src-gd-static-typing]], [[src-gd-signals]], [[src-godot-notifications]], [[src-singletons-autoload]], [[src-release-policy]],

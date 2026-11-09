@@ -27,8 +27,11 @@ Navigational only; no claims. Engine-agnostic design principles. Evidence is mix
 ### Learning from existing games
 - [[game-studio-game-reference-analysis-method]] · [[game-studio-reference-analysis-legal-boundary]]
 
+### Progression, readability and animation
+- [[game-studio-progression-loops-and-dda]] · [[game-studio-art-readability-silhouette-and-animation-principles]]
+
 ### Known gaps (no primary source read yet)
-Progression and reward design, difficulty-curve construction, feedback-loop theory beyond MDA's examples, scope planning for small teams, per-genre conventions, art direction and animation principles.
+Reward-design evidence, difficulty-curve construction beyond the Hamlet pointer, scope planning for small teams, per-genre conventions, art-bible primary sources (progression vocabulary and silhouette/animation notes now exist but are pointer-level).
 
 ### Sources
 Design sources (`src-gs-design-*`) are listed in [[game-studio-sources-index]]; accessibility and loudness sources are in the same hub.
