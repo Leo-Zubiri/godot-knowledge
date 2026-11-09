@@ -110,6 +110,13 @@ Navigational only; no claims. Every preserved `src-gs-*` source, grouped by them
 - [[src-gd-pck-encryption-dedicated-server-iap-plugins-decompiler]] — PCK encryption page, dedicated servers, Play Billing/iOS plugins, GDRE Tools (`paraphrased`) · cited by: [[game-studio-anti-cheat-and-purchase-integrity]], [[godot-export-fundamentals]]
 - [[src-gs-backend-nakama-stripe-idempotency-owasp-logging]] — Nakama IAP validation and READMEs, Stripe idempotency, OWASP logging (`paraphrased`) · cited by: [[game-studio-anti-cheat-and-purchase-integrity]]
 
+### Runtime concerns: error reporting and multiplayer observability (2026-11-08)
+- [[src-gd-error-logging-crash-engine]] — Godot 4.7 ProjectSettings file_logging, OS.crash/has_feature, Engine.print_error_messages, debugging overview (`paraphrased`) · cited by: [[godot-error-crash-reporting-and-enriched-logging]]
+- [[src-sentry-godot-sdk]] — getsentry/sentry-godot README+API, MIT GDExtension, Godot 4.5+ (`excerpt`) · cited by: [[godot-error-crash-reporting-and-enriched-logging]]
+- [[src-gd-dedicated-server-export]] — Godot 4.7 dedicated-server export, --headless, dedicated_server tag (`paraphrased`) · cited by: [[game-studio-multiplayer-observability-and-session-monitoring]]
+- [[src-gs-observability-prometheus-otel-grafana]] — Prometheus, OpenTelemetry, Grafana overviews (`paraphrased`) · cited by: [[game-studio-multiplayer-observability-and-session-monitoring]]
+- [[src-gs-nakama-multiplayer-and-metrics]] — Nakama multiplayer/presence and metrics config (`paraphrased`) · cited by: [[game-studio-multiplayer-observability-and-session-monitoring]]
+
 ## See also
 - [[game-studio-index]] — map of the game-studio notes
 - [[godot-index]] — Godot knowledge map (older sources listed there)

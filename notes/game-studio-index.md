@@ -26,6 +26,7 @@ Notes carry optional facet tags (controlled vocabulary in [`meta/methodology/tag
 ### Start here
 - [[game-studio-tool-selection-guide]] — **which tool for which task** (agent routing table).
 - [[game-studio-architecture-proposal]] — decision document, roadmap, open gaps.
+- [[game-studio-cross-cutting-runtime-concerns]] — **cross-cutting** map: the runtime concerns every game/sim must address (errors, observability, saves, economy, accessibility, i18n, input).
 
 ### Evaluation and risk
 - [[game-studio-cost-and-openness-classification]] — free/libre/open-source-first tiers
@@ -50,6 +51,7 @@ Notes carry optional facet tags (controlled vocabulary in [`meta/methodology/tag
 
 ### Standards and workflows
 - [[game-studio-asset-conventions]] · [[game-studio-workflows]]
+- [[game-studio-multiplayer-observability-and-session-monitoring]] — monitoring a live multiplayer game: session/match + health signals, where authority emits them, Prometheus/OpenTelemetry/Grafana vs a solo-dev minimal tier.
 
 ### Decisions (proposed)
 - [[gs-adr-free-and-open-source-first]] · [[gs-adr-blender-primary-3d]] · [[gs-adr-godot-final-ui-authority]] · [[gs-adr-artcraft-role]] · [[gs-adr-interchange-formats]]
