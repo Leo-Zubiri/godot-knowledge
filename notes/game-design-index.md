@@ -30,6 +30,10 @@ Navigational only; no claims. Engine-agnostic design principles. Evidence is mix
 ### Progression, readability and animation
 - [[game-studio-game-usability-heuristics-pinelle]] · [[game-studio-progression-loops-and-dda]] · [[game-studio-art-readability-silhouette-and-animation-principles]]
 
+### Scoping and input conventions
+- [[game-design-scoping-questions-for-new-game-or-feature]] — question bank for "make a game of X" / "add feature Y": read the repo first, ≤5 Tier-0 questions with defaults, answers into ADRs (lessons section unreviewed)
+- [[game-design-input-mapping-conventions-keyboard-gamepad-touch]] — per-device and per-genre control defaults, face-button equivalence, touch target sizes, Steam Deck items, Godot 4.7 bridge (ui_* defaults as read in the 4.7-stable source)
+
 ### Known gaps (no primary source read yet)
 Reward-design evidence, difficulty-curve construction beyond the Hamlet pointer, scope planning for small teams, per-genre conventions, art-bible primary sources (progression vocabulary and silhouette/animation notes now exist but are pointer-level).
 
