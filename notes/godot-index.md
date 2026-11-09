@@ -76,7 +76,8 @@ Sources: [[src-gd-projectsettings-subemitters-visualshaders]] · [[src-gd-partic
 
 ### Input, modules, networking, loading, configuration (documented, proposed)
 [[godot-touch-input-and-virtualjoystick]] — VirtualJoystick, TouchScreenButton, touch events, emulation settings and device-agnostic actions.
-Sources: [[src-gd-touch-input-virtualjoystick]]
+[[godot-reusable-module-packaging]] — packaging a reusable module under addons/, plugin.cfg vs runtime-only, extraction into another project, Asset Library rules.
+Sources: [[src-gd-touch-input-virtualjoystick]] · [[src-gd-plugins-addons-assetlib]]
 
 ### Preserved sources
 Official Godot 4.7 documentation is preserved under [`sources/`](../sources/) and cited by the notes above
