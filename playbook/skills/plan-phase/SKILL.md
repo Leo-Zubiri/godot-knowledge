@@ -8,7 +8,7 @@ description: Create or update a dated plan for a Godot project under docs/plans/
 Prerequisite: `docs/project-profile.md` exists (else run `scope-game`).
 
 1. **Folder.** `<plans_dir>/<YYYY-MM-DD>_<slug>/` (date = creation date, ISO). Copy
-   `studio/templates/plan.md` → `plan.md`; one `phase-NN-<slug>.md` per phase from `studio/templates/phase.md`.
+   `playbook/templates/plan.md` → `plan.md`; one `phase-NN-<slug>.md` per phase from `playbook/templates/phase.md`.
    Set `active_plan` in the profile.
 2. **Shape.** Phases ordered by *what unblocks the next decision*: foundation → decision spikes (throwaway) →
    core → vertical slice → content → identity → export → optional post-v1. Each phase: goal in one sentence,
@@ -17,9 +17,9 @@ Prerequisite: `docs/project-profile.md` exists (else run `scope-game`).
 3. **Scope discipline.** Only modules the current phase forces; extract on second use
    (`godot-reusable-module-packaging`). ≤ 4 roles. Documents ≤ 150 lines except phase files; each with a
    `status / updated / owner` header; ADRs immutable (supersede).
-4. **Decisions.** Every architectural choice → `adr_dir/NNNN-<slug>.md` (`studio/templates/adr.md`) citing note
+4. **Decisions.** Every architectural choice → `adr_dir/NNNN-<slug>.md` (`playbook/templates/adr.md`) citing note
    ids; open choices → marked *open until phase X* with the spike that closes them.
-5. **Critique.** Run `studio/checklists/plan-review.md`; add a "Critical review" table (weakness → risk →
+5. **Critique.** Run `playbook/checklists/plan-review.md`; add a "Critical review" table (weakness → risk →
    adjustment) to `plan.md` before presenting. Present the plan; ask only blocking questions.
-6. **Close a phase.** `review-acceptance` with `studio/checklists/phase-exit.md`; update `plan.md` status table,
+6. **Close a phase.** `review-acceptance` with `playbook/checklists/phase-exit.md`; update `plan.md` status table,
    `active.md`, and write back generic findings (`write-back-knowledge`).

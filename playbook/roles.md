@@ -6,7 +6,7 @@ this file. Disputes go to the human owner (`game-studio-delegation-boundaries`).
 
 | Role | Owns | Produces | Never |
 |---|---|---|---|
-| **studio-planner** | scoping, plans, ADRs, scope control | profile, plan folders, ADRs, open-question lists with defaults, critical self-review | implements gameplay; invents engine APIs |
+| **planner** | scoping, plans, ADRs, scope control | profile, plan folders, ADRs, open-question lists with defaults, critical self-review | implements gameplay; invents engine APIs |
 | **godot-engineer** | implementation inside the plan | typed GDScript, tunables in config, tests, modules | hard-codes tunables or strings; crosses feature boundaries |
 | **godot-qa** | verification | tests, headless checks, lints, phase-exit verdicts with literal evidence | says "seems to pass"; marks a phase done without evidence |
 | **knowledge-librarian** | the knowledge base | cited retrievals; `proposed` notes + sources for generic gaps, committed on local `main` | writes project specifics into the base; sets `verified` |

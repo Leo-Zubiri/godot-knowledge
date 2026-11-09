@@ -28,11 +28,9 @@ layering** — the repo already works as plain Markdown + Git.
 5. **(Optional) Web Clipper** — install the browser extension; import
    [`meta/web-clipper-template.json`](meta/web-clipper-template.json) (drag it into the clipper's template area) and set
    its destination folder to `inbox/`. (Adjust fields to your clipper version — see [`meta/obsidian.md`](meta/obsidian.md).)
-6. **(Optional) Studio layer for your game projects** — one command, once per machine:
-   `bash studio/install.sh` (idempotent; `--check` / `--uninstall`). It symlinks `studio/skills` and `studio/agents`
-   into `~/.claude/`, adds a user rule importing `studio/PLAYBOOK.md`, and registers the read-only Obsidian MCP at
-   user scope. It touches your personal `~/.claude/`, so it is **your** step (an agent is not allowed to modify it).
-   Details: [`studio/INSTALL.md`](studio/INSTALL.md).
+6. **(Optional) Connect a game project** — one command, once per project: `bash playbook/setup.sh project <game-dir>
+   --claude`, then commit the generated files in the game repo. Nothing is installed per machine; teammates only
+   clone both repos. Details: [`playbook/INSTALL.md`](playbook/INSTALL.md).
 
 ## Then
 Feed it ([intake](meta/workflows/intake.md)) → review & verify in Git ([git-governance](meta/workflows/git-governance.md))

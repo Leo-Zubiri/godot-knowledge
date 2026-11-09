@@ -18,8 +18,8 @@ Navigational only; no claims. Knowledge about running AI coding agents safely an
 ### Orchestration and topology
 - [[game-studio-readiness-classification]] — how tools and interfaces are judged
 - [[game-studio-agent-orchestration]] · [[game-studio-multiagent-topology]] · [[game-studio-delegation-boundaries]]
-- [[gs-adr-no-extra-orchestration-framework]] · [[gs-adr-mcp-optional]] · [[gs-adr-studio-layer]]
-- Acting on a game with this base: the procedural layer `studio/` (`studio/PLAYBOOK.md`, `studio/INSTALL.md`)
+- [[gs-adr-no-extra-orchestration-framework]] · [[gs-adr-mcp-optional]] · [[gs-adr-playbook-layer]] (supersedes [[gs-adr-studio-layer]])
+- Acting on a game with this base: the procedural layer `playbook/` (`playbook/PLAYBOOK.md`; connect a project with `playbook/INSTALL.md`)
 
 ### Process rigor and review
 - [[game-studio-configurable-rigor]] · [[game-studio-review-modes-and-verdicts]]

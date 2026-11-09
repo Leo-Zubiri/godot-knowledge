@@ -17,7 +17,7 @@ phases: [phase-00-<slug>, phase-01-<slug>]
 ## Context
 <why this initiative exists; what prompted it; intended outcome>
 
-## Critical review (filled before approval — `studio/checklists/plan-review.md`)
+## Critical review (filled before approval — `playbook/checklists/plan-review.md`)
 | Weakness | Risk | Adjustment |
 |---|---|---|
 | … | … | … |

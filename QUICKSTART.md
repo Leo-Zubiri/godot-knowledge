@@ -30,9 +30,10 @@ For guided help (Obsidian, MCP, intake, retrieval), see the provider-neutral spe
 (`.claude/skills/knowledge-ops/`). It advises and prepares changes; **it never marks knowledge `verified`.**
 
 ## 4b. (Optional) Let the base act on your game projects
-Install the capped procedural layer once per machine: `bash studio/install.sh` (user-level symlinks + a rule
-importing [`studio/PLAYBOOK.md`](studio/PLAYBOOK.md) + read-only MCP; see [`studio/INSTALL.md`](studio/INSTALL.md)). A game repo then needs only a ≤ 10-line
-`AGENTS.md` pointing here and a `docs/project-profile.md`. Decision and limits: `notes/gs-adr-studio-layer.md`.
+Connect each game project once: `bash playbook/setup.sh project <game-dir> --claude` and commit the generated files
+(pointer `AGENTS.md`, adapters, `docs/project-profile.md`, plan folder, pointer skills). Teammates only clone both
+repos; nothing is installed per machine. See [`playbook/INSTALL.md`](playbook/INSTALL.md); decision:
+`notes/gs-adr-playbook-layer.md`.
 
 ## 5. Feed it (structured intake)
 Add material to [`inbox/`](inbox/) (optionally via [`meta/templates/capture.md`](meta/templates/capture.md)), then run

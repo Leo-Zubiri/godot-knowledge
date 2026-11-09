@@ -2,8 +2,8 @@
 id: gs-adr-studio-layer
 type: decision
 domain: agent-ops
-status: proposed
-summary: "Proposed: the knowledge base ships a small procedural layer (studio/: playbook, conventions, roles, ≤4 agents, ≤7 skills, checklists, templates) so an agent can act on any game with near-zero per-project setup, capped to avoid becoming a framework."
+status: superseded
+summary: "Proposed: the knowledge base ships a small procedural layer (playbook/: playbook, conventions, roles, ≤4 agents, ≤7 skills, checklists, templates) so an agent can act on any game with near-zero per-project setup, capped to avoid becoming a framework."
 tags: [dept/orchestration]
 sources:
   - claim: "Claude Code discovers personal skills in ~/.claude/skills and a skill entry may be a symlink; user-scope rules load in every project; additional directories grant file access but load no skills"
@@ -19,7 +19,8 @@ sources:
     ref: src-gs-agent-instructions-portability
     retrieved: 2026-11-08
 related:
-  - relates-to: "[[gs-adr-no-extra-orchestration-framework]]"   # the cap that keeps studio/ from becoming a framework
+  - superseded-by: "[[gs-adr-playbook-layer]]"   # project-level, agent-agnostic bootstrap replaces user-level install
+  - relates-to: "[[gs-adr-no-extra-orchestration-framework]]"   # the cap that keeps playbook/ from becoming a framework
   - relates-to: "[[game-studio-skills-architecture]]"   # skill layering this layer follows
   - relates-to: "[[game-studio-multiagent-topology]]"   # ≤4 roles rule
   - relates-to: "[[game-studio-game-project-profile]]"   # the game-side contract file
@@ -39,7 +40,7 @@ skills, long instruction files) — the opposite of a self-sufficient knowledge 
 stated the template ships no `skills/` directory, so adding one must be an explicit decision.
 
 ## Decision
-Add an optional top-level `studio/` layer: `PLAYBOOK.md` (entry point), `conventions.md`, `roles.md`,
+Add an optional top-level `playbook/` layer: `PLAYBOOK.md` (entry point), `conventions.md`, `roles.md`,
 `agents/` (Claude adapters, ≤ 4), `skills/` (standard `SKILL.md`, ≤ 7, ≤ 3 KB, no scripts or hooks, pointing to
 notes by id), `checklists/`, `templates/`, `INSTALL.md`. Distribution to Claude Code is **user-level**: symlinks
 of skills (documented), symlinks or copies of agents (symlinks unverified), a `~/.claude/rules/` file importing
@@ -51,11 +52,12 @@ may commit knowledge directly on local `main`; `verified` remains human-only.
 ## Consequences
 + A new game needs no copied agents/skills; conventions evolve in one place; token cost bounded by short skill
   descriptions and a short playbook.
-− `studio/` is a mini-framework by stealth: the caps above are the guard; a plugin packaging is deferred until
+− `playbook/` is a mini-framework by stealth: the caps above are the guard; a plugin packaging is deferred until
   symlinks show a measured failure; symlinked agents must be tested; global skills appear in non-game sessions
   (descriptions state the `project.godot` condition). Token cost is not measured yet.
 
 ## See also
+- `[[gs-adr-playbook-layer]]` — supersedes this decision
 - `[[gs-adr-no-extra-orchestration-framework]]` — why the layer is capped
 - `[[game-studio-skills-architecture]]` — skills vs tool adapters vs standards
 - `[[game-studio-game-project-profile]]` — what the game must expose

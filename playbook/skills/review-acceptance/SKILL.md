@@ -1,11 +1,11 @@
 ---
 name: review-acceptance
-description: Review a plan, a phase or a deliverable of a Godot project against the studio checklists and give an evidence-based verdict. Use when the user asks "is this done?", "review this", or before closing a plan phase.
+description: Review a plan, a phase or a deliverable of a Godot project against the playbook checklists and give an evidence-based verdict. Use when the user asks "is this done?", "review this", or before closing a plan phase.
 ---
 
 # Review against checklists
 
-Checklists: `$GODOT_KNOWLEDGE_PATH/studio/checklists/` — `plan-review.md` (before approving a plan),
+Checklists: `$GODOT_KNOWLEDGE_PATH/playbook/checklists/` — `plan-review.md` (before approving a plan),
 `phase-exit.md` (closing a phase), `module-extraction.md`, `input-mapping.md`, `purchase-integrity.md`.
 Acceptance principles: `game-studio-acceptance-criteria`, `game-studio-review-modes-and-verdicts`.
 

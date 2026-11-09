@@ -1,7 +1,7 @@
 # Phase NN — <name>
 
 > Status: pending | active | done · Updated: <date> · Owner: <human> · Est.: <duration> · Gate: <previous phase>
-> Goal: <one sentence>. Roles: <studio-planner | godot-engineer | godot-qa | knowledge-librarian>.
+> Goal: <one sentence>. Roles: <planner | engineer | qa | knowledge-librarian>.
 > Consult first: <note ids>. Write back if found: <generic topics>.
 
 ## Steps (grouped by folder; numbered; each with the files it creates)
@@ -17,7 +17,7 @@
 make check && make test
 ```
 
-## Exit criteria (each needs evidence — `studio/checklists/phase-exit.md`)
+## Exit criteria (each needs evidence — `playbook/checklists/phase-exit.md`)
 - [ ] …
 - [ ] …
 

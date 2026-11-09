@@ -20,10 +20,10 @@ Question bank with rationale, options, defaults and blocking flags: note
 5. **Feature variant.** Use the note's feature section: user problem, ADRs touched, affected modules, data/save
    compatibility, tunables, input per device, multiplayer impact, acceptance tests, non-goals; default = smallest
    slice behind a flag.
-6. **Write outputs.** `docs/project-profile.md` from `studio/templates/project-profile.md`; one ADR stub per closed
-   Tier 0 answer (`studio/templates/adr.md`); re-ask triggers noted (new platform, money, > 1 player, external
+6. **Write outputs.** `docs/project-profile.md` from `playbook/templates/project-profile.md`; one ADR stub per closed
+   Tier 0 answer (`playbook/templates/adr.md`); re-ask triggers noted (new platform, money, > 1 player, external
    service, licence change).
-7. **Self-check before presenting** (`studio/checklists/plan-review.md`): platform? language? money? attribution
+7. **Self-check before presenting** (`playbook/checklists/plan-review.md`): platform? language? money? attribution
    (engine licence text must ship)? native touch? online cost? physics precision? too many modules/agents/docs?
 
 Cite the note id in the profile (`always_notes`) so later sessions reuse it.
