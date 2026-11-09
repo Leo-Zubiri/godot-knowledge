@@ -1,7 +1,7 @@
 ---
 id: game-studio-framework-churn-risk
 type: concept
-domain: game-studio
+domain: agent-ops
 status: proposed
 summary: Fast-moving agent frameworks show instability signals (rapid fix releases, doc/count drift, popularity anomalies); pin versions, test skills, and avoid mandatory dependencies.
 tags: [scope/reference-study, dept/orchestration]

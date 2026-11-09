@@ -4,7 +4,7 @@ type: reference
 domain: godot
 status: proposed
 summary: "Godot 4.7 3D materials: OpenGL-style normal maps, ORM packing, transparency modes and sorting limits, cull mode, texture limits, banding and depth."
-tags: [dept/materials, dept/3d-art, tool/godot]
+tags: [dept/materials, dept/3d-art, tool/godot, dim/3d]
 applies-to:
   min: "4.0"
   tested: "4.7 (documentation only; not run in the engine)"

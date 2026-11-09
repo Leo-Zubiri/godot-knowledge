@@ -1,7 +1,7 @@
 ---
 id: game-studio-agent-audit-and-recovery
 type: reference
-domain: game-studio
+domain: agent-ops
 status: proposed
 summary: "Documented audit and recovery features of Claude Code (OpenTelemetry, hooks that fail open on timeout, checkpoints that miss Bash-only changes and most subagent edits) and what Codex/OpenCode leave unread."
 tags: [dept/orchestration]

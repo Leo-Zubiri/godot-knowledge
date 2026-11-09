@@ -4,7 +4,7 @@ type: reference
 domain: godot
 status: proposed
 summary: "Godot 4.7 renderer choice (Forward+, Mobile, Compatibility), what each lacks, and how to choose a GI technique (SDFGI, VoxelGI, LightmapGI) and light limits."
-tags: [dept/3d-art, dept/game-dev, tool/godot]
+tags: [dept/3d-art, dept/game-dev, tool/godot, dim/3d]
 applies-to:
   min: "4.0"
   tested: "4.7 (documentation only; not run in the engine)"

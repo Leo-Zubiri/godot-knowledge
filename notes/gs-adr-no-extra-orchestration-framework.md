@@ -1,7 +1,7 @@
 ---
 id: gs-adr-no-extra-orchestration-framework
 type: decision
-domain: game-studio
+domain: agent-ops
 status: proposed
 summary: "Proposed: no additional orchestration framework; AGENTS.md, standard SKILL.md, MCP config and a task runner are sufficient."
 tags: [dept/orchestration]

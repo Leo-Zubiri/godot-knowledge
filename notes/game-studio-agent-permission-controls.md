@@ -1,7 +1,7 @@
 ---
 id: game-studio-agent-permission-controls
 type: reference
-domain: game-studio
+domain: agent-ops
 status: proposed
 summary: "What Claude Code, Codex and OpenCode document about permissions and sandboxing, separating OS-enforced controls from advisory ones; product-specific names change fast."
 tags: [dept/orchestration]

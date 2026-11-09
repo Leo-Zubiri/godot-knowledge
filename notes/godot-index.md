@@ -49,6 +49,11 @@ awaiting human verification — see [`AGENTS.md`](../AGENTS.md)).
 - **Delivery and quality:** [[godot-export-fundamentals]] · [[godot-export-platform-notes]] · [[godot-web-export-constraints]] · [[godot-ci-export-documented-limits]] · [[godot-build-metadata-and-feature-tags]] · [[godot-logging-and-crash-evidence]] · [[godot-screen-reader-and-input-remapping]]
 - **State machines:** no official guidance exists in the 4.7 docs (only AnimationNodeStateMachine and a 3.2-era page); no note until sources are found.
 
+### Other domains
+- [[game-design-index]] — game design principles and validation (engine-agnostic).
+- [[agent-ops-index]] — agent operations, safety and knowledge-base engineering (engine-agnostic).
+- [[game-studio-index]] — production tooling, assets and licensing, quality and delivery.
+
 ### Game studio (agent-driven 2D+3D production)
 - [[game-studio-index]] — tool architecture, evaluations, decisions and workflows for AI-agent game production around Godot (all `proposed`).
 

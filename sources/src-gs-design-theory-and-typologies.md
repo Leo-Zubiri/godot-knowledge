@@ -1,7 +1,7 @@
 ---
 id: src-gs-design-theory-and-typologies
 type: source
-domain: game-studio
+domain: game-design
 source:
   url: "https://aaai.org/papers/ws04-04-001-mda-a-formal-approach-to-game-design-and-game-research/"
   urls:

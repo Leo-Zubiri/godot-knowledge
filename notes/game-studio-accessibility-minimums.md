@@ -1,7 +1,7 @@
 ---
 id: game-studio-accessibility-minimums
 type: reference
-domain: game-studio
+domain: game-design
 status: proposed
 summary: "Basic accessibility considerations from the Game Accessibility Guidelines and the Xbox Accessibility Guidelines, separated into what an agent can check mechanically and what needs human judgement; no numeric thresholds are invented."
 tags: [dept/ui-ux, dept/qa]

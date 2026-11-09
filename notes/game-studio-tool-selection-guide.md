@@ -33,6 +33,9 @@ created_by_type: agent
 
 > **Evidence status:** preliminary routing from documentary research (2026-11-08); nothing was executed. Defaults are *proposals*, not approved standards. `?` = unverified, see the linked note before relying on it.
 
+## Domain map
+Production tooling is here; engine implementation is in [[godot-index]], design principles in [[game-design-index]] and agent-operations practice in [[agent-ops-index]].
+
 ## Cost preference
 Prefer free/libre/open-source options; gratis-restricted need a licence check; paid/closed only as a recorded exception ([[gs-adr-free-and-open-source-first]], [[game-studio-cost-and-openness-classification]]).
 

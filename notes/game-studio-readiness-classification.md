@@ -1,7 +1,7 @@
 ---
 id: game-studio-readiness-classification
 type: concept
-domain: game-studio
+domain: agent-ops
 status: proposed
 summary: "How to judge a tool for agent-driven game production: four separate readiness flags (API available, documented, agent-ready, production-ready) plus recommendation classes."
 tags: [dept/orchestration]

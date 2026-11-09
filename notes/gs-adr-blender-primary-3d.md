@@ -4,7 +4,7 @@ type: decision
 domain: game-studio
 status: proposed
 summary: "Proposed: Blender, driven by headless bpy scripts, is the primary 3D production tool; its scope is not stretched where specialists win."
-tags: [dept/3d-art, tool/blender]
+tags: [dept/3d-art, tool/blender, dim/3d]
 sources:
   - claim: "Blender 5.2 LTS, pip bpy, CLI pattern"
     ref: src-gs-blender-releases-bpy

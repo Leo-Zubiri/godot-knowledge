@@ -1,7 +1,7 @@
 ---
 id: src-gs-gp-evals
 type: source
-domain: game-studio
+domain: agent-ops
 source:
   url: "https://github.com/jame581/GodotPrompter/blob/master/evals/SKILLS.md"
   title: "GodotPrompter skill evals (with/without-skill ablation)"

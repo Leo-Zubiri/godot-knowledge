@@ -1,7 +1,7 @@
 ---
 id: game-studio-path-scoped-safety
 type: pattern
-domain: game-studio
+domain: agent-ops
 status: proposed
 summary: Combine a hard deny-list for destructive operations with path-aware validators; treat warn-only hooks as advisory and back critical checks with CI.
 tags: [scope/reference-study, dept/orchestration]

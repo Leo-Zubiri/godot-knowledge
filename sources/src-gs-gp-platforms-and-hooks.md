@@ -1,7 +1,7 @@
 ---
 id: src-gs-gp-platforms-and-hooks
 type: source
-domain: game-studio
+domain: agent-ops
 source:
   url: "https://github.com/jame581/GodotPrompter/blob/master/tests/agent-integration/host-smoke-matrix.json"
   urls:

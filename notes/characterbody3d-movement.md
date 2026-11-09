@@ -4,7 +4,7 @@ type: pattern
 domain: godot
 status: proposed
 summary: "Move a 3D character with CharacterBody3D: set velocity (m/s), apply gravity, call move_and_slide(), and use the documented floor, wall and slide properties."
-tags: [dept/game-dev, tool/godot]
+tags: [dept/game-dev, tool/godot, dim/3d]
 applies-to:
   min: "4.0"
   tested: "4.7 (documentation only; not run in the engine)"

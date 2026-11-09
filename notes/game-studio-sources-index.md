@@ -11,7 +11,7 @@ updated: 2026-11-08
 created_by_type: agent
 ---
 
-## Game studio — sources hub
+## Sources hub (all domains)
 Navigational only; no claims. Every preserved `src-gs-*` source, grouped by theme, with the notes that cite it. This is the **human layer** over the machine-readable `ref:` citations (which are plain ids, so Obsidian's graph and backlinks pane do not show them). Citations are unchanged; this list is maintained by hand when a source is added (find citing notes with `rg -l "ref: <source-id>" notes/`). All sources are `capture: paraphrased` (extractions, not verbatim text): re-fetch before promoting dependent notes to `verified`.
 
 ### Godot, testing and agent tooling

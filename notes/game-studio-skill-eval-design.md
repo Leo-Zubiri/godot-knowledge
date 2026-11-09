@@ -1,7 +1,7 @@
 ---
 id: game-studio-skill-eval-design
 type: pattern
-domain: game-studio
+domain: agent-ops
 status: proposed
 summary: Evaluate whether a skill earns its tokens with with/without-skill ablations, keeping 'ceiling' cases as routing checks, and distinguishing grader noise from model error.
 tags: [scope/reference-study, dept/qa]

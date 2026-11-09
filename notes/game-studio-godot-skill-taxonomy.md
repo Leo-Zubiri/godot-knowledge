@@ -1,7 +1,7 @@
 ---
 id: game-studio-godot-skill-taxonomy
 type: pattern
-domain: game-studio
+domain: agent-ops
 status: proposed
 summary: Organize Godot agent skills by engine domain, one folder per skill, with core, addon and process skills kept distinct and a small related-skills set.
 tags: [scope/reference-study, dept/orchestration, tool/godot]

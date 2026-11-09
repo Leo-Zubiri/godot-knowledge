@@ -1,7 +1,7 @@
 ---
 id: src-gs-agent-instructions-portability
 type: source
-domain: game-studio
+domain: agent-ops
 source:
   url: "https://agentskills.io/specification"
   urls:

@@ -1,7 +1,7 @@
 ---
 id: src-h06-platformer-experiment
 type: source
-domain: godot
+domain: agent-ops
 source:
   url: godot-lab@9aa96dde2e726511d0ba75c788a7c2d628bc5afb
   title: "H06 exp-h06-platformer-pickup — A/A'/B knowledge-benefit experiment (godot-lab, protocol v2)"

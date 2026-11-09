@@ -1,7 +1,7 @@
 ---
 id: game-studio-prototype-vs-vertical-slice
 type: concept
-domain: game-studio
+domain: game-design
 status: proposed
 summary: "A prototype tests whether a game should be made; a vertical slice tests whether the team can make it — but sources disagree on the term, so each project must define its own."
 tags: [dept/design]

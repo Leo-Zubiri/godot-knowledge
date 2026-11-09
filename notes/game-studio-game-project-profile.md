@@ -1,7 +1,7 @@
 ---
 id: game-studio-game-project-profile
 type: guide
-domain: game-studio
+domain: agent-ops
 status: proposed
 summary: "Proposed project profile (genre, 2D/3D, style, platform, multiplayer, scale, tools) that an agent reads first to select which knowledge to load, plus the retrieval layers over existing notes; token savings are not measured."
 tags: [dept/orchestration, dept/design]
@@ -34,6 +34,16 @@ Let an agent avoid loading unrelated knowledge by reading a short project profil
 2. **Specialized (load by task):** notes chosen by `domain` and `tags` (`dept/*`, `tool/*`, `scope/*`), then the 1–3 that match.
 3. **Reference (on demand):** the sources hub ([[game-studio-sources-index]]), catalogs and matrices ([[game-studio-tool-matrix]], [[game-studio-asset-source-catalog]]).
 
+## Domains to load (routing)
+| Domain | Load it when… | Entry |
+|---|---|---|
+| `godot` | the task touches engine implementation (code, scenes, physics, UI, export…) | [[godot-index]] |
+| `game-design` | the task is design, validation with players, accessibility or analysing other games | [[game-design-index]] |
+| `game-studio` | the task is tools, pipelines, assets and licences, quality or delivery | [[game-studio-index]] |
+| `agent-ops` | agents run the work (permissions, sessions, cost, skills, knowledge-base engineering) | [[agent-ops-index]] |
+
+A pure 2D, single-player, desktop-only project can skip notes tagged `dim/3d`; a project with no agents running unattended can skip most of `agent-ops`. Filtering by `domain` is now meaningful: `rg -l "^domain: game-design" notes/`.
+
 ## The profile (kept in the *consuming project's* repo, not here)
 | Field | Examples | Used to |
 |---|---|---|
@@ -51,6 +61,7 @@ Let an agent avoid loading unrelated knowledge by reading a short project profil
 1. Read the profile; 2. open the indexes; 3. pick notes by tag/domain that match the profile, skip the rest; 4. consult the catalogs only when a task needs a provider, format or licence; 5. record which notes it used (for later measurement).
 
 ## Known limits (measured on this repository)
+- Domains were split on 2026-11-08 (`godot` 37 notes, `game-studio` 36, `agent-ops` 32, `game-design` 8); note ids keep their historical prefixes, so the id no longer tells the domain.
 - Tags currently skew toward agent-operations meta-knowledge (`scope/reference-study` 20 notes, `dept/orchestration` 19) while art, materials and audio have one note each, so tag filters cannot yet express dimension (2D/3D) or genre.
 - A dimension facet (e.g. `dim/2d`, `dim/3d`) would need a vocabulary addition approved in a diff; do not repurpose `applies-to` (it means version applicability).
 - The task router is organised by tool, not yet by game question.

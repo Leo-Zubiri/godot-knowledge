@@ -1,7 +1,7 @@
 ---
 id: src-gs-ccgs-workflow-rigor-and-gates
 type: source
-domain: game-studio
+domain: agent-ops
 source:
   url: "https://github.com/Donchitos/Claude-Code-Game-Studios/blob/main/.claude/docs/workflow-modes.md"
   urls:

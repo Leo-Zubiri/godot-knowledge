@@ -1,7 +1,7 @@
 ---
 id: game-studio-platform-portability-matrix
 type: reference
-domain: game-studio
+domain: agent-ops
 status: proposed
 summary: "How to record per-agent-platform support honestly: verified / documented / registration incomplete / unsupported, with results recorded rather than only checks defined."
 tags: [scope/reference-study, dept/orchestration]

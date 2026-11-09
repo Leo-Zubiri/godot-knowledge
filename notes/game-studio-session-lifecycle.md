@@ -1,7 +1,7 @@
 ---
 id: game-studio-session-lifecycle
 type: pattern
-domain: game-studio
+domain: agent-ops
 status: proposed
 summary: Keep session memory in a short overwritten checkpoint file plus a rotated narrative, compact proactively, and reload state after compaction or a crash.
 tags: [scope/reference-study, dept/orchestration]

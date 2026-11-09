@@ -1,7 +1,7 @@
 ---
 id: game-studio-token-efficient-workflows
 type: pattern
-domain: game-studio
+domain: agent-ops
 status: proposed
 summary: Mechanisms that cut unnecessary agent work (default-minimal process, scripts instead of reading docs, files as memory, subagent summaries, read guards) versus those that add overhead.
 tags: [scope/reference-study, dept/orchestration]

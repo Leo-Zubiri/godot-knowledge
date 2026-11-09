@@ -1,7 +1,7 @@
 ---
 id: src-gs-design-prototype-slice-docs
 type: source
-domain: game-studio
+domain: game-design
 source:
   url: "https://ltpf.ramiismail.com/prototypes-and-vertical-slice/"
   urls:

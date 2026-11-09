@@ -4,6 +4,7 @@ type: pattern
 domain: godot
 status: proposed
 summary: Move a player/entity with CharacterBody2D in Godot 4.x — set `velocity`, apply gravity per frame, call `move_and_slide()` (no args), check `is_on_floor()`.
+tags: [dept/game-dev, tool/godot, dim/2d]
 aliases: [CharacterBody2D, move_and_slide, player movement, platformer controller, is_on_floor]
 applies-to:
   min: "4.0"

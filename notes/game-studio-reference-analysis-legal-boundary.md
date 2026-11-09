@@ -1,7 +1,7 @@
 ---
 id: game-studio-reference-analysis-legal-boundary
 type: concept
-domain: game-studio
+domain: game-design
 status: proposed
 summary: "Learn transferable principles from existing games without copying protected content; what is safe to record and what needs human or legal review. No legal conclusions."
 tags: [scope/game-analysis, scope/licensing]

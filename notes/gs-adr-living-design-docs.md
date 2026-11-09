@@ -1,7 +1,7 @@
 ---
 id: gs-adr-living-design-docs
 type: decision
-domain: game-studio
+domain: game-design
 status: proposed
 summary: "Proposed: use lightweight, living design documents kept current through the definition of done, instead of a large upfront GDD."
 tags: [dept/design]

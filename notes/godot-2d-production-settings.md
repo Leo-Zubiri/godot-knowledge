@@ -4,7 +4,7 @@ type: reference
 domain: godot
 status: proposed
 summary: "Godot 4.7 2D production settings and pitfalls: TileMapLayer/TileSet, 2D lights and normal maps, Parallax2D, canvas layers, Camera2D, texture filter."
-tags: [dept/2d-art, tool/godot]
+tags: [dept/2d-art, tool/godot, dim/2d]
 applies-to:
   min: "4.0"
   tested: "4.7 (documentation only; not run in the engine)"

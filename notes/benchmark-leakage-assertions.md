@@ -1,7 +1,7 @@
 ---
 id: benchmark-leakage-assertions
 type: anti-pattern
-domain: godot
+domain: agent-ops
 status: proposed
 summary: Asserting an exact implementation constant (e.g. SPEED==300) that also lives in the knowledge/reference under test leaks the answer, so "knowledge helps" can be an artifact of copying a magic number rather than better code.
 aliases: [benchmark leakage, implementation-specific assertions, magic-constant test coupling, overfit evaluation]

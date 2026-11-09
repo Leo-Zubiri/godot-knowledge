@@ -1,7 +1,7 @@
 ---
 id: src-gs-agent-ops-permissions-hooks-recovery
 type: source
-domain: game-studio
+domain: agent-ops
 source:
   url: "https://code.claude.com/docs/en/permissions"
   urls:

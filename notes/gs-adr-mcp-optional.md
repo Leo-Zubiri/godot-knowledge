@@ -1,7 +1,7 @@
 ---
 id: gs-adr-mcp-optional
 type: decision
-domain: game-studio
+domain: agent-ops
 status: proposed
 summary: "Proposed: the architecture must not depend on MCP; CLI/scripts are the foundation and MCP is optional."
 tags: [dept/orchestration]

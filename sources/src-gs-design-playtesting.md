@@ -1,7 +1,7 @@
 ---
 id: src-gs-design-playtesting
 type: source
-domain: game-studio
+domain: game-design
 source:
   url: "https://www.nngroup.com/articles/why-you-only-need-to-test-with-5-users/"
   urls:

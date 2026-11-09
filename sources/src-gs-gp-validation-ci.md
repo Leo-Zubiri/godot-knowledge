@@ -1,7 +1,7 @@
 ---
 id: src-gs-gp-validation-ci
 type: source
-domain: game-studio
+domain: agent-ops
 source:
   url: "https://github.com/jame581/GodotPrompter/blob/master/scripts/README.md"
   urls:

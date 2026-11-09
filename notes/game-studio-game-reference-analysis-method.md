@@ -1,11 +1,14 @@
 ---
 id: game-studio-game-reference-analysis-method
 type: reference
-domain: game-studio
+domain: game-design
 status: proposed
 summary: "Proposed repeatable method for analysing existing games with five separate evidence layers, a division of labour between a human player and an agent, and what must not be recorded."
 tags: [scope/game-analysis, dept/design]
 sources:
+  - claim: "HEP heuristics count, categories and study limits"
+    ref: src-gs-design-primary-papers-read
+    retrieved: 2026-11-08
   - claim: "Named analysis methods and heuristics are only known from search summaries (MDA, design patterns, close playing, usability heuristics)"
     ref: src-gs-design-reference-analysis-pointers-unverified
     retrieved: 2026-11-08
@@ -41,6 +44,9 @@ created_by_type: agent
 3. The agent searches for developer-confirmed sources and records short paraphrases.
 4. The agent drafts interpretation and hypotheses; a human approves before anything is reviewed.
 5. **Transfer:** write the principle in your own words as a genre-neutral statement with its evidence class.
+
+## Heuristic evaluation as an optional layer (verified detail)
+HEP (Desurvire et al. 2004, read) offers 43 playability heuristics in four categories for early-stage evaluation; its authors found it useful before expensive prototypes but conclude user testing remains the benchmark (one game, four users). Pinelle et al. (CHI 2008) and the other named methods remain unread pointers.
 
 ## Limits
 An agent cannot see or feel the game, judge pacing, or tell whether a hypothesis holds. Retention and pacing figures are usually not public; treat any such number as unverified unless the developer published it.

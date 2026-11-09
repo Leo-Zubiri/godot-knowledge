@@ -1,7 +1,7 @@
 ---
 id: game-studio-agent-orchestration
 type: reference
-domain: game-studio
+domain: agent-ops
 status: proposed
 summary: How to share instructions, skills and tool configuration across Claude Code, Codex and OpenCode without vendor lock-in; no extra orchestration framework.
 tags: [dept/orchestration]

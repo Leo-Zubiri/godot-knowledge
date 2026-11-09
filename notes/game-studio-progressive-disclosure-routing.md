@@ -1,7 +1,7 @@
 ---
 id: game-studio-progressive-disclosure-routing
 type: pattern
-domain: game-studio
+domain: agent-ops
 status: proposed
 summary: "Keep always-loaded context tiny: trigger-style descriptions, a generated index, an optional small routing card, and depth in on-demand reference files with hard size caps."
 tags: [scope/reference-study, dept/orchestration]

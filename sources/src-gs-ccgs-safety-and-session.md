@@ -1,7 +1,7 @@
 ---
 id: src-gs-ccgs-safety-and-session
 type: source
-domain: game-studio
+domain: agent-ops
 source:
   url: "https://github.com/Donchitos/Claude-Code-Game-Studios/blob/main/.claude/settings.json"
   urls:

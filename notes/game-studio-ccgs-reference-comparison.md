@@ -1,7 +1,7 @@
 ---
 id: game-studio-ccgs-reference-comparison
 type: reference
-domain: game-studio
+domain: agent-ops
 status: proposed
 summary: Classification (adopt/adapt/reference-only/reject/unverified) of Claude-Code-Game-Studios patterns against our Godot/Blender/ComfyUI studio, with licence scope and repo split.
 tags: [scope/reference-study]

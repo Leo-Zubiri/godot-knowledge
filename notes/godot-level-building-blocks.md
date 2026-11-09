@@ -4,7 +4,7 @@ type: reference
 domain: godot
 status: proposed
 summary: "Godot 4.7 level building blocks: GridMap MeshLibrary structure, CSG for prototyping, MultiMesh, occlusion culling, visibility ranges and large-world precision limits."
-tags: [dept/level-design, tool/godot]
+tags: [dept/level-design, tool/godot, dim/3d]
 applies-to:
   min: "4.0"
   tested: "4.7 (documentation only; not run in the engine)"

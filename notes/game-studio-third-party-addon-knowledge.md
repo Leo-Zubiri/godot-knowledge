@@ -1,7 +1,7 @@
 ---
 id: game-studio-third-party-addon-knowledge
 type: pattern
-domain: game-studio
+domain: agent-ops
 status: proposed
 summary: Treat addon knowledge as separate, version-pinned skills researched from the tagged release source, with cited API facts and an explicit C# parity decision.
 tags: [scope/reference-study, tool/godot]

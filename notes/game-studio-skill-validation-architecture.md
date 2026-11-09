@@ -1,7 +1,7 @@
 ---
 id: game-studio-skill-validation-architecture
 type: reference
-domain: game-studio
+domain: agent-ops
 status: proposed
 summary: Layers of automated skill validation (structure, links, budgets, generated-file currency, self-test) and what a passing validator does not prove.
 tags: [scope/reference-study, dept/qa]

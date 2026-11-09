@@ -1,7 +1,7 @@
 ---
 id: game-studio-version-aware-godot-knowledge
 type: pattern
-domain: game-studio
+domain: agent-ops
 status: proposed
 summary: Keep Godot knowledge tied to an explicit baseline version, annotate newer-version sections, correct errors visibly, and prioritize recent engine changes where models are weakest.
 tags: [scope/reference-study, tool/godot]

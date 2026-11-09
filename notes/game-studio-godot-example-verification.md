@@ -1,7 +1,7 @@
 ---
 id: game-studio-godot-example-verification
 type: concept
-domain: game-studio
+domain: agent-ops
 status: proposed
 summary: Code examples in Godot skills need real parsing/compilation against a pinned engine version; a README claim that examples were verified is not evidence without a repeatable check.
 tags: [scope/reference-study, dept/qa, tool/godot]

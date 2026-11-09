@@ -4,6 +4,7 @@ type: pattern
 domain: godot
 status: proposed
 summary: Detect overlaps (pickups, hitboxes, triggers) with Area2D + its body_entered/area_entered signals, filtered by collision layers/masks.
+tags: [dept/game-dev, tool/godot, dim/2d]
 aliases: [Area2D, body_entered, area_entered, pickup, hitbox, trigger, overlap detection]
 applies-to:
   min: "4.0"

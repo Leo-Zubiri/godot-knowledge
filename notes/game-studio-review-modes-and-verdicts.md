@@ -1,7 +1,7 @@
 ---
 id: game-studio-review-modes-and-verdicts
 type: pattern
-domain: game-studio
+domain: agent-ops
 status: proposed
 summary: Review intensity as solo/lean/full modes and a gate verdict vocabulary where a missing input is NOT ASSESSED and never counts as approval; strictest verdict wins.
 tags: [scope/reference-study, dept/qa]

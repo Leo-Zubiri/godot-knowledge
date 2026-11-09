@@ -1,7 +1,7 @@
 ---
 id: game-studio-skills-architecture
 type: reference
-domain: game-studio
+domain: agent-ops
 status: proposed
 summary: Proposed split of shared game-development skills, tool adapters and production standards, kept vendor-neutral.
 tags: [dept/orchestration]

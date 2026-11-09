@@ -1,7 +1,7 @@
 ---
 id: knowledge-availability-vs-application
 type: concept
-domain: godot
+domain: agent-ops
 status: proposed
 summary: Making a knowledge base available is not the same as the model retrieving it, and retrieving it is not the same as producing better code — measure each link separately; a knowledge base may improve provenance without improving quality.
 aliases: [availability vs retrieval vs application, knowledge mediation, retrieval does not imply quality]

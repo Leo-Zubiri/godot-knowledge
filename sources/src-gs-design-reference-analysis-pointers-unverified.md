@@ -1,7 +1,7 @@
 ---
 id: src-gs-design-reference-analysis-pointers-unverified
 type: source
-domain: game-studio
+domain: game-design
 source:
   url: "https://www.copyright.gov/title17/92chap1.html"
   urls:

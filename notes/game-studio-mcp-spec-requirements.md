@@ -1,7 +1,7 @@
 ---
 id: game-studio-mcp-spec-requirements
 type: reference
-domain: game-studio
+domain: agent-ops
 status: proposed
 summary: "What the MCP specification (schema 2026-07-28) requires versus leaves to hosts: primitives, transports, optional authorization, human-in-the-loop, untrusted tool annotations, no protocol-level security."
 tags: [dept/orchestration]

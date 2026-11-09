@@ -1,7 +1,7 @@
 ---
 id: game-studio-gp-reference-comparison
 type: reference
-domain: game-studio
+domain: agent-ops
 status: proposed
 summary: Classification (adopt/adapt/reference-only/reject/unverified) of GodotPrompter patterns against a version-pinned, explicit-update, multi-agent-compatible Godot knowledge ecosystem.
 tags: [scope/reference-study]

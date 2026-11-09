@@ -1,7 +1,7 @@
 ---
 id: game-studio-reproducibility-and-model-pinning
 type: concept
-domain: game-studio
+domain: agent-ops
 status: proposed
 summary: "Pin the model snapshot ID and record it, expect nondeterminism (temperature/top_p/top_k removed from the Claude API on 2026-10-21), and track deprecation dates."
 tags: [dept/orchestration]

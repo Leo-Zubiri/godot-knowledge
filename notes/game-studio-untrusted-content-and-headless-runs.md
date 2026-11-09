@@ -1,7 +1,7 @@
 ---
 id: game-studio-untrusted-content-and-headless-runs
 type: concept
-domain: game-studio
+domain: agent-ops
 status: proposed
 summary: "Treat tool outputs and fetched content as untrusted (vendor guidance), and remember that headless `-p` runs show no trust or MCP approval prompts."
 tags: [dept/orchestration]

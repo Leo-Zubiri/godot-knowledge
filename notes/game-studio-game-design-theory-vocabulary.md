@@ -1,11 +1,14 @@
 ---
 id: game-studio-game-design-theory-vocabulary
 type: reference
-domain: game-studio
+domain: game-design
 status: proposed
 summary: "Shared vocabulary from game design theory (MDA, flow, GameFlow, self-determination, player typologies) with each model's evidence caveat — useful for naming and checking design, not as validated laws."
 tags: [dept/design]
 sources:
+  - claim: "MDA text, HEP heuristics and study limits, read in primary PDFs"
+    ref: src-gs-design-primary-papers-read
+    retrieved: 2026-11-08
   - claim: "MDA abstract: authors, year, venue and purpose; the PDF text was unreadable"
     ref: src-gs-design-theory-and-typologies
     retrieved: 2026-11-08
@@ -36,11 +39,14 @@ These models give a **shared vocabulary** for discussing designs and for an agen
 ## Models and caveats
 | Model | What it says (as far as read) | Caveat | Evidence |
 |---|---|---|---|
-| **MDA** (Hunicke, LeBlanc, Zubek, 2004) | Games analysed through Mechanics → Dynamics → Aesthetics; meant to connect design, game criticism and technical research; developed in the GDC Game Design and Tuning Workshop 2001–2004 | Short workshop paper; no empirical validation found; the list of eight "aesthetics" was not read in the primary text | abstract-only (listing read; PDF unreadable) |
+| **MDA** (Hunicke, LeBlanc, Zubek, 2004) | Rules → System → "Fun" with design counterparts **Mechanics** (components at the level of data and algorithms), **Dynamics** (run-time behaviour over time), **Aesthetics** (desired emotional responses); designer works mechanics→aesthetics, player experiences the reverse; eight-item aesthetic taxonomy given as non-exhaustive (sensation, fantasy, narrative, challenge, fellowship, discovery, expression, submission); states there is no Grand Unified Theory of "fun" | Short workshop paper; **no empirical validation presented**; the taxonomy is descriptive vocabulary | **verified** (full paper read) |
 | **Flow** (Csikszentmihalyi) and **GameFlow** (Sweetser & Wyeth, 2005) | Enjoyment as balance of challenge and skill; GameFlow lists eight elements (concentration, challenge, skills, control, clear goals, feedback, immersion, social interaction) | Critiques found only as summaries: partial empirical support for the challenge–skill balance; GameFlow validated by expert review of two games | abstract-only / unverified |
 | **Self-determination theory** (Ryan, Rigby & Przybylski, 2006) | Autonomy, competence and relatedness predict enjoyment and future play | Self-reported samples; methods not read | abstract-only |
 | **Bartle's player types** (1996) | Achievers, explorers, socialisers, killers on two axes | **The author states it is not conventionally rigorous**, based on a debate among ~30 players of one MUD, the types are stereotypes, ideal mixes were never measured | verified (read in full) |
 | **Typology syntheses** (Hamari & Tuunanen, 2014) | Seven recurring dimensions: intensity, achievement, exploration, sociability, domination, immersion, in-game demographics | The abstract page shows no explicit warnings (later critiques on validity — Yee 2006, Kirchner-Krath 2024 — were not read) | abstract-only |
+
+## HEP — playability heuristics (verified, read)
+Desurvire, Caplan and Toth (CHI 2004) propose Heuristic Evaluation for Playability: **43 heuristics** in four categories (Game Play 16, Game Story 8, Game Mechanics 7, Game Usability 12). Their evidence is thin by their own design: one early game concept, a screens-only prototype and **four users**. HEP found more issues early than the user sessions, but user testing found more game-specific problems and some only visible through real play; they conclude HEP helps early design and **user testing remains the benchmark**.
 
 ## Interpretation (ours)
 - Use these as **prompts and checklists** ("what experience do we intend, which mechanics should produce it, what dynamics might emerge?"), not as segmentation of real players.

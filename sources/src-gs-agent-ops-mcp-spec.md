@@ -1,7 +1,7 @@
 ---
 id: src-gs-agent-ops-mcp-spec
 type: source
-domain: game-studio
+domain: agent-ops
 source:
   url: "https://modelcontextprotocol.io/specification/latest"
   urls:

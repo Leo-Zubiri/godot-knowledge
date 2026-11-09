@@ -2,47 +2,38 @@
 id: game-studio-index
 type: index
 domain: game-studio
-summary: "Map of content for the game-studio domain: agent-driven 2D+3D Godot production architecture, tool evaluations, decisions and workflows."
+summary: "Map of content for the game-studio domain: game production architecture around Godot and Blender — tool evaluations, assets and licensing, quality, delivery, decisions and workflows."
 related:
   - relates-to: "[[godot-index]]"   # parent Godot knowledge map
+  - relates-to: "[[agent-ops-index]]"   # agent operations (split out of this domain)
+  - relates-to: "[[game-design-index]]"   # game design (split out of this domain)
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent
 ---
 
 ## Game studio — map of content
-Navigational only; no claims. All claim-bearing notes are `proposed` (agent-authored, documentary research dated 2026-11-08, awaiting human verification).
+Navigational only; no claims. Game *production* knowledge: tools, pipelines, assets and licences, quality and delivery. All claim-bearing notes are `proposed` (agent-authored, documentary research dated 2026-11-08, awaiting human verification).
+
+### Other domains (split out so each can be loaded on its own)
+- [[godot-index]] — Godot 4.7 engine knowledge (architecture, physics, UI, animation, audio, 2D/3D, export, logging).
+- [[game-design-index]] — game design principles, prototyping, playtesting, analysis of existing games, accessibility.
+- [[agent-ops-index]] — agent orchestration, safety and permissions, sessions and cost, skills and knowledge-base engineering. (Those notes keep the historical `game-studio-` id prefix.)
 
 ### Browse by tag
-Notes carry optional facet tags (controlled vocabulary in [`meta/methodology/tags.md`](../meta/methodology/tags.md)): `dept/*` (department), `tool/*` (tool) and `scope/*` (reference study, licensing). Find notes with `rg -l "^tags:.*dept/qa" notes/`, or colour the Obsidian graph with Groups such as `tag:#dept/qa` (keep the graph's **Tags** toggle off). Tags are a search aid, not evidence.
-
-### Godot engine knowledge
-Engine-specific notes (project hygiene, resources, saving, physics, navigation, UI, animation, audio, 2D, VFX, localization, 3D materials, renderers, levels, import) live in the Godot domain: start at [[godot-index]].
+Notes carry optional facet tags (controlled vocabulary in [`meta/methodology/tags.md`](../meta/methodology/tags.md)): `dept/*` (department), `tool/*` (tool), `dim/*` (2D or 3D) and `scope/*`. Find notes with `rg -l "^tags:.*dept/qa" notes/`, or colour the Obsidian graph with Groups such as `tag:#dept/qa` (keep the graph's **Tags** toggle off). Tags are a search aid, not evidence.
 
 ### Start here
 - [[game-studio-tool-selection-guide]] — **which tool for which task** (agent routing table).
 - [[game-studio-architecture-proposal]] — decision document, roadmap, open gaps.
-- [[game-studio-readiness-classification]] — how tools are judged.
 
 ### Evaluation and risk
 - [[game-studio-cost-and-openness-classification]] — free/libre/open-source-first tiers
 - [[game-studio-tool-matrix]] · [[game-studio-licensing-risks]] · [[game-studio-hardware-and-cost]] · [[game-studio-artcraft-evaluation]]
 
-### Department architecture
-- [[game-studio-agent-orchestration]] · [[game-studio-skills-architecture]]
+### Production departments
 - [[game-studio-godot-integration]] · [[game-studio-blender-pipeline]] · [[game-studio-level-design]]
-- [[game-studio-2d-ui-audio-materials]] · [[game-studio-ai-generation]]
-
-### Reference architecture study (Claude-Code-Game-Studios; patterns only, not a dependency)
-- [[game-studio-ccgs-reference-comparison]] — classification of patterns (adopt/adapt/reference-only/reject/unverified)
-- [[game-studio-multiagent-topology]] · [[game-studio-delegation-boundaries]] · [[game-studio-configurable-rigor]] · [[game-studio-review-modes-and-verdicts]]
-- [[game-studio-path-scoped-safety]] · [[game-studio-session-lifecycle]] · [[game-studio-token-efficient-workflows]] · [[game-studio-framework-churn-risk]]
-- [[game-studio-evidence-driven-visual-qa]] · [[game-studio-automated-vs-player-quality]]
-
-### Reference architecture study 2 (GodotPrompter; patterns only, not a dependency)
-- [[game-studio-gp-reference-comparison]] — classification of patterns
-- [[game-studio-godot-skill-taxonomy]] · [[game-studio-progressive-disclosure-routing]] · [[game-studio-skill-validation-architecture]] · [[game-studio-godot-example-verification]]
-- [[game-studio-platform-portability-matrix]] · [[game-studio-version-aware-godot-knowledge]] · [[game-studio-third-party-addon-knowledge]] · [[game-studio-skill-eval-design]]
+- [[game-studio-2d-ui-audio-materials]] · [[game-studio-ai-generation]] · [[game-studio-loudness-targets]]
 
 ### Asset discovery, reuse and licensing (cross-cutting)
 - [[game-studio-asset-discovery-and-reuse-workflow]] — find/acquire/register before generating
@@ -50,28 +41,24 @@ Engine-specific notes (project hygiene, resources, saving, physics, navigation, 
 - [[game-studio-godot-ecosystem-free-resources]] — Asset Library, Godot Shaders, Godot MIT notice
 - [[game-studio-reuse-vs-generation-decision-framework]] · [[game-studio-godot-asset-format-and-import-compatibility]]
 
-### Game design, analysis and creative foundations (Wave 1; evidence mostly abstract-level)
-- [[game-studio-game-project-profile]] — profile-driven retrieval (read first)
-- [[game-studio-game-design-theory-vocabulary]] · [[game-studio-prototype-vs-vertical-slice]] · [[game-studio-playtesting-methods]] · [[gs-adr-living-design-docs]]
-- [[game-studio-game-reference-analysis-method]] · [[game-studio-reference-analysis-legal-boundary]]
-- [[game-studio-accessibility-minimums]] · [[game-studio-loudness-targets]]
+### Quality and acceptance
+- [[game-studio-acceptance-criteria]] · [[game-studio-evidence-driven-visual-qa]] · [[game-studio-automated-vs-player-quality]]
 
-### Delivery and release (Waves 3 and 5; platform facts as written 2026-11-08)
+### Delivery and release (platform facts as written 2026-11-08)
 - [[game-studio-delivery-platforms-and-fees]] · [[game-studio-versioning-and-changelog]] · [[game-studio-release-credits-and-ratings]] · [[game-studio-post-release-and-crash-reporting]]
 - Godot-side export, CI limits and logging: see [[godot-index]].
 
-### AI-assisted production operations (Wave 4)
-- [[game-studio-mcp-spec-requirements]] · [[game-studio-agent-permission-controls]] · [[game-studio-agent-audit-and-recovery]]
-- [[game-studio-reproducibility-and-model-pinning]] · [[game-studio-untrusted-content-and-headless-runs]]
-
 ### Standards and workflows
-- [[game-studio-asset-conventions]] · [[game-studio-acceptance-criteria]] · [[game-studio-workflows]]
+- [[game-studio-asset-conventions]] · [[game-studio-workflows]]
 
 ### Decisions (proposed)
-- [[gs-adr-free-and-open-source-first]] · [[gs-adr-blender-primary-3d]] · [[gs-adr-mcp-optional]] · [[gs-adr-no-extra-orchestration-framework]] · [[gs-adr-godot-final-ui-authority]] · [[gs-adr-artcraft-role]] · [[gs-adr-interchange-formats]]
+- [[gs-adr-free-and-open-source-first]] · [[gs-adr-blender-primary-3d]] · [[gs-adr-godot-final-ui-authority]] · [[gs-adr-artcraft-role]] · [[gs-adr-interchange-formats]]
+- Agent-operations decisions live in [[agent-ops-index]]; the design-documentation decision in [[game-design-index]].
 
 ### Preserved sources
-- [[game-studio-sources-index]] — all 50 `src-gs-*` sources by theme, with the notes that cite them (paraphrased extractions with provenance; re-fetch before verification).
+- [[game-studio-sources-index]] — all 50 `src-gs-*` sources by theme (including agent-ops and design sources), with the notes that cite them (paraphrased extractions with provenance; re-fetch before verification).
 
 ## See also
 - [[godot-index]] — parent Godot knowledge map
+- [[agent-ops-index]] — agent operations
+- [[game-design-index]] — game design

@@ -1,7 +1,7 @@
 ---
 id: game-studio-configurable-rigor
 type: pattern
-domain: game-studio
+domain: agent-ops
 status: proposed
 summary: One rigor dial (minimal/standard/full) that expands into explicit workflow knobs, default minimal, with documented precedence and overrides.
 tags: [scope/reference-study, dept/orchestration]

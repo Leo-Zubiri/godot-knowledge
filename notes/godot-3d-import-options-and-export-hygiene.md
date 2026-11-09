@@ -4,7 +4,7 @@ type: reference
 domain: godot
 status: proposed
 summary: "Godot 4.7 3D import options (root scale, Generate LODs, shadow meshes, lightmap UV, animation trimming), EditorScenePostImport/GLTFDocument, and the Blender export hygiene checklist."
-tags: [dept/3d-art, dept/assets, tool/godot]
+tags: [dept/3d-art, dept/assets, tool/godot, dim/3d]
 applies-to:
   min: "4.0"
   tested: "4.7 (documentation only; not run in the engine)"

@@ -1,7 +1,7 @@
 ---
 id: src-gs-agent-ops-models-injection-cost
 type: source
-domain: game-studio
+domain: agent-ops
 source:
   url: "https://platform.claude.com/docs/en/about-claude/models/overview"
   urls:
