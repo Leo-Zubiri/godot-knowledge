@@ -74,6 +74,10 @@ Sources: [[src-gd-project-organization-vcs-uids]] · [[src-gd-architecture-autol
 [[godot-3d-particles-trails-attractors-collision]] · [[godot-shader-compile-stutter-and-baker]] · [[godot-cpu-gpu-optimization-servers-and-threads]] · [[godot-tilemaplayer-and-2d-camera-notes]] · [[godot-import-process-and-csv-translations]] · [[godot-skeleton3d-modifiers-and-gdscript-style]]
 Sources: [[src-gd-projectsettings-subemitters-visualshaders]] · [[src-gd-particles-shaders-performance]] · [[src-gd-2d-tilemap-audio-import-i18n]] · [[src-gd-skeleton-gdscript-fsm-demo]]
 
+### Input, modules, networking, loading, configuration (documented, proposed)
+[[godot-touch-input-and-virtualjoystick]] — VirtualJoystick, TouchScreenButton, touch events, emulation settings and device-agnostic actions.
+Sources: [[src-gd-touch-input-virtualjoystick]]
+
 ### Preserved sources
 Official Godot 4.7 documentation is preserved under [`sources/`](../sources/) and cited by the notes above
 ([[src-gd-static-typing]], [[src-gd-signals]], [[src-godot-notifications]], [[src-singletons-autoload]], [[src-release-policy]],
