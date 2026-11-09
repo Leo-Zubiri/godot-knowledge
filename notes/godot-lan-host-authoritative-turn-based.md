@@ -20,6 +20,7 @@ related:
   - depends-on: "[[godot-physics-bodies-layers-and-interpolation]]"   # non-deterministic physics is why only the host simulates
   - relates-to: "[[godot-scene-scoped-lookups]]"   # RPC nodes need identical, readable node paths on all peers
   - relates-to: "[[godot-export-platform-notes]]"   # Android export preset where the INTERNET permission lives
+  - relates-to: "[[game-studio-multiplayer-observability-and-session-monitoring]]"   # the host is the authoritative source that emits the monitored session/match events
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent
@@ -77,3 +78,4 @@ A small group on one Wi-Fi network wants to play a turn-based game where each tu
 - [[godot-physics-bodies-layers-and-interpolation]] — non-deterministic physics is why only the host simulates
 - [[godot-scene-scoped-lookups]] — RPC nodes need identical, readable node paths on all peers
 - [[godot-export-platform-notes]] — Android export preset where the INTERNET permission lives
+- [[game-studio-multiplayer-observability-and-session-monitoring]] — the host is the authoritative source that emits the monitored session/match events
