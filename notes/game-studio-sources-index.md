@@ -99,6 +99,17 @@ Navigational only; no claims. Every preserved `src-gs-*` source, grouped by them
 - [[src-gs-delivery-epic-iarc-followup]] — IARC process page (read) and Epic revenue share (search summary only) (`paraphrased`) · cited by: [[game-studio-delivery-steam-store-privacy-notes]]
 - [[src-gs-delivery-steam-store-privacy]] — Steam, Microsoft, Apple, COPPA/GDPR, ESRB/PEGI, packaging, GlitchTip (`paraphrased`) · cited by: [[game-studio-delivery-steam-store-privacy-notes]]
 
+### Scoping, input conventions and purchase integrity (2026-11-08)
+- [[src-gs-design-scoping-ofl-adr-steam-ai-onepage]] — OFL FAQ, Nygard ADR format, Steam AI disclosure (secondary coverage only), GDC One-Page abstract (`paraphrased`) · cited by: [[game-design-scoping-questions-for-new-game-or-feature]]
+- [[src-gd-licences-csharp-webrtc-scoping]] — Godot 4.7 licence compliance, C# platform limits, WebRTC (`paraphrased`) · cited by: [[game-design-scoping-questions-for-new-game-or-feature]]
+- [[src-gs-input-platform-conventions]] — Microsoft/Apple gamepad UI conventions, Apple/Android/WCAG target sizes, Steam Deck review, Steam Input, SDL DB, Kenney prompts, Hoober 2013 (`paraphrased`) · cited by: [[game-design-input-mapping-conventions-keyboard-gamepad-touch]]
+- [[src-gd-joypad-buttons-ui-defaults-safe-area]] — JoyButton/JoyAxis, Input joypad API, ui_* and swap_cancel_ok, DisplayServer safe area, `input_map.cpp` 4.7-stable lines (`excerpt`) · cited by: [[game-design-input-mapping-conventions-keyboard-gamepad-touch]]
+- [[src-gs-purchase-google-play-billing]] — Play Billing security/integration, purchases.products.get, Voided Purchases, RTDN, Play Integrity (`paraphrased`) · cited by: [[game-studio-anti-cheat-and-purchase-integrity]]
+- [[src-gs-purchase-apple-app-store-server]] — App Store Server API, Notifications V2 types, receipts deprecation, guideline 3.1.1 (`paraphrased`) · cited by: [[game-studio-anti-cheat-and-purchase-integrity]]
+- [[src-gs-purchase-steam-microtxn-inventory-refunds]] — ISteamMicroTxn, implementation guide, Inventory Service, refund policy (`paraphrased`) · cited by: [[game-studio-anti-cheat-and-purchase-integrity]]
+- [[src-gd-pck-encryption-dedicated-server-iap-plugins-decompiler]] — PCK encryption page, dedicated servers, Play Billing/iOS plugins, GDRE Tools (`paraphrased`) · cited by: [[game-studio-anti-cheat-and-purchase-integrity]], [[godot-export-fundamentals]]
+- [[src-gs-backend-nakama-stripe-idempotency-owasp-logging]] — Nakama IAP validation and READMEs, Stripe idempotency, OWASP logging (`paraphrased`) · cited by: [[game-studio-anti-cheat-and-purchase-integrity]]
+
 ## See also
 - [[game-studio-index]] — map of the game-studio notes
 - [[godot-index]] — Godot knowledge map (older sources listed there)

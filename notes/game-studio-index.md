@@ -60,6 +60,7 @@ Notes carry optional facet tags (controlled vocabulary in [`meta/methodology/tag
 
 ### Delivery: Steam, stores, privacy (gap closure)
 - [[game-studio-delivery-steam-store-privacy-notes]]
+- [[game-studio-anti-cheat-and-purchase-integrity]] — threat model, local/LAN/online decision tree, server-verified purchases per store (Google, Apple, Steam as written 2026-11-08), Godot client-hardening limits, checklist
 
 ## See also
 - [[godot-index]] — parent Godot knowledge map

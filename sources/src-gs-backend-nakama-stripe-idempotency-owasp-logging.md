@@ -1,0 +1,29 @@
+---
+id: src-gs-backend-nakama-stripe-idempotency-owasp-logging
+type: source
+domain: game-studio
+source:
+  url: "https://heroiclabs.com/docs/nakama/concepts/iap-validation/"
+  urls:
+    - "https://heroiclabs.com/docs/nakama/concepts/iap-validation/"
+    - "https://github.com/heroiclabs/nakama"
+    - "https://github.com/heroiclabs/nakama-godot"
+    - "https://docs.stripe.com/api/idempotent_requests"
+    - "https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html"
+  title: "Nakama IAP validation concept, Nakama server README (licence, features, database), nakama-godot client README (Godot 4), Stripe 'Idempotent requests', OWASP Logging Cheat Sheet"
+  retrieved: 2026-11-08
+  version: "pages as written on 2026-11-08; GitHub READMEs not pinned to a commit (no SHA exposed)"
+  capture: paraphrased
+  retrieved_via: "fetch-time summarizer (WebFetch); the Stripe page was returned nearly in full; not verbatim"
+created: 2026-11-08
+updated: 2026-11-08
+created_by_type: agent
+---
+
+> Preserved pointer + key points (conventionally immutable). **Basis:** five pages fetched on 2026-11-08 through a summarizing fetch tool — a **paraphrased extraction**; quoted fragments are what the tool reported as quotations. Repository state is not pinned. Stripe's page is cited only as a clear public description of idempotency keys — it is a payments-API design reference, not a store integration. Re-fetch before promoting dependent notes to `verified`. No synthesis here.
+
+- **Nakama, IAP validation (concept page):** supports Apple App Store, Google Play, Huawei AppGallery and Facebook Instant Games. Flow: the client sends the receipt; "Nakama contacts the provider's API (Apple, Google, or Huawei) to verify the receipt is authentic"; the normalised result is stored against the user. "Every validated purchase and subscription is stored in Nakama's database"; a re-submitted receipt returns `seenBefore: true` — "This receipt has already been validated - it may be a replay attack or legitimate re-validation" — the page **flags** duplicates, it does not say it rejects them (game logic must act on the flag). "All transactions are logged, preventing multiple submissions of the same purchase token or receipt." Subscriptions: "Nakama automatically updates subscription state based on provider notifications"; list/get by product ID with expiry, active status and original transaction ID. "Your game should handle these errors gracefully and not grant rewards when validation fails." Google validation "Requires Google Cloud Service Account with Play Console permissions"; the exact config keys were not on the page (*unverified*).
+- **Nakama server README:** "Scalable open-source game backend server: multiplayer, matchmaking, leaderboards, chat, and social features for games"; **"This project is licensed under the Apache-2 License"**; "Nakama server requires CockroachDB or another Postgres wire-compatible server as it's database"; features listed include "Purchase Validation - Validate in-app purchases and subscriptions", leaderboards ("Dynamic, seasonal, get top members, or members around a user"), matchmaker, "Realtime, or turn-based active and passive multiplayer"; client SDKs: .NET/C#, Unity, JavaScript, Java/Android, Unreal, **Godot**, Defold, Swift/iOS; managed hosting "Heroic Cloud" is promoted. A wallet feature and "authoritative multiplayer" wording were not on the README (*unverified* from this page).
+- **nakama-godot README:** "Godot client for Nakama server written in GDScript"; supports Godot "4.0+" ("You're currently looking at the Godot 4 version"; Godot 3 uses the `godot-3` branch); Apache-2.0; install from releases or the asset repository and add `Nakama.gd` from `addons/com.heroiclabs.nakama/` as an autoload; the README does not list IAP client calls (*unverified*: `validate_purchase_apple_async` etc.); 155 commits, 20 open issues, 8 open PRs, 783 stars on the day read; Releases section empty on the page; no explicit 4.7 statement.
+- **Stripe, "Idempotent requests":** "The API supports idempotency for safely retrying requests without accidentally performing the same operation twice"; the client sends an `Idempotency-Key` header; "A client generates an idempotency key, which is a unique key that the server uses to recognize subsequent retries of the same request … we suggest using V4 UUIDs"; keys up to 255 characters; "Avoid using sensitive data … as idempotency keys"; v1 keys are pruned after at least 24 hours; "The idempotency layer compares incoming parameters to those of the original request and errors if they're not the same to prevent accidental misuse"; results are saved only once endpoint execution begins; only `POST` requests take keys ("GET and DELETE … are idempotent by definition").
+- **OWASP Logging Cheat Sheet:** events to log — "Input validation failures e.g. protocol violations, unacceptable encodings, invalid parameter names and values", "Authentication successes and failures", "Authorization (access control) failures", "Application errors and system events", higher-risk functionality such as "Access to sensitive data such as payment cardholder data" and data import/export. Each record should capture "when, where, who and what" (international date/time, user identity if known, event type, severity, description). **Do not record directly** (remove, mask, hash or encrypt): "Session identification values", "Access tokens", "Authentication passwords", "Bank account or payment card holder data", "Encryption keys and other primary secrets", "Sensitive personal data and some forms of personally identifiable information (PII)". Protection: "Build in tamper detection so you know if a record has been modified or deleted"; "Store or copy log data to read-only media as soon as possible"; restrict and review read privileges; protect logs in transit from tampering.

@@ -12,6 +12,9 @@ sources:
   - claim: "Export presets, filters, templates, packs and patches pages for Godot 4.7"
     ref: src-gd-export-and-platforms
     retrieved: 2026-11-08
+  - claim: "PCK encryption requires self-compiled export templates; key set at compile time and in the preset; the key is stored in the binary"
+    ref: src-gd-pck-encryption-dedicated-server-iap-plugins-decompiler
+    retrieved: 2026-11-08
 related:
   - relates-to: "[[godot-project-hygiene]]"   # credentials file and version metadata
   - relates-to: "[[godot-ci-export-documented-limits]]"   # command-line export and CI gaps
@@ -38,6 +41,8 @@ created_by_type: agent
 
 ## Encryption (caveat)
 Known only from a search summary of the compile guide (*unverified wording*): a 256-bit AES key must be compiled into export templates built from source and set in the preset; official precompiled templates do not support it in at least the 4.4 version of the page; Android needs APK expansion. Do not promise encryption without reading the current page.
+
+*Addendum (2026-11-08, page now read — 4.7 serves it at `engine_details/development/compiling/compiling_with_script_encryption_key.html`):* "It is absolutely required to compile your own export templates to use PCK encryption"; the key is set as `SCRIPT_AES256_ENCRYPTION_KEY` at compile time and repeated in the preset (`GODOT_SCRIPT_ENCRYPTION_KEY` for CLI exports); include filters are empty by default, so nothing is encrypted until you add them; and "the key needs to be stored in the binary" — encryption raises effort, it does not protect scripts or secrets. The 4.7 page has no Android note (the APK-expansion remark above stays *unverified*). Consequences for purchases and cheating: [[game-studio-anti-cheat-and-purchase-integrity]].
 
 ## What an agent can and cannot check
 **By reading files/CLI:** `export_presets.cfg` content (presets, filters, runnable flag, feature tags), that `export_credentials.cfg` is git-ignored, that required presets exist per target. **Needs a build or device:** that the export launches, PCK load order and patch behaviour, encryption key mismatches.
