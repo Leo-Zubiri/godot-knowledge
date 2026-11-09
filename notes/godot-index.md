@@ -41,11 +41,21 @@ awaiting human verification — see [`AGENTS.md`](../AGENTS.md)).
 - [[knowledge-availability-vs-application]] — available ≠ retrieved ≠ better code; measure mediation; provenance can
   improve while quality does not.
 
+### Godot 4.7 engineering and production (from the official docs; documentation only, not run in the engine)
+- **Architecture and data:** [[godot-project-hygiene]] · [[godot-scene-scoped-lookups]] · [[godot-resource-sharing-and-duplication]] · [[godot-save-game-serialization]]
+- **Physics, navigation, performance:** [[godot-physics-bodies-layers-and-interpolation]] · [[characterbody3d-movement]] · [[godot-navigation-overview]] · [[godot-performance-workflow]]
+- **UI, animation, audio, 2D, VFX, localization:** [[godot-ui-layout-and-themes]] · [[godot-ui-focus-and-gamepad-navigation]] · [[godot-animation-tree-and-tween-pitfalls]] · [[godot-audio-buses-and-adaptive-music]] · [[godot-2d-production-settings]] · [[godot-particles-and-shader-basics]] · [[godot-localization-workflow]]
+- **3D:** [[godot-3d-materials-and-transparency]] · [[godot-renderer-feature-matrix]] · [[godot-level-building-blocks]] · [[godot-3d-import-options-and-export-hygiene]]
+- **State machines:** no official guidance exists in the 4.7 docs (only AnimationNodeStateMachine and a 3.2-era page); no note until sources are found.
+
 ### Game studio (agent-driven 2D+3D production)
 - [[game-studio-index]] — tool architecture, evaluations, decisions and workflows for AI-agent game production around Godot (all `proposed`).
 
 ### Game studio sources
 - [[game-studio-sources-index]] — hub of the game-studio sources.
+
+### Godot 4.7 documentation sources
+[[src-gd-best-practices]] · [[src-gd-scene-resources-saving]] · [[src-gd-physics]] · [[src-gd-navigation]] · [[src-gd-performance]] · [[src-gd-ui-layout-themes]] · [[src-gd-animation]] · [[src-gd-audio]] · [[src-gd-2d-production]] · [[src-gd-vfx-shaders]] · [[src-gd-localization]] · [[src-gd-3d-materials-rendering]] · [[src-gd-3d-import-and-levels]]
 
 ### Preserved sources
 Official Godot 4.7 documentation is preserved under [`sources/`](../sources/) and cited by the notes above

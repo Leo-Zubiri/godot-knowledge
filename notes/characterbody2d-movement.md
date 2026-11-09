@@ -14,6 +14,7 @@ sources:
     retrieved: 2026-11-08
     version: "4.7"
 related:
+  - relates-to: "[[characterbody3d-movement]]"   # the 3D equivalent
   - depends-on: "[[input-handling]]"            # movement reads input actions each physics frame
   - relates-to: "[[node-lifecycle-callbacks]]"  # runs in _physics_process (fixed timestep)
   - relates-to: "[[godot-version-policy]]"       # move_and_slide signature changed 3.x -> 4.x
@@ -68,3 +69,4 @@ func _physics_process(delta: float) -> void:
 ## See also
 - [[input-handling]] — the actions this reads · [[node-lifecycle-callbacks]] — `_physics_process`
 - [[area2d-detection]] — for pickups/triggers around the player
+- [[characterbody3d-movement]] — the 3D equivalent

@@ -16,6 +16,7 @@ sources:
     ref: src-gs-godot-cli
     retrieved: 2026-11-08
 related:
+  - relates-to: "[[godot-level-building-blocks]]"   # Godot level building blocks
   - relates-to: "[[game-studio-blender-pipeline]]"   # 3D environments come from Blender GLB
   - relates-to: "[[game-studio-godot-integration]]"   # Godot scenes are the target
 created: 2026-11-08
@@ -43,3 +44,4 @@ Procedural-generation tools not investigated (no evidence of advantage). Genre o
 ## See also
 - [[game-studio-blender-pipeline]] — 3D asset export
 - [[game-studio-godot-integration]] — Godot scenes are the target
+- [[godot-level-building-blocks]] — Godot level building blocks

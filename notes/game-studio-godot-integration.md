@@ -22,6 +22,7 @@ sources:
     ref: src-gs-godot-3d-import
     retrieved: 2026-11-08
 related:
+  - relates-to: "[[godot-performance-workflow]]"   # measuring performance
   - depends-on: "[[game-studio-readiness-classification]]"   # readiness flags used
   - relates-to: "[[game-studio-acceptance-criteria]]"   # validation steps feed acceptance
   - relates-to: "[[game-studio-blender-pipeline]]"   # assets arrive via GLB import
@@ -59,3 +60,4 @@ Scenes, `.tres` resources, Control/Theme UI and animation integration live in Go
 ## See also
 - [[game-studio-acceptance-criteria]] — what to validate after import
 - [[game-studio-readiness-classification]] — readiness flags used
+- [[godot-performance-workflow]] — measuring performance

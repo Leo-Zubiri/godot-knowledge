@@ -13,6 +13,7 @@ sources:
     ref: src-gs-accessibility-and-loudness
     retrieved: 2026-11-08
 related:
+  - relates-to: "[[godot-ui-layout-and-themes]]"   # Godot stretch presets, fonts and theme practice
   - relates-to: "[[game-studio-acceptance-criteria]]"   # UI and audio criteria
   - relates-to: "[[gs-adr-godot-final-ui-authority]]"   # UI implemented in Godot
   - relates-to: "[[game-studio-loudness-targets]]"   # audio cues and volume controls
@@ -48,3 +49,4 @@ The page notes remapping, text size, colourblindness and subtitle presentation a
 - [[game-studio-acceptance-criteria]] — where checks are recorded
 - [[gs-adr-godot-final-ui-authority]] — UI implemented in Godot
 - [[game-studio-loudness-targets]] — audio cues and volume controls
+- [[godot-ui-layout-and-themes]] — Godot stretch presets, fonts and theme practice

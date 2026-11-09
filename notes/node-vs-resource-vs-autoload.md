@@ -15,6 +15,8 @@ sources:
     retrieved: 2026-11-06
     version: "4.7"
 related:
+  - relates-to: "[[godot-project-hygiene]]"   # scene independence and dependency-supply order
+  - relates-to: "[[godot-resource-sharing-and-duplication]]"   # resource sharing and duplication pitfalls (Godot 4.7 docs)
   - relates-to: "[[autoload-singletons]]"   # autoload is one of the three options compared here
   - contradicts: "[[god-autoload]]"         # defaulting everything to a global is the failure mode
 created: 2026-11-06
@@ -48,3 +50,5 @@ whole game?* → Autoload. When unsure, prefer the **least global** option that 
 
 ## See also
 - [[autoload-singletons]] · [[node-lifecycle-callbacks]] · [[god-autoload]]
+- [[godot-resource-sharing-and-duplication]] — resource sharing and duplication pitfalls (Godot 4.7 docs)
+- [[godot-project-hygiene]] — scene independence and dependency-supply order

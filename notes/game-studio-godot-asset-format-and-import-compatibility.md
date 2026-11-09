@@ -22,6 +22,7 @@ sources:
     ref: src-gs-asset-materials-hdri
     retrieved: 2026-11-08
 related:
+  - relates-to: "[[godot-3d-import-options-and-export-hygiene]]"   # import options, export hygiene and post-import hooks
   - relates-to: "[[game-studio-blender-pipeline]]"   # Blender as the import/cleanup hub
   - relates-to: "[[game-studio-godot-integration]]"   # Godot import side
   - relates-to: "[[game-studio-acceptance-criteria]]"   # validation after import
@@ -54,3 +55,4 @@ Treat every acquired asset as untrusted input: convert to GLB/PNG/OGG/WAV/SVG th
 
 ## See also
 - [[game-studio-acceptance-criteria]]
+- [[godot-3d-import-options-and-export-hygiene]] — import options, export hygiene and post-import hooks
