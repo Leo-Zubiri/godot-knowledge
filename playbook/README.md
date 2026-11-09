@@ -59,6 +59,8 @@ There is no automatic sync between this template and domain repos built from it.
 the template version it took them from in its README.
 
 ## Godot additions in this repository (domain content on top of the generic layer)
+- Cross-cutting MOC `game-studio-cross-cutting-runtime-concerns` lists what every game/sim must address at runtime
+  (error/crash reporting, observability, save integrity, accessibility, i18n, input, economy); `phase-exit` references it.
 - `conventions.md` — GDScript/architecture/git/safety conventions, each pointing to a note.
 - Skills: `scope-game` (replaces the generic `scope-project`; points to
   `game-design-scoping-questions-for-new-game-or-feature`), `tune-config`, `package-module` — with the 5 generic

@@ -1,12 +1,14 @@
-# godot-knowledge — a reusable, evidence-based Godot knowledge base
+# godot-knowledge — a reusable, evidence-based game-development knowledge base
 
-A **file-based, Markdown + YAML + Git** knowledge base about **Godot** (engine architecture, GDScript, scene/node
-design, patterns & anti-patterns), readable by both humans and AI agents, where every claim cites a source and nothing
-is trusted as `verified` until a human reviews it.
+A **file-based, Markdown + YAML + Git** knowledge base for **building games** — it began Godot-focused (engine
+architecture, GDScript, scenes/nodes, patterns & anti-patterns) and has grown to span four domains: `godot`,
+`game-studio` (tools, assets, delivery), `game-design`, and `agent-ops` (running AI agents on the work). Readable by
+both humans and AI agents, where every claim cites a source and nothing is trusted as `verified` until a human
+reviews it. The repository keeps its `godot-knowledge` name; the scope is game development.
 
-Built from the **[Knowledge Repository Template v1.0.0](https://github.com/Leo-Zubiri/knowledge-wiki-template)** — its
-methodology (content classes, provenance, typed relationships, trust lifecycle, filesystem-first retrieval, Git
-governance) is preserved unchanged. See [`OVERVIEW.md`](OVERVIEW.md) for the guided tour and [`AGENTS.md`](AGENTS.md) if
+Built from the **[Knowledge Repository Template](https://github.com/Leo-Zubiri/knowledge-wiki-template)** (methodology
+from v1.0.0, procedural `playbook/` layer from v1.1.0) — its methodology (content classes, provenance, typed
+relationships, trust lifecycle, filesystem-first retrieval, Git governance) is preserved unchanged. See [`OVERVIEW.md`](OVERVIEW.md) for the guided tour and [`AGENTS.md`](AGENTS.md) if
 you're an agent.
 
 ## Scope

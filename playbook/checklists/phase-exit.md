@@ -14,3 +14,4 @@ Every item needs evidence (command + literal output, file path, test report, cap
 - [ ] Generic findings written back to the knowledge base (`proposed`) or listed as `knowledge_gaps`.
 - [ ] Human gates (visual quality, fun, licences, outward-facing actions) explicitly accepted by the owner.
 - [ ] Throwaway code from the phase archived or deleted as the plan said.
+- [ ] Cross-cutting runtime concerns addressed or explicitly deferred (see `[[game-studio-cross-cutting-runtime-concerns]]`): observability/session monitoring, error/crash reporting.
