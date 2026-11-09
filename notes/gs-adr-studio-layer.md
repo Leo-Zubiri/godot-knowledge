@@ -59,3 +59,5 @@ may commit knowledge directly on local `main`; `verified` remains human-only.
 - `[[gs-adr-no-extra-orchestration-framework]]` — why the layer is capped
 - `[[game-studio-skills-architecture]]` — skills vs tool adapters vs standards
 - `[[game-studio-game-project-profile]]` — what the game must expose
+- `[[game-studio-multiagent-topology]]` — the ≤ 4 roles rule
+- `[[game-studio-agent-orchestration]]` — AGENTS.md as single source; CLAUDE.md imports
