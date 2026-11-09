@@ -45,6 +45,7 @@ One row per allowed tag; the first column is the tag in backticks (the recipe re
 | `dept/level-design` | level design and environments |
 | `dept/game-dev` | gameplay programming and Godot integration |
 | `dept/design` | game design: loops, mechanics, documentation, prototyping, playtesting |
+| `dept/delivery` | build, export, distribution, versioning and post-release |
 | `dept/qa` | QA, validation, tests and acceptance criteria |
 | `dept/assets` | asset conventions, discovery, reuse, licences and registry |
 | `tool/godot` | Godot engine and its ecosystem |

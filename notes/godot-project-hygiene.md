@@ -13,6 +13,7 @@ sources:
     ref: src-gd-best-practices
     retrieved: 2026-11-08
 related:
+  - relates-to: "[[godot-export-fundamentals]]"   # export_credentials.cfg must stay out of version control
   - relates-to: "[[node-vs-resource-vs-autoload]]"   # where shared state lives
   - relates-to: "[[godot-version-policy]]"   # version scoping
   - relates-to: "[[god-autoload]]"   # the autoload anti-pattern
@@ -40,3 +41,4 @@ lowercase snake_case folders/files (C# scripts follow PascalCase class names), P
 - [[node-vs-resource-vs-autoload]] — choosing where shared state lives
 - [[godot-version-policy]] — version scoping
 - [[god-autoload]] — the autoload anti-pattern
+- [[godot-export-fundamentals]] — export_credentials.cfg must stay out of version control

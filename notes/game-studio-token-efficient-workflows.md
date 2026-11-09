@@ -16,6 +16,7 @@ sources:
     ref: src-gs-ccgs-workflow-rigor-and-gates
     retrieved: 2026-11-08
 related:
+  - relates-to: "[[game-studio-reproducibility-and-model-pinning]]"   # documented prompt-cache figures and nondeterminism
   - relates-to: "[[game-studio-progressive-disclosure-routing]]"   # skill-loading layers and size caps
   - relates-to: "[[game-studio-configurable-rigor]]"   # process weight
   - relates-to: "[[game-studio-session-lifecycle]]"   # state in files
@@ -51,3 +52,4 @@ Prefer scripts + small skills; measure before claiming savings (tokens, API cost
 - [[game-studio-hardware-and-cost]] — metric definitions
 - [[game-studio-configurable-rigor]] — process weight
 - [[game-studio-session-lifecycle]] — state in files
+- [[game-studio-reproducibility-and-model-pinning]] — documented prompt-cache figures and nondeterminism

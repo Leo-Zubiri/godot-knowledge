@@ -10,6 +10,7 @@ sources:
     ref: src-gs-ccgs-safety-and-session
     retrieved: 2026-11-08
 related:
+  - relates-to: "[[game-studio-agent-audit-and-recovery]]"   # what rewind does not cover and telemetry/hooks limits
   - relates-to: "[[game-studio-token-efficient-workflows]]"   # files as memory saves context
   - relates-to: "[[game-studio-agent-orchestration]]"   # portable instruction base
 created: 2026-11-08
@@ -31,3 +32,4 @@ Plain Markdown is portable across Claude Code, Codex and OpenCode; automatic rel
 ## See also
 - [[game-studio-token-efficient-workflows]]
 - [[game-studio-agent-orchestration]] — portable instruction base
+- [[game-studio-agent-audit-and-recovery]] — what rewind does not cover and telemetry/hooks limits

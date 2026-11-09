@@ -13,6 +13,7 @@ sources:
     ref: src-gs-asset-audio
     retrieved: 2026-11-08
 related:
+  - relates-to: "[[game-studio-release-credits-and-ratings]]"   # credits generated from the registry
   - depends-on: "[[game-studio-asset-conventions]]"   # extends the existing manifest proposal
   - relates-to: "[[game-studio-asset-license-and-provenance-policy]]"   # fields encode the seven permissions
   - relates-to: "[[game-studio-asset-discovery-and-reuse-workflow]]"   # written at step 10
@@ -48,3 +49,4 @@ Traceability, licence audits, attribution generation, update checks (re-verify `
 - [[game-studio-asset-conventions]] — workspace layout and base manifest
 - [[game-studio-asset-license-and-provenance-policy]] — fields encode the seven permissions
 - [[game-studio-asset-discovery-and-reuse-workflow]] — written at step 10
+- [[game-studio-release-credits-and-ratings]] — credits generated from the registry

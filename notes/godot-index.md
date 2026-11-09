@@ -46,6 +46,7 @@ awaiting human verification — see [`AGENTS.md`](../AGENTS.md)).
 - **Physics, navigation, performance:** [[godot-physics-bodies-layers-and-interpolation]] · [[characterbody3d-movement]] · [[godot-navigation-overview]] · [[godot-performance-workflow]]
 - **UI, animation, audio, 2D, VFX, localization:** [[godot-ui-layout-and-themes]] · [[godot-ui-focus-and-gamepad-navigation]] · [[godot-animation-tree-and-tween-pitfalls]] · [[godot-audio-buses-and-adaptive-music]] · [[godot-2d-production-settings]] · [[godot-particles-and-shader-basics]] · [[godot-localization-workflow]]
 - **3D:** [[godot-3d-materials-and-transparency]] · [[godot-renderer-feature-matrix]] · [[godot-level-building-blocks]] · [[godot-3d-import-options-and-export-hygiene]]
+- **Delivery and quality:** [[godot-export-fundamentals]] · [[godot-export-platform-notes]] · [[godot-web-export-constraints]] · [[godot-ci-export-documented-limits]] · [[godot-build-metadata-and-feature-tags]] · [[godot-logging-and-crash-evidence]] · [[godot-screen-reader-and-input-remapping]]
 - **State machines:** no official guidance exists in the 4.7 docs (only AnimationNodeStateMachine and a 3.2-era page); no note until sources are found.
 
 ### Game studio (agent-driven 2D+3D production)
@@ -56,6 +57,9 @@ awaiting human verification — see [`AGENTS.md`](../AGENTS.md)).
 
 ### Godot 4.7 documentation sources
 [[src-gd-best-practices]] · [[src-gd-scene-resources-saving]] · [[src-gd-physics]] · [[src-gd-navigation]] · [[src-gd-performance]] · [[src-gd-ui-layout-themes]] · [[src-gd-animation]] · [[src-gd-audio]] · [[src-gd-2d-production]] · [[src-gd-vfx-shaders]] · [[src-gd-localization]] · [[src-gd-3d-materials-rendering]] · [[src-gd-3d-import-and-levels]]
+
+### Godot 4.7 documentation sources (delivery and quality)
+[[src-gd-export-and-platforms]] · [[src-gd-accessibility-logging-debug]]
 
 ### Preserved sources
 Official Godot 4.7 documentation is preserved under [`sources/`](../sources/) and cited by the notes above

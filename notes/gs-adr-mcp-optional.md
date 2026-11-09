@@ -16,6 +16,7 @@ sources:
     ref: src-gs-comfyui-mcp
     retrieved: 2026-11-08
 related:
+  - relates-to: "[[game-studio-mcp-spec-requirements]]"   # what the MCP specification requires versus leaves to hosts
   - relates-to: "[[game-studio-readiness-classification]]"   # integration preference order
 created: 2026-11-08
 updated: 2026-11-08
@@ -34,3 +35,4 @@ Reproducible, CI-friendly runs; slightly less interactive exploration; MCP serve
 ## See also
 - [[game-studio-architecture-proposal]] — overall proposal
 - [[game-studio-readiness-classification]] — integration preference order
+- [[game-studio-mcp-spec-requirements]] — what the MCP specification requires versus leaves to hosts

@@ -14,6 +14,7 @@ sources:
     retrieved: 2026-11-08
     version: "4.7"
 related:
+  - relates-to: "[[godot-screen-reader-and-input-remapping]]"   # runtime remapping with InputMap
   - relates-to: "[[node-lifecycle-callbacks]]"   # _input/_unhandled_input are lifecycle callbacks
   - relates-to: "[[characterbody2d-movement]]"   # movement polls input actions each physics frame
 created: 2026-11-08
@@ -58,3 +59,4 @@ func _unhandled_input(event: InputEvent) -> void:
 
 ## See also
 - [[characterbody2d-movement]] — consumes these actions · [[node-lifecycle-callbacks]] — the input callbacks
+- [[godot-screen-reader-and-input-remapping]] — runtime remapping with InputMap

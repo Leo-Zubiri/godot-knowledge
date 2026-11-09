@@ -22,6 +22,8 @@ sources:
     ref: src-gs-godot-3d-import
     retrieved: 2026-11-08
 related:
+  - relates-to: "[[godot-ci-export-documented-limits]]"   # what CI export documents and omits
+  - relates-to: "[[godot-export-fundamentals]]"   # export presets, packs and templates
   - relates-to: "[[godot-performance-workflow]]"   # measuring performance
   - depends-on: "[[game-studio-readiness-classification]]"   # readiness flags used
   - relates-to: "[[game-studio-acceptance-criteria]]"   # validation steps feed acceptance
@@ -61,3 +63,5 @@ Scenes, `.tres` resources, Control/Theme UI and animation integration live in Go
 - [[game-studio-acceptance-criteria]] — what to validate after import
 - [[game-studio-readiness-classification]] — readiness flags used
 - [[godot-performance-workflow]] — measuring performance
+- [[godot-export-fundamentals]] — export presets, packs and templates
+- [[godot-ci-export-documented-limits]] — what CI export documents and omits

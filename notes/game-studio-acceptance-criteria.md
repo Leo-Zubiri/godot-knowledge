@@ -19,6 +19,7 @@ sources:
     ref: src-gs-audio-import-and-tools
     retrieved: 2026-11-08
 related:
+  - relates-to: "[[godot-logging-and-crash-evidence]]"   # log files as QA evidence
   - depends-on: "[[game-studio-asset-conventions]]"   # reports and manifests
   - relates-to: "[[game-studio-godot-integration]]"   # execution layer
 created: 2026-11-08
@@ -51,3 +52,4 @@ Visual/animation quality, art direction, licence/provenance sign-off.
 - [[game-studio-evidence-driven-visual-qa]] — visual-evidence gate and result states
 - [[game-studio-review-modes-and-verdicts]] — verdict vocabulary
 - [[game-studio-asset-conventions]] — report format
+- [[godot-logging-and-crash-evidence]] — log files as QA evidence

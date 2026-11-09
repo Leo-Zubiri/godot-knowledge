@@ -56,6 +56,14 @@ Engine-specific notes (project hygiene, resources, saving, physics, navigation, 
 - [[game-studio-game-reference-analysis-method]] · [[game-studio-reference-analysis-legal-boundary]]
 - [[game-studio-accessibility-minimums]] · [[game-studio-loudness-targets]]
 
+### Delivery and release (Waves 3 and 5; platform facts as written 2026-11-08)
+- [[game-studio-delivery-platforms-and-fees]] · [[game-studio-versioning-and-changelog]] · [[game-studio-release-credits-and-ratings]] · [[game-studio-post-release-and-crash-reporting]]
+- Godot-side export, CI limits and logging: see [[godot-index]].
+
+### AI-assisted production operations (Wave 4)
+- [[game-studio-mcp-spec-requirements]] · [[game-studio-agent-permission-controls]] · [[game-studio-agent-audit-and-recovery]]
+- [[game-studio-reproducibility-and-model-pinning]] · [[game-studio-untrusted-content-and-headless-runs]]
+
 ### Standards and workflows
 - [[game-studio-asset-conventions]] · [[game-studio-acceptance-criteria]] · [[game-studio-workflows]]
 
@@ -63,7 +71,7 @@ Engine-specific notes (project hygiene, resources, saving, physics, navigation, 
 - [[gs-adr-free-and-open-source-first]] · [[gs-adr-blender-primary-3d]] · [[gs-adr-mcp-optional]] · [[gs-adr-no-extra-orchestration-framework]] · [[gs-adr-godot-final-ui-authority]] · [[gs-adr-artcraft-role]] · [[gs-adr-interchange-formats]]
 
 ### Preserved sources
-- [[game-studio-sources-index]] — all 45 `src-gs-*` sources by theme, with the notes that cite them (paraphrased extractions with provenance; re-fetch before verification).
+- [[game-studio-sources-index]] — all 50 `src-gs-*` sources by theme, with the notes that cite them (paraphrased extractions with provenance; re-fetch before verification).
 
 ## See also
 - [[godot-index]] — parent Godot knowledge map

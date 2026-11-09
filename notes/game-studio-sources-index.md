@@ -77,6 +77,13 @@ Navigational only; no claims. Every preserved `src-gs-*` source, grouped by them
 - [[src-gs-godot-import-formats-47]] — Godot 4.7 documentation: available 3D formats and image import (`paraphrased`) · cited by: [[game-studio-godot-asset-format-and-import-compatibility]]
 - [[src-gs-asset-quaternius-ual-pack]] — Quaternius Universal Animation Library pack page (CC0 statement) — conflicts with the QAL licence page (`paraphrased`) · cited by: [[game-studio-asset-source-catalog]], [[game-studio-godot-asset-format-and-import-compatibility]]
 
+### AI operations, delivery and release (Waves 3–5)
+- [[src-gs-agent-ops-mcp-spec]] — Model Context Protocol specification (schema 2026-07-28): primitives, transports, authorization, tools, elicitation (`paraphrased`) · cited by: [[game-studio-mcp-spec-requirements]]
+- [[src-gs-agent-ops-permissions-hooks-recovery]] — Agent permission, sandbox, hooks, security, checkpointing and telemetry documentation (Claude Code, Codex, OpenCode) (`paraphrased`) · cited by: [[game-studio-agent-audit-and-recovery]], [[game-studio-agent-permission-controls]], [[game-studio-untrusted-content-and-headless-runs]]
+- [[src-gs-agent-ops-models-injection-cost]] — Claude platform docs: model IDs and deprecations, prompt caching, prompt-injection mitigation, eval design (`paraphrased`) · cited by: [[game-studio-reproducibility-and-model-pinning]], [[game-studio-untrusted-content-and-headless-runs]]
+- [[src-gs-delivery-platforms]] — Distribution platforms: itch.io, Steam, Google Play, Apple, F-Droid, Flathub (fees and rules as written on 2026-11-08) (`paraphrased`) · cited by: [[game-studio-delivery-platforms-and-fees]], [[game-studio-post-release-and-crash-reporting]], [[game-studio-versioning-and-changelog]]
+- [[src-gs-delivery-versioning-hygiene]] — Versioning and release hygiene: SemVer, Keep a Changelog, CC attribution best practices, IARC pointer, bug-triage pointers, Sentry self-hosted licence (`paraphrased`) · cited by: [[game-studio-post-release-and-crash-reporting]], [[game-studio-release-credits-and-ratings]], [[game-studio-versioning-and-changelog]]
+
 ## See also
 - [[game-studio-index]] — map of the game-studio notes
 - [[godot-index]] — Godot knowledge map (older sources listed there)

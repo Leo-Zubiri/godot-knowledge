@@ -10,6 +10,7 @@ sources:
     ref: src-gs-ccgs-safety-and-session
     retrieved: 2026-11-08
 related:
+  - relates-to: "[[game-studio-agent-permission-controls]]"   # what each agent product enforces versus advises
   - relates-to: "[[gs-adr-mcp-optional]]"   # MCP/GUI servers are another arbitrary-code surface
   - relates-to: "[[game-studio-godot-integration]]"   # Godot-specific protected paths
   - relates-to: "[[game-studio-agent-orchestration]]"   # instructions are advisory
@@ -36,3 +37,4 @@ created_by_type: agent
 - [[game-studio-agent-orchestration]] — advisory vs enforced
 - [[gs-adr-mcp-optional]] — MCP/GUI servers are another arbitrary-code surface
 - [[game-studio-godot-integration]] — Godot-specific protected paths
+- [[game-studio-agent-permission-controls]] — what each agent product enforces versus advises

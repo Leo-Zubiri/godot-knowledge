@@ -13,6 +13,7 @@ sources:
     ref: src-gs-gp-platforms-and-hooks
     retrieved: 2026-11-08
 related:
+  - relates-to: "[[game-studio-untrusted-content-and-headless-runs]]"   # grader tips and untrusted-output rules
   - relates-to: "[[benchmark-leakage-assertions]]"   # avoid asserting constants the skill itself supplies
   - relates-to: "[[knowledge-availability-vs-application]]"   # measure mediation, not just availability
   - relates-to: "[[game-studio-skill-validation-architecture]]"   # behaviour layer above structural checks
@@ -38,3 +39,4 @@ Our own repo already learned that an assertion matching a constant present in th
 
 ## See also
 - [[game-studio-skill-validation-architecture]]
+- [[game-studio-untrusted-content-and-headless-runs]] — grader tips and untrusted-output rules
