@@ -77,7 +77,8 @@ Sources: [[src-gd-projectsettings-subemitters-visualshaders]] · [[src-gd-partic
 ### Input, modules, networking, loading, configuration (documented, proposed)
 [[godot-touch-input-and-virtualjoystick]] — VirtualJoystick, TouchScreenButton, touch events, emulation settings and device-agnostic actions.
 [[godot-reusable-module-packaging]] — packaging a reusable module under addons/, plugin.cfg vs runtime-only, extraction into another project, Asset Library rules.
-Sources: [[src-gd-touch-input-virtualjoystick]] · [[src-gd-plugins-addons-assetlib]]
+[[godot-lan-host-authoritative-turn-based]] — host-authoritative LAN turn-based multiplayer: intent RPCs, Synchronizer/Spawner, UDP-broadcast discovery with join-by-IP fallback.
+Sources: [[src-gd-touch-input-virtualjoystick]] · [[src-gd-plugins-addons-assetlib]] · [[src-gd-high-level-multiplayer-udp]]
 
 ### Preserved sources
 Official Godot 4.7 documentation is preserved under [`sources/`](../sources/) and cited by the notes above
