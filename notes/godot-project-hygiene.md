@@ -12,7 +12,11 @@ sources:
   - claim: "Scene organization, interfaces, data/logic preferences, version control and project organization pages"
     ref: src-gd-best-practices
     retrieved: 2026-11-08
+  - claim: "Version-control files, import and UID files, export configuration"
+    ref: src-gd-project-organization-vcs-uids
+    retrieved: 2026-11-08
 related:
+  - relates-to: "[[godot-project-structure-selection-method]]"   # structure selection
   - relates-to: "[[godot-export-fundamentals]]"   # export_credentials.cfg must stay out of version control
   - relates-to: "[[node-vs-resource-vs-autoload]]"   # where shared state lives
   - relates-to: "[[godot-version-policy]]"   # version scoping
@@ -34,10 +38,14 @@ Cost order: `get_node()` slowest, `$Child` faster, cache with `@onready`; an exp
 ## Files, version control, naming
 lowercase snake_case folders/files (C# scripts follow PascalCase class names), PascalCase node names; case mismatches can break exported PCKs; third-party content in top-level `addons/`; an empty `.gdignore` stops import of a folder (ignored resources cannot be loaded). Ignore `.godot/` and `*.translation`; generate metadata via Project > Version Control; on Windows set `core.autocrlf` to `input`; install Git LFS on every machine before committing large files; older versions may store credentials in `export_presets.cfg`.
 
+## Version-control files in detail (added, documented)
+Ignore `.godot/` and `*.translation`; the project manager's Git option generates `.gitignore` (only `.godot/` and `/android/`, per the 4.7 source) and `.gitattributes` (`* text=auto eol=lf`), so add `*.translation` yourself if you use CSV translations. **Commit** `.import` files, `.uid` files (4.4+; see [[godot-asset-source-import-organization]]) and `export_presets.cfg`; keep `.godot/export_credentials.cfg` out. Git LFS is optional and must be set up before the first commit. Folder strategy and moves: [[godot-project-structure-selection-method]], [[godot-project-structure-assessment-and-refactoring]].
+
 ## What an agent can and cannot check
 **Can check by reading files:** naming, folder layout, ignore files, typed signatures. **Needs the engine:** node-path correctness, configuration-warning output, cached-resource behaviour.
 
 ## See also
+- [[godot-project-structure-selection-method]] — structure selection
 - [[node-vs-resource-vs-autoload]] — choosing where shared state lives
 - [[godot-version-policy]] — version scoping
 - [[god-autoload]] — the autoload anti-pattern

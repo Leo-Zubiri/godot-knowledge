@@ -10,6 +10,7 @@ sources:
     ref: src-gs-godot-3d-import
     retrieved: 2026-11-08
 related:
+  - relates-to: "[[godot-project-structure-selection-method]]"   # folder structure routing
   - depends-on: "[[game-studio-tool-selection-guide]]"   # task routing the profile refines
   - relates-to: "[[game-studio-index]]"   # entry point
   - relates-to: "[[godot-index]]"   # Godot knowledge map
@@ -38,6 +39,7 @@ Let an agent avoid loading unrelated knowledge by reading a short project profil
 | Domain | Load it when… | Entry |
 |---|---|---|
 | `godot` | the task touches engine implementation (code, scenes, physics, UI, export…) | [[godot-index]] |
+| `godot` (structure) | creating or reorganizing a project's folders and assets | [[godot-project-structure-selection-method]] |
 | `game-design` | the task is design, validation with players, accessibility or analysing other games | [[game-design-index]] |
 | `game-studio` | the task is tools, pipelines, assets and licences, quality or delivery | [[game-studio-index]] |
 | `agent-ops` | agents run the work (permissions, sessions, cost, skills, knowledge-base engineering) | [[agent-ops-index]] |
@@ -67,5 +69,6 @@ A pure 2D, single-player, desktop-only project can skip notes tagged `dim/3d`; a
 - The task router is organised by tool, not yet by game question.
 
 ## See also
+- [[godot-project-structure-selection-method]] — folder structure routing
 - [[game-studio-tool-selection-guide]] — routing by task
 - [[game-studio-token-efficient-workflows]] — loading levers
