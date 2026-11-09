@@ -79,7 +79,8 @@ Sources: [[src-gd-projectsettings-subemitters-visualshaders]] · [[src-gd-partic
 [[godot-reusable-module-packaging]] — packaging a reusable module under addons/, plugin.cfg vs runtime-only, extraction into another project, Asset Library rules.
 [[godot-lan-host-authoritative-turn-based]] — host-authoritative LAN turn-based multiplayer: intent RPCs, Synchronizer/Spawner, UDP-broadcast discovery with join-by-IP fallback.
 [[godot-loading-screen-threaded-resources]] — loading screen with the threaded ResourceLoader API, progress polling, cache modes, minimum display time.
-Sources: [[src-gd-touch-input-virtualjoystick]] · [[src-gd-plugins-addons-assetlib]] · [[src-gd-high-level-multiplayer-udp]] · [[src-gd-background-loading-resourceloader]] · [[src-gd-autoload-scenetree-engine]]
+[[godot-config-driven-tunables]] — (unreviewed, interpretation) taxonomy for tunables: ProjectSettings + feature-tag overrides, tuning Resources, ConfigFile in user://, dev overrides, constants.
+Sources: [[src-gd-touch-input-virtualjoystick]] · [[src-gd-plugins-addons-assetlib]] · [[src-gd-high-level-multiplayer-udp]] · [[src-gd-background-loading-resourceloader]] · [[src-gd-autoload-scenetree-engine]] · [[src-gd-projectsettings-configfile-resources]]
 
 ### Preserved sources
 Official Godot 4.7 documentation is preserved under [`sources/`](../sources/) and cited by the notes above
