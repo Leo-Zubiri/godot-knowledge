@@ -28,7 +28,7 @@ Navigational only; no claims. Engine-agnostic design principles. Evidence is mix
 - [[game-studio-game-reference-analysis-method]] · [[game-studio-reference-analysis-legal-boundary]]
 
 ### Progression, readability and animation
-- [[game-studio-progression-loops-and-dda]] · [[game-studio-art-readability-silhouette-and-animation-principles]]
+- [[game-studio-game-usability-heuristics-pinelle]] · [[game-studio-progression-loops-and-dda]] · [[game-studio-art-readability-silhouette-and-animation-principles]]
 
 ### Known gaps (no primary source read yet)
 Reward-design evidence, difficulty-curve construction beyond the Hamlet pointer, scope planning for small teams, per-genre conventions, art-bible primary sources (progression vocabulary and silhouette/animation notes now exist but are pointer-level).

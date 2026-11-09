@@ -90,6 +90,7 @@ Navigational only; no claims. Every preserved `src-gs-*` source, grouped by them
 - [[src-gd-skeleton-gdscript-fsm-demo]] — Skeleton3D, GDScript style/exports/warnings, FSM demo (`paraphrased`) · cited by: [[godot-skeleton3d-modifiers-and-gdscript-style]]
 - [[src-gs-design-progression-balance]] — Lost Garden, DDA (Hamlet pp. 1-5), balance pointers (`paraphrased`) · cited by: [[game-studio-progression-loops-and-dda]]
 - [[src-gs-design-art-readability-animation]] — TF2 NPAR paper (pp. 1-4), animation principles (`paraphrased`) · cited by: [[game-studio-art-readability-silhouette-and-animation-principles]]
+- [[src-gs-design-pinelle-lasseter-read]] — Pinelle et al. CHI 2008 and Lasseter 1987, both read in full from unofficial copies (`paraphrased`) · cited by: [[game-studio-game-usability-heuristics-pinelle]], [[game-studio-art-readability-silhouette-and-animation-principles]], [[game-studio-game-reference-analysis-method]]
 - [[src-gs-agent-ops-subagents-headless-evals]] — Claude Code/OpenCode docs, Anthropic engineering posts (`paraphrased`) · cited by: [[game-studio-claude-code-headless-subagents-and-model-pinning]], [[game-studio-agent-eval-and-context-guidance]]
 - [[src-gs-delivery-steam-store-privacy]] — Steam, Microsoft, Apple, COPPA/GDPR, ESRB/PEGI, packaging, GlitchTip (`paraphrased`) · cited by: [[game-studio-delivery-steam-store-privacy-notes]]
 

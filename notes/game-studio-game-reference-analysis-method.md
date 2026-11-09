@@ -15,7 +15,11 @@ sources:
   - claim: "MDA is a vocabulary framework with an abstract read; no empirical validation found"
     ref: src-gs-design-theory-and-typologies
     retrieved: 2026-11-08
+  - claim: "Pinelle et al. CHI 2008: method, ten heuristics, preliminary evaluation"
+    ref: src-gs-design-pinelle-lasseter-read
+    retrieved: 2026-11-08
 related:
+  - relates-to: "[[game-studio-game-usability-heuristics-pinelle]]"   # usability heuristics layer
   - relates-to: "[[game-studio-reference-analysis-legal-boundary]]"   # what may be recorded
   - relates-to: "[[game-studio-game-design-theory-vocabulary]]"   # MDA-style interpretation
   - relates-to: "[[game-studio-playtesting-methods]]"   # hypotheses need testing
@@ -46,12 +50,13 @@ created_by_type: agent
 5. **Transfer:** write the principle in your own words as a genre-neutral statement with its evidence class.
 
 ## Heuristic evaluation as an optional layer (verified detail)
-HEP (Desurvire et al. 2004, read) offers 43 playability heuristics in four categories for early-stage evaluation; its authors found it useful before expensive prototypes but conclude user testing remains the benchmark (one game, four users). Pinelle et al. (CHI 2008) and the other named methods remain unread pointers.
+HEP (Desurvire et al. 2004, read) offers 43 playability heuristics in four categories for early-stage evaluation; its authors found it useful before expensive prototypes but conclude user testing remains the benchmark (one game, four users). Pinelle et al. (CHI 2008, read) give ten usability-only heuristics from 108 reviews, with a five-evaluator preliminary test (see [[game-studio-game-usability-heuristics-pinelle]]); the other named methods remain unread pointers.
 
 ## Limits
 An agent cannot see or feel the game, judge pacing, or tell whether a hypothesis holds. Retention and pacing figures are usually not public; treat any such number as unverified unless the developer published it.
 
 ## See also
+- [[game-studio-game-usability-heuristics-pinelle]] — Pinelle's ten heuristics
 - [[game-studio-reference-analysis-legal-boundary]] — what to avoid recording
 - [[game-studio-game-design-theory-vocabulary]] — MDA-style interpretation
 - [[game-studio-playtesting-methods]] — hypotheses need testing
