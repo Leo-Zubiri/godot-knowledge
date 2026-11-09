@@ -6,6 +6,9 @@ status: proposed
 summary: "Preliminary catalog of asset providers by type with licence scope, automation access and a proposed class (approved-candidate, conditional, avoid, not evaluated)."
 tags: [dept/assets]
 sources:
+  - claim: "Quaternius UAL pack page (CC0) versus QAL licence"
+    ref: src-gs-asset-quaternius-ual-pack
+    retrieved: 2026-11-08
   - claim: "CMU, Rokoko, Poly Pizza, Smithsonian: official terms unreadable (record of what remains to verify)"
     ref: src-gs-free-mocap-and-3d-sources-unverified
     retrieved: 2026-11-08
@@ -84,6 +87,9 @@ Classes: **approved-candidate** (clear provider-wide licence; still confirm the 
 | Audio | Zapsplat, Free Music Archive, Internet Archive; OpenGameArt | terms unread / blocked | conditional / avoid until read |
 
 Still **gaps** with no libre source identified: a free humanoid animation library with a clear libre licence (Mixamo has no confirmed libre equivalent), particle/VFX sprite sheets, tilesets/pixel-art libraries, free UI kits.
+
+## Licence conflict to resolve (Quaternius Universal Animation Library)
+The pack page states **CC0** and lists FBX/GLB/Blend (Standard/Pro free, Source via Patreon), while Quaternius's main licence page is the custom **QAL v1.0** (not CC0; no standalone redistribution). Both statements are preserved ([[src-gs-asset-quaternius-ual-pack]]); until a human decides which governs, treat the pack as **conditional** and do not redistribute the original files. Kenney's Particle Pack page states CC0 (80 PNG-like 512×512 tiles; formats not listed on the page).
 
 ## Cost and openness (free/libre-first)
 The project prefers free, gratis and open-source resources ([[gs-adr-free-and-open-source-first]]). Mapping of this catalog to tiers: **libre-open** — Kenney, Poly Haven, ambientCG, TextureCan (CC0), Lucide/Phosphor/Tabler (ISC/MIT); **gratis-restricted** — Quaternius (QAL), Sonniss, Pixabay, Freesound (per sound), incompetech (CC BY), Font Awesome Free, OFL fonts (per family), BlenderKit Royalty Free, per-creator itch.io/OpenGameArt/Sketchfab content; **paid/closed** — paid Fab/itch.io/CGTrader listings, Mixamo (free with an Adobe ID; terms unverified). Details: [[game-studio-cost-and-openness-classification]].

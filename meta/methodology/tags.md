@@ -44,6 +44,7 @@ One row per allowed tag; the first column is the tag in backticks (the recipe re
 | `dept/ai-generation` | AI asset generation (ComfyUI and models) |
 | `dept/level-design` | level design and environments |
 | `dept/game-dev` | gameplay programming and Godot integration |
+| `dept/design` | game design: loops, mechanics, documentation, prototyping, playtesting |
 | `dept/qa` | QA, validation, tests and acceptance criteria |
 | `dept/assets` | asset conventions, discovery, reuse, licences and registry |
 | `tool/godot` | Godot engine and its ecosystem |
@@ -51,4 +52,5 @@ One row per allowed tag; the first column is the tag in backticks (the recipe re
 | `tool/comfyui` | ComfyUI and generative models |
 | `tool/artcraft` | ArtCraft Crafting Apps |
 | `scope/reference-study` | patterns derived from a studied reference architecture (not adopted) |
+| `scope/game-analysis` | analysis of existing games and its method |
 | `scope/licensing` | licences, costs and openness of tools, models and assets |

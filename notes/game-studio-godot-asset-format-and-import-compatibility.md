@@ -6,6 +6,12 @@ status: proposed
 summary: "What is known and what is not about the formats provider assets arrive in and how Godot/Blender import them; most per-provider format facts are unverified."
 tags: [dept/assets, tool/godot]
 sources:
+  - claim: "Quaternius UAL pack formats and CC0 statement"
+    ref: src-gs-asset-quaternius-ual-pack
+    retrieved: 2026-11-08
+  - claim: "Godot 4.7 documentation: available 3D formats and image import"
+    ref: src-gs-godot-import-formats-47
+    retrieved: 2026-11-08
   - claim: "Godot 3D import hints, post-import, retargeting for GLB/glTF scenes"
     ref: src-gs-godot-3d-import
     retrieved: 2026-11-08
@@ -32,10 +38,15 @@ created_by_type: agent
 - Audio imports as WAV, Ogg Vorbis or MP3; loop behaviour differs by format.
 - Sources: [[game-studio-godot-integration]], [[game-studio-blender-pipeline]].
 
+## Confirmed for Godot 4.7 (official docs, page headers say 4.7)
+- 3D: glTF 2.0 (recommended; binary keeps textures inside, text variant diffs better), `.blend` (Godot calls Blender to export glTF; Blender 3.0+, 3.5+ recommended, installed on every machine; not in Android/web editors), FBX (**ufbx default since 4.3**; FBX2glTF is the older, not recommended path), DAE (poorly suited), OBJ (no skinning/animation/UV2/PBR). Blender export notes: deformation-bones-only for shape keys; backface culling off by default; Blender before 3.2 skips emissive textures.
+- Images: PNG (8-bit, no HDR), JPEG (no alpha), WebP, EXR/HDR for skies; **SVG** is rasterized at import via ThorVG (limited features; text must be converted to paths; only SVG can import as DPITexture); 2D default compression is Lossless (use for pixel art), avoid VRAM Compressed in 2D; 3D uses VRAM Compressed and mipmaps.
+- Audio and retargeting rules: see [[game-studio-godot-integration]] and [[game-studio-blender-pipeline]].
+
 ## Unknown / `unverified` (research gap)
-- Download formats per provider: Kenney, Quaternius, KayKit packs; Poly Haven/ambientCG/TextureCan texture and model formats (PNG/EXR/JPG/blend/glTF?); Sketchfab and Fab per-listing formats; Mixamo's FBX export and rig conventions.
-- Godot's FBX import path and quality for third-party rigs; whether provider rigs map cleanly to the humanoid BoneMap.
-- SVG/PNG import details for icons and sprites; font embedding conditions under the OFL.
+- Download formats per provider: Kenney, KayKit, Poly Haven/ambientCG/TextureCan, Sketchfab and Fab listings, BlenderKit, Mixamo; Quaternius Universal Animation Library lists FBX/GLB/Blend/OBJ/glTF on its pack page.
+- Whether provider rigs map cleanly to the humanoid BoneMap (vendor claims of "tested in Godot" are unverified).
+- Godot font import rules (the docs page returned 404).
 - Colour-space/normal-map conventions of PBR libraries versus Godot materials.
 
 ## Proposal

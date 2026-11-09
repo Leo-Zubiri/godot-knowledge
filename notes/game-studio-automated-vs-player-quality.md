@@ -13,6 +13,7 @@ sources:
     ref: src-gs-ccgs-qa-evidence
     retrieved: 2026-11-08
 related:
+  - relates-to: "[[game-studio-playtesting-methods]]"   # playtesting methods and the limits of sample-size models
   - relates-to: "[[game-studio-evidence-driven-visual-qa]]"   # the evidence gate this qualifies
   - relates-to: "[[game-studio-acceptance-criteria]]"   # human gates
 created: 2026-11-08
@@ -37,3 +38,4 @@ Never describe "tests pass" or "screenshot captured" as "good game feel"; keep a
 ## See also
 - [[game-studio-evidence-driven-visual-qa]]
 - [[game-studio-acceptance-criteria]] — human gates
+- [[game-studio-playtesting-methods]] — playtesting methods and the limits of sample-size models

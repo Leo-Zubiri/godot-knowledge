@@ -23,6 +23,7 @@ sources:
     ref: src-gs-gut-gdunit4
     retrieved: 2026-11-08
 related:
+  - relates-to: "[[game-studio-game-project-profile]]"   # profile-driven loading refines this routing
   - depends-on: "[[game-studio-tool-matrix]]"   # ratings and evidence behind each default
   - relates-to: "[[game-studio-architecture-proposal]]"   # overall decision document
 created: 2026-11-08
@@ -61,6 +62,9 @@ Pick the right tool and interface for a task without re-researching. Rule of thu
 | Audio format choice | WAV short SFX, Ogg music | Godot import settings | Ogg/MP3 loop only forward | [[game-studio-acceptance-criteria]] |
 | Concept art / reference images | ComfyUI + Apache-2.0 image models | HTTP API script | check licence per model | [[game-studio-ai-generation]] |
 | Image→3D prototype | TRELLIS / SF3D / Hunyuan (all Experimental) | Python/CLI | licence + VRAM limits; never ship uncleaned | [[game-studio-ai-generation]], [[game-studio-licensing-risks]] |
+| Game design question (loop, mechanics, docs, prototype/slice, playtest) | design notes, not a tool | read the notes, then prototype and playtest with humans | no data for heavy GDDs; theory models are vocabulary | [[game-studio-game-design-theory-vocabulary]], [[game-studio-prototype-vs-vertical-slice]], [[game-studio-playtesting-methods]] |
+| Analyse an existing game | method, not a tool | human plays, agent structures notes with five evidence layers | no screenshots/extracted/datamined content | [[game-studio-game-reference-analysis-method]], [[game-studio-reference-analysis-legal-boundary]] |
+| Decide which knowledge to load for a project | project profile | read profile, indexes, then notes by tag | tags can't yet express 2D/3D | [[game-studio-game-project-profile]] |
 | Find an existing asset instead of making one | provider catalog + licence check | [[game-studio-asset-discovery-and-reuse-workflow]]; human login for most downloads | NC/unknown licences; committing non-CC0 originals; scraping | [[game-studio-asset-source-catalog]], [[game-studio-asset-license-and-provenance-policy]] |
 | Find a Godot addon or shader | Godot Asset Library API; Godot Shaders | read-only REST (`GET /asset`), then read the repo LICENSE | licence label is only a hint; GPL v3 shaders need review | [[game-studio-godot-ecosystem-free-resources]] |
 | Share skills across Claude/Codex/OpenCode | AGENTS.md + standard SKILL.md | symlink/copy | hooks/fork not portable | [[game-studio-agent-orchestration]] |
@@ -78,5 +82,6 @@ Pick the right tool and interface for a task without re-researching. Rule of thu
 - Real workflows are `designed` only ([[game-studio-workflows]]).
 
 ## See also
+- [[game-studio-game-project-profile]] — project profile for loading only relevant knowledge
 - [[game-studio-index]] — all game-studio notes
 - [[game-studio-architecture-proposal]] — overall decision document

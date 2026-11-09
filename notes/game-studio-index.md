@@ -47,6 +47,12 @@ Notes carry optional facet tags (controlled vocabulary in [`meta/methodology/tag
 - [[game-studio-godot-ecosystem-free-resources]] — Asset Library, Godot Shaders, Godot MIT notice
 - [[game-studio-reuse-vs-generation-decision-framework]] · [[game-studio-godot-asset-format-and-import-compatibility]]
 
+### Game design, analysis and creative foundations (Wave 1; evidence mostly abstract-level)
+- [[game-studio-game-project-profile]] — profile-driven retrieval (read first)
+- [[game-studio-game-design-theory-vocabulary]] · [[game-studio-prototype-vs-vertical-slice]] · [[game-studio-playtesting-methods]] · [[gs-adr-living-design-docs]]
+- [[game-studio-game-reference-analysis-method]] · [[game-studio-reference-analysis-legal-boundary]]
+- [[game-studio-accessibility-minimums]] · [[game-studio-loudness-targets]]
+
 ### Standards and workflows
 - [[game-studio-asset-conventions]] · [[game-studio-acceptance-criteria]] · [[game-studio-workflows]]
 
@@ -54,7 +60,7 @@ Notes carry optional facet tags (controlled vocabulary in [`meta/methodology/tag
 - [[gs-adr-free-and-open-source-first]] · [[gs-adr-blender-primary-3d]] · [[gs-adr-mcp-optional]] · [[gs-adr-no-extra-orchestration-framework]] · [[gs-adr-godot-final-ui-authority]] · [[gs-adr-artcraft-role]] · [[gs-adr-interchange-formats]]
 
 ### Preserved sources
-- [[game-studio-sources-index]] — all 38 `src-gs-*` sources by theme, with the notes that cite them (paraphrased extractions with provenance; re-fetch before verification).
+- [[game-studio-sources-index]] — all 45 `src-gs-*` sources by theme, with the notes that cite them (paraphrased extractions with provenance; re-fetch before verification).
 
 ## See also
 - [[godot-index]] — parent Godot knowledge map

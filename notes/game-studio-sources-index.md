@@ -68,6 +68,15 @@ Navigational only; no claims. Every preserved `src-gs-*` source, grouped by them
 - [[src-gs-free-fonts-icons-audio-sources]] — Free fonts, icon sets, music/SFX sources and sfxr-style generators (`paraphrased`) · cited by: [[game-studio-asset-source-catalog]]
 - [[src-gs-free-mocap-and-3d-sources-unverified]] — Free mocap and 3D sources whose official terms could not be read (CMU Mocap, Rokoko, Poly Pizza, Smithsonian Open Access) (`paraphrased`) · cited by: [[game-studio-asset-source-catalog]]
 
+### Game design, analysis, accessibility and Godot import (Wave 1)
+- [[src-gs-design-prototype-slice-docs]] — Prototype vs vertical slice and living design documentation (Ismail; Keith 2011; Florencio 2022) (`paraphrased`) · cited by: [[game-studio-prototype-vs-vertical-slice]], [[gs-adr-living-design-docs]]
+- [[src-gs-design-playtesting]] — Playtesting and usability-testing sample sizes (Nielsen 2000; Valve GDC 2009 as unread pointer) (`paraphrased`) · cited by: [[game-studio-playtesting-methods]]
+- [[src-gs-design-theory-and-typologies]] — Game design theory: MDA abstract, Bartle's player types, Hamari and Tuunanen meta-synthesis; other models as unread pointers (`paraphrased`) · cited by: [[game-studio-game-design-theory-vocabulary]], [[game-studio-game-reference-analysis-method]]
+- [[src-gs-design-reference-analysis-pointers-unverified]] — Methods for analysing existing games and legal-boundary pointers (not read in full) (`paraphrased`) · cited by: [[game-studio-game-reference-analysis-method]], [[game-studio-reference-analysis-legal-boundary]]
+- [[src-gs-accessibility-and-loudness]] — Game Accessibility Guidelines (basic tier), Xbox Accessibility Guidelines intro, EBU R128; ITU BS.2434 as unread pointer (`paraphrased`) · cited by: [[game-studio-accessibility-minimums]], [[game-studio-loudness-targets]]
+- [[src-gs-godot-import-formats-47]] — Godot 4.7 documentation: available 3D formats and image import (`paraphrased`) · cited by: [[game-studio-godot-asset-format-and-import-compatibility]]
+- [[src-gs-asset-quaternius-ual-pack]] — Quaternius Universal Animation Library pack page (CC0 statement) — conflicts with the QAL licence page (`paraphrased`) · cited by: [[game-studio-asset-source-catalog]], [[game-studio-godot-asset-format-and-import-compatibility]]
+
 ## See also
 - [[game-studio-index]] — map of the game-studio notes
 - [[godot-index]] — Godot knowledge map (older sources listed there)
