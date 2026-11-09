@@ -4,6 +4,7 @@ type: reference
 domain: game-studio
 status: proposed
 summary: Classification (adopt/adapt/reference-only/reject/unverified) of GodotPrompter patterns against a version-pinned, explicit-update, multi-agent-compatible Godot knowledge ecosystem.
+tags: [scope/reference-study]
 sources:
   - claim: "Repo facts, licence scope, provenance, README claims"
     ref: src-gs-gp-repo-overview

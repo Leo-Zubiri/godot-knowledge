@@ -4,6 +4,7 @@ type: reference
 domain: game-studio
 status: proposed
 summary: How to share instructions, skills and tool configuration across Claude Code, Codex and OpenCode without vendor lock-in; no extra orchestration framework.
+tags: [dept/orchestration]
 sources:
   - claim: "AGENTS.md, SKILL.md and MCP portability facts per agent product"
     ref: src-gs-agent-instructions-portability

@@ -4,6 +4,7 @@ type: pattern
 domain: game-studio
 status: proposed
 summary: "Decision order for choosing between reusing, modifying, combining, generating or creating an asset, or rejecting a candidate, weighing licence, fit, style, performance, time and cost."
+tags: [dept/assets, dept/ai-generation]
 sources:
   - claim: "Provider licences differ widely, so licence is evaluated first (per-asset, NC, ShareAlike, redistribution limits)"
     ref: src-gs-asset-cc-licenses

@@ -4,6 +4,7 @@ type: reference
 domain: game-studio
 status: proposed
 summary: "Free/libre resources inside the Godot ecosystem — Asset Library and Godot Shaders — how their licences are declared, what is automatable, and the caveats; plus Godot's own MIT notice requirement for shipped games."
+tags: [tool/godot, dept/assets]
 sources:
   - claim: "Godot MIT licence terms and notice requirement when shipping the engine binary; third-party components listed in COPYRIGHT.txt"
     ref: src-gs-free-godot-ecosystem

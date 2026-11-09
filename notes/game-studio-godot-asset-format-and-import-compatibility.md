@@ -4,6 +4,7 @@ type: reference
 domain: game-studio
 status: proposed
 summary: "What is known and what is not about the formats provider assets arrive in and how Godot/Blender import them; most per-provider format facts are unverified."
+tags: [dept/assets, tool/godot]
 sources:
   - claim: "Godot 3D import hints, post-import, retargeting for GLB/glTF scenes"
     ref: src-gs-godot-3d-import

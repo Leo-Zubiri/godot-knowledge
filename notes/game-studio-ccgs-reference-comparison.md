@@ -4,6 +4,7 @@ type: reference
 domain: game-studio
 status: proposed
 summary: Classification (adopt/adapt/reference-only/reject/unverified) of Claude-Code-Game-Studios patterns against our Godot/Blender/ComfyUI studio, with licence scope and repo split.
+tags: [scope/reference-study]
 sources:
   - claim: "Repo facts, licence scope, releases, config model, project-reported comparison"
     ref: src-gs-ccgs-repo-overview

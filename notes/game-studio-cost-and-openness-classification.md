@@ -4,6 +4,7 @@ type: reference
 domain: game-studio
 status: proposed
 summary: "Free/libre/open-source-first classification of the studio's tools, models and asset sources: libre-open, gratis-restricted, and paid/closed, with the distinctions agents must keep."
+tags: [scope/licensing]
 sources:
   - claim: "Godot licence page, Asset Library and Godot Shaders"
     ref: src-gs-free-godot-ecosystem

@@ -4,6 +4,7 @@ type: reference
 domain: game-studio
 status: proposed
 summary: "Proposed shared asset conventions: workspace layout, naming, manifests, validation reports and reproducible generation records."
+tags: [dept/assets]
 sources:
   - claim: "Godot CLI/import mechanisms the conventions must interoperate with"
     ref: src-gs-godot-cli

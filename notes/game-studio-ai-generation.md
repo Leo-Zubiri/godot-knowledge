@@ -4,6 +4,7 @@ type: reference
 domain: game-studio
 status: proposed
 summary: "Local AI generation stack (ComfyUI plus open-weight models): what is documented, licence/hardware limits, and why generated output is not a production asset."
+tags: [dept/ai-generation, tool/comfyui]
 sources:
   - claim: "ComfyUI HTTP/WebSocket API, release cadence, Manager code-execution risk"
     ref: src-gs-comfyui-core

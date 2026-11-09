@@ -4,6 +4,7 @@ type: concept
 domain: game-studio
 status: proposed
 summary: Passing tests and a captured still do not establish player-facing quality; timing, responsiveness, animation and audio sync need manual playtest.
+tags: [scope/reference-study, dept/qa]
 sources:
   - claim: "Reference states what a still shows and cannot show, and keeps feel checks manual"
     ref: src-gs-ccgs-qa-evidence

@@ -4,6 +4,7 @@ type: reference
 domain: game-studio
 status: proposed
 summary: Level design automation architecture for both 2D tile games and 3D environments, with Godot scenes as the integration target.
+tags: [dept/level-design, tool/godot]
 sources:
   - claim: "Tiled and LDtk-importer facts"
     ref: src-gs-level-2d-tools

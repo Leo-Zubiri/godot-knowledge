@@ -4,6 +4,7 @@ type: pattern
 domain: game-studio
 status: proposed
 summary: Keep Godot knowledge tied to an explicit baseline version, annotate newer-version sections, correct errors visibly, and prioritize recent engine changes where models are weakest.
+tags: [scope/reference-study, tool/godot]
 sources:
   - claim: "Baseline 4.3+, newer 4.5-4.7 features as annotated sections; corrections found while fact-checking"
     ref: src-gs-gp-repo-overview

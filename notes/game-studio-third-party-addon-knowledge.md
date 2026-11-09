@@ -4,6 +4,7 @@ type: pattern
 domain: game-studio
 status: proposed
 summary: Treat addon knowledge as separate, version-pinned skills researched from the tagged release source, with cited API facts and an explicit C# parity decision.
+tags: [scope/reference-study, tool/godot]
 sources:
   - claim: "Addon skills pin addon and minimum Godot version, research from the release tag, record dated notes with source citations, decide C# parity from what ships"
     ref: src-gs-gp-skill-architecture

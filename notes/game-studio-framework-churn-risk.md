@@ -4,6 +4,7 @@ type: concept
 domain: game-studio
 status: proposed
 summary: Fast-moving agent frameworks show instability signals (rapid fix releases, doc/count drift, popularity anomalies); pin versions, test skills, and avoid mandatory dependencies.
+tags: [scope/reference-study, dept/orchestration]
 sources:
   - claim: "CCGS release timeline: fix releases within days of 1.1.0, long skills losing steps after compaction, skills failing before start outside auto mode"
     ref: src-gs-ccgs-repo-overview

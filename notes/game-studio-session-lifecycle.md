@@ -4,6 +4,7 @@ type: pattern
 domain: game-studio
 status: proposed
 summary: Keep session memory in a short overwritten checkpoint file plus a rotated narrative, compact proactively, and reload state after compaction or a crash.
+tags: [scope/reference-study, dept/orchestration]
 sources:
   - claim: "Reference session-state file, compaction thresholds, crash recovery, session-start behaviour"
     ref: src-gs-ccgs-safety-and-session

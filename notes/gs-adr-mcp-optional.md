@@ -4,6 +4,7 @@ type: decision
 domain: game-studio
 status: proposed
 summary: "Proposed: the architecture must not depend on MCP; CLI/scripts are the foundation and MCP is optional."
+tags: [dept/orchestration]
 sources:
   - claim: "MCP servers for Godot differ widely in editor need, runtime tools and releases"
     ref: src-gs-godot-mcp-servers

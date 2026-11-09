@@ -4,6 +4,7 @@ type: reference
 domain: game-studio
 status: proposed
 summary: Proposed split of shared game-development skills, tool adapters and production standards, kept vendor-neutral.
+tags: [dept/orchestration]
 sources:
   - claim: "Standard SKILL.md/AGENTS.md portability constraints"
     ref: src-gs-agent-instructions-portability

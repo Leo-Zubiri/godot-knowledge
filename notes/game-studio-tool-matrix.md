@@ -4,6 +4,7 @@ type: reference
 domain: game-studio
 status: proposed
 summary: Preliminary per-department comparison of candidate tools with licence, CLI/API/MCP/headless status, readiness flags and recommendation class.
+tags: [dept/orchestration]
 sources:
   - claim: "Second-pass licence confirmation of open-source tools"
     ref: src-gs-free-tool-licenses

@@ -4,6 +4,7 @@ type: reference
 domain: game-studio
 status: proposed
 summary: "Decision document: smallest reliable toolchain for agent-driven 2D+3D Godot game production, departments, preliminary classes, roadmap and open gaps."
+tags: [dept/orchestration]
 sources:
   - claim: "Godot, Blender, ComfyUI, ArtCraft and tooling evidence is preserved in the game-studio sources (see linked notes)"
     ref: src-gs-godot-cli

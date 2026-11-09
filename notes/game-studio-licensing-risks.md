@@ -4,6 +4,7 @@ type: reference
 domain: game-studio
 status: proposed
 summary: Licensing and commercial-use risks per tool, keeping application code, open-weight models and hosted services separate.
+tags: [scope/licensing]
 sources:
   - claim: "Second-pass tool licence confirmation"
     ref: src-gs-free-tool-licenses

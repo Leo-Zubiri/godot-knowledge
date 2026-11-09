@@ -4,6 +4,7 @@ type: guide
 domain: game-studio
 status: proposed
 summary: "Designed 11-step workflow for finding, licensing, acquiring, validating and registering an existing asset before generating or creating one, with realistic automation limits."
+tags: [dept/assets]
 sources:
   - claim: "Programmatic access varies: Freesound/Poly Haven/ambientCG APIs; Sketchfab and Freesound downloads need user OAuth; most providers manual"
     ref: src-gs-asset-audio

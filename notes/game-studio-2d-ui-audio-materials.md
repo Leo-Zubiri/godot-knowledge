@@ -4,6 +4,7 @@ type: reference
 domain: game-studio
 status: proposed
 summary: "Preliminary stacks for materials, 2D art, UI design-to-Godot and audio: documented automation of Material Maker, Krita, Inkscape, Penpot, audio tools, and Godot audio import rules."
+tags: [dept/2d-art, dept/ui-ux, dept/audio, dept/materials]
 sources:
   - claim: "Second-pass confirmation of tool licences (Pixelorama, LibreSprite, ffmpeg, sox, Krita, Inkscape, Ardour)"
     ref: src-gs-free-tool-licenses

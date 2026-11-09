@@ -4,6 +4,7 @@ type: pattern
 domain: game-studio
 status: proposed
 summary: Give each agent a domain, let peers consult but not decide outside it, escalate disputes to the nearest shared parent, and let one coordinator propagate cross-domain changes.
+tags: [scope/reference-study, dept/orchestration]
 sources:
   - claim: "Reference delegation, consultation, conflict-resolution and change-propagation rules"
     ref: src-gs-ccgs-agent-topology

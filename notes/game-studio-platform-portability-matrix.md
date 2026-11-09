@@ -4,6 +4,7 @@ type: reference
 domain: game-studio
 status: proposed
 summary: "How to record per-agent-platform support honestly: verified / documented / registration incomplete / unsupported, with results recorded rather than only checks defined."
+tags: [scope/reference-study, dept/orchestration]
 sources:
   - claim: "Seven-host smoke matrix with status labels and no recorded results; one pre-release run of 3 subagents"
     ref: src-gs-gp-platforms-and-hooks

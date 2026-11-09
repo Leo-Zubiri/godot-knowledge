@@ -4,6 +4,7 @@ type: guide
 domain: game-studio
 status: proposed
 summary: Seven representative production workflows (character, PBR material, environment, UI, VFX, audio, vertical slice) documented as designed only, with autonomy, human steps and failure modes.
+tags: [dept/orchestration]
 sources:
   - claim: "Blender → GLB → Godot mechanisms"
     ref: src-gs-godot-3d-import

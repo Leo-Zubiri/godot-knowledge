@@ -4,6 +4,7 @@ type: reference
 domain: game-studio
 status: proposed
 summary: "Lightweight asset registry design: plain-text records per asset with licence evidence, permissions and usage, supporting audits, attribution generation and replacement; no database."
+tags: [dept/assets]
 sources:
   - claim: "Per-asset vs provider-wide licensing and the redistribution/AI restrictions the registry must record"
     ref: src-gs-asset-marketplaces

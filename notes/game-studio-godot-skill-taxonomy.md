@@ -4,6 +4,7 @@ type: pattern
 domain: game-studio
 status: proposed
 summary: Organize Godot agent skills by engine domain, one folder per skill, with core, addon and process skills kept distinct and a small related-skills set.
+tags: [scope/reference-study, dept/orchestration, tool/godot]
 sources:
   - claim: "Reference layout: 59 skills as domain, addon and process skills; one folder each; related-skills line of 3-5 names"
     ref: src-gs-gp-skill-architecture

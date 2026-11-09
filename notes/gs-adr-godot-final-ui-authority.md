@@ -4,6 +4,7 @@ type: decision
 domain: game-studio
 status: proposed
 summary: "Proposed: Godot Control nodes and Theme resources are the final UI authority; external design tools only supply specs and assets."
+tags: [dept/ui-ux, tool/godot]
 sources:
   - claim: "Godot audio/Theme authority and Penpot MCP browser dependency"
     ref: src-gs-2d-ui-tools

@@ -4,6 +4,7 @@ type: reference
 domain: game-studio
 status: proposed
 summary: Layers of automated skill validation (structure, links, budgets, generated-file currency, self-test) and what a passing validator does not prove.
+tags: [scope/reference-study, dept/qa]
 sources:
   - claim: "Validator layers, size budgets, parity markers, safety scanner, API denylist, and what is absent"
     ref: src-gs-gp-validation-ci

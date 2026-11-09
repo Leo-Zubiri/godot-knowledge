@@ -4,6 +4,7 @@ type: pattern
 domain: game-studio
 status: proposed
 summary: Evaluate whether a skill earns its tokens with with/without-skill ablations, keeping 'ceiling' cases as routing checks, and distinguishing grader noise from model error.
+tags: [scope/reference-study, dept/qa]
 sources:
   - claim: "Ablation method, discriminating vs ceiling cases, judge, three runs per case, results and stated limits"
     ref: src-gs-gp-evals

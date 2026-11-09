@@ -4,6 +4,7 @@ type: pattern
 domain: game-studio
 status: proposed
 summary: A visual change is not done until the game is run with real rendering, a frame is captured and inspected, evidence is retained with a staleness hash, and the result is OBSERVED / NOT VERIFIED / N/A.
+tags: [scope/reference-study, dept/qa, tool/godot]
 sources:
   - claim: "Reference run-and-observe rule, Godot 4 recipe, result states, limits and forbidden flags"
     ref: src-gs-ccgs-qa-evidence

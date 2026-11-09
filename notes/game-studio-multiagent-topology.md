@@ -4,6 +4,7 @@ type: concept
 domain: game-studio
 status: proposed
 summary: A large role hierarchy (directors, leads, specialists) adds coordination overhead; for a Godot studio with a human supervisor a few artifact-producing roles plus a gate role is the proposed starting topology.
+tags: [scope/reference-study, dept/orchestration]
 sources:
   - claim: "Nine specialized agents that dispatch to skills; no agent-level evidence found"
     ref: src-gs-gp-skill-architecture

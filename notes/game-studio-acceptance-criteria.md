@@ -4,6 +4,7 @@ type: reference
 domain: game-studio
 status: proposed
 summary: "Objective acceptance criteria for assets and features (3D, materials, environments, UI, VFX, audio): an exported file is not a production-ready asset."
+tags: [dept/qa]
 sources:
   - claim: "Godot CLI mechanisms usable for import/parse/export checks"
     ref: src-gs-godot-cli

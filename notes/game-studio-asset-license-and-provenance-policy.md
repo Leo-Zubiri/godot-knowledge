@@ -4,6 +4,7 @@ type: reference
 domain: game-studio
 status: proposed
 summary: "What each licence type does and does not allow (commercial use, modification, shipping, redistributing originals, attribution, sharing, AI use) and the proposed rules agents follow; usable in a game is not the same as redistributable."
+tags: [dept/assets, scope/licensing]
 sources:
   - claim: "CC0, CC BY, CC BY-SA, CC BY-NC deeds: permissions, attribution, ShareAlike, NonCommercial, no-additional-restrictions"
     ref: src-gs-asset-cc-licenses

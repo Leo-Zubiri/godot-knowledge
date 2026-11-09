@@ -4,6 +4,7 @@ type: concept
 domain: game-studio
 status: proposed
 summary: "How to judge a tool for agent-driven game production: four separate readiness flags (API available, documented, agent-ready, production-ready) plus recommendation classes."
+tags: [dept/orchestration]
 sources:
   - claim: "Claim that tools advertise AI/MCP features that the repo docs do not fully back is illustrated by the Blender and Godot MCP evidence (GUI-bound, unguarded, no releases)."
     ref: src-gs-blender-mcp

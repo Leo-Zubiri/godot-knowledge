@@ -4,6 +4,7 @@ type: reference
 domain: game-studio
 status: proposed
 summary: "Preliminary catalog of asset providers by type with licence scope, automation access and a proposed class (approved-candidate, conditional, avoid, not evaluated)."
+tags: [dept/assets]
 sources:
   - claim: "CMU, Rokoko, Poly Pizza, Smithsonian: official terms unreadable (record of what remains to verify)"
     ref: src-gs-free-mocap-and-3d-sources-unverified

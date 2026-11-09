@@ -4,6 +4,7 @@ type: pattern
 domain: game-studio
 status: proposed
 summary: Combine a hard deny-list for destructive operations with path-aware validators; treat warn-only hooks as advisory and back critical checks with CI.
+tags: [scope/reference-study, dept/orchestration]
 sources:
   - claim: "Reference permission deny-list, hook triggers and blocking vs warning behaviour, stated limits"
     ref: src-gs-ccgs-safety-and-session

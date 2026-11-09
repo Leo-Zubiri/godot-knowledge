@@ -4,6 +4,7 @@ type: pattern
 domain: game-studio
 status: proposed
 summary: Review intensity as solo/lean/full modes and a gate verdict vocabulary where a missing input is NOT ASSESSED and never counts as approval; strictest verdict wins.
+tags: [scope/reference-study, dept/qa]
 sources:
   - claim: "Review modes, gate IDs, verdict semantics and parallel-gate rules"
     ref: src-gs-ccgs-workflow-rigor-and-gates

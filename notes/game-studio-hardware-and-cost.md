@@ -4,6 +4,7 @@ type: reference
 domain: game-studio
 status: proposed
 summary: Documented hardware needs per tool and the cost/effort metrics, all marked not measured where no reliable data exists.
+tags: [scope/licensing]
 sources:
   - claim: "ComfyUI minimum hardware claim and platforms"
     ref: src-gs-comfyui-core

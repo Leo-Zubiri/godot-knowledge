@@ -4,6 +4,7 @@ type: decision
 domain: game-studio
 status: proposed
 summary: "Proposed: the studio prioritizes free, gratis and open-source tools, models and assets; gratis-restricted needs a licence check and paid/closed is a justified exception."
+tags: [scope/licensing]
 sources:
   - claim: "Licences and costs of tools, models and assets vary widely; clearly libre-open options exist for each department"
     ref: src-gs-asset-packs-3d-2d

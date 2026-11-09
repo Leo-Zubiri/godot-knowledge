@@ -4,6 +4,7 @@ type: pattern
 domain: game-studio
 status: proposed
 summary: "Keep always-loaded context tiny: trigger-style descriptions, a generated index, an optional small routing card, and depth in on-demand reference files with hard size caps."
+tags: [scope/reference-study, dept/orchestration]
 sources:
   - claim: "Reference size caps (SKILL.md 16 KB, session card 3 KB), references folder, 'Use when' descriptions, generated index.json"
     ref: src-gs-gp-skill-architecture

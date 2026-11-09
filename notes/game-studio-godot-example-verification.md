@@ -4,6 +4,7 @@ type: concept
 domain: game-studio
 status: proposed
 summary: Code examples in Godot skills need real parsing/compilation against a pinned engine version; a README claim that examples were verified is not evidence without a repeatable check.
+tags: [scope/reference-study, dept/qa, tool/godot]
 sources:
   - claim: "Validator does not invoke Godot/dotnet; contributors check examples manually; README claims parsed/compiled against 4.7.2"
     ref: src-gs-gp-repo-overview

@@ -4,6 +4,7 @@ type: guide
 domain: game-studio
 status: proposed
 summary: Task-to-tool routing for agents — for each game-dev task (2D/3D art, materials, UI, audio, levels, VFX, testing, generation) the preliminary default tool, how to drive it, what to avoid, and which note to read next.
+tags: [dept/orchestration]
 aliases: [what tool to use, tool routing, which tool for, agent tool selection]
 sources:
   - claim: "Godot CLI mechanisms (import, check-only, export, headless)"

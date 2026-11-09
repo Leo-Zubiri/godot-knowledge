@@ -4,6 +4,7 @@ type: pattern
 domain: game-studio
 status: proposed
 summary: Mechanisms that cut unnecessary agent work (default-minimal process, scripts instead of reading docs, files as memory, subagent summaries, read guards) versus those that add overhead.
+tags: [scope/reference-study, dept/orchestration]
 sources:
   - claim: "Skill size caps, references folder, session card, generated index"
     ref: src-gs-gp-skill-architecture

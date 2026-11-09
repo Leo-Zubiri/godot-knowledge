@@ -13,6 +13,9 @@ created_by_type: agent
 ## Game studio — map of content
 Navigational only; no claims. All claim-bearing notes are `proposed` (agent-authored, documentary research dated 2026-11-08, awaiting human verification).
 
+### Browse by tag
+Notes carry optional facet tags (controlled vocabulary in [`meta/methodology/tags.md`](../meta/methodology/tags.md)): `dept/*` (department), `tool/*` (tool) and `scope/*` (reference study, licensing). Find notes with `rg -l "^tags:.*dept/qa" notes/`, or colour the Obsidian graph with Groups such as `tag:#dept/qa` (keep the graph's **Tags** toggle off). Tags are a search aid, not evidence.
+
 ### Start here
 - [[game-studio-tool-selection-guide]] — **which tool for which task** (agent routing table).
 - [[game-studio-architecture-proposal]] — decision document, roadmap, open gaps.

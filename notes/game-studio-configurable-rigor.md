@@ -4,6 +4,7 @@ type: pattern
 domain: game-studio
 status: proposed
 summary: One rigor dial (minimal/standard/full) that expands into explicit workflow knobs, default minimal, with documented precedence and overrides.
+tags: [scope/reference-study, dept/orchestration]
 sources:
   - claim: "Rigor tiers, required artifacts per tier, override rules and companion knobs"
     ref: src-gs-ccgs-workflow-rigor-and-gates
