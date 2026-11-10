@@ -72,6 +72,7 @@ awaiting human verification — see [`AGENTS.md`](../AGENTS.md)).
 Sources: [[src-gd-project-organization-vcs-uids]] · [[src-gd-architecture-autoloads-plugins-cli]] · [[src-gs-project-organization-community-pointers]]
 
 ### Gap-closure additions (documented, proposed)
+[[godot-gdunit4-headless-test-run]] — verified gdUnit4 6.2.3 headless CLI on 4.7.2 (GdUnitCmdTool.gd + --ignoreHeadlessMode, exit 0/100/101).
 [[godot-3d-particles-trails-attractors-collision]] · [[godot-shader-compile-stutter-and-baker]] · [[godot-cpu-gpu-optimization-servers-and-threads]] · [[godot-tilemaplayer-and-2d-camera-notes]] · [[godot-import-process-and-csv-translations]] · [[godot-skeleton3d-modifiers-and-gdscript-style]]
 Sources: [[src-gd-projectsettings-subemitters-visualshaders]] · [[src-gd-particles-shaders-performance]] · [[src-gd-2d-tilemap-audio-import-i18n]] · [[src-gd-skeleton-gdscript-fsm-demo]]
 
