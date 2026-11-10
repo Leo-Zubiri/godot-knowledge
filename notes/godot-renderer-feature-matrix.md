@@ -16,6 +16,7 @@ related:
   - relates-to: "[[godot-export-platform-notes]]"   # web and iOS-simulator renderer limits
   - relates-to: "[[godot-performance-workflow]]"   # cost and instancing
   - relates-to: "[[godot-3d-materials-and-transparency]]"   # material features
+  - relates-to: "[[godot-xr-openxr-and-webxr]]"   # XR adds renderer constraints (foveation/VRS/MSAA; Mobile vs Compatibility for Quest) this matrix omits
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent
@@ -40,3 +41,4 @@ An agent can read the renderer setting in `project.godot`, Environment fields, l
 - [[godot-performance-workflow]] — cost and instancing
 - [[godot-3d-materials-and-transparency]] — material features
 - [[godot-export-platform-notes]] — web and iOS-simulator renderer limits
+- [[godot-xr-openxr-and-webxr]] — XR adds renderer constraints (foveation/VRS/MSAA; Mobile vs Compatibility for Quest) this matrix omits
