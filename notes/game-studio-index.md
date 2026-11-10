@@ -52,6 +52,7 @@ Notes carry optional facet tags (controlled vocabulary in [`meta/methodology/tag
 ### Standards and workflows
 - [[game-studio-asset-conventions]] · [[game-studio-workflows]]
 - [[game-studio-multiplayer-observability-and-session-monitoring]] — monitoring a live multiplayer game: session/match + health signals, where authority emits them, Prometheus/OpenTelemetry/Grafana vs a solo-dev minimal tier.
+- [[game-studio-vr-standards-comfort-and-distribution]] — VR/XR for a studio: OpenXR as the cross-vendor standard, comfort/locomotion best practices, interaction conventions on the action model, VR accessibility, and SteamVR/Quest distribution (store fees/review flagged unverified).
 
 ### Decisions (proposed)
 - [[gs-adr-free-and-open-source-first]] · [[gs-adr-blender-primary-3d]] · [[gs-adr-godot-final-ui-authority]] · [[gs-adr-artcraft-role]] · [[gs-adr-interchange-formats]]

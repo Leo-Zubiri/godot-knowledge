@@ -117,6 +117,11 @@ Navigational only; no claims. Every preserved `src-gs-*` source, grouped by them
 - [[src-gs-observability-prometheus-otel-grafana]] — Prometheus, OpenTelemetry, Grafana overviews (`paraphrased`) · cited by: [[game-studio-multiplayer-observability-and-session-monitoring]]
 - [[src-gs-nakama-multiplayer-and-metrics]] — Nakama multiplayer/presence and metrics config (`paraphrased`) · cited by: [[game-studio-multiplayer-observability-and-session-monitoring]]
 
+### VR/XR (2026-11-09)
+- [[src-gd-xr-openxr-webxr]] — Godot 4.7 XR tutorials (index, setting up XR, better start script, XR action map, deploying to Android) and class refs (XRInterface, XRController3D, WebXRInterface) (`paraphrased`) · cited by: [[godot-xr-openxr-and-webxr]], [[game-studio-vr-standards-comfort-and-distribution]]
+- [[src-gs-vr-openxr-standard-and-distribution]] — Khronos OpenXR landing page + Steamworks SteamVR info page (`paraphrased`) · cited by: [[game-studio-vr-standards-comfort-and-distribution]], [[godot-xr-openxr-and-webxr]]
+- [[src-gs-vr-comfort-and-accessibility]] — W3C XAUR; Meta locomotion comfort/usability + best practices; XR Access landing page (`paraphrased`) · cited by: [[game-studio-vr-standards-comfort-and-distribution]]
+
 ## See also
 - [[game-studio-index]] — map of the game-studio notes
 - [[godot-index]] — Godot knowledge map (older sources listed there)

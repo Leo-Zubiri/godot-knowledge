@@ -23,6 +23,7 @@ related:
   - relates-to: "[[godot-screen-reader-and-input-remapping]]"   # runtime remapping that the requirements section demands
   - relates-to: "[[game-studio-accessibility-minimums]]"   # broader accessibility floor; this note only covers input
   - relates-to: "[[game-design-scoping-questions-for-new-game-or-feature]]"   # question 0.9 sends the agent here
+  - relates-to: "[[game-studio-vr-standards-comfort-and-distribution]]"   # VR controllers are another device profile on this same action model
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent
@@ -111,3 +112,4 @@ Deck review (*documented*): the game "must support Steam Deck's physical control
 - [[godot-screen-reader-and-input-remapping]] — runtime remapping that the requirements section demands
 - [[game-studio-accessibility-minimums]] — broader accessibility floor; this note only covers input
 - [[game-design-scoping-questions-for-new-game-or-feature]] — question 0.9 sends the agent here
+- [[game-studio-vr-standards-comfort-and-distribution]] — VR controllers are another device profile on this same action model
