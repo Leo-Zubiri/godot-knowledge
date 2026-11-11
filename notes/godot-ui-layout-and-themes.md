@@ -41,3 +41,4 @@ Reading `.tscn`/`.tres` can verify anchors/size flags, theme references, variati
 - [[game-studio-accessibility-minimums]] — text and contrast minimums
 - [[godot-ui-focus-and-gamepad-navigation]] — focus and gamepad
 - [[godot-localization-workflow]] — longer strings and fonts
+- [[godot-fonts-and-msdf-in-4-7]] — fonts and MSDF in depth (FontFile/FontVariation, fallbacks, pixel-art)

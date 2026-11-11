@@ -77,6 +77,7 @@ Sources: [[src-gd-project-organization-vcs-uids]] · [[src-gd-architecture-autol
 Sources: [[src-gd-projectsettings-subemitters-visualshaders]] · [[src-gd-particles-shaders-performance]] · [[src-gd-2d-tilemap-audio-import-i18n]] · [[src-gd-skeleton-gdscript-fsm-demo]]
 
 ### Input, modules, networking, loading, configuration (documented, proposed)
+[[godot-fonts-and-msdf-in-4-7]] — fonts in depth: FontFile/FontVariation/SystemFont, MSDF vs raster import, fallback chains for non-Latin, pixel-art fonts, hinting/antialiasing/subpixel/mipmaps, `gui/theme/custom_font`.
 [[godot-touch-input-and-virtualjoystick]] — VirtualJoystick, TouchScreenButton, touch events, emulation settings and device-agnostic actions.
 [[godot-reusable-module-packaging]] — packaging a reusable module under addons/, plugin.cfg vs runtime-only, extraction into another project, Asset Library rules.
 [[godot-lan-host-authoritative-turn-based]] — host-authoritative LAN turn-based multiplayer: intent RPCs, Synchronizer/Spawner, UDP-broadcast discovery with join-by-IP fallback.
@@ -84,7 +85,7 @@ Sources: [[src-gd-projectsettings-subemitters-visualshaders]] · [[src-gd-partic
 [[godot-config-driven-tunables]] — (unreviewed, interpretation) taxonomy for tunables: ProjectSettings + feature-tag overrides, tuning Resources, ConfigFile in user://, dev overrides, constants.
 [[godot-minigame-collection-architecture]] — (unreviewed, interpretation) hub + manifest registry, base scene contract, intent/simulation split, per-minigame settings, folder isolation.
 [[godot-xr-openxr-and-webxr]] — VR/AR in Godot 4.7: enable OpenXR + the XR node tree, the OpenXR Action Map (separate from the engine InputMap), renderer/foveation constraints, and export for PCVR, standalone Quest and WebXR.
-Sources: [[src-gd-touch-input-virtualjoystick]] · [[src-gd-plugins-addons-assetlib]] · [[src-gd-high-level-multiplayer-udp]] · [[src-gd-background-loading-resourceloader]] · [[src-gd-autoload-scenetree-engine]] · [[src-gd-projectsettings-configfile-resources]] · [[src-gd-xr-openxr-webxr]]
+Sources: [[src-gd-touch-input-virtualjoystick]] · [[src-gd-plugins-addons-assetlib]] · [[src-gd-high-level-multiplayer-udp]] · [[src-gd-background-loading-resourceloader]] · [[src-gd-autoload-scenetree-engine]] · [[src-gd-projectsettings-configfile-resources]] · [[src-gd-xr-openxr-webxr]] · [[src-gd-fonts-and-msdf]]
 
 ### Preserved sources
 Official Godot 4.7 documentation is preserved under [`sources/`](../sources/) and cited by the notes above
