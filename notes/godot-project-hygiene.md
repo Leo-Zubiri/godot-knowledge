@@ -41,6 +41,8 @@ lowercase snake_case folders/files (C# scripts follow PascalCase class names), P
 ## Version-control files in detail (added, documented)
 Ignore `.godot/` and `*.translation`; the project manager's Git option generates `.gitignore` (only `.godot/` and `/android/`, per the 4.7 source) and `.gitattributes` (`* text=auto eol=lf`), so add `*.translation` yourself if you use CSV translations. **Commit** `.import` files, `.uid` files (4.4+; see [[godot-asset-source-import-organization]]) and `export_presets.cfg`; keep `.godot/export_credentials.cfg` out. Git LFS is optional and must be set up before the first commit. Folder strategy and moves: [[godot-project-structure-selection-method]], [[godot-project-structure-assessment-and-refactoring]].
 
+**Mono/.NET editor rewrites `project.godot` (observed 2026-11-10, Godot 4.7.2.stable.mono).** Running the **`.mono`** editor/`--import` on a **GDScript-only** project can re-add a `[dotnet]` section (`project/assembly_name`) and reorder or drop hand-written keys, producing a dirty `project.godot` after an otherwise read-only import (it was intermittent — one import rewrote it, a later one did not). Keep the hand-maintained `project.godot` as the source of truth, discard import-time rewrites (`git checkout -- project.godot`), and prefer the **non-`.mono`** 4.7.2 build for a GDScript project (or a CI runner with `.NET` disabled, which does not add the section). This is the friction behind "does `[dotnet]` reappear?"
+
 ## What an agent can and cannot check
 **Can check by reading files:** naming, folder layout, ignore files, typed signatures. **Needs the engine:** node-path correctness, configuration-warning output, cached-resource behaviour.
 

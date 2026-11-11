@@ -29,6 +29,14 @@ created_by_type: agent
 - **Pitfalls:** default font covers only part of Latin-1 (use e.g. Noto via a Theme); remaps do not work with DynamicFonts (use font fallback); UI must fit longer strings (pseudolocalization); Arabic/Hebrew mirror most UI but icons and non-UI nodes need manual handling; languages without spaces need break-iterator data (~4 MB); Locale Test must be empty before committing.
 - **Testing:** editor Preview Translation, or `godot --language fr`.
 - CSV import: page returned 404 — format and options **unverified**.
+- **Verified in-engine 2026-11-10 (Godot 4.7.2):** `.po` files listed in `project.godot` under
+  `internationalization/locale/translations=PackedStringArray("res://…/en.po", …)` load at runtime with **no
+  separate `.import` file** (Godot reads the `.po` straight from the setting), so a key-based catalog works headless;
+  `TranslationServer.set_locale("es")` then `tr("KEY")` returns the translated string live. `TranslationServer.
+  pseudolocalization_enabled = true` toggles the **built-in** pseudolocalization and transforms the returned text
+  (so overflow/missing-key detection needs no external tool). A **toolchain-free key-coverage check** (no gettext):
+  parse `msgid`/`msgstr` from each `.po` and assert every `.pot` key is present and non-empty in each locale — this
+  is runnable in a unit test and in CI without `msgfmt`.
 
 ## What an agent can and cannot check
 An agent can run `msgfmt --check`, compare keys across locale files, grep scripts for hard-coded UI strings and for `tr()` calls with computed keys (the extractor skips them). Translation quality and truncation need a native reviewer.
