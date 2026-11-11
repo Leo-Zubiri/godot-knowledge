@@ -71,7 +71,24 @@ interpolates from *process* frames; stepping only *physics* frames desyncs them)
 the viewport's `physics_interpolation_mode = PHYSICS_INTERPOLATION_MODE_OFF` during the capture. In normal play
 interpolation does its job — this only bites automated captures.
 
+## Tuning a casual pool spike on Jolt — hands-on findings (4.7.2)
+Building and playtesting a Jolt pool spike produced four concrete, reusable results — see the pool model in
+[[game-design-billiards-pool-physics-model]] for the target numbers:
+- **Rolling friction = a constant opposing force, not damping.** `apply_central_force(-v.normalized() * μ_r·g·mass)` each
+  physics frame + a small `stop_speed` cutoff gives a natural roll-and-rest; `linear_damp` alone stops "dead" then crawls.
+  Hands-on: `linear_damp 0.45` → rolls forever; a constant decel ~0.1–0.2 m/s² → rests smoothly.
+- **A struck ball that was sleeping ignores `apply_central_impulse` under Jolt** (the impulse is lost even after setting
+  `sleeping = false`). **Set `linear_velocity` directly** for the cue strike (`cue.linear_velocity = dir*speed`) — reliable
+  from rest. (A collision still wakes a sleeping ball normally.)
+- **Rail-hugging fix without physical cushions:** drop the box-collider rails and **reflect velocity analytically against
+  the play rectangle** in the per-frame step — if `|pos.x| > halfL - R` and moving outward, `v.x = -e_c·v.x` (keep
+  tangential), clamp position; skip the reflection near pocket mouths. No geometry to stick to → no rail-hugging, no
+  tunnelling. Keep rails as visual-only meshes. (Ball-ball stays on Jolt.)
+- **Keep the physics behind a swappable backend** (`make_ball/strike/step/is_at_rest`) so a later analytic sim replaces
+  Jolt in one line — the modular seam that keeps ADR-0012 reversible.
+
 ## See also
+- [[game-design-billiards-pool-physics-model]] — the correct pool model + parameters these knobs target
 - [[game-studio-physics-engine-vs-custom-simulation]] — the engine-vs-custom decision these facts feed
 - [[godot-physics-bodies-layers-and-interpolation]] — bodies/layers/interpolation mechanics
 - [[src-gd-godot-physics-options-and-jolt]] — the research backing the documented half

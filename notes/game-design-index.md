@@ -34,6 +34,9 @@ Navigational only; no claims. Engine-agnostic design principles. Evidence is mix
 - [[game-design-scoping-questions-for-new-game-or-feature]] — question bank for "make a game of X" / "add feature Y": read the repo first, ≤5 Tier-0 questions with defaults, answers into ADRs (lessons section unreviewed)
 - [[game-design-input-mapping-conventions-keyboard-gamepad-touch]] — per-device and per-genre control defaults, face-button equivalence, touch target sizes, Steam Deck items, Godot 4.7 bridge (ui_* defaults as read in the 4.7-stable source)
 
+### Genre mechanics
+- [[game-design-billiards-pool-physics-model]] — correct pool/billiards physics for a game: sliding→rolling states (constant rolling decel ≈0.1 m/s²), ball-ball e_b=0.95 + throw, spin from tip offset, non-specular cushions (nose 0.635·D), analytic-event-based vs rigid-body engine, rail-hugging fix, and a starting parameter set.
+
 ### Known gaps (no primary source read yet)
 Reward-design evidence, difficulty-curve construction beyond the Hamlet pointer, scope planning for small teams, per-genre conventions, art-bible primary sources (progression vocabulary and silhouette/animation notes now exist but are pointer-level).
 
