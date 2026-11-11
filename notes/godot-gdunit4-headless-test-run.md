@@ -51,6 +51,12 @@ created_by_type: agent
   but enabling it (`editor_plugins/enabled`) is needed for the in-editor panel.
 - A plain `godot --headless --path . --check-only -s <file>.gd` parse-checks one script; its stderr carries the
   version banner, so gate on the **exit code**, not on whether stderr is empty.
+- **Advancing frames headless:** `await get_tree().physics_frame` (and `process_frame`) do advance under
+  `--ignoreHeadlessMode` — verified 2026-11-10 (`Engine.get_physics_frames()` increments). So lifecycle/physics-tick
+  tests run without a window; only `InputEvent`-driven scene-runner tests need a display.
+- **Restore global engine state in `after()`/`after_test()`.** A suite that mutates `Engine.physics_ticks_per_second`,
+  `time_scale`, autoload singletons or `ProjectSettings` must restore them even when an assert fails, or it poisons
+  every later suite in the same run. Capture in `before_test()`, restore in `after_test()`.
 
 ## What an agent can and cannot check
 - Can: run the command and assert exit 0; confirm `reports/` is produced; confirm `--ignoreHeadlessMode` is present.
