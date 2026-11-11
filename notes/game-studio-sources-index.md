@@ -129,6 +129,9 @@ Navigational only; no claims. Every preserved `src-gs-*` source, grouped by them
 ### Fonts and typography (2026-11-10)
 - [[src-gd-fonts-and-msdf]] — Godot 4.7 *Using fonts* tutorial + FontFile / FontVariation / SystemFont / ProjectSettings class refs (`paraphrased`; `importing_fonts.html` 404) · cited by: [[godot-fonts-and-msdf-in-4-7]]
 
+### Licenses screen / engine runtime API (2026-11-10)
+- [[src-gd-engine-license-copyright-api]] — Engine.get_license_info() / get_copyright_info() + reading res://addons/*/LICENSE (`hands-on`, Godot 4.7.2: return shapes confirmed by execution, rendered real licence text) · cited by: [[godot-about-and-licenses-screen]]
+
 ## See also
 - [[game-studio-index]] — map of the game-studio notes
 - [[godot-index]] — Godot knowledge map (older sources listed there)

@@ -85,7 +85,8 @@ Sources: [[src-gd-projectsettings-subemitters-visualshaders]] · [[src-gd-partic
 [[godot-config-driven-tunables]] — (unreviewed, interpretation) taxonomy for tunables: ProjectSettings + feature-tag overrides, tuning Resources, ConfigFile in user://, dev overrides, constants.
 [[godot-minigame-collection-architecture]] — (unreviewed, interpretation) hub + manifest registry, base scene contract, intent/simulation split, per-minigame settings, folder isolation.
 [[godot-xr-openxr-and-webxr]] — VR/AR in Godot 4.7: enable OpenXR + the XR node tree, the OpenXR Action Map (separate from the engine InputMap), renderer/foveation constraints, and export for PCVR, standalone Quest and WebXR.
-Sources: [[src-gd-touch-input-virtualjoystick]] · [[src-gd-plugins-addons-assetlib]] · [[src-gd-high-level-multiplayer-udp]] · [[src-gd-background-loading-resourceloader]] · [[src-gd-autoload-scenetree-engine]] · [[src-gd-projectsettings-configfile-resources]] · [[src-gd-xr-openxr-webxr]] · [[src-gd-fonts-and-msdf]]
+[[godot-about-and-licenses-screen]] — (hands-on 4.7.2) in-app About/Licenses screen from Engine.get_license_info()/get_copyright_info() + reading res://addons/*/LICENSE, rendered in a scrollable focus-navigable Control.
+Sources: [[src-gd-touch-input-virtualjoystick]] · [[src-gd-plugins-addons-assetlib]] · [[src-gd-high-level-multiplayer-udp]] · [[src-gd-background-loading-resourceloader]] · [[src-gd-autoload-scenetree-engine]] · [[src-gd-projectsettings-configfile-resources]] · [[src-gd-xr-openxr-webxr]] · [[src-gd-fonts-and-msdf]] · [[src-gd-engine-license-copyright-api]]
 
 ### Preserved sources
 Official Godot 4.7 documentation is preserved under [`sources/`](../sources/) and cited by the notes above
