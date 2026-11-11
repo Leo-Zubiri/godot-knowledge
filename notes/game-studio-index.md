@@ -52,6 +52,8 @@ Notes carry optional facet tags (controlled vocabulary in [`meta/methodology/tag
 
 ### Standards and workflows
 - [[game-studio-asset-conventions]] · [[game-studio-workflows]]
+- [[game-studio-spike-technical-feasibility-prototype]] — a spike: time-boxed throwaway prototype that answers one technical/feasibility question (vs a design prototype, a tracer bullet, a vertical slice); exists to close an ADR with evidence.
+- [[game-studio-physics-engine-vs-custom-simulation]] — built-in rigid-body engine (Jolt/PhysX) vs custom/analytic sim for a physics-driven game: axes feel/determinism/effort, billiards as the hard case, and why the feel question is settled by a spike on-device.
 - [[game-studio-multiplayer-observability-and-session-monitoring]] — monitoring a live multiplayer game: session/match + health signals, where authority emits them, Prometheus/OpenTelemetry/Grafana vs a solo-dev minimal tier.
 - [[game-studio-vr-standards-comfort-and-distribution]] — VR/XR for a studio: OpenXR as the cross-vendor standard, comfort/locomotion best practices, interaction conventions on the action model, VR accessibility, and SteamVR/Quest distribution (store fees/review flagged unverified).
 

@@ -132,6 +132,11 @@ Navigational only; no claims. Every preserved `src-gs-*` source, grouped by them
 ### Licenses screen / engine runtime API (2026-11-10)
 - [[src-gd-engine-license-copyright-api]] — Engine.get_license_info() / get_copyright_info() + reading res://addons/*/LICENSE (`hands-on`, Godot 4.7.2: return shapes confirmed by execution, rendered real licence text) · cited by: [[godot-about-and-licenses-screen]]
 
+### Process: spikes, and physics-model decisions (2026-11-10)
+- [[src-gs-spike-xp-and-safe]] — "spike" in XP (Kent Beck) / SAFe: time-boxed throwaway feasibility prototype, vs tracer bullet (`paraphrased`, web summaries) · cited by: [[game-studio-spike-technical-feasibility-prototype]]
+- [[src-gd-ball-physics-engine-vs-analytic-sim]] — billiards physics: generic 2D engine vs analytic/event-based (myPhysicsLab, Poolimmersion/FastFiz, variable time-step, simultaneous contacts) (`paraphrased`) · cited by: [[game-studio-physics-engine-vs-custom-simulation]]
+- [[src-gs-deterministic-physics-lockstep]] — float non-determinism across platforms, lockstep needs bit-identical sims, fixed-point/integer route (Gaffer on Games et al.) (`paraphrased`) · cited by: [[game-studio-physics-engine-vs-custom-simulation]]
+
 ## See also
 - [[game-studio-index]] — map of the game-studio notes
 - [[godot-index]] — Godot knowledge map (older sources listed there)
