@@ -22,7 +22,7 @@ related:
   - relates-to: "[[godot-version-policy]]"   # version scoping
   - relates-to: "[[god-autoload]]"   # the autoload anti-pattern
 created: 2026-11-08
-updated: 2026-11-08
+updated: 2026-11-10
 created_by_type: agent
 ---
 
@@ -42,6 +42,8 @@ lowercase snake_case folders/files (C# scripts follow PascalCase class names), P
 Ignore `.godot/` and `*.translation`; the project manager's Git option generates `.gitignore` (only `.godot/` and `/android/`, per the 4.7 source) and `.gitattributes` (`* text=auto eol=lf`), so add `*.translation` yourself if you use CSV translations. **Commit** `.import` files, `.uid` files (4.4+; see [[godot-asset-source-import-organization]]) and `export_presets.cfg`; keep `.godot/export_credentials.cfg` out. Git LFS is optional and must be set up before the first commit. Folder strategy and moves: [[godot-project-structure-selection-method]], [[godot-project-structure-assessment-and-refactoring]].
 
 **Mono/.NET editor rewrites `project.godot` (observed 2026-11-10, Godot 4.7.2.stable.mono).** Running the **`.mono`** editor/`--import` on a **GDScript-only** project can re-add a `[dotnet]` section (`project/assembly_name`) and reorder or drop hand-written keys, producing a dirty `project.godot` after an otherwise read-only import (it was intermittent — one import rewrote it, a later one did not). Keep the hand-maintained `project.godot` as the source of truth, discard import-time rewrites (`git checkout -- project.godot`), and prefer the **non-`.mono`** 4.7.2 build for a GDScript project (or a CI runner with `.NET` disabled, which does not add the section). This is the friction behind "does `[dotnet]` reappear?"
+
+**A new `class_name` needs `--import` before it resolves (observed 2026-11-10, Godot 4.7.2; hit 3× in one session).** Global classes live in `.godot/global_script_class_cache.cfg`, which `--import` (or opening the editor) regenerates. Until then, any script that references the new type **fails to parse** with *"Could not find type X in the current scope"* — so a headless `--check-only`/parse pass and **running the scene** both break on the new class. `.godot/` is git-ignored ([[godot-project-structure-selection-method]]), so a **freshly created worktree or clone starts with a stale/empty cache** and the same error appears for classes that already exist in the repo. Fix: run `--import` (e.g. a `make import` target) **after adding a `class_name` and as the first step in a fresh checkout**, before check/run. Not a code bug — a build-cache regeneration step.
 
 ## What an agent can and cannot check
 **Can check by reading files:** naming, folder layout, ignore files, typed signatures. **Needs the engine:** node-path correctness, configuration-warning output, cached-resource behaviour.

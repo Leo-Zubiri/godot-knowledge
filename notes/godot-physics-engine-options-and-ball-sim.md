@@ -86,6 +86,10 @@ Building and playtesting a Jolt pool spike produced four concrete, reusable resu
   tunnelling. Keep rails as visual-only meshes. (Ball-ball stays on Jolt.)
 - **Keep the physics behind a swappable backend** (`make_ball/strike/step/is_at_rest`) so a later analytic sim replaces
   Jolt in one line — the modular seam that keeps ADR-0012 reversible.
+- **A physics spike's MECHANICS verify headless, its feel does not.** Drive it from a `SceneTree` script: set a ball's
+  `linear_velocity`, advance `await physics_frame`, and assert on positions/velocities — e.g. all balls come to rest
+  (`velocity < ε`), a ball aimed at a pocket is removed, a ball skimming a rail does not hug it. Catches regressions
+  cheaply; whether it *feels* like pool still needs a human at the controls.
 
 ## See also
 - [[game-design-billiards-pool-physics-model]] — the correct pool model + parameters these knobs target
