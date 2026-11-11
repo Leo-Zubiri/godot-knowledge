@@ -19,6 +19,7 @@ related:
   - relates-to: "[[game-studio-workflows]]"   # the vertical-slice workflow is a designed integration test
   - relates-to: "[[game-studio-acceptance-criteria]]"   # slice must pass the same gates
   - relates-to: "[[gs-adr-living-design-docs]]"   # documentation that accompanies pre-production
+  - relates-to: "[[game-studio-spike-technical-feasibility-prototype]]"   # a spike is the technical/feasibility kind of throwaway prototype
 created: 2026-11-08
 updated: 2026-11-08
 created_by_type: agent
