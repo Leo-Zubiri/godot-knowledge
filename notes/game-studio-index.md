@@ -39,6 +39,7 @@ Notes carry optional facet tags (controlled vocabulary in [`meta/methodology/tag
 ### Asset discovery, reuse and licensing (cross-cutting)
 - [[game-studio-asset-discovery-and-reuse-workflow]] — find/acquire/register before generating
 - [[game-studio-asset-license-and-provenance-policy]] · [[game-studio-asset-source-catalog]] · [[game-studio-asset-registry-and-manifest-conventions]]
+- [[game-studio-font-licensing-and-sourcing]] — font licence families (OFL/Apache/CC0/CC-BY), where to source open-source fonts, and the "no attribution" decision rule
 - [[game-studio-godot-ecosystem-free-resources]] — Asset Library, Godot Shaders, Godot MIT notice
 - [[game-studio-reuse-vs-generation-decision-framework]] · [[game-studio-godot-asset-format-and-import-compatibility]]
 

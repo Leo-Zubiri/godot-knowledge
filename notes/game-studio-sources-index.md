@@ -117,10 +117,17 @@ Navigational only; no claims. Every preserved `src-gs-*` source, grouped by them
 - [[src-gs-observability-prometheus-otel-grafana]] — Prometheus, OpenTelemetry, Grafana overviews (`paraphrased`) · cited by: [[game-studio-multiplayer-observability-and-session-monitoring]]
 - [[src-gs-nakama-multiplayer-and-metrics]] — Nakama multiplayer/presence and metrics config (`paraphrased`) · cited by: [[game-studio-multiplayer-observability-and-session-monitoring]]
 
+### Font licensing and open-source font sourcing (2026-11-10)
+- [[src-gs-font-licence-families-ofl-apache-gnu]] — SIL OFL FAQ, GNU FreeFont (GPLv3 + font exception), Google Fonts licensing FAQ (`paraphrased`; Google FAQ JS-blocked → third-party, unverified) · cited by: [[game-studio-font-licensing-and-sourcing]]
+- [[src-gs-font-open-source-providers]] — Google Fonts, Fontsource, The League of Moveable Type, Noto (licence posture and script coverage) (`paraphrased`; Noto facts via web search, unverified) · cited by: [[game-studio-font-licensing-and-sourcing]]
+
 ### VR/XR (2026-11-09)
 - [[src-gd-xr-openxr-webxr]] — Godot 4.7 XR tutorials (index, setting up XR, better start script, XR action map, deploying to Android) and class refs (XRInterface, XRController3D, WebXRInterface) (`paraphrased`) · cited by: [[godot-xr-openxr-and-webxr]], [[game-studio-vr-standards-comfort-and-distribution]]
 - [[src-gs-vr-openxr-standard-and-distribution]] — Khronos OpenXR landing page + Steamworks SteamVR info page (`paraphrased`) · cited by: [[game-studio-vr-standards-comfort-and-distribution]], [[godot-xr-openxr-and-webxr]]
 - [[src-gs-vr-comfort-and-accessibility]] — W3C XAUR; Meta locomotion comfort/usability + best practices; XR Access landing page (`paraphrased`) · cited by: [[game-studio-vr-standards-comfort-and-distribution]]
+
+### Fonts and typography (2026-11-10)
+- [[src-gd-fonts-and-msdf]] — Godot 4.7 *Using fonts* tutorial + FontFile / FontVariation / SystemFont / ProjectSettings class refs (`paraphrased`; `importing_fonts.html` 404) · cited by: [[godot-fonts-and-msdf-in-4-7]]
 
 ## See also
 - [[game-studio-index]] — map of the game-studio notes
