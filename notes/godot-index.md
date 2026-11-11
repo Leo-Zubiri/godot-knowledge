@@ -86,7 +86,8 @@ Sources: [[src-gd-projectsettings-subemitters-visualshaders]] · [[src-gd-partic
 [[godot-minigame-collection-architecture]] — (unreviewed, interpretation) hub + manifest registry, base scene contract, intent/simulation split, per-minigame settings, folder isolation.
 [[godot-xr-openxr-and-webxr]] — VR/AR in Godot 4.7: enable OpenXR + the XR node tree, the OpenXR Action Map (separate from the engine InputMap), renderer/foveation constraints, and export for PCVR, standalone Quest and WebXR.
 [[godot-about-and-licenses-screen]] — (hands-on 4.7.2) in-app About/Licenses screen from Engine.get_license_info()/get_copyright_info() + reading res://addons/*/LICENSE, rendered in a scrollable focus-navigable Control.
-Sources: [[src-gd-touch-input-virtualjoystick]] · [[src-gd-plugins-addons-assetlib]] · [[src-gd-high-level-multiplayer-udp]] · [[src-gd-background-loading-resourceloader]] · [[src-gd-autoload-scenetree-engine]] · [[src-gd-projectsettings-configfile-resources]] · [[src-gd-xr-openxr-webxr]] · [[src-gd-fonts-and-msdf]] · [[src-gd-engine-license-copyright-api]]
+[[godot-physics-engine-options-and-ball-sim]] — (hands-on 4.7.2 + research) Jolt as built-in default vs GodotPhysics3D (no maintained Box2D); no native rolling friction (linear_damp is the feel knob); cushion-taller-than-ball-diameter, recessed pockets, CCD/tick vs tunnelling, interpolation-vs-headless-screenshot, custom_integrator for a custom sim.
+Sources: [[src-gd-touch-input-virtualjoystick]] · [[src-gd-plugins-addons-assetlib]] · [[src-gd-high-level-multiplayer-udp]] · [[src-gd-background-loading-resourceloader]] · [[src-gd-autoload-scenetree-engine]] · [[src-gd-projectsettings-configfile-resources]] · [[src-gd-xr-openxr-webxr]] · [[src-gd-fonts-and-msdf]] · [[src-gd-engine-license-copyright-api]] · [[src-gd-godot-physics-options-and-jolt]]
 
 ### Preserved sources
 Official Godot 4.7 documentation is preserved under [`sources/`](../sources/) and cited by the notes above

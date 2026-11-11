@@ -136,6 +136,7 @@ Navigational only; no claims. Every preserved `src-gs-*` source, grouped by them
 - [[src-gs-spike-xp-and-safe]] — "spike" in XP (Kent Beck) / SAFe: time-boxed throwaway feasibility prototype, vs tracer bullet (`paraphrased`, web summaries) · cited by: [[game-studio-spike-technical-feasibility-prototype]]
 - [[src-gd-ball-physics-engine-vs-analytic-sim]] — billiards physics: generic 2D engine vs analytic/event-based (myPhysicsLab, Poolimmersion/FastFiz, variable time-step, simultaneous contacts) (`paraphrased`) · cited by: [[game-studio-physics-engine-vs-custom-simulation]]
 - [[src-gs-deterministic-physics-lockstep]] — float non-determinism across platforms, lockstep needs bit-identical sims, fixed-point/integer route (Gaffer on Games et al.) (`paraphrased`) · cited by: [[game-studio-physics-engine-vs-custom-simulation]]
+- [[src-gd-godot-physics-options-and-jolt]] — Godot 4.7 physics for a ball game: Jolt built-in default, no maintained Box2D, no native rolling friction, CCD, determinism→host-authoritative, custom_integrator, Pooltool (`paraphrased`, official docs + Jolt README) · cited by: [[godot-physics-engine-options-and-ball-sim]]
 
 ## See also
 - [[game-studio-index]] — map of the game-studio notes

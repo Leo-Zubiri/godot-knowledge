@@ -15,6 +15,7 @@ sources:
     retrieved: 2026-11-10
 related:
   - relates-to: "[[game-studio-spike-technical-feasibility-prototype]]"   # the decision is CLOSED by a spike, not by reasoning
+  - relates-to: "[[godot-physics-engine-options-and-ball-sim]]"   # Godot-specific: what the engine gives + hands-on gotchas
   - relates-to: "[[godot-physics-bodies-layers-and-interpolation]]"   # the engine-side bodies/layers/interpolation you'd use for the engine path
   - relates-to: "[[godot-lan-host-authoritative-turn-based]]"   # why determinism matters: netcode model depends on this choice
   - relates-to: "[[gs-adr-living-design-docs]]"   # record the choice as an ADR with the spike's evidence
@@ -62,6 +63,14 @@ change it), so it **cannot be settled from docs or a headless run** — it needs
 (it's cheapest); if its feel passes on-device, adopt it and record the ADR; only if it fails do you invest in a custom
 sim, now with evidence. Default caution: **start with the engine, keep the option to replace it behind the minigame's
 own physics boundary** so the choice isn't load-bearing across the codebase.
+
+## In Godot specifically (2026-11)
+The "2D engine" leg of this decision is **weaker in Godot than it looks**: the only maintained 2D backend is
+GodotPhysics2D (no maintained Box2D), and a 2D engine can't model follow/draw anyway — so **option B collapses into
+"custom 2D-math sim rendered in 3D" (a flavour of C), not a 2D physics engine**. On the engine side, Jolt is the built-in
+default (good for Android), but **Godot has no native rolling friction** (approximate with `linear_damp`) and its physics
+**isn't cross-platform deterministic** (→ host-authoritative netcode). Engine-side gotchas and hands-on numbers:
+[[godot-physics-engine-options-and-ball-sim]].
 
 ## What an agent can and cannot check
 **By building/measuring:** stand up the engine path, measure frame time / step budget on target hardware, detect
