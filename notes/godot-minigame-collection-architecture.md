@@ -24,12 +24,13 @@ related:
   - relates-to: "[[godot-project-organization-strategies]]"   # by-feature folders are the isolation unit
   - relates-to: "[[autoload-singletons]]"   # the hub and registry are the only autoloads
   - relates-to: "[[node-lifecycle-callbacks]]"   # contract methods are called after _ready
+  - relates-to: "[[godot-physics-bodies-layers-and-interpolation]]"   # the per-minigame tick change needs an interpolation reset
 created: 2026-11-08
-updated: 2026-11-08
+updated: 2026-11-10
 created_by_type: agent
 ---
 
-> **Evidence status — interpretation.** This is a **design pattern we propose**, not engine doctrine. The API facts (autoloads, scene switching, scene-organization guidance, Resources, `Engine.physics_ticks_per_second`) come from the official Godot 4.7 documentation (retrieved 2026-11-08, paraphrased extractions — see the cited sources); the registry, contract, folder rules and settings handshake are **our interpretation** and have not been exercised in the engine. Status `unreviewed`.
+> **Evidence status — interpretation, with a verified addendum.** The registry, contract, folder rules and settings handshake are a **design pattern we propose**; the base API facts come from the Godot 4.7 docs (cited). **Section 9 and the tick-handshake claim were exercised in the engine on 2026-11-10** (Godot 4.7.2.stable.mono, gdUnit4 6.2.3, headless) — the typed contract, the seat model, the intent sink, the per-minigame tick apply/restore on finish **and abort**, and that `await get_tree().physics_frame` advances physics headless. Those are evidence class *verified-in-engine (this environment only)*. Status stays `unreviewed` until a human reviews.
 
 ## Problem
 A collection of small, independent games needs one menu, shared services (audio, settings, profiles), consistent pause/quit behaviour and the option to add local or LAN multiplayer later — without each minigame reaching into the others or into the hub.
@@ -77,12 +78,23 @@ Rule: `minigames/<a>/` may import only `shared/` and `addons/`; never `hub/` or 
 ### 8. Text and assets
 Manifests and results carry **translation keys**; the hub calls `tr(key)` when rendering. Shared art (fonts, UI theme) lives in `shared/`; per-game art stays in the game folder so deleting a minigame deletes everything it owned.
 
+### 9. Typed, serializable contract and seats *(verified-in-engine 2026-11-10)*
+Prefer **typed Resources with a Dictionary wire form** over bare Dictionaries for the context/result/intent, so the Inspector, `@export` validation and the LAN boundary all work from one definition:
+- `GameResult`/`MatchResult` — **per-seat and composable**: `per_seat: Dictionary` (`seat → {score, rank, stats}`), `outcome: Dictionary` (`winner_seats`, `draw`, `aborted`). A later *session* folds N round results by summing per seat; keep "best-of-N" in the hub, not the minigame.
+- `Intent` — **self-describing**: carries its own `seat_index` (never inferred from the caller), `type`, `payload`, plus `to_dict()`/`from_dict()`. Local play passes the object; LAN sends `to_dict()` and the host rebuilds it — a round-trip through `var_to_bytes` must survive (one unit test). The simulation validates turn/range; the input layer does not.
+- `Context`/`MatchConfig` — `mode`, `seats`, `rng_seed`, and an **opaque** `rules: Resource` the kit never reads (the minigame casts it, like `Config.get_res()`).
+- **Seats as the identity/input unit** (not a player int). `class_name Seat` with `index`, `kind ∈ {LOCAL, REMOTE, AI}`, `peer_id` (ENet host = 1), `name_key`, `loadout_ids`. Hot-seat = several `LOCAL` seats on one device; LAN = `REMOTE` seats keyed by `peer_id`; results index by `index`. Modelling players as seats now is the single change that keeps hot-seat, multi-gamepad and net-peer on one code path; retrofitting `winner: int → seats` later touches every result, prank-attribution and the LAN handshake.
+- **Intent sink.** `submit_intent(intent)` stays the single input door: it emits a signal (observability/tests) and forwards to an injected `Callable`. Local sets a sink that applies to its own sim; a future `gn_lan_session` swaps in a sink that RPCs the host, and the kit never references the network.
+- **Seed replays logic, not physics.** The `rng_seed` makes shuffles/spawn-jitter/selection reproducible; it does **not** make a rigid-body engine (Jolt) deterministic across machines — do not build physics replay on it ([[godot-lan-host-authoritative-turn-based]]).
+- **Lifecycle safety (verified):** connect `finished` with `CONNECT_ONE_SHOT` and make `finish()` idempotent; free the instance with `queue_free()` **after** the signal returns (never `free()` inside the emitter); guard re-entrancy (refuse a second start over a live one); `abort(reason)` must restore the tick exactly like `finish`.
+
 ## Trade-offs
 - The contract adds boilerplate for tiny games; keep `MinigameBase` default implementations no-ops.
 - Directory scanning at startup costs time on slow storage; an exported manifest list is faster and explicit.
 - Shared services become the only coupling point; guard them with small interfaces or they grow into a god autoload (see [[autoload-singletons]]).
 - Per-game physics ticks change behaviour of shared physics-based UI; restore them reliably even on abort.
-- Not validated: whether `scene_changed` reliably fires after `change_scene_to_packed()` in every case, and whether `physics_ticks_per_second` can be changed between scenes without side effects — both need an engine test.
+- **Verified 2026-11-10:** `Engine.physics_ticks_per_second` can be changed at runtime and restored cleanly (apply on enter, restore on finish *and* abort). With `physics/common/physics_interpolation=true` the change needs `reset_physics_interpolation()` on the new subtree to avoid a one-frame interpolation artifact — the same reset you call after teleporting a body ([[godot-physics-bodies-layers-and-interpolation]]). Whether the visual artifact actually appears without the reset was **not** confirmed (needs a display); the reset is applied defensively.
+- Still not validated: whether `scene_changed` reliably fires after `change_scene_to_packed()` in every case (this slice instantiated the minigame as a child instead of switching the main scene, so it did not exercise `change_scene_to_packed`).
 
 ## See also
 - [[godot-lan-host-authoritative-turn-based]] — the intent/simulation split exists so this can be added later
@@ -92,3 +104,4 @@ Manifests and results carry **translation keys**; the hub calls `tr(key)` when r
 - [[godot-project-organization-strategies]] — by-feature folders are the isolation unit
 - [[autoload-singletons]] — the hub and registry are the only autoloads
 - [[node-lifecycle-callbacks]] — contract methods are called after _ready
+- [[godot-physics-bodies-layers-and-interpolation]] — the per-minigame tick change needs an interpolation reset
