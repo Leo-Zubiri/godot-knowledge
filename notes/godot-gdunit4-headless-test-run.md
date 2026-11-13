@@ -20,7 +20,7 @@ related:
   - relates-to: "[[godot-logging-and-crash-evidence]]"   # headless logs as the place test output lands
   - relates-to: "[[godot-ci-export-documented-limits]]"   # headless/CI constraints
 created: 2026-11-10
-updated: 2026-11-10
+updated: 2026-11-12
 created_by_type: agent
 ---
 
@@ -54,6 +54,11 @@ created_by_type: agent
 - **Advancing frames headless:** `await get_tree().physics_frame` (and `process_frame`) do advance under
   `--ignoreHeadlessMode` — verified 2026-11-10 (`Engine.get_physics_frames()` increments). So lifecycle/physics-tick
   tests run without a window; only `InputEvent`-driven scene-runner tests need a display.
+- **Physics integration tests (verified 2026-11-12, 27 tests with Jolt):** `async` test functions that
+  `await get_tree().physics_frame` work under `--ignoreHeadlessMode` and can run a real physics world with a pure-logic
+  layer on top. Two costs to plan for: physics runs at **real time** (simulated seconds = wall-clock seconds), and every
+  scene added in one test shares **one** physics world — free a scene before building the next. Details and the
+  measure-N-ms-after-the-event technique: [[godot-physics-engine-options-and-ball-sim]] ("Testing physics").
 - **Restore global engine state in `after()`/`after_test()`.** A suite that mutates `Engine.physics_ticks_per_second`,
   `time_scale`, autoload singletons or `ProjectSettings` must restore them even when an assert fails, or it poisons
   every later suite in the same run. Capture in `before_test()`, restore in `after_test()`.
