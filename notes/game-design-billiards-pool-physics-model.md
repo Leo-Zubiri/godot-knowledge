@@ -18,7 +18,7 @@ related:
   - relates-to: "[[godot-physics-engine-options-and-ball-sim]]"   # engine-side Godot/Jolt mechanics + hands-on rail-hugging fix
   - relates-to: "[[game-studio-spike-technical-feasibility-prototype]]"   # judged by a spike you play, not from these numbers
 created: 2026-11-10
-updated: 2026-11-10
+updated: 2026-11-12
 created_by_type: agent
 ---
 
@@ -53,6 +53,39 @@ reasonable playability compromise.
   faithfully and isn't cross-platform deterministic. Fine for a casual game with **host-authoritative + snapshots** netcode.
 - **Rule of thumb:** casual party game → tuned rigid-body engine; billiards-grade fidelity or lockstep/replays → custom
   analytic sim ([[game-studio-physics-engine-vs-custom-simulation]]). Decide with a spike you actually play.
+
+## Cue-tip point of impact → initial velocity and spin (the "effect" contract)
+Let the player choose where the tip hits the ball; convert it to `v` and `ω` in ONE pure function shared by every physics
+backend. For a horizontal impulse `J` at height `h` above the centre: `v = J/m`, `ω = J·h/I`, `I = (2/5)·m·R²`, so
+**`ω = 5·v·b / (2R)` with `b = h/R`** (same with a sideways offset `a` for english: `ω_vertical = 5·v·a / (2R)`).
+- **`b = 0.4` ⇒ immediate rolling** (`ω·R = v`, zero slip). `b > 0.4` = follow with over-spin, `b < 0` = draw, `b = 0` = stun.
+- **Miscue limit ≈ 0.5R:** clamp the tip point to the circle of radius `0.5R` (a UI circle the player drags inside);
+  a diagonal request must not exceed the circle's spin. Expose "was limited" for feedback.
+- **Elevation (massé):** the horizontal impulse scales with `cos θ`; the curved swerve needs extra modelling — keep the
+  field in the shot contract even if v1 only applies `cos θ`.
+- **Conventions are where this goes wrong — fix them once and test them.** With y up and the shooter's direction `d`:
+  forward roll axis = `UP × d`; right english = `+ω_y` (counter-clockwise from above). A good test: for ANY heading, the
+  rolling strike (`b = 0.4`) must give contact slip `|v + ω × (0,−R,0)| ≈ 0`.
+- Effect after the impact (head-on, ~2 m/s, short run-up) was reproduced by a rigid-body engine — draw retreats
+  34–46 cm, stun stays, rolling +27 cm, follow +29–34 cm ([[godot-physics-engine-options-and-ball-sim]], hands-on). The
+  tip point has no visible effect if the cue ball starts far away: sliding converts to rolling in ≈ 0.29 s / 0.5 m at μ=0.2.
+
+## Rack geometry and modality (data, not code)
+- **Triangle (8-ball), 15 balls**, rows 1-2-3-4-5, balls touching (+ a tiny gap), rows `2R·cos30°` apart: the **8 in the
+  centre slot** (row 3 middle) and **one solid + one stripe in the two back corners**; apex on the foot spot.
+- **Diamond (9-ball), 9 balls**, rows 1-2-3-2-1: **1 at the apex, 9 in the centre**.
+- Each modality declares its **shape and the ball number of every slot**; the rule set derives its ball *set* from that
+  single list. Adding a modality is then one subclass, no `if mode == …` anywhere.
+
+## Architecture: facts vs decisions
+Keep three layers apart: the **simulation** reports *facts* (first ball touched, balls pocketed IN ORDER, cue pocketed,
+rail after contact, balls that left the table), the **rules** decide (foul, group, turn, winner) from those facts, the **match
+FSM** wires intents ↔ sim ↔ rules with signals. Two consequences worth designing in from the start:
+- **Rules must be able to REQUEST physical actions.** "The 8 pocketed on the break is respotted" is a rules decision the
+  physical table does not know about; without an explicit `respot` list in the rules' result, the FSM and the table silently
+  drift apart (found by an end-to-end test comparing both views). Return commands, don't assume the sim mirrors the rules.
+- **Fix the order contract:** a rules result that lists the balls on the table should be sorted, or two correct
+  implementations disagree on order and every equality check is noise.
 
 ## The "rail-hugging" bug (ball slides along the cushion) — cause and fix
 Root cause in a stepper: **solver bounce/rest threshold + high tangential friction + a vertical box wall** (contacts at the
