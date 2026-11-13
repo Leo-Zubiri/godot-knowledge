@@ -18,7 +18,7 @@ related:
   - relates-to: "[[godot-physics-bodies-layers-and-interpolation]]"   # bodies/layers/interpolation mechanics
   - relates-to: "[[game-studio-spike-technical-feasibility-prototype]]"   # these findings came from a spike
 created: 2026-11-10
-updated: 2026-11-10
+updated: 2026-11-12
 created_by_type: agent
 ---
 
@@ -77,6 +77,9 @@ Building and playtesting a Jolt pool spike produced four concrete, reusable resu
 - **Rolling friction = a constant opposing force, not damping.** `apply_central_force(-v.normalized() * μ_r·g·mass)` each
   physics frame + a small `stop_speed` cutoff gives a natural roll-and-rest; `linear_damp` alone stops "dead" then crawls.
   Hands-on: `linear_damp 0.45` → rolls forever; a constant decel ~0.1–0.2 m/s² → rests smoothly.
+  **Refined (see "Spin on Jolt" below): apply it only while the ball is ROLLING (no slip at the contact point), and
+  only treat a ball as at rest when it neither moves NOR spins** — otherwise it fights Jolt's own sliding friction and
+  erases follow/draw.
 - **A struck ball that was sleeping ignores `apply_central_impulse` under Jolt** (the impulse is lost even after setting
   `sleeping = false`). **Set `linear_velocity` directly** for the cue strike (`cue.linear_velocity = dir*speed`) — reliable
   from rest. (A collision still wakes a sleeping ball normally.)
@@ -91,8 +94,45 @@ Building and playtesting a Jolt pool spike produced four concrete, reusable resu
   (`velocity < ε`), a ball aimed at a pocket is removed, a ball skimming a rail does not hug it. Catches regressions
   cheaply; whether it *feels* like pool still needs a human at the controls.
 
+## Spin on Jolt (follow / draw / english) — hands-on, measured in 4.7.2
+**Jolt DOES produce follow/draw/stun from an initial angular velocity**, through its ordinary cloth-ball friction (it
+converts sliding into rolling) — you do not have to fake it. Set `angular_velocity` together with `linear_velocity` when
+the cue strikes; the mapping from tip offset is in [[game-design-billiards-pool-physics-model]]. Measured with a head-on
+cue→object collision at ~2 m/s, 6–20 cm of run-up (cue-ball displacement AFTER the impact):
+
+| Strike | Cue ball after impact |
+|---|---|
+| draw (tip −0.5R) | **−34 to −46 cm** (retreats) |
+| stun (centre, no spin) | **0 to +2 cm** (dead) |
+| rolling (tip +0.4R) | **+27 cm** |
+| follow (tip +0.5R) | **+29 to +34 cm** (further than rolling) |
+
+Three traps that made the effect disappear, in the order they bit:
+1. **Rest detection that zeroes spin.** `if speed < ε: angular_velocity = 0; sleeping = true` is fatal: a draw/follow cue
+   ball after a head-on hit has `v≈0` but high `ω` — put to sleep it loses the whole effect (every strike looked "dead").
+   Rest = **linear speed < ε AND `|ω|·R` < ε**.
+2. **Rolling resistance applied while sliding.** Apply the constant-decel force only when the contact point does not
+   slip: `slip = |(v.x + R·ω.z, v.z − R·ω.x)| < ε`  (`u = v + ω × (0,−R,0)`, y up). While it slips, Jolt's friction owns it.
+3. **`physics/jolt_physics_3d/limits/max_angular_velocity` defaults to ≈47.12 rad/s (15π).** A rolling-spin strike at
+   2 m/s needs `v/R ≈ 70 rad/s` (a 7 m/s break ≈ 245), so the default silently **clips the spin** — rolling and follow came out
+   identical until the limit was raised (set to 600). Raise it for any ball game; the symptom is "more spin changes nothing".
+
+Also measured: with a long run-up (~54 cm at 2 m/s) every strike has already converted to rolling by the time it hits
+(sliding lasts ≈ `(2/7)·v/(μ·g)` ≈ 0.29 s / ~0.5 m at μ=0.2) — so **a test or a game design that wants visible draw/stun
+needs the cue ball close to the object ball**, exactly as on a real table.
+
+## Testing physics (hands-on, 4.7.2)
+- **Several scenes in ONE test share ONE physics world.** Two tables spawned in the same test collide with each other
+  (balls from table 1 interact with table 2 at the same coordinates). Free each scene (`remove_child` + `free()`, then
+  await a physics frame) before building the next — a "ordering" test comparing three runs failed until I did.
+- **Physics advances in real time** (120 ticks = 1 s of wall clock), so a physics integration test costs its simulated
+  seconds. Keep them few and short; measure a quantity N ms after the event (e.g. cue velocity 0.25 s after impact)
+  instead of waiting for everything to rest; strengthen rolling decel in the TEST config so tables settle in 1–2 s.
+  `--fixed-fps` did not help (slower, and it hung under `xvfb-run`).
+
 ## See also
 - [[game-design-billiards-pool-physics-model]] — the correct pool model + parameters these knobs target
+- [[godot-gdunit4-headless-test-run]] — running such physics suites headless
 - [[game-studio-physics-engine-vs-custom-simulation]] — the engine-vs-custom decision these facts feed
 - [[godot-physics-bodies-layers-and-interpolation]] — bodies/layers/interpolation mechanics
 - [[src-gd-godot-physics-options-and-jolt]] — the research backing the documented half
