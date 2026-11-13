@@ -30,6 +30,18 @@ created_by_type: agent
 - **3D advice:** occlusion culling, minimal transparency, LOD (import-time mesh LOD, visibility ranges, distance fade), billboards/impostors, automatic instancing only for identical opaque/alpha-tested meshes in Forward+ (otherwise MultiMesh), baked lighting with most lights Static, fewer animated polygons, tiled large worlds.
 - The CPU, GPU and servers performance pages were **not read**.
 
+## Scripted profiling run — verified addendum (4.7.2, windowed, real GPU; proposed, unreviewed)
+A `SceneTree` script (`godot --path . -s tool.gd`) can drive a scene, sample every frame and print a table; verified on Godot 4.7.2 with a
+physics-heavy scene (16 rigid bodies). What held and what did not:
+- **Do not trust `Performance.TIME_PROCESS` for frame cost**: it returned values inconsistent with the frame rate (p95 ≈ 91 ms while the
+  run averaged ≈ 240 fps). **Measure frame time yourself** with `Time.get_ticks_usec()` deltas between `await process_frame`.
+- `Performance.TIME_PHYSICS_PROCESS` looked plausible (≈ 1 ms per frame for the 16 bodies at 120 ticks/s); `RENDER_TOTAL_DRAW_CALLS_IN_FRAME`
+  and `RENDER_TOTAL_PRIMITIVES_IN_FRAME` returned real values in a **windowed** run (not tried headless). Take the max over the run, and
+  remember the primitive count includes the shadow pass.
+- In a `-s` script's `_init`, autoloads and absolute node paths are not available yet: `await process_frame` twice before touching them.
+- CPU physics time is comparable across machines; fps and render counts depend on the GPU, so a phone needs its own run.
+- Make the script exit non-zero when the p95 frame time exceeds the project budget, so it can gate a build.
+
 ## What an agent can and cannot check
 An agent can add monitor logging and run a scripted scene to capture numbers; render monitors in a headless run are *unverified*. Perceived smoothness needs a human. Budgets are project-defined, not invented here.
 

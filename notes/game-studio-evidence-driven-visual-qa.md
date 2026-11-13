@@ -32,6 +32,14 @@ created_by_type: agent
 ## Tension with our other evidence
 Our own sources found headless screenshots unreliable and the Xvfb recipe unverified; the reference relies on `--write-movie` in a windowed run. Both are documented, **neither tested by us** — see [[game-studio-godot-integration]]. A smoke test is still required before this becomes a standard.
 
+## Movie Maker recording — verified addendum (Godot 4.7.2, windowed, real GPU; proposed, unreviewed)
+`godot --path . --write-movie out.avi --fixed-fps 60 --quit-after 2700 res://scene.tscn` **worked in a normal window** (not Xvfb): 2700 frames
+→ a 45 s AVI, recorded in ≈ 2 min 20 s (≈ 31 % of real time, so budget time), and `ffmpeg -c:v libx264 -pix_fmt yuv420p -crf 23` shrank it to ≈ 3 MB.
+Fixed fps makes the physics deterministic per frame; to get a *reproducible* demo, drive the scene with a scripted player using a fixed RNG seed
+(here: a bot that aims, picks power and shoots through the same public methods the human controller uses). To check a recording without
+watching it, extract frames with `ffmpeg -ss <t> -i video.mp4 -frames:v 1 frame.png` and look at a few. Audio was not checked. Keep the video
+out of git (binary); keep the command in the repo.
+
 ## Caveat
 Model-judged inspection of the frame is itself unmeasured (`unverified`); human review remains for art quality.
 

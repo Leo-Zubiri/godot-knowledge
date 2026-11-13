@@ -121,6 +121,14 @@ Also measured: with a long run-up (~54 cm at 2 m/s) every strike has already con
 (sliding lasts ≈ `(2/7)·v/(μ·g)` ≈ 0.29 s / ~0.5 m at μ=0.2) — so **a test or a game design that wants visible draw/stun
 needs the cue ball close to the object ball**, exactly as on a real table.
 
+## Per-ball friction scaling — hands-on (4.7.2, proposed, unreviewed)
+To make ONE ball slippery (or grippy) for a shot, give that body its **own duplicated `PhysicsMaterial`** (`physics_material_override`) with
+`friction × k`; mutating a material shared by all balls changes them all. If rolling resistance is a custom constant deceleration (the
+"damping is the feel knob" section), scale that by the same `k` per ball. Restore the shared material when the effect ends. Measured: a cue
+ball struck with k = 0.6 travelled 0.41 m vs 0.29 m for the same weak shot; the final rolling speed after sliding does not depend on μ,
+the extra distance comes from a longer slide and a smaller rolling deceleration. Test it by comparing two runs **in separate worlds** (free
+the first ball before the second, or the second collides with it).
+
 ## Testing physics (hands-on, 4.7.2)
 - **Several scenes in ONE test share ONE physics world.** Two tables spawned in the same test collide with each other
   (balls from table 1 interact with table 2 at the same coordinates). Free each scene (`remove_child` + `free()`, then
