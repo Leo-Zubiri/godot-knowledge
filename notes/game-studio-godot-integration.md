@@ -29,7 +29,7 @@ related:
   - relates-to: "[[game-studio-acceptance-criteria]]"   # validation steps feed acceptance
   - relates-to: "[[game-studio-blender-pipeline]]"   # assets arrive via GLB import
 created: 2026-11-08
-updated: 2026-11-08
+updated: 2026-11-12
 created_by_type: agent
 ---
 
@@ -47,7 +47,7 @@ created_by_type: agent
 | Pin versions | Godot 4.7.2-stable (2026-08-18); GUT 9.7.1 / gdUnit4 per Godot minor (check tags) |
 
 ## The screenshot problem
-Under `--headless` the rendering server is Dummy; screenshots reportedly fail (forum evidence, not official). An Xvfb + software-renderer run, awaiting `RenderingServer.frame_post_draw` before `get_image()`, is the usual workaround but has **no verified recipe** — it needs an authorized smoke test. `--write-movie` is the official alternative to evaluate.
+Under `--headless` the rendering server is Dummy; screenshots reportedly fail (forum evidence, not official). An Xvfb + software-renderer run, awaiting `RenderingServer.frame_post_draw` before `get_image()`, is the usual workaround but had **no verified recipe** when this note was written. **Verified 2026-11-12 (Godot 4.7.2, proposed, unreviewed):** `xvfb-run -a godot --path . -s shot.gd` where the script awaits a few `process_frame`s, then `RenderingServer.frame_post_draw`, then `get_viewport().get_texture().get_image().save_png(path)` rendered the real 3D scene and HUD correctly (software rendering on a virtual display; shader/lighting fidelity versus a real GPU not compared). GUI input events are also delivered under Xvfb, unlike `--headless`. Quirk: `DisplayServer.get_display_safe_area()` returns bogus margins on Xvfb. The old claim was — it needs an authorized smoke test. `--write-movie` is the official alternative to evaluate.
 
 ## Editor/runtime interaction via MCP (optional)
 - Erodenn/godot-mcp-runtime: headless editing, screenshot, key/mouse/UI input, live GDScript — *on paper*; confirmation gating for `run_script`/`run_project`.

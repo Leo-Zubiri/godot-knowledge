@@ -18,7 +18,7 @@ related:
   - relates-to: "[[godot-screen-reader-and-input-remapping]]"   # runtime remapping of the same actions
   - relates-to: "[[godot-ui-focus-and-gamepad-navigation]]"   # menus still need focus handling on non-touch devices
 created: 2026-11-08
-updated: 2026-11-08
+updated: 2026-11-12
 created_by_type: agent
 ---
 
@@ -40,7 +40,7 @@ Touch input in Godot arrives as `InputEventScreenTouch` (press/release per finge
 - `action` names the InputMap action it presses; `texture_normal` / `texture_pressed`, `shape` (+ `bitmask`), `shape_centered`, `shape_visible` (editor only).
 - `passby_press = true` makes `pressed`/`released` fire while a finger slides in and out even if the touch began elsewhere — useful for D-pad style strips.
 - `visibility_mode = VISIBILITY_TOUCHSCREEN_ONLY` hides the node on non-touch devices, so one scene can serve desktop and mobile.
-- For **menus** use ordinary `Button`s and leave `input_devices/pointing/emulate_mouse_from_touch` on (default) so they react to taps.
+- For **menus** use ordinary `Button`s. *Corrected 2026-11-12:* this note used to say the mouse emulation must stay on for them to react to taps; on Godot 4.7.2 they react to real touch events **with or without** `emulate_mouse_from_touch` (verified line below).
 - **Verified on 4.7.2 (proposed, unreviewed):** a `Button` reacts to a real `InputEventScreenTouch` even with `emulate_mouse_from_touch=false`; a custom `Control` then receives only `InputEventScreenTouch`/`ScreenDrag`. With emulation on it receives both, the extra mouse events carrying `device == -1` (`InputEvent.DEVICE_ID_EMULATION`) — filter those if a widget must treat touch as touch. So the emulation is optional for menus, not required.
 - Safe area: `DisplayServer.get_display_safe_area()` is in screen coordinates; apply it only on mobile (on desktop/xvfb it yields bogus margins).
 
@@ -53,7 +53,7 @@ Touch input in Godot arrives as `InputEventScreenTouch` (press/release per finge
 ## Emulation settings (Project Settings > Input Devices > Pointing)
 | Setting | Default | Effect |
 |---|---|---|
-| `input_devices/pointing/emulate_mouse_from_touch` | `true` | taps/swipes also send mouse events (Buttons and `_gui_input` work on phones) |
+| `input_devices/pointing/emulate_mouse_from_touch` | `true` | taps/swipes also send mouse events. NOT required for `Button`s (they react to touch anyway, verified 4.7.2); a custom `Control` then gets each touch twice (touch + emulated mouse with `device == -1`), so filter the emulated one |
 | `input_devices/pointing/emulate_touch_from_mouse` | `false` | mouse clicks/drags also send touch events — **enable to test touch nodes on desktop** |
 | `input_devices/pointing/android/enable_long_press_as_right_click` | `false` | Android long press → right click |
 | `input_devices/pointing/android/enable_pan_and_scale_gestures` | `false` | Android multi-touch pan/scale gesture events |

@@ -14,7 +14,7 @@ related:
   - relates-to: "[[game-studio-acceptance-criteria]]"   # adds a visual-evidence gate
   - relates-to: "[[game-studio-automated-vs-player-quality]]"   # what a still cannot prove
 created: 2026-11-08
-updated: 2026-11-08
+updated: 2026-11-12
 created_by_type: agent
 ---
 
@@ -30,7 +30,7 @@ created_by_type: agent
 - Headless/null-renderer launches are explicitly forbidden because they skip rendering; waiving the run at minimal QA is also forbidden (only tests are waived).
 
 ## Tension with our other evidence
-Our own sources found headless screenshots unreliable and the Xvfb recipe unverified; the reference relies on `--write-movie` in a windowed run. Both are documented, **neither tested by us** — see [[game-studio-godot-integration]]. A smoke test is still required before this becomes a standard.
+Our own sources found headless screenshots unreliable and the Xvfb recipe unverified; the reference relies on `--write-movie` in a windowed run. Both are documented; **both were later tested by us (2026-11-12, Godot 4.7.2: Xvfb screenshots and `--write-movie` in a window — see the addenda in this note and in [[game-studio-godot-integration]])**; the original text said "neither tested" — see [[game-studio-godot-integration]]. A smoke test is still required before this becomes a standard.
 
 ## Movie Maker recording — verified addendum (Godot 4.7.2, windowed, real GPU; proposed, unreviewed)
 `godot --path . --write-movie out.avi --fixed-fps 60 --quit-after 2700 res://scene.tscn` **worked in a normal window** (not Xvfb): 2700 frames

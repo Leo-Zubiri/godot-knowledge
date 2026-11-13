@@ -25,7 +25,7 @@ related:
   - relates-to: "[[game-design-scoping-questions-for-new-game-or-feature]]"   # question 0.9 sends the agent here
   - relates-to: "[[game-studio-vr-standards-comfort-and-distribution]]"   # VR controllers are another device profile on this same action model
 created: 2026-11-08
-updated: 2026-11-08
+updated: 2026-11-12
 created_by_type: agent
 ---
 
@@ -69,7 +69,7 @@ Confirm is the **bottom** button on Xbox and PlayStation and the **right** butto
 | Frequently used controls ≥ 44x44 pt, secondary ≥ 28x28 pt (iOS); 44 pt is Apple's *default* control size, 28 pt the minimum | *documented* (Apple HIG) |
 | ≥ 48x48 dp with ≥ 8 dp spacing | *documented* (Android accessibility help; the Material 3 page 404'd) |
 | ≥ 24x24 CSS px minimum, 44x44 enhanced | *documented* (WCAG 2.2 SC 2.5.8 / 2.5.5) |
-| Keep controls inside `DisplayServer.get_display_safe_area()`; notches via `get_display_cutouts()` | *documented* (Godot 4.7) |
+| Keep controls inside `DisplayServer.get_display_safe_area()`; notches via `get_display_cutouts()` | *documented* (Godot 4.7). Hands-on 4.7.2: it is in **screen** coordinates, so convert before applying to a viewport, and apply it **only on mobile** (desktop/Xvfb returned bogus margins) |
 | Thumb zones: Hoober's 2013 observation (49 % one-handed, 36 % cradled, 15 % two-handed) is a dated study, **not a standard**, and the author later retracted the reach drawings | *documented* (with retraction) |
 | Offer a mirrored / left-handed layout | *convention* |
 | No essential action gesture-only; provide a button alternative | *documented* (Apple HIG accessibility) |

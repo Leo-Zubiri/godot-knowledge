@@ -17,7 +17,7 @@ related:
   - relates-to: "[[godot-level-building-blocks]]"   # occlusion, MultiMesh and visibility ranges
   - relates-to: "[[game-studio-acceptance-criteria]]"   # performance budgets are project-defined
 created: 2026-11-08
-updated: 2026-11-08
+updated: 2026-11-12
 created_by_type: agent
 ---
 

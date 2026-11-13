@@ -27,7 +27,7 @@ related:
   - depends-on: "[[game-studio-tool-matrix]]"   # ratings and evidence behind each default
   - relates-to: "[[game-studio-architecture-proposal]]"   # overall decision document
 created: 2026-11-08
-updated: 2026-11-08
+updated: 2026-11-12
 created_by_type: agent
 ---
 
@@ -48,7 +48,7 @@ Pick the right tool and interface for a task without re-researching. Rule of thu
 | Gameplay code, scenes, resources, physics, UI implementation | Godot 4.7.x (GDScript, `.tscn/.tres`) | `godot --headless --script <f> --check-only`; `--import`; text edits | none | [[game-studio-godot-integration]], [[godot-index]] |
 | Run tests | gdUnit4 (GUT fallback) | `runtest.sh`, JUnit/HTML; exit 0/100/101 | pin to Godot minor version | [[game-studio-godot-integration]] |
 | Export/build | Godot export presets | `--export-release|--export-debug` | templates in CI not documented | [[game-studio-godot-integration]] |
-| Screenshot / see running game | Xvfb run or `--write-movie` (both `?`), or pinned Erodenn runtime MCP | needs authorized smoke test | `--headless` cannot render | [[game-studio-godot-integration]] |
+| Screenshot / see running game | Xvfb run or `--write-movie` (both verified 2026-11-12 on 4.7.2, windowed/Xvfb; see the integration note), or pinned Erodenn runtime MCP | needs authorized smoke test | `--headless` cannot render | [[game-studio-godot-integration]] |
 | 3D model, rig, animation, UV, LOD | Blender 5.2 LTS | `blender --background --factory-startup --python script.py` → GLB | Blender MCP = exploration only; Mixar no | [[game-studio-blender-pipeline]] |
 | Collision / navmesh / occluders from 3D | Blender name suffixes `-col -convcol -navmesh -occ` | GLB import in Godot | headless navmesh bake `?` | [[game-studio-level-design]] |
 | Humanoid animation retarget | Godot BoneMap + SkeletonProfileHumanoid | import settings | Rigify naming `?` | [[game-studio-blender-pipeline]] |
