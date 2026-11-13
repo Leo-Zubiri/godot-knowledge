@@ -37,6 +37,8 @@ Navigational only; no claims. Engine-agnostic design principles. Evidence is mix
 ### Genre mechanics
 - [[game-design-billiards-pool-physics-model]] — correct pool/billiards physics for a game: sliding→rolling states (constant rolling decel ≈0.1 m/s²), ball-ball e_b=0.95 + throw, spin from tip offset, non-specular cushions (nose 0.635·D), analytic-event-based vs rigid-body engine, rail-hugging fix, and a starting parameter set.
 
+- [[game-design-pool-view-camera-aim-and-spin-ux]] — UX pattern for a playable 3D pool view: camera behind the shot, overview while rolling, ghost-ball aim prediction, tip (spin) selector, ball-in-hand placement, pattern+number readability (unreviewed).
+
 ### Known gaps (no primary source read yet)
 Reward-design evidence, difficulty-curve construction beyond the Hamlet pointer, scope planning for small teams, per-genre conventions, art-bible primary sources (progression vocabulary and silhouette/animation notes now exist but are pointer-level).
 
