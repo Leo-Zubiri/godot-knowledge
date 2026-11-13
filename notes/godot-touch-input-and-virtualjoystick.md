@@ -41,6 +41,8 @@ Touch input in Godot arrives as `InputEventScreenTouch` (press/release per finge
 - `passby_press = true` makes `pressed`/`released` fire while a finger slides in and out even if the touch began elsewhere — useful for D-pad style strips.
 - `visibility_mode = VISIBILITY_TOUCHSCREEN_ONLY` hides the node on non-touch devices, so one scene can serve desktop and mobile.
 - For **menus** use ordinary `Button`s and leave `input_devices/pointing/emulate_mouse_from_touch` on (default) so they react to taps.
+- **Verified on 4.7.2 (proposed, unreviewed):** a `Button` reacts to a real `InputEventScreenTouch` even with `emulate_mouse_from_touch=false`; a custom `Control` then receives only `InputEventScreenTouch`/`ScreenDrag`. With emulation on it receives both, the extra mouse events carrying `device == -1` (`InputEvent.DEVICE_ID_EMULATION`) — filter those if a widget must treat touch as touch. So the emulation is optional for menus, not required.
+- Safe area: `DisplayServer.get_display_safe_area()` is in screen coordinates; apply it only on mobile (on desktop/xvfb it yields bogus margins).
 
 ## Raw touch events
 - `InputEventScreenTouch`: `index` (one finger = one index), `position` (viewport coordinates), `pressed`, `canceled`, `double_tap`.

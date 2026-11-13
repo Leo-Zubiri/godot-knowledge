@@ -65,6 +65,7 @@ created_by_type: agent
 
 ## What an agent can and cannot check
 - Can: run the command and assert exit 0; confirm `reports/` is produced; confirm `--ignoreHeadlessMode` is present.
+- Verified on 4.7.2 (proposed, unreviewed): under `--headless` GUI events (touch, mouse over `Control`s) are NOT delivered to the GUI, so UI-input suites need a display: run them with `xvfb-run -a godot ... GdUnitCmdTool.gd --ignoreHeadlessMode -a tests/ui` (no `--headless`) and keep them in a separate directory from the headless unit/integration suites.
 - Cannot: validate input-simulation tests headlessly (they need a display); confirm compatibility on Godot or
   gdUnit4 versions other than those tested above.
 
