@@ -129,6 +129,25 @@ ball struck with k = 0.6 travelled 0.41 m vs 0.29 m for the same weak shot; the 
 the extra distance comes from a longer slide and a smaller rolling deceleration. Test it by comparing two runs **in separate worlds** (free
 the first ball before the second, or the second collides with it).
 
+## Jolt ignores restitution below ~1 m/s — hands-on (4.7.2, proposed, unreviewed)
+Symptom: a soft head-on hit between two balls (`bounce` 0.95) left **both balls moving together at about half the speed** (cue 0.88 m/s before,
+0.42 + 0.42 m/s after) instead of the cue stopping and the object leaving; a bot that planned shots from that model potted 14 % of clean shots.
+Cause: Jolt applies restitution only when the closing speed exceeds a threshold, project setting
+**`physics/jolt_physics_3d/simulation/bounce_velocity_threshold`, default 1.0 m/s**; below it the contact is perfectly inelastic. Fix: set it near zero in
+`project.godot` (we used `0.01`). Result on the same layouts: 14 % → 57 % potted. Any billiards/marbles/ball game with soft hits needs this; check it
+whenever a slow collision "sticks". (Edit the file by hand: the Mono editor may rewrite unrelated sections.)
+
+## Faster-than-real-time headless simulation (hands-on, 4.7.2)
+- To run many physics trials quickly, launch with **`--fixed-fps <tps>`** (and `Engine.physics_ticks_per_second = <tps>`): it disables real-time
+  synchronisation, so frames run as fast as the CPU allows with an unchanged step (40 timed shots took 2 s). **Do not use `Engine.time_scale`**:
+  it multiplies the physics delta (the step becomes `time_scale / tps`), which made balls travel ~3× too fast and invalidated a calibration.
+- A `SceneTree` script (`-s`) that fails to compile does **not exit**: the process hangs until a timeout. Run the parse check (`make check`) before any long
+  or parallel batch, and put a `timeout` on every run.
+- End each trial as soon as its question is answered (target potted, or target and cue both still for ~40 frames) instead of waiting for every body to
+  sleep; require the **cue ball** to be still too, or a stationary target ends the trial before the cue arrives.
+- Measured effective deceleration of a struck ball in this setup (center hit, sliding then rolling): ≈ 1.85× the pure rolling deceleration, because the
+  initial slide costs distance. Travel ≈ v² / (2 · 1.85 · rolling_decel); calibrate such a constant against the engine, never assume the textbook one.
+
 ## Testing physics (hands-on, 4.7.2)
 - **Several scenes in ONE test share ONE physics world.** Two tables spawned in the same test collide with each other
   (balls from table 1 interact with table 2 at the same coordinates). Free each scene (`remove_child` + `free()`, then
