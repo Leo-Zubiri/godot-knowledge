@@ -139,6 +139,12 @@ Navigational only; no claims. Every preserved `src-gs-*` source, grouped by them
 - [[src-gd-pool-physics-model-and-params]] — correct billiards/pool physics + parameters (Alciatore, Pooltool/Han 2005, Mathavan 2010, FastFiz): ball states, rolling decel, throw, spin, cushions, rail-hugging, analytic-vs-stepper (`paraphrased`, authoritative) · cited by: [[game-design-billiards-pool-physics-model]], [[godot-physics-engine-options-and-ball-sim]]
 - [[src-gd-godot-physics-options-and-jolt]] — Godot 4.7 physics for a ball game: Jolt built-in default, no maintained Box2D, no native rolling friction, CCD, determinism→host-authoritative, custom_integrator, Pooltool (`paraphrased`, official docs + Jolt README) · cited by: [[godot-physics-engine-options-and-ball-sim]]
 
+### Lighting for stylised 3D scenes (2026-11-14)
+- [[src-gd-lighting-environment-mobile-renderer]] — Godot 4.7 docs: environment and post-processing, renderer feature table, lights and shadows, StandardMaterial3D, faking GI, LightmapGI, reflection probes, class references (`paraphrased`) · cited by: [[godot-lighting-flat-colour-3d-scenes-mobile-renderer]]
+- [[src-gs-three-point-lighting-and-lighting-ratio]] — three-point lighting (key, fill, back) and lighting ratio (Wikipedia) (`paraphrased`) · cited by: [[godot-lighting-flat-colour-3d-scenes-mobile-renderer]]
+- [[src-gs-valve-illustrative-rendering-tf2]] — Mitchell, Francke, Eng: illustrative rendering in a shipped stylised game — warm-to-cool shading, rim highlights, directional ambient (`excerpt`) · cited by: [[godot-lighting-flat-colour-3d-scenes-mobile-renderer]]
+- [[src-gs-android-arm-lighting-for-mobile-games]] — Android Developers / Arm: mobile lighting cost, baked lighting first, blob shadows, painted shade (`paraphrased`) · cited by: [[godot-lighting-flat-colour-3d-scenes-mobile-renderer]]
+
 ## See also
 - [[game-studio-index]] — map of the game-studio notes
 - [[godot-index]] — Godot knowledge map (older sources listed there)
