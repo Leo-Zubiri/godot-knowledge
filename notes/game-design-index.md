@@ -8,7 +8,7 @@ related:
   - relates-to: "[[godot-index]]"   # Godot engine knowledge
   - relates-to: "[[agent-ops-index]]"   # agent operations
 created: 2026-11-08
-updated: 2026-11-08
+updated: 2026-11-14
 created_by_type: agent
 ---
 
@@ -39,6 +39,9 @@ Navigational only; no claims. Engine-agnostic design principles. Evidence is mix
 
 - [[game-design-pool-cpu-opponent-ghost-ball-planner]] — a pool/billiards CPU opponent: pure ghost-ball planner, power from a calibrated effective deceleration, difficulty as deliberate error, measured pot rates (unreviewed).
 - [[game-design-pool-view-camera-aim-and-spin-ux]] — UX pattern for a playable 3D pool view: camera behind the shot, overview while rolling, ghost-ball aim prediction, tip (spin) selector, ball-in-hand placement, pattern+number readability (unreviewed).
+
+### Game feel, feedback and party-game randomness
+- [[game-design-game-feel-and-juice-checklist-turn-based-physics]] — checklist for juice in a turn-based physics game: anticipation → impact → reaction → settle per event, hit-stop and camera-shake rules, slow motion and replays in Godot 4.7, audio variation and voice reactions, randomness without unfairness, turn timers, accessibility switches, mobile cost (proposed; numbers mostly inference).
 
 ### Known gaps (no primary source read yet)
 Reward-design evidence, difficulty-curve construction beyond the Hamlet pointer, scope planning for small teams, per-genre conventions, art-bible primary sources (progression vocabulary and silhouette/animation notes now exist but are pointer-level).

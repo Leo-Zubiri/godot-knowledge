@@ -7,7 +7,7 @@ related:
   - relates-to: "[[game-studio-index]]"   # parent map of the game-studio notes
   - relates-to: "[[godot-index]]"   # older Godot-domain sources are listed there
 created: 2026-11-08
-updated: 2026-11-08
+updated: 2026-11-14
 created_by_type: agent
 ---
 
@@ -94,7 +94,7 @@ Navigational only; no claims. Every preserved `src-gs-*` source, grouped by them
 - [[src-gd-skeleton-gdscript-fsm-demo]] — Skeleton3D, GDScript style/exports/warnings, FSM demo (`paraphrased`) · cited by: [[godot-skeleton3d-modifiers-and-gdscript-style]]
 - [[src-gs-design-progression-balance]] — Lost Garden, DDA (Hamlet pp. 1-5), balance pointers (`paraphrased`) · cited by: [[game-studio-progression-loops-and-dda]]
 - [[src-gs-design-art-readability-animation]] — TF2 NPAR paper (pp. 1-4), animation principles (`paraphrased`) · cited by: [[game-studio-art-readability-silhouette-and-animation-principles]]
-- [[src-gs-design-pinelle-lasseter-read]] — Pinelle et al. CHI 2008 and Lasseter 1987, both read in full from unofficial copies (`paraphrased`) · cited by: [[game-studio-game-usability-heuristics-pinelle]], [[game-studio-art-readability-silhouette-and-animation-principles]], [[game-studio-game-reference-analysis-method]]
+- [[src-gs-design-pinelle-lasseter-read]] — Pinelle et al. CHI 2008 and Lasseter 1987, both read in full from unofficial copies (`paraphrased`) · cited by: [[game-studio-game-usability-heuristics-pinelle]], [[game-studio-art-readability-silhouette-and-animation-principles]], [[game-studio-game-reference-analysis-method]], [[game-design-game-feel-and-juice-checklist-turn-based-physics]]
 - [[src-gs-agent-ops-subagents-headless-evals]] — Claude Code/OpenCode docs, Anthropic engineering posts (`paraphrased`) · cited by: [[game-studio-claude-code-headless-subagents-and-model-pinning]], [[game-studio-agent-eval-and-context-guidance]]
 - [[src-gs-delivery-epic-iarc-followup]] — IARC process page (read) and Epic revenue share (search summary only) (`paraphrased`) · cited by: [[game-studio-delivery-steam-store-privacy-notes]]
 - [[src-gs-delivery-steam-store-privacy]] — Steam, Microsoft, Apple, COPPA/GDPR, ESRB/PEGI, packaging, GlitchTip (`paraphrased`) · cited by: [[game-studio-delivery-steam-store-privacy-notes]]
@@ -144,6 +144,14 @@ Navigational only; no claims. Every preserved `src-gs-*` source, grouped by them
 - [[src-gs-three-point-lighting-and-lighting-ratio]] — three-point lighting (key, fill, back) and lighting ratio (Wikipedia) (`paraphrased`) · cited by: [[godot-lighting-flat-colour-3d-scenes-mobile-renderer]]
 - [[src-gs-valve-illustrative-rendering-tf2]] — Mitchell, Francke, Eng: illustrative rendering in a shipped stylised game — warm-to-cool shading, rim highlights, directional ambient (`excerpt`) · cited by: [[godot-lighting-flat-colour-3d-scenes-mobile-renderer]]
 - [[src-gs-android-arm-lighting-for-mobile-games]] — Android Developers / Arm: mobile lighting cost, baked lighting first, blob shadows, painted shade (`paraphrased`) · cited by: [[godot-lighting-flat-colour-3d-scenes-mobile-renderer]]
+
+### Game feel, juice and party-game randomness (2026-11-14)
+- [[src-gs-design-game-feel-juice-talks]] — Swink "Game Feel: The Secret Ingredient"; "Juice It or Lose It" and "The Art of Screenshake" step lists via a lecture handout (talks not watched) (`paraphrased`) · cited by: [[game-design-game-feel-and-juice-checklist-turn-based-physics]]
+- [[src-gs-design-hitstop-and-camera-shake]] — Sakurai column on hitstop (fan translation), Critpoints on hitstop, trauma-based screen shake recipe (`paraphrased`) · cited by: [[game-design-game-feel-and-juice-checklist-turn-based-physics]]
+- [[src-gs-design-party-randomness-and-catch-up]] — input vs output randomness, fairness, kingmaking vs catch-up, party-game balance quotes (`paraphrased`) · cited by: [[game-design-game-feel-and-juice-checklist-turn-based-physics]]
+- [[src-gs-pool-shot-clock-wnt-rules]] — a professional pool tour's shot clock rules, July 2024 (`excerpt`) · cited by: [[game-design-game-feel-and-juice-checklist-turn-based-physics]]
+- [[src-gs-accessibility-motion-flash-and-timing]] — Xbox Accessibility Guidelines 117 and 118, Game Accessibility Guidelines full-list items on motion, flashing, haptics, timing (`excerpt`) · cited by: [[game-design-game-feel-and-juice-checklist-turn-based-physics]]
+- [[src-gd-time-scale-tween-particles-audio-randomizer]] — Godot 4.7 class references: Engine.time_scale, create_timer, Tween, CPU/GPU particles 3D, AudioStreamRandomizer, Camera3D (`paraphrased`) · cited by: [[game-design-game-feel-and-juice-checklist-turn-based-physics]]
 
 ## See also
 - [[game-studio-index]] — map of the game-studio notes
