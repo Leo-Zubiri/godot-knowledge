@@ -36,6 +36,7 @@ Navigational only; no claims. Engine-agnostic design principles. Evidence is mix
 
 ### Genre mechanics
 - [[game-design-billiards-pool-physics-model]] — correct pool/billiards physics for a game: sliding→rolling states (constant rolling decel ≈0.1 m/s²), ball-ball e_b=0.95 + throw, spin from tip offset, non-specular cushions (nose 0.635·D), analytic-event-based vs rigid-body engine, rail-hugging fix, and a starting parameter set.
+- [[game-design-pool-break-rules-and-what-a-casual-game-can-simplify]] — the break shot in 8-ball and 9-ball under the WPA rules (cue ball behind the head string, four balls to a rail, illegal break vs foul, spotting, open table), what a casual game can fix to one option, what the simulation must report, and how to show a player what they may hit.
 
 - [[game-design-pool-cpu-opponent-ghost-ball-planner]] — a pool/billiards CPU opponent: pure ghost-ball planner, power from a calibrated effective deceleration, difficulty as deliberate error, measured pot rates (unreviewed).
 - [[game-design-pool-view-camera-aim-and-spin-ux]] — UX pattern for a playable 3D pool view: camera behind the shot, overview while rolling, ghost-ball aim prediction, tip (spin) selector, ball-in-hand placement, pattern+number readability (unreviewed).
