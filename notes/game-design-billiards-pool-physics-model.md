@@ -114,6 +114,45 @@ side detail and a verified Godot/Jolt implementation: [[godot-physics-engine-opt
   `Δω = 5/2·Δv/R`. With zero spin the rebound is unchanged, so existing behaviour and tests keep passing. Not validated against a
   measured cushion model (Han 2005 / Mathavan 2010 are the references for a faithful one).
 
+## Measuring instead of guessing: a physics audit, and what it found in a rigid-body engine
+*Run here (Godot 4.7.2 + Jolt, 120 Hz), unreviewed. Owner complaint: "the physics is still far off". A headless tool fires
+laboratory shots into the real simulation and prints measured / reference / verdict per row; 7 of 27 rows were off, 0 of 29 after
+the fixes. The table is the evidence a change helped — "feels right" still needs a person.*
+
+**Rows worth having** (each needs only spawn-ball, set velocity/spin, step N ticks): slide→roll speed ratio (5/7) and sliding
+deceleration (μ_s·g); rolling deceleration and whether it is constant; head-on stun split ((1±e)/2); half-ball cut — separation
+angle (~90°), object-ball deviation from the line of centres ("throw") at 1 and 3 m/s, and the rolling cue ball's final deflection
+(~34°); tip at 0.4R → zero initial slip; follow/draw distance measured **1 s after contact**; cushion speed ratio head-on and exit
+angle at 45° rolling; pocket acceptance half-width, *clean* vs *touching a jaw*; break spread, rail hits and time to rest.
+
+**What was wrong, and the fix that measured correct:**
+- **Default contact margins are sized for metre-scale objects.** Jolt's `penetration_slop` and `speculative_contact_distance`
+  default to 2 cm and continuous collision starts at 75 % of the inner radius with 25 % allowed penetration. For a 57 mm ball that
+  means contact is resolved with the balls overlapping or not yet touching, which rotates the collision normal: a half-ball cut at
+  3 m/s threw the object ball 10° off (reference ≤ 5°, *decreasing* with speed). Setting slop 1 mm, speculative distance 2 mm, CCD
+  threshold 0.1 and max penetration 0.02 brought it to 2.9°. **Check an engine's contact tolerances against your object size.**
+- **One friction value for cloth and ball-ball.** Real ball-ball friction is ~0.05, cloth ~0.2. With a single physics material both
+  were 0.2. Fix in Godot: give the balls the ball-ball value and mark the cloth's `PhysicsMaterial.rough = true`, so the ball-cloth
+  pair uses the larger (cloth) value while ball-ball pairs use the ball value. Side effect: an effect that used to lower one ball's
+  friction through its material stops working (the rough cloth always wins) — it has to become an explicit force at the contact point.
+- **Hidden rolling resistance.** With the configured rolling deceleration at 0.2 the measured one was 0.27; with exponential
+  `angular_damp` removed, the engine still added ~0.055 m/s² on a rolling ball. The config value is therefore "added" resistance:
+  0.06 gives a measured ~0.12–0.13 (real ≈ 0.10). Without measuring, the roll was almost 3× too short and the break barely spread.
+- **Analytic cushions need the contact height.** Reflecting the normal velocity alone leaves a rolling ball's forward spin fighting
+  the rebound: a 45° rolling ball left at 66°. Applying the cushion impulse at 0.27·R above centre (Δω = 5/2·(h/R)·Δv/R, reducing
+  the incoming roll) gave 49°, and a speed-dependent restitution (0.85 − 0.02·v, floor 0.6) matched the head-on ratios.
+- **Pockets as a capture circle are too generous and never rattle.** A 6 cm circle swallowed ±5 cm (side) and ±4 cm (corner) where
+  the regulation mouths allow ±3.6 / ±2.9 cm clean. Replace with: cushion lines that end at the real jaw tips, the tips as hard
+  points with a soft restitution (~0.55), and "pocketed" = centre past the mouth line plus a small shelf (bounded in depth, so a
+  ball that left the table elsewhere is not counted as pocketed). Clean acceptance became ±3.5 / ±2.5 cm, a little more off a jaw.
+
+**Traps in the audit itself:** measuring a "first contact" or a final position over the whole shot (with realistic rolling the ball
+comes back off a rail and corrupts it — measure at a fixed time after the event); several simulations sharing one physics world in
+one test (their balls overlap); and a pocket test that counts "rattles then drops" the same as a clean entry.
+
+**After physics changes:** re-run the AI calibration (with tighter pockets a CPU with the same aiming error dropped from 30 % to
+22 % pots while the error-free planner rose from 58 % to 77 %), and re-check anything timed to "the shot is resolved".
+
 ## What an agent can and cannot check
 **By building/measuring:** that balls come to rest (not forever, not "dead"), that a ball aimed at a pocket pots, that a
 ball does not hug the rail, stop distances ∝ v². **Needs a human at the controls:** whether the *feel* reads as pool,
