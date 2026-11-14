@@ -56,6 +56,9 @@ func _unhandled_input(event: InputEvent) -> void:
 - The action names used here (`move_left`, `jump`, …) must exist in the project's Input Map; they are project
   configuration, not engine defaults.
 - **Not yet experimentally validated in `godot-lab`** — status `proposed`.
+- **Do not restore `project.godot` from version control to drop editor noise** (observed in 4.7.2, *run here*): actions added to the
+  Input Map since the last commit live only in that file, so `git checkout -- project.godot` silently deletes them and the game then
+  logs missing-action errors. Review the diff and keep the `[input]` changes instead.
 
 ## See also
 - [[characterbody2d-movement]] — consumes these actions · [[node-lifecycle-callbacks]] — the input callbacks
