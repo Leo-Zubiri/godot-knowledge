@@ -66,6 +66,22 @@ blended locomotion or animator-authored clips, use a skeleton and AnimationTree 
 - Closures in GDScript capture locals by value: accumulate into a one-element array (`lowest[0] = min(lowest[0], x)`) inside a polling
   lambda.
 
+## Owner feedback on idle motion, and bending a "rigid" part
+- **Turning the whole body left and right read as robotic.** A faceless character made of rigid parts has no eyes or neck to
+  motivate a look; a yaw sweep is just a prop rotating. What the owner asked for instead, and what read as alive in stills:
+  **secondary motion on a soft part** (the tip of the hat curls over, stays a while, then springs straight) and **motivated
+  whole-body action** (two or three hops, stretching at the top, as if trying to see over the table). Prefer gestures with an
+  evident reason over symmetric sweeps. (Feedback from one person; the replacement was not yet judged in motion.)
+- **Bending part of a rigid mesh without a skeleton or a custom shader:** give the instance its own `ArrayMesh` copy of that part,
+  precompute a per-vertex weight (0 below a height, smoothstep to 1 at the tip), and when the bend parameter changes rotate each
+  vertex about a pivot by `angle × weight` (rotate its normal too) and rebuild the single surface. A few hundred vertices, only
+  on change, is negligible. Keeps the standard material (textures, rim) — a vertex shader would force a `ShaderMaterial`.
+- **Trap:** `ArrayMesh.clear_surfaces()` makes the `MeshInstance3D` drop its per-surface **override material** (the instance's
+  colour). Read it before rebuilding and set it again after. Also set the surface material on the new mesh, and test that two
+  instances do not share the deformed mesh.
+- A parameter held by a long idle gesture (the curled tip) needs the same "decays outside its owning state" rule as the others,
+  or an interrupting gesture leaves it stuck.
+
 ## Limitations
 - No blending between gestures beyond "kill and start from current values" (which is what tweening the current parameter gives).
 - Rigid parts only; long stretched limbs need a generated mesh or a scaled cylinder between two points.
