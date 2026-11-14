@@ -8,7 +8,7 @@ aliases: [server authoritative, host authoritative, LAN discovery, UDP broadcast
 tags: [dept/game-dev, tool/godot]
 applies-to:
   min: "4.0 (MultiplayerSynchronizer/Spawner and @rpc are 4.x API)"
-  tested: "4.7 (documentation only; not run in the engine or on a network)"
+  tested: "4.7.2.stable.mono: ENet host+client, RPC, UDP broadcast discovery and a full mirrored turn-based game run on one PC (loopback and the real LAN address, two processes); NOT tested on Android or between two devices"
 sources:
   - claim: "High-level multiplayer model, @rpc semantics, security guidance, ENet, Synchronizer/Spawner/ReplicationConfig and PacketPeerUDP broadcast rules for Godot 4.7"
     ref: src-gd-high-level-multiplayer-udp
@@ -22,7 +22,7 @@ related:
   - relates-to: "[[godot-export-platform-notes]]"   # Android export preset where the INTERNET permission lives
   - relates-to: "[[game-studio-multiplayer-observability-and-session-monitoring]]"   # the host is the authoritative source that emits the monitored session/match events
 created: 2026-11-08
-updated: 2026-11-08
+updated: 2026-11-13
 created_by_type: agent
 ---
 
@@ -57,10 +57,21 @@ A small group on one Wi-Fi network wants to play a turn-based game where each tu
 **Node paths.** RPCs resolve by `NodePath`, so the scene layout must be identical on all peers and dynamic nodes must be added with `add_child(node, true)` (readable names). See [[godot-scene-scoped-lookups]].
 
 **LAN discovery.** Godot has no lobby-discovery API; build one with `PacketPeerUDP`:
-- Host: `bind(DISCOVERY_PORT)`; on each incoming packet reply with `{name, port, players}` to `get_packet_ip()`/`get_packet_port()`.
+- Host: `bind(DISCOVERY_PORT)`; on each incoming packet reply with `{name, port, players}` to `get_packet_ip()`/`get_packet_port()`. (A simpler variant, verified: the host *announces* by broadcast and the finder only listens; see "Verified hands-on".)
 - Client: `set_broadcast_enabled(true)` **before** `set_dest_address("255.255.255.255", DISCOVERY_PORT)`, send a probe every second, list replies, then `create_client(reply_ip, reply_port)`.
 - Always offer **join by IP** as the fallback: broadcast can be blocked by client isolation on guest Wi-Fi, by some Android devices, or by a firewall; the docs say LAN clients use the host's internal 192.168.x.x address.
 - Use a different port for discovery than for ENet. Never call `PacketPeerUDP.wait()` on the main thread — it cannot be interrupted.
+
+## Verified hands-on (Godot 4.7.2, desktop; proposed, unreviewed)
+Built and run: a 2-player turn-based game with a host-authoritative mirror. What held, and the corrections to the sketch above:
+- **Host and client in ONE process (for tests):** give each its own `SceneMultiplayer` for its node subtree: `get_tree().set_multiplayer(SceneMultiplayer.new(), node.get_path())`, then `create_server` / `create_client("127.0.0.1", port)` and read `multiplayer` from nodes under each root. RPCs flow both ways, so network code runs in the normal headless test suite with real ENet. Put every RPC node (relay, replicator) as a **child of the session node** so it shares that `multiplayer`; use different loopback ports per test.
+- **Two games in one process need separate 3D worlds:** put each in a `SubViewport` with `own_world_3d = true`; the physics spaces are then different (checked: shooting in A left B untouched). `viewport.world_3d` was null for a child of a SubViewport; use `find_world_3d()`.
+- **Timing quirks:** right after the client's `connected_to_server`, the server's `multiplayer.get_peers()` can still be empty; wait for `peer_connected` before `rpc_id`. `rpc_id` to a peer whose receiving node does not exist yet fails, so use the readiness handshake the sketch mentions: the client sends a "ready" request once its replica node exists and the host only sends to ready peers.
+- **Never trust the seat the client declares:** the host sets `intent.seat_index` from the **sender peer** (`get_remote_sender_id()` → seat map) and validates the packet shape (types are not checked by the engine) before handing it to the simulation.
+- **Client = mirror, not a second simulation:** the host sends a full state dictionary (phase, active player, groups, remaining pieces, winner) on each FSM change; the client applies it and emits the same signals, so the HUD and the input code do not care whether they run local or networked. Client physics bodies are frozen kinematic with `collision_layer = 0` and moved from snapshots.
+- **Snapshots:** while pieces roll, an `unreliable_ordered` stream at ~20 Hz carries only the bodies that moved (`[id, pos(3), quat(4)]` floats in a `PackedFloat32Array`); a **reliable full snapshot** at rest is the truth. The client renders ≈ 2 snapshot periods in the past and interpolates between the last two samples (lerp/slerp, no extrapolation). Measured on 16 rigid bodies: **≈ 45–55 KB per break**.
+- **UDP discovery recipe that worked:** the announcer is an *unbound* `PacketPeerUDP` with `set_broadcast_enabled(true)` then `set_dest_address(broadcast_ip, discovery_port)`, sending JSON every second; the finder `bind(discovery_port)` and polls `get_available_packet_count()` in `_process`. `255.255.255.255` worked on the real LAN address (Linux desktop, same machine); tests use `127.0.0.1`. **`get_packet_ip()` returns `""` unless called after `get_packet()`.** `JSON.parse_string` prints an engine ERROR on every non-JSON packet; use `JSON.new().parse()` and check the return code.
+- **Still unverified:** Android (INTERNET permission, whether broadcast arrives), a second physical device, Wi-Fi with client isolation, reconnection.
 
 ## Trade-offs
 - **Host advantage:** the host sees state first and never waits on the network; acceptable for turn-based play, not for twitch games.
