@@ -18,7 +18,7 @@ related:
   - relates-to: "[[godot-ui-focus-and-gamepad-navigation]]"   # focus and gamepad
   - relates-to: "[[godot-localization-workflow]]"   # longer strings and fonts
 created: 2026-11-08
-updated: 2026-11-08
+updated: 2026-11-13
 created_by_type: agent
 ---
 
@@ -32,6 +32,17 @@ created_by_type: agent
 - **Fonts:** TTF/OTF/TTC/OTC/WOFF/WOFF2 and BMFont; hinting default Light; MSDF stays sharp at any size; pixel-art fonts need Nearest filter and integer-multiple sizes; fallbacks in Advanced Import Settings.
 - **RichTextLabel/BBCode:** enable `bbcode_enabled`; connect `meta_clicked` for `[url]`; escape user input with `[lb]` to prevent BBCode injection.
 - The docs give **no design-tool handoff workflow**: a Penpot/Figma design must be re-expressed as a container layout plus a Theme.
+
+## Layout traps seen when building a list screen — hands-on (4.7.2, proposed, unreviewed)
+- A **`ScrollContainer` does not give its content a width**: a `VBoxContainer` inside it takes its minimum width, so rows with `autowrap` labels collapse to one character per line
+  (text rendered vertically). Fix: give the scroll a fixed `custom_minimum_size.x` and the content a minimum width, and turn `autowrap_mode` off (with `text_overrun_behavior =
+  OVERRUN_TRIM_ELLIPSIS`) on short labels inside rows.
+- The default `Button` style is nearly invisible on a dark background: give secondary buttons an outline `StyleBoxFlat` (accent border, translucent fill) for `normal`, `hover`,
+  `pressed`, `hover_pressed`, `focus` and `disabled`, so every action is discoverable by shape and not only by text.
+- `Button.text` keeps the **translation key** you assigned (Godot translates it only when drawing); a test must compare against the key, or assert on `tr(key)`. Text you
+  build with `tr()` and `%` is already translated and must be rebuilt on `NOTIFICATION_TRANSLATION_CHANGED`.
+- Animated "waiting…" text: keep a small list of labels and a timer-less counter in `_process` (a 4-state dot counter every ~0.45 s) instead of a Tween per label; rebuilding the
+  panel just recreates the list.
 
 ## What an agent can and cannot check
 Reading `.tscn`/`.tres` can verify anchors/size flags, theme references, variation names matching existing types and stretch settings versus the preset. Appearance, text fit in other languages and navigation feel need a human reviewing screenshots at several window sizes.
