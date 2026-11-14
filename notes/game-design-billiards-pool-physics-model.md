@@ -13,12 +13,15 @@ sources:
   - claim: "ball states sliding/rolling (constant decel μ_r·g≈0.1), 5/7 rule, ball-ball e_b=0.95 + throw, spin from tip offset, cushion non-specular + nose 0.635·D, analytic-event-based vs stepper, full parameter set"
     ref: src-gd-pool-physics-model-and-params
     retrieved: 2026-11-10
+  - claim: "spin about the vertical axis decays at a constant rate 5·μ_sp·g/(2R), decoupled from sliding/rolling; Pooltool default u_sp ≈ 0.444·R"
+    ref: src-gd-pooltool-spinning-friction
+    retrieved: 2026-11-14
 related:
   - relates-to: "[[game-studio-physics-engine-vs-custom-simulation]]"   # the engine-vs-custom decision this is the hard case of
   - relates-to: "[[godot-physics-engine-options-and-ball-sim]]"   # engine-side Godot/Jolt mechanics + hands-on rail-hugging fix
   - relates-to: "[[game-studio-spike-technical-feasibility-prototype]]"   # judged by a spike you play, not from these numbers
 created: 2026-11-10
-updated: 2026-11-12
+updated: 2026-11-14
 created_by_type: agent
 ---
 
@@ -93,6 +96,23 @@ equator). Fixes: lower the bounce threshold, OR **reflect the normal velocity an
 below a speed threshold (`v_n' = -e_c·v_n`, keep tangential) so there is no geometry to stick to; cushion material **high
 restitution + low tangential friction**; nose above centre; smooth continuous rail collider; CCD on the ball only. Engine-
 side detail and a verified Godot/Jolt implementation: [[godot-physics-engine-options-and-ball-sim]].
+
+## Spin about the vertical axis (side spin) must be decayed explicitly
+- **Model** ([[src-gd-pooltool-spinning-friction]]): `ω_z(t) = ω_0z − (5·μ_sp·g/(2R))·t` — a **constant** angular deceleration,
+  independent of whether the ball slides or rolls. With Pooltool's default (`u_sp ≈ 0.444·R ≈ 0.0127`) that is ≈ **11 rad/s²**
+  for a standard ball, so 40 rad/s of side spin lasts under 4 s.
+- **Why a rigid-body engine gets it wrong** (*run here*, Godot 4.7.2 + Jolt, unreviewed): a sphere on a plane touches at one point,
+  so contact friction applies **no torque about the contact normal**. The only thing left is the body's `angular_damp`, which is
+  *exponential*: with 0.2 /s a ball at 60 rad/s needs ~19 s to fall under a rest threshold. Symptoms: balls visibly "spin in place
+  for a long time", and the shot takes many seconds to be considered resolved (or hits the resolve timeout).
+- **Fix that worked:** each physics tick, while the ball is grounded, `ω_y = move_toward(ω_y, 0, spin_decel·dt)` with `spin_decel`
+  as a tunable (real ≈ 11; a slightly higher value settles the table sooner). Keep the low exponential damp for the other axes.
+  Test: set 60 rad/s on a resting ball and assert it stops within `60/spin_decel` (+ margin) and not instantly.
+- **Side spin at an analytic cushion** (*own heuristic, interpretation*): if cushions are an analytic reflection (see rail-hugging
+  below), side spin has no effect unless you add it. A cheap version: the ball surface at the contact moves along the rail at
+  `ω_y·R`; convert a fraction of it (≈ 0.3) into tangential velocity, cap the change at `μ_c·(1+e)·|v_normal|`, and spend spin by
+  `Δω = 5/2·Δv/R`. With zero spin the rebound is unchanged, so existing behaviour and tests keep passing. Not validated against a
+  measured cushion model (Han 2005 / Mathavan 2010 are the references for a faithful one).
 
 ## What an agent can and cannot check
 **By building/measuring:** that balls come to rest (not forever, not "dead"), that a ball aimed at a pocket pots, that a
