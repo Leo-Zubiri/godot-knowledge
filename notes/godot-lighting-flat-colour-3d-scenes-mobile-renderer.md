@@ -95,6 +95,27 @@ The sources point to lighting and material response first. A platform-vendor gui
 ## What an agent can and cannot check
 An agent can read Environment, light and material resources and compare them with this guide: tonemap mode, ambient source and energy, fill-to-key energy ratio, `light_specular` on fills, shadow max distance, roughness spread across materials, number of lights per mesh. Whether the result *looks* right needs a rendered frame and a human eye.
 
+## Field result: overhead lamp instead of a lateral directional light (run here, unreviewed)
+*Godot 4.7.2, Mobile renderer, desktop GPU; judged from screenshots by an agent, not by the owner in motion; Android not measured.*
+The first pass of the checklist above (low cool ambient, lateral warm `DirectionalLight3D`, weak fill, filmic tonemap) still drew
+"too much light, plastic, and I dislike the shadows" from the owner: a lateral directional light gives **long hard shadows** across a
+small interior. What read as a lit room at night was a **fixture over the subject**:
+- **Two downward `SpotLight3D` with shadows** over the long axis of the table replace the directional light and use the whole
+  two-light budget (no fill). Shadows fall short, under each object. Start values that worked: height 1.45 m, spots ±0.62 m from
+  centre, cone 54°, `spot_angle_attenuation` 1.6, energy 2.6 (7.0 burnt the green cloth to mint), range 5 m.
+- **Shadow bias must match object size.** With `shadow_bias` 0.04 and `shadow_normal_bias` 1.2 the 57 mm balls cast **no** contact
+  shadow and looked like they floated; 0.012 / 0.35 with `shadow_blur` 1.4 gave soft contact shadows. Raise bias only if acne appears.
+- **Ambient decides whether "dark" is readable.** 0.10 left the walls invisible (a black void); 0.24, cool, keeps the room legible
+  while the table still dominates. Background colour near black.
+- **Banding** on dark surfaces lit by a falloff (visible rings on a dark hat) went away with
+  `rendering/anti_aliasing/quality/use_debanding=true` — the Mobile caution above, confirmed.
+- **Hide the fixture, keep the light,** when a top-down camera would look through the lampshade.
+- **Generated detail instead of sourced textures:** `NoiseTexture2D` (FastNoiseLite) as a triplanar normal map for cloth/felt and
+  as a grey albedo multiplier stretched along one axis for wood grain; cached and shared. Wood grain read immediately; a fine cloth
+  weave is nearly invisible under top light (it needs grazing light or a stronger bump). Triplanar means no UVs are required.
+- **Clearcoat in a custom ball shader** (`CLEARCOAT`, `CLEARCOAT_ROUGHNESS`) plus one `ReflectionProbe` (`UPDATE_ONCE`, interior,
+  box projection) gave tight highlights; the probe mostly reflects the emissive lampshade in a dark room.
+
 ## See also
 - [[godot-renderer-feature-matrix]] — renderer choice, GI options and light limits this guide builds on
 - [[godot-3d-materials-and-transparency]] — material fields, banding and debanding
