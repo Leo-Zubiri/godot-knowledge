@@ -112,6 +112,8 @@ Make short CC0 recordings (laughs, a drop, jingles) into *this game's own* sound
 18. **Normalise a quiet source in two passes**: render the slice, measure `volumedetect` `max_volume`, then apply `volume=(−3 − max)dB` capped at
     +18 dB and `alimiter=limit=0.89:level=disabled`. One-pass gain guesses left a quiet footstep 13 dB under its siblings.
 
+19. **Voice processing cannot be judged by an agent.** Three processed versions of one character laugh (pitch up + nasal EQ; shorter; lower, more nasal, longer) were each rejected by the owner even though every one measured as "changed" in the spectrum. For subjective assets offer raw candidates first and keep the processed ones behind an off-by-default switch; see section 7 of [[game-design-game-feel-and-juice-checklist-turn-based-physics]].
+
 ## See also
 - [[game-studio-2d-ui-audio-materials]] — WAV for short SFX, Ogg for music and loops (WAV supports loop points).
 - [[game-studio-artcraft-evaluation]] — SoundCraft's limits; ffmpeg was the baseline here.
