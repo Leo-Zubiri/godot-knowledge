@@ -14,6 +14,7 @@ related:
   - refines: "[[godot-procedural-placeholder-sfx-audiostreamwav]]"   # the generators and the single-curve starting point
   - relates-to: "[[godot-audio-buses-and-adaptive-music]]"   # buses the players and loops go through
   - relates-to: "[[game-design-game-feel-and-juice-checklist-turn-based-physics]]"   # section 7: audio layering and voices
+  - relates-to: "[[godot-audio-debug-overlay-for-listening-feedback]]"   # how the owner points at the sound they dislike
 created: 2026-11-15
 updated: 2026-11-15
 created_by_type: agent
@@ -83,7 +84,38 @@ pool; a fake in tests). It never writes to the simulation, so it cannot affect d
   roll logic are testable in CI. (Timing from `create_timer` versus wall-clock `Time.get_ticks_msec()` can disagree inside a test runner; make
   grace periods a property the test can set to 0 instead of waiting.)
 
+## Update after a listening round (what the owner heard, what changed)
+The first version used long real clips, a synthetic rolling loop and full recordings. A listener then reported "a long, dirty noise" and
+"other sounds overlapping". What was changed — **run and tested, but still not judged by ear by the agent**:
+1. **Never replay a recorded scatter on top of the simulation's own collisions.** A real break-shot recording contains the cue strike *and* the
+   balls scattering. The simulation already plays one sound per collision, so the scatter is double-counted and reads as overlapping sounds.
+   Cut the recording to the **opening strike only (≈ 0.3 s)** and play it *instead of* the loose cue sound when the shot is a break.
+2. **Every real clip must be short, with a fade-out.** Ball–ball ≈ 0.2 s, cue ≈ 0.12 s, pocket ≤ 0.75 s, each with a 50–180 ms fade-out. Long
+   tails of a noisy room recording read as "long dirty noise" and pile up under bursts. Test it: a catalog test that fails if a clip of a
+   category exceeds its limit.
+3. **Rolling: default OFF.** A synthetic filtered-noise loop was judged "dirty/long", and a real bowling-ball rolling loop "doesn't sound good".
+   A pool ball rolling on cloth is nearly silent, so the safe default is **impacts only**. Keep the rolling code behind `roll_enabled = false`
+   but keep *tracking each ball's last speed every frame* (the pocket sound needs the arrival speed even with rolling off).
+4. **The return mechanism after a pocket** works as a real "metal ball rolling down wood" pass with a short hard-ball thud at its end
+   (a pitched-down impact placed at `length − 0.14 s`), 2–3 passes per intensity tier chosen by **measured RMS** (soft ≈ −39 dB, medium ≈ −33 dB,
+   hard ≈ −20 dB), started ≈ 0.45 s after the pocket (+ small jitter) and ≈ −5 dB below the pocket sound so it never covers it.
+5. **Mix chain.** An `AudioEffectLimiter` on Master (ceiling −1 dB, threshold −3 dB), created **idempotently** (check existing effects first,
+   several bus instances in tests must not stack limiters). On duckable buses add an `AudioEffectAmplify` at index 0 and **duck through it**,
+   not through the bus volume: the player's own slider is untouched. Example: while a character laughs, effects −5 dB for 0.45 s, release 0.35 s.
+   A new duck call must *restart*, not stack: kill the previous `Tween`, set the amplify, tween back to 0 dB.
+6. **Random taunts.** Each occasion becomes a laugh only with probability ≈ 0.6 (a win always laughs), after `delay + random jitter`; use many
+   short takes (0.5–0.75 s) and pitch jitter ±12 %. Keep a *separate long laugh* (2.5–3 s) for the game's startup in a sibling category that is
+   **not** in the short pool — with dotted-prefix matching `voice.x.laugh_long` is not under `voice.x.laugh.`, so it never enters the random draw
+   ([[game-studio-categorised-audio-catalog-pattern]]).
+7. To let a non-technical owner name the sound they dislike, show every sound on screen as it plays:
+   [[godot-audio-debug-overlay-for-listening-feedback]].
+
+Evidence for this round: tests for clip-length limits per category, the break clip < 0.4 s, rolling off by default with the pocket speed still tracked,
+exactly one limiter on Master, ducking restoring itself and not stacking, and the long laugh excluded from the short pool; a second recorded
+match (`--write-movie`) ran without errors. Not verified: that the dirty/overlapping impression is gone.
+
 ## Pitfalls
+- A recording with a long noisy tail, or one that already contains many collisions, must be trimmed before use — otherwise it is the "dirty" sound.
 - Per-ball rolling players multiply voices and fight the pool; one aggregate loop is cheaper and sounds like a table, not like N toys.
 - A looping `AudioStreamWAV` without a crossfaded seam clicks once per loop.
 - A sink that is the engine's pool must dedupe by stream object, otherwise a signal connected twice doubles the level.
