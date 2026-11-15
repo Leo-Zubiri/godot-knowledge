@@ -136,8 +136,9 @@ angle at 45° rolling; pocket acceptance half-width, *clean* vs *touching a jaw*
   pair uses the larger (cloth) value while ball-ball pairs use the ball value. Side effect: an effect that used to lower one ball's
   friction through its material stops working (the rough cloth always wins) — it has to become an explicit force at the contact point.
 - **Hidden rolling resistance.** With the configured rolling deceleration at 0.2 the measured one was 0.27; with exponential
-  `angular_damp` removed, the engine still added ~0.055 m/s² on a rolling ball. The config value is therefore "added" resistance:
-  0.06 gives a measured ~0.12–0.13 (real ≈ 0.10). Without measuring, the roll was almost 3× too short and the break barely spread.
+  `angular_damp` removed, the engine still braked a rolling ball. This was first worked around by treating the config value as
+  "added" resistance (0.06 → measured ~0.13). **That was a wrong diagnosis** — the real causes and the proper fix are in the
+  calibration section below (project default damping combined with the body's; force applied at the centre only).
 - **Analytic cushions need the contact height.** Reflecting the normal velocity alone leaves a rolling ball's forward spin fighting
   the rebound: a 45° rolling ball left at 66°. Applying the cushion impulse at 0.27·R above centre (Δω = 5/2·(h/R)·Δv/R, reducing
   the incoming roll) gave 49°, and a speed-dependent restitution (0.85 − 0.02·v, floor 0.6) matched the head-on ratios.
@@ -152,6 +153,57 @@ one test (their balls overlap); and a pocket test that counts "rattles then drop
 
 **After physics changes:** re-run the AI calibration (with tighter pockets a CPU with the same aiming error dropped from 30 % to
 22 % pots while the error-free planner rose from 58 % to 77 %), and re-check anything timed to "the shot is resolved".
+
+## Calibrating feel after the audit: a sweep lab, and five more things the engine was doing
+*Run here (Godot 4.7.2 + Jolt, 120 Hz), unreviewed. Owner complaint after the audit: "balls travel too far on moderate shots, feel
+light, the power bar is unnatural". A second headless tool (a **lab**, not pass/fail) printed tables: distance / time / speed
+samples per power-bar step, kinetic energy (linear + rotational) before and after each collision type, a frozen 3-ball chain, the
+break, cushions, and the rolling deceleration with the game's own resistance set to 0. A saved baseline made every later change a
+before/after comparison.*
+
+**The complaint was mostly not physics: it was what the power bar meant.**
+- Stop distance grows with v², so a **linear** bar whose 100 % is a break speed (7 m/s) puts every soft shot in its first 15 %.
+  Fix that kept the cloth real: `v = v_min + (v_max − v_min) · power^k` with `k ≈ 1.5`, a **normal-shot cap of ~4.5 m/s** and a
+  **separate cap for the break (~9.5 m/s)** flagged by the authority (the match state machine), not by the client. One function
+  plus its inverse (`power_for_speed`), used by the AI and by every tool.
+- **Tests and tools should ask for a speed, not a bar fraction.** The bar is a game-feel decision and will change; a test that says
+  "power 0.3" silently becomes a different test.
+- **Mass does not change trajectories** when all balls are equal and resistance is an acceleration. "Heavier" must come from
+  speeds, losses and presentation (sound, hit-stop) — not kilograms.
+
+**What the lab showed the engine doing (each one measured, each with its fix):**
+- **Project default damping is COMBINED with the body's.** `physics/3d/default_linear_damp` / `default_angular_damp` are 0.1 and
+  a `RigidBody3D`'s damp mode defaults to *combine*, so a ball with `linear_damp = 0` was still damped: 0.094 m/s² at 1 m/s but
+  0.024 at 0.25 m/s (speed-dependent — not rolling resistance). Fix: `linear_damp_mode = angular_damp_mode = DAMP_MODE_REPLACE`
+  on the balls. Measured engine-only braking after: 0.000.
+- **A rolling-resistance force at the centre only delivers 5/7 of it.** Braking the linear velocity without braking the roll
+  creates slip, and cloth friction gives part back. Fix: scale the horizontal velocity AND the rolling component of the angular
+  velocity by the same factor each tick. Then configured = measured (0.110 / 0.110) and the "added resistance" fudge disappears.
+- **Restitution of the two bodies is SUMMED** (and clamped to 1) in Godot's Jolt integration: two balls with `bounce = 0.95` each
+  collided perfectly elastically (measured e = 1.000 with two spheres in zero gravity; 0.950 with 0.475 each). Fix: give each ball
+  half the wanted coefficient. *Measure e with a two-body probe before trusting a material value.*
+- **Jolt's body-pair contact cache made slow balls never stop**: a ball under ~0.1 m/s sank ~1 mm into the cloth and was pushed
+  forward, hovering at ~0.06 m/s. That had been hidden by an artificial "final brake" and a high rest threshold. With
+  `body_pair_contact_cache_enabled = false` the ball decelerates linearly to zero, the final brake could be removed and the rest
+  threshold lowered (4 → 1.5 cm/s): the stop is progressive instead of a visible snap.
+- **Touching balls (the rack) and the speculative margin.** With `speculative_contact_distance` *below* the rack gap, contacts
+  resolve one at a time: a frozen 3-ball line behaves like a Newton's cradle, but the rack is dead (3–7 balls reach a rail,
+  illegal breaks). *Above* the gap the rack resolves as a cluster and breaks open — but the sequential-impulse solver **creates
+  energy with restitution in a multi-contact cluster, more with more velocity iterations**: break energy 0.1 s after impact was
+  ~80 % with 4 `velocity_steps`, ~115 % with 10 (default), ~125 % with 30, and it grows with break speed. Baumgarte factor made no
+  difference. Settled on 6 steps with the real e: 83–101 % over 6–10 m/s, 10–14 balls to a rail. This is a numerical knob, not
+  physics — label it so, and keep "energy after the break ≤ 100 %" as an audit row. Known cost: a frozen line is no longer a
+  perfect cradle (the last two balls leave together).
+
+**Traps in the measurements themselves:** a head-on split measured several ticks after contact includes cloth friction on the
+sliding object ball (0.946 looked like a restitution error; measured in the contact tick it was 0.967 vs 0.975 ideal). A fixed
+"≈ 90°" band for the half-ball separation is only right for e = 1: derive the reference from e and μ
+(`90° − atan(((1−e)/2·cos30°)/(sin30° − j)) − atan(j/((1+e)/2·cos30°))`, `j = μ·(1+e)/2·cos30°` → 84.4° for 0.95 / 0.05).
+Break spread is chaotic (millimetres of cue-ball offset change it by 2×): judge the break over several breaks and by
+rail-ball count and energy, not by one spread number.
+
+**After it:** the AI's error-free pot rate rose (77 % → 91–96 %) with the same parameters, and a lower "extra speed at the
+pocket" margin kept the rate with softer shots; anything needing a hard hit (jump shots) now sits higher on the bar.
 
 ## What an agent can and cannot check
 **By building/measuring:** that balls come to rest (not forever, not "dead"), that a ball aimed at a pocket pots, that a
