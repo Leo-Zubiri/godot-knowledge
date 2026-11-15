@@ -15,6 +15,7 @@ related:
   - relates-to: "[[godot-audio-buses-and-adaptive-music]]"   # buses the players and loops go through
   - relates-to: "[[game-design-game-feel-and-juice-checklist-turn-based-physics]]"   # section 7: audio layering and voices
   - relates-to: "[[godot-audio-debug-overlay-for-listening-feedback]]"   # how the owner points at the sound they dislike
+  - relates-to: "[[godot-positional-ambient-and-footstep-audio-3d]]"   # footsteps, clock and fireplace in 3D
 created: 2026-11-15
 updated: 2026-11-15
 created_by_type: agent
@@ -113,6 +114,16 @@ The first version used long real clips, a synthetic rolling loop and full record
 Evidence for this round: tests for clip-length limits per category, the break clip < 0.4 s, rolling off by default with the pocket speed still tracked,
 exactly one limiter on Master, ducking restoring itself and not stacking, and the long laugh excluded from the short pool; a second recorded
 match (`--write-movie`) ran without errors. Not verified: that the dirty/overlapping impression is gone.
+
+## Update after a third listening round: secondary contacts must not outrank the primary collision
+A listener said the *soft cushion (rail) hit* was "too much and covers the ball collision". Run and tested, not judged by ear:
+- **Gain.** A rail hit sits **−6 dB below a ball–ball hit at equal speed**, and a *soft* rail hit another **−6 dB** (config values, not constants).
+- **Masking.** A *soft* rail event arriving within **70 ms after** a ball–ball sound is **dropped**; a medium/hard one in that window is **ducked 6 dB**.
+  The mixer needs the timestamp of the last primary sound (one dictionary of last-play times per kind is enough).
+- **Rule.** Secondary contact sounds (cushion, table, rolling) must never outrank the primary collision they accompany; a test plays a ball hit and a rail
+  hit at the same speed and asserts ≥ 5.5 dB difference, and one that asserts the soft rail right after a ball hit does not play.
+- **World sounds** (footsteps of characters, clock, fireplace, music) were added in the same round: [[godot-positional-ambient-and-footstep-audio-3d]];
+  the music player is in [[godot-audio-buses-and-adaptive-music]].
 
 ## Pitfalls
 - A recording with a long noisy tail, or one that already contains many collisions, must be trimmed before use — otherwise it is the "dirty" sound.
