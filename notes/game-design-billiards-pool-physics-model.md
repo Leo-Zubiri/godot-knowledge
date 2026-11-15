@@ -207,6 +207,19 @@ before/after comparison.*
   first-contact rules and the hit sound go missing.
 - **Balls potted on the break scale steeply with break speed** (same table, 36 breaks each): 0.1 at 6.5 m/s, 0.6 at 7.5, 1.1 at
   8.5, 1.7 at 9.5. Cap the break speed with that curve in hand; a real strong break pots about one.
+- **An analytic cushion must only BRAKE the spin a ball arrives with, never add spin.** The "cushion impulse acts above centre"
+  shortcut (Δω = 5/2·(h/R)·Δv/R added on every rebound) was tuned on rolling balls, where it gives the right exit angle. For a
+  ball arriving WITHOUT spin (sliding — most balls after a break) it creates overspin in the outgoing direction: the ball leaves
+  at 0.80 of its speed and the cloth then accelerates it to ~0.91. A player sees "every rail hit speeds the balls up". A
+  frictionless normal force on a sphere has no torque; only cushion friction changes spin, and friction can at most stop the
+  relative motion. Fix: `ω_along = move_toward(ω_along, 0, 5/2·(h/R)·Δv/R)`. Measured after: peak speed in the second after a
+  rebound / exit speed = 1.00 for sliding and rolling arrivals; a head-on ball settles at ≈ 0.55 of its incoming speed; a
+  full-power shot went from 4.0 to 3.2 table lengths. Audit row: a sliding ball must never be faster after the rebound.
+- **A geometrically perfect rack makes the break learnable.** The simulation is reproducible, so from a fresh start the same
+  break pots the same ball every time. Rack with a random offset of ~0.15 mm per ball (below half the rack gap so balls never
+  overlap, apex ball untouched, seeded per match so a host-authoritative game still agrees): the same straight break repeated 36
+  times then pots nothing in about half the cases and a different ball in the rest. Put the randomness in the rack, not in the
+  player's aim or power — players forgive a loose rack, not a cue that disobeys.
 - **An audit that only checks energy and rail count will pass a wrong break.** Add rows a player would notice: cue-ball recoil
   speed after the break, pots per break (mean over ≥ 12 breaks, and that some breaks pot nothing), and look at *when and where*
   balls are potted — pots straight from the rack in under a second are a solver artifact.
