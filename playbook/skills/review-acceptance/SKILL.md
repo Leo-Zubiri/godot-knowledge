@@ -6,7 +6,8 @@ description: Review a plan, a phase or a deliverable of a Godot project against 
 # Review against checklists
 
 Checklists: `$GODOT_KNOWLEDGE_PATH/playbook/checklists/` — `plan-review.md` (before approving a plan),
-`phase-exit.md` (closing a phase), `module-extraction.md`, `input-mapping.md`, `purchase-integrity.md`.
+`phase-exit.md` (closing a phase), `audio-phase-exit.md` (a phase that touches audio), `module-extraction.md`,
+`input-mapping.md`, `purchase-integrity.md`.
 Acceptance principles: `game-studio-acceptance-criteria`, `game-studio-review-modes-and-verdicts`.
 
 1. **Pick the checklist** for the object under review; read the phase's own exit criteria too.

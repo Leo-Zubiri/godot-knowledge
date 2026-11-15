@@ -15,3 +15,5 @@ Every item needs evidence (command + literal output, file path, test report, cap
 - [ ] Human gates (visual quality, fun, licences, outward-facing actions) explicitly accepted by the owner.
 - [ ] Throwaway code from the phase archived or deleted as the plan said.
 - [ ] Cross-cutting runtime concerns addressed or explicitly deferred (see `[[game-studio-cross-cutting-runtime-concerns]]`): observability/session monitoring, error/crash reporting.
+- [ ] If the phase added or changed audio, also pass `audio-phase-exit.md` (licences read per file, clean short clips, measured tiers, silence
+      when idle, human ear on voices/music before they ship ON).
