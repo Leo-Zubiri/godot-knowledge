@@ -42,9 +42,10 @@ related:
   - relates-to: "[[godot-particles-and-shader-basics]]"   # GPU vs CPU particles
   - relates-to: "[[godot-physics-driven-impact-audio-for-rigid-body-games]]"   # recipe for the impact/rolling/voice audio of section 7
   - relates-to: "[[godot-procedural-placeholder-sfx-audiostreamwav]]"   # per-play pitch/volume variation and minimum intervals
+  - relates-to: "[[godot-positional-ambient-and-footstep-audio-3d]]"   # footsteps and room sounds in 3D
   - relates-to: "[[game-studio-playtesting-methods]]"   # feel cannot be verified without players
 created: 2026-11-14
-updated: 2026-11-14
+updated: 2026-11-15
 created_by_type: agent
 ---
 
@@ -151,6 +152,10 @@ What the sources say [src-gs-design-hitstop-and-camera-shake]:
   - Start the laugh after the result is readable (0.2-0.4 s after the event), never on top of the impact sound.
   - Voices go on their own bus with their own volume slider; a "reactions: full / reduced / off" option helps long sessions.
 - Accessibility: separate volume controls for effects, speech and music, and no essential information by sound alone [src-gs-accessibility-motion-flash-and-timing] — every audio cue that matters (timer warning, foul) needs a visual twin.
+
+- *Run later (own pattern):* secondary contact sounds (cushion) must never outrank the primary collision — rail −6 dB, soft rail −12 dB, dropped within 70 ms after
+  a ball hit; character voices wanted "nasal and a bit lower" (pitch down, stronger mid peaks); footsteps/ambience in 3D:
+  [[godot-physics-driven-impact-audio-for-rigid-body-games]], [[godot-positional-ambient-and-footstep-audio-3d]].
 
 ## 8. Randomness that creates stories without feeling unfair
 Vocabulary and principles [src-gs-design-party-randomness-and-catch-up]:
