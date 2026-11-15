@@ -65,6 +65,20 @@ When a file is classified by inference (for example slices of one recording labe
 `inferred` **and** put its use behind a config flag that defaults to **off** (`use_real_impacts = false`) until a human approves it by ear. Voices and UI sounds whose
 role is unambiguous can be on by default.
 
+### `measured` versus `inferred`
+Two kinds of classification exist and they deserve different trust. **Measured**: the category comes from the source's own description (e.g. "billiard
+balls hitting each other") and the intensity from the *measured peak* of each isolated hit — tag `real,measured`, safe to enable by default. **Inferred**:
+a guess from order or spectrum (cue vs ball vs pocket slices of one recording) — tag `inferred` and keep it behind the flag. In one project the inferred
+slices were dropped as soon as measured recordings were available.
+
+### Sibling categories must not share the dotted prefix
+Lookup matches a category and everything *below* it (`cat` or `cat.` prefix). A long startup laugh in `voice.x.laugh_long` is **not** under `voice.x.laugh.`,
+so it never enters the random pool of short laughs; a name like `voice.x.laugh.long` would. Test that the pool excludes it.
+
+### Single source of truth
+The generator writes `catalog.json`; a registry sync script derives the per-file registry lines and the provenance table from it. Never edit those by hand
+and keep a test that validates the shipped catalog (files exist, licences allowed, required categories present, clip lengths within limits).
+
 ## Trade-offs
 - Costs: a generator step and a registry sync; one more file to keep valid. Benefits: reuse across games, intensity banks without code changes, provenance for
   free, and tests that fail when a file or licence goes missing.
