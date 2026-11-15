@@ -186,21 +186,37 @@ before/after comparison.*
   forward, hovering at ~0.06 m/s. That had been hidden by an artificial "final brake" and a high rest threshold. With
   `body_pair_contact_cache_enabled = false` the ball decelerates linearly to zero, the final brake could be removed and the rest
   threshold lowered (4 → 1.5 cm/s): the stop is progressive instead of a visible snap.
-- **Touching balls (the rack) and the speculative margin.** With `speculative_contact_distance` *below* the rack gap, contacts
-  resolve one at a time: a frozen 3-ball line behaves like a Newton's cradle, but the rack is dead (3–7 balls reach a rail,
-  illegal breaks). *Above* the gap the rack resolves as a cluster and breaks open — but the sequential-impulse solver **creates
-  energy with restitution in a multi-contact cluster, more with more velocity iterations**: break energy 0.1 s after impact was
-  ~80 % with 4 `velocity_steps`, ~115 % with 10 (default), ~125 % with 30, and it grows with break speed. Baumgarte factor made no
-  difference. Settled on 6 steps with the real e: 83–101 % over 6–10 m/s, 10–14 balls to a rail. This is a numerical knob, not
-  physics — label it so, and keep "energy after the break ≤ 100 %" as an audit row. Known cost: a frozen line is no longer a
-  perfect cradle (the last two balls leave together).
+- **Touching balls (the rack): a rigid-body engine cannot resolve a fast hit into them — compute that instant yourself.**
+  First attempt (wrong, kept here as a warning): tune the solver. With `speculative_contact_distance` *above* the rack gap the
+  rack resolves as one rigid cluster; break energy then depends on `velocity_steps` (~80 % with 4, ~115 % with 10, ~125 % with
+  30), so 6 steps "passed" an energy + rail-count audit. A player then reported "a straight break always pots two balls". Measured
+  over 36 breaks per case: **cluster mode** — the cue ball bounces straight back at 3–5 m/s as off a wall, edge balls leave in a
+  fan aimed at the foot corner pockets (1.1 balls per break potted within 0.8 s), 2.2 pots per break; **sequential mode**
+  (margin below the gap) — all the energy ends in the two back corner balls and 16–27 of 36 breaks are illegal (< 4 balls to a
+  rail). Solver iterations, random rack looseness in either mode, and other gaps did not change the picture.
+  **Fix that measured right:** a small pure function called before the engine step. When a fast ball will reach, within this
+  tick, a ball that touches others, integrate those few milliseconds with **Hertzian contact** (force ∝ overlap^1.5, 2D,
+  frictionless, fine fixed step, unloading force × e² so a two-ball hit rebounds with e) and write the resulting positions and
+  velocities; the engine then only sees separating balls. Useful properties: a Hertz scattering outcome does not depend on the
+  stiffness or the speed, so pick the stiffness for numerical comfort (max overlap ≈ 2 % of R, ~40 steps per contact → ~130
+  steps, ≈ 2 ms of script time per break); pairs already within the rack gap get their current distance as rest length (no
+  preload). Checks it passes: momentum conserved, energy 100 % at e = 1 and ~81 % at e = 0.95 for a 15-ball rack, (1+e)/2 for two
+  balls, a frozen line behaves as a Newton's cradle, a centred break is mirror-symmetric with the back corners fastest along the
+  30° edge lines. In the game: cue ball recoils ≤ 1 m/s, every ball moves, ≥ 9 balls reach a rail, ~1 ball potted per break.
+  Limits: no ball-ball friction (no throw) in that impact, spin untouched. Emit the same "contact" signal the engine would, or
+  first-contact rules and the hit sound go missing.
+- **Balls potted on the break scale steeply with break speed** (same table, 36 breaks each): 0.1 at 6.5 m/s, 0.6 at 7.5, 1.1 at
+  8.5, 1.7 at 9.5. Cap the break speed with that curve in hand; a real strong break pots about one.
+- **An audit that only checks energy and rail count will pass a wrong break.** Add rows a player would notice: cue-ball recoil
+  speed after the break, pots per break (mean over ≥ 12 breaks, and that some breaks pot nothing), and look at *when and where*
+  balls are potted — pots straight from the rack in under a second are a solver artifact.
 
 **Traps in the measurements themselves:** a head-on split measured several ticks after contact includes cloth friction on the
 sliding object ball (0.946 looked like a restitution error; measured in the contact tick it was 0.967 vs 0.975 ideal). A fixed
 "≈ 90°" band for the half-ball separation is only right for e = 1: derive the reference from e and μ
 (`90° − atan(((1−e)/2·cos30°)/(sin30° − j)) − atan(j/((1+e)/2·cos30°))`, `j = μ·(1+e)/2·cos30°` → 84.4° for 0.95 / 0.05).
-Break spread is chaotic (millimetres of cue-ball offset change it by 2×): judge the break over several breaks and by
-rail-ball count and energy, not by one spread number.
+Break spread is chaotic (millimetres of cue-ball offset change it by 2×): judge the break over many breaks (12 is the
+minimum; means over 12 breaks still move by ±0.4 balls), never by one spread number.
 
 **After it:** the AI's error-free pot rate rose (77 % → 91–96 %) with the same parameters, and a lower "extra speed at the
 pocket" margin kept the rate with softer shots; anything needing a hard hit (jump shots) now sits higher on the bar.
