@@ -46,6 +46,20 @@ Get original sound files whose licence you verified yourself, with evidence reco
 7. **Record evidence** for every file: source URL, the licence line as shown, the date, the author. Put them in a provenance file / registry
    ([[game-studio-categorised-audio-catalog-pattern]]). Add a note if the author's page states conditions beyond the licence.
 
+## Faster discovery and checking (run in a later session)
+- **Licence-filtered search URL:** `https://freesound.org/search/?q=<word>&f=license%3A%22Creative+Commons+0%22&s=downloads+desc`. Queries are AND-ed: three words
+  often return 0 results; use one or two (e.g. `billiard`, `ball rolling`).
+- **List the results with one script call** (`evaluate_script`): iterate `a[href*="/sounds/"]`, match `/people/<user>/sounds/<id>/`, de-duplicate by id, print
+  `id | user | title`.
+- **Check one sound page with one script call** instead of a full snapshot: the first `a[href*="creativecommons.org"]` href (`…/publicdomain/zero/1.0/` = CC0,
+  `…/licenses/by/4.0/` = CC BY, `…/licenses/by-nc/…` = NonCommercial), the first `a[href*="/download/"]`, the duration and the description. A page that redirects
+  to the search page (title "Freesound - Search") may need a second load before it shows the sound.
+- **Licences met in one session:** most were CC0; some owner-supplied links were CC BY 4.0 (excluded under a CC0-only policy) and CC BY-NC 3.0/4.0
+  (excluded: non-commercial). Owners paste links without checking — **verify every page**, never trust the chat. Also reject sources that are technically
+  CC0 but unusable (clipped laptop-microphone recording).
+- Navigating to a `/download/` URL can throw `NS_BINDING_RETARGETED` in the DevTools MCP: that means the navigation *became a download*; check the folder.
+  Large files (≈ 17 MB, two minutes of 24-bit mono) need ≈ 10 s.
+
 ## Sources that could NOT be verified (do not use until they are)
 - **OpenGameArt pages:** `WebFetch` returned HTTP 403. Open them in the logged-in browser, or ask the owner to confirm the licence; many OGA items are CC-BY or GPL, not CC0.
 - **RouteNote sound-effect pages and directory.audio:** the pages did not expose a verifiable licence in the extract — treated as not usable for a CC0-only policy.
