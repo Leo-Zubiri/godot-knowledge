@@ -26,7 +26,7 @@ Navigational only; no claims. Knowledge about running AI coding agents safely an
 
 ### Safety, permissions and recovery
 - [[game-studio-path-scoped-safety]] · [[game-studio-agent-permission-controls]] · [[game-studio-untrusted-content-and-headless-runs]]
-- [[game-studio-mcp-spec-requirements]] · [[game-studio-agent-audit-and-recovery]]
+- [[game-studio-mcp-spec-requirements]] · [[game-studio-agent-audit-and-recovery]] · [[game-studio-agent-git-hygiene-with-isolated-worktrees]]
 
 ### Sessions, cost and reproducibility
 - [[game-studio-session-lifecycle]] · [[game-studio-token-efficient-workflows]] · [[game-studio-reproducibility-and-model-pinning]]

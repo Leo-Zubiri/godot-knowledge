@@ -39,6 +39,8 @@ Project-specific overrides belong in the game's ADRs, not here. Each rule points
 - Commit `.import`, `.uid`, `export_presets.cfg`; never `.godot/`, `*.translation`, credentials —
   `godot-project-hygiene`.
 - Small commits, imperative messages with a scope prefix; cite note ids when a decision rests on one.
+- Agent in an isolated worktree with the owner's uncommitted changes in the main checkout: branch from local `main`, integrate
+  with save-patch / checkout / `--ff-only` / re-apply, never `reset --hard` — `game-studio-agent-git-hygiene-with-isolated-worktrees`.
 
 ## Safety (policy; enforce with user-level `permissions.deny` where it matters)
 - No `rm -rf` outside throwaway folders, no force-push, no `reset --hard`, no `sudo`, never read or edit `.env`,
