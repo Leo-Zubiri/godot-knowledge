@@ -40,6 +40,7 @@ related:
   - relates-to: "[[godot-code-driven-character-animation-without-skeleton]]"   # cheap anticipation and reaction poses
   - relates-to: "[[godot-3d-particles-trails-attractors-collision]]"   # trails and renderer limits for the VFX layer
   - relates-to: "[[godot-particles-and-shader-basics]]"   # GPU vs CPU particles
+  - relates-to: "[[godot-physics-driven-impact-audio-for-rigid-body-games]]"   # recipe for the impact/rolling/voice audio of section 7
   - relates-to: "[[godot-procedural-placeholder-sfx-audiostreamwav]]"   # per-play pitch/volume variation and minimum intervals
   - relates-to: "[[game-studio-playtesting-methods]]"   # feel cannot be verified without players
 created: 2026-11-14
@@ -138,6 +139,7 @@ What the sources say [src-gs-design-hitstop-and-camera-shake]:
 - **Instant replay:** record `{tick, id, position, rotation}` for moving bodies during the resolve phase (the same snapshot data a host-authoritative game already sends to clients, see [[godot-lan-host-authoritative-turn-based]]) and play it back through the non-simulating "mirror" path with interpolation. Re-simulating from the input is only valid with a deterministic simulation, which a general rigid-body engine does not promise. Offer the replay only for flagged shots (tier 2-3, multi-cushion, lucky pot, embarrassing foul), keep it under about 6 s, make it skippable by any player, and never auto-play more than once per few turns.
 
 ## 7. Audio layering and character voices
+- **Implementation recipe:** how to wire all of this to a rigid-body simulation (velocity-to-loudness curve, intensity tiers, burst cap, voice pool, rolling loop, voice budget) is in [[godot-physics-driven-impact-audio-for-rigid-body-games]].
 - **Per impact:** transient + body + optional low-end layer for big hits ("more bass" is a step on the screenshake list [src-gs-design-game-feel-juice-talks]); volume and brightness from impact speed; a minimum interval per sound type so a cluster of contacts does not machine-gun ([[godot-procedural-placeholder-sfx-audiostreamwav]]).
 - **Never the same sample twice in a row:** `AudioStreamRandomizer` picks from a pool with weights, has a mode that tries to "avoid playing the same stream twice in a row", and adds random pitch (range `1/random_pitch`..`random_pitch`) and volume offsets [src-gd-time-scale-tween-particles-audio-randomizer]. *(inference)* 4-6 variants per frequent sound and a `random_pitch` around 1.05-1.1 is a common starting point.
 - **Ducking:** lower music and ambience under tier-2/3 stings and during slow motion, on a separate bus ([[godot-audio-buses-and-adaptive-music]]).
