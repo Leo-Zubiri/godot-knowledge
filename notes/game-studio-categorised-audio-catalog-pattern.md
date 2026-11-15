@@ -79,6 +79,12 @@ so it never enters the random pool of short laughs; a name like `voice.x.laugh.l
 The generator writes `catalog.json`; a registry sync script derives the per-file registry lines and the provenance table from it. Never edit those by hand
 and keep a test that validates the shipped catalog (files exist, licences allowed, required categories present, clip lengths within limits).
 
+## Categories added for world sounds (run)
+`sfx.foot.<surface>` (footstep one-shots), `ambient.<object>` (loops such as `ambient.clock`, `ambient.fireplace`), `music.menu` / `music.match`. The same
+`pick()` serves them; the music player returns *silence* when a music category is empty, so the catalog can ship without tracks
+([[godot-audio-buses-and-adaptive-music]]). Loops are marked with a `loop` tag and made seamless offline
+([[game-studio-ffmpeg-sample-processing-for-cc0-game-audio]]); positional use: [[godot-positional-ambient-and-footstep-audio-3d]].
+
 ## Trade-offs
 - Costs: a generator step and a registry sync; one more file to keep valid. Benefits: reuse across games, intensity banks without code changes, provenance for
   free, and tests that fail when a file or licence goes missing.
