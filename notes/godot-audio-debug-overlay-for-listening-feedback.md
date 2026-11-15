@@ -46,6 +46,12 @@ Tuning audio with a non-technical owner stalls on vocabulary: "a long dirty nois
   numbering, the bus really emitting for started *and* dropped sounds, and the toggle. In gdUnit string asserts use `not_contains`, not `does_not_contain`.
 - Generalises to any game: the same overlay can show music cues, ambience layers or voice lines.
 
+## Covering sounds that do not go through the pool
+Sounds started by their own nodes (3D footsteps, room loops, the music player) bypass the shared `play_sfx`, so they must **emit the same signal themselves**
+(`sound_started.emit({label, tag, bus, volume_db, pitch, started, reason})`) to appear in the list: a footstep line showed as `PASO <character> · foot_wood_01.wav ·
+Characters`, a room loop once at build as `SALA ClockTick`, music as `MÚSICA`. This is how the owner can name *any* sound they dislike, not only the pooled ones
+([[godot-positional-ambient-and-footstep-audio-3d]]).
+
 ## See also
 - [[godot-physics-driven-impact-audio-for-rigid-body-games]] — the sounds being tuned.
 - [[godot-audio-buses-and-adaptive-music]] — buses and what fails silently.
