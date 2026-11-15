@@ -34,7 +34,7 @@ Notes carry optional facet tags (controlled vocabulary in [`meta/methodology/tag
 
 ### Production departments
 - [[game-studio-godot-integration]] · [[game-studio-blender-pipeline]] · [[game-studio-level-design]]
-- [[game-studio-2d-ui-audio-materials]] · [[game-studio-ai-generation]] · [[game-studio-loudness-targets]]
+- [[game-studio-2d-ui-audio-materials]] · [[game-studio-ai-generation]] · [[game-studio-loudness-targets]] · [[game-studio-ffmpeg-sample-processing-for-cc0-game-audio]] · [[game-studio-categorised-audio-catalog-pattern]] · [[game-studio-sourcing-cc0-audio-with-a-logged-in-browser]]
 
 ### Asset discovery, reuse and licensing (cross-cutting)
 - [[game-studio-asset-discovery-and-reuse-workflow]] — find/acquire/register before generating

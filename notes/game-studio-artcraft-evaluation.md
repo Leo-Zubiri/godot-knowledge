@@ -31,6 +31,8 @@ ArtCraft's org (`storytold`) hosts `artcraft` (a "crafting engine"; README **not
 | PhotoCraft | CLI batch, JSON, MCP | early alpha | PNG/TGA/QOI/EXR/PSD | "not yet a Photoshop replacement" |
 | FigCraft | CLI, JSON, MCP, 400+ commands | early alpha, "~49%" | SVG/PNG/PDF; `.fig` best-effort | Figma interop unverified |
 | SoundCraft | CLI headless bounce (LUFS), JSON, MCP | pre-alpha, "~40%" | WAV/AIFF/FLAC out | **cannot write Ogg/MP3** |
+
+> **Field note (2026-11-15, audio):** in a real audio-processing task ffmpeg was the working baseline; SoundCraft was not used (pre-alpha, and it cannot write Ogg/MP3 anyway) — see [[game-studio-ffmpeg-sample-processing-for-cc0-game-audio]].
 | VectorCraft, EffectCraft | `unverified` | README not opened | `unverified` | research gap |
 
 ## Cautions
