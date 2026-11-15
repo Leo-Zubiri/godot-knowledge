@@ -20,7 +20,7 @@ related:
   - relates-to: "[[godot-logging-and-crash-evidence]]"   # headless logs as the place test output lands
   - relates-to: "[[godot-ci-export-documented-limits]]"   # headless/CI constraints
 created: 2026-11-10
-updated: 2026-11-12
+updated: 2026-11-15
 created_by_type: agent
 ---
 
@@ -62,6 +62,28 @@ created_by_type: agent
 - **Restore global engine state in `after()`/`after_test()`.** A suite that mutates `Engine.physics_ticks_per_second`,
   `time_scale`, autoload singletons or `ProjectSettings` must restore them even when an assert fails, or it poisons
   every later suite in the same run. Capture in `before_test()`, restore in `after_test()`.
+
+## Gotchas hit while writing many suites (run here, Godot 4.7.2 + gdUnit4 6.2.3; interpretation, unreviewed)
+- **String assert names:** `assert_str(x).starts_with(...)`, `.contains(...)`, `.not_contains(...)` — NOT `begins_with` / `does_not_contain`
+  (the call fails at runtime with "Nonexistent function", the test shows as an error, not a failure).
+- **`var x := node.method()` on an untyped node** (an instance created from `load(...).new()` or typed as `Node`) fails at parse
+  time with *"Cannot infer the type"*: annotate (`var before: float = bus.get_bus_linear("Sfx")`).
+- **Typed arrays from a dictionary default:** `var a: Array[Vector2] = dict.get(key, [])` errors at runtime (*"assign an array of
+  type Array to Array[Vector2]"*) whenever the key is missing. Check `has()` and assign only then.
+- **Duplicate sibling names:** adding two nodes with the same `name` makes Godot rename the second to `@Node3D@N`. Give unique names
+  (`Column%d`) or classify by a prefix/`rstrip("0123456789")`; do not count by exact name.
+- **A new `class_name` is invisible until `--import`** has refreshed the class cache ([[godot-project-hygiene]]): symptoms are
+  parse errors in every test that mentions it.
+- **Wall-clock vs engine timers disagree inside the runner:** a test that waited `create_timer(0.4)` still saw
+  `Time.get_ticks_msec()` deltas below a 300 ms grace period. Make such periods a **property**, set it to 0 in the test, and do not
+  assert on elapsed real time.
+- **Audio under `--headless`:** the dummy audio driver still lets `AudioStreamPlayer.playing`, `volume_db`, bus creation and
+  `AudioServer` effects be asserted; it does not let you hear anything.
+- **Shipped defaults need their own test** when a feature is switched off in config (`assert cfg.feature_enabled == false` on the
+  loaded `.tres`), and tests of that feature must turn the switch on explicitly.
+- **Locale-dependent tooling in scripts that feed tests/assets:** under a Spanish locale `awk`/`printf` write `27,946`; set
+  `export LC_ALL=C` in build scripts.
+- **Long suites:** the full run can exceed a foreground tool timeout when chained after an import; run it in the background and wait.
 
 ## What an agent can and cannot check
 - Can: run the command and assert exit 0; confirm `reports/` is produced; confirm `--ignoreHeadlessMode` is present.
