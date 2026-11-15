@@ -71,6 +71,27 @@ Make short CC0 recordings (laughs, a drop, jingles) into *this game's own* sound
    behind a feature flag until a human approves ([[game-studio-categorised-audio-catalog-pattern]]).
 4. Keep everything in **one build script** reading a folder of originals and writing the outputs, so "same originals → same files". Originals are not committed.
 
+## Findings from the "clean hits" round (run; not judged by ear)
+5. **Onset times drift if you use the wrong window length.** With 88-sample windows at 44.1 kHz (= 1.9955 ms) computing `time = index * 0.002` drifts
+   ≈ 0.23 % (≈ 0.1 s at 45 s) and the later clips came out silent. Always use the real window duration (`step / rate`).
+6. **Pick only CLEAN hits.** Require silence before the hit (`--before 0.25`) and a tail at least 20 dB under the peak (`--clean-tail 20`, measured
+   over the last 40 % of the clip window) so no second sound is inside the clip. This reduced 105 cue hits to 18 and 26 ball hits to 21 usable ones.
+   Keep clips short (hit ≈ 0.2 s, cue ≈ 0.12 s) with a 50 ms fade-out.
+7. **Intensity tiers from measurement.** Split the isolated hits into terciles of their *measured* peak (soft / medium / hard), take a few evenly spread
+   from each, normalise every clip to ≈ −3 dBFS with capped gain (+14 / −12 dB) and leave loudness to the game's speed curve. Trust a classification
+   made from the source's description plus the measured level; do not trust one guessed from spectra.
+8. **`alimiter` auto-levels by default**: pass `level=disabled`. Downmix to mono *before* the limiter (`aformat=channel_layouts=mono`): an output-side
+   `-ac 1` downmix after the limiter can exceed its ceiling.
+9. **Denoise before make-up gain.** +11 dB on a quiet recording raises its noise floor into an audible hiss: `highpass=f=90,afftdn=nr=16:nf=-50,
+   lowpass=f=14000` first, then `volume`, then fades.
+10. **Scripting hygiene.** Use `ffmpeg -nostdin` inside `while read … done < <(…)` loops (otherwise ffmpeg eats the loop's stdin) and
+    `export LC_ALL=C` so `awk`/`printf` write decimal points (a comma makes ffmpeg read `27,946` as `27`). The comma issue was a precaution here; the
+    drift in finding 5 was the real cause of the silent clips.
+11. **Reject clipped sources.** Check `volumedetect` and a 50 ms peak timeline before using a file: a laptop-microphone pool recording sat at 0 dB for
+    most windows (distorted, overlapping hits) and was rejected.
+12. **No numpy needed.** Python's `wave` + `array` are enough for an envelope/onset tool: 2 ms max-abs windows, a threshold, a refractory time.
+13. To chain several recordings into one clip with a thud at the end: `-filter_complex "[0:a]…[r];[1:a]…,adelay=<ms>|<ms>[t];[r][t]amix=inputs=2:normalize=0:duration=longest"`.
+
 ## See also
 - [[game-studio-2d-ui-audio-materials]] — WAV for short SFX, Ogg for music and loops (WAV supports loop points).
 - [[game-studio-artcraft-evaluation]] — SoundCraft's limits; ffmpeg was the baseline here.
