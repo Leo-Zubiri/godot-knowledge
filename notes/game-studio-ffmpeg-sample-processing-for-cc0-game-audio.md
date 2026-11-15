@@ -92,6 +92,26 @@ Make short CC0 recordings (laughs, a drop, jingles) into *this game's own* sound
 12. **No numpy needed.** Python's `wave` + `array` are enough for an envelope/onset tool: 2 ms max-abs windows, a threshold, a refractory time.
 13. To chain several recordings into one clip with a thud at the end: `-filter_complex "[0:a]…[r];[1:a]…,adelay=<ms>|<ms>[t];[r][t]amix=inputs=2:normalize=0:duration=longest"`.
 
+## Findings from the "lower and more nasal" round (run, measured; not judged by ear)
+14. **A "higher, shorter" voice was rejected; the owner asked for "nasal and a bit lower".** Switch from pitch *up* (×1.15–1.3) to pitch *down*
+    (×0.88–1.0) with the same trick `asetrate=44100*K,aresample=44100,atempo=1/K`, and lengthen to ≈ 0.9–1.6 s by using *whole* source segments
+    (single, or two joined with `concat`). Chain used: `highpass=f=230, equalizer=f=480:t=q:w=1.0:g=-8, equalizer=f=1150:t=q:w=1.2:g=12,
+    equalizer=f=1800:t=q:w=1.4:g=7, equalizer=f=2800:t=q:w=1.5:g=-3, lowpass=f=5600`, optional `vibrato=f=6.5:d=0.22`, `asoftclip=type=tanh`,
+    `acompressor`, `loudnorm`, `alimiter`.
+15. **Lowering pitch also lowers the formants, which makes a voice *less* nasal** — compensate with stronger mid peaks. Measured with per-band RMS
+    relative to the total and the spectral centroid: centroid 3744 Hz (source) → 2875 Hz (the earlier up-shifted version) → **≈ 2.0–2.3 kHz** (new);
+    share of the 1–1.6 kHz band −5.9 dB (source) / −6.3 (earlier) → **−4.7 dB** (new); 1.6–2.5 kHz −3.7 dB; 4–8 kHz down. Measure, don't assume;
+    whether it *sounds* nasal is still the owner's call.
+16. **Seamless loop by cross-fading the tail into the head.** The result `acrossfade(A[xf:dur], A[0:xf], d=xf)` has length `dur − xf` and its end flows
+    into its start:
+    `[0:a]…,asplit=2[a][b];[a]atrim=start=XF:end=DUR,asetpts=PTS-STARTPTS[f1];[b]atrim=start=0:end=XF,asetpts=PTS-STARTPTS[f2];
+    [f1][f2]acrossfade=d=XF:c1=tri:c2=tri`. Used for a wall-clock tick (0.3 s fade) and a fireplace (0.5 s fade).
+17. **Pick the loop window by measurement.** Scan a long recording in 1 s windows (Python `wave` + `array`) and choose the 12 s span with the lowest
+    maximum peak plus RMS spread (`score = max_peak_dB + 1.5 × (max_rms − min_rms)`): it avoids pops and pokes. A stable 12 s span of a 72 s fireplace
+    recording had peak −24.9 dB and only 1.4 dB RMS variation.
+18. **Normalise a quiet source in two passes**: render the slice, measure `volumedetect` `max_volume`, then apply `volume=(−3 − max)dB` capped at
+    +18 dB and `alimiter=limit=0.89:level=disabled`. One-pass gain guesses left a quiet footstep 13 dB under its siblings.
+
 ## See also
 - [[game-studio-2d-ui-audio-materials]] — WAV for short SFX, Ogg for music and loops (WAV supports loop points).
 - [[game-studio-artcraft-evaluation]] — SoundCraft's limits; ffmpeg was the baseline here.
