@@ -60,6 +60,18 @@ Get original sound files whose licence you verified yourself, with evidence reco
 - Navigating to a `/download/` URL can throw `NS_BINDING_RETARGETED` in the DevTools MCP: that means the navigation *became a download*; check the folder.
   Large files (≈ 17 MB, two minutes of 24-bit mono) need ≈ 10 s.
 
+## More traps met in a later round (run)
+- **Owner-pasted links keep arriving unchecked.** In one session three of them were *not* CC0: one CC BY 4.0, two CC BY-NC (3.0 and 4.0). The page title and
+  content looked right each time. Treat every pasted link as a candidate, never as approved.
+- **A technically CC0 file can still be unusable**: a laptop-microphone pool recording sat at 0 dBFS for most windows (clipped, overlapping hits) — check
+  `volumedetect` and a 50 ms peak timeline before adopting a file.
+- **Extra filters in the Freesound search URL**, combined with the CC0 licence filter: `+duration%3A%5B0+TO+3%5D` (short one-shots) and
+  `+category%3A%22Music%22`. A CC0 `Music` search returned mostly loose samples and loops, not finished themes — do not pick tracks blindly without hearing
+  them; give the owner a short candidate list or ship the music *player* and let them choose ([[godot-audio-buses-and-adaptive-music]]).
+- **OpenGameArt licences can be read in the logged-in browser** even though `WebFetch` gets 403: `evaluate_script` on
+  `.field-name-field-art-licenses a` lists the `License(s)`. Two popular RPG themes were **CC-BY-SA 3.0** (one also GPL 3.0/2.0): attribution plus
+  share-alike, so they are excluded by a CC0-only policy.
+
 ## Sources that could NOT be verified (do not use until they are)
 - **OpenGameArt pages:** `WebFetch` returned HTTP 403. Open them in the logged-in browser, or ask the owner to confirm the licence; many OGA items are CC-BY or GPL, not CC0.
 - **RouteNote sound-effect pages and directory.audio:** the pages did not expose a verifiable licence in the extract — treated as not usable for a CC0-only policy.
