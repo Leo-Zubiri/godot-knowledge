@@ -16,7 +16,7 @@ related:
   - relates-to: "[[game-studio-loudness-targets]]"   # the loudness numbers used here are not a verified platform target
   - relates-to: "[[game-studio-categorised-audio-catalog-pattern]]"   # where the processed files are registered
 created: 2026-11-15
-updated: 2026-11-15
+updated: 2026-11-16
 created_by_type: agent
 ---
 
@@ -113,6 +113,13 @@ Make short CC0 recordings (laughs, a drop, jingles) into *this game's own* sound
     +18 dB and `alimiter=limit=0.89:level=disabled`. One-pass gain guesses left a quiet footstep 13 dB under its siblings.
 
 19. **Voice processing cannot be judged by an agent.** Three processed versions of one character laugh (pitch up + nasal EQ; shorter; lower, more nasal, longer) were each rejected by the owner even though every one measured as "changed" in the spectrum. For subjective assets offer raw candidates first and keep the processed ones behind an off-by-default switch; see section 7 of [[game-design-game-feel-and-juice-checklist-turn-based-physics]].
+
+## Music tracks: gentle normalisation, compact OGG, seamless loop (run; not judged by ear)
+Three piano tracks of 4–5 min became the game's menu and match music at **7.7 MB in total**:
+`ffmpeg -i in.ogg -filter_complex "[0:a]aresample=44100,aformat=channel_layouts=stereo,loudnorm=I=-24:TP=-3:LRA=11,asplit=2[a][b];[a]atrim=start=3:end=DUR,asetpts=PTS-STARTPTS[f1];[b]atrim=start=0:end=3,asetpts=PTS-STARTPTS[f2];[f1][f2]acrossfade=d=3:c1=tri:c2=tri" -c:a libvorbis -q:a 2 -ac 2 -ar 44100 out.ogg`
+- `DUR` from `ffprobe -show_entries format=duration -of csv=p=0`; the result is `DUR − 3` s long and its end flows into its start (a piano decays, so the 3 s seam is not expected to be audible — not heard by the agent).
+- `libvorbis -q:a 2` ≈ 96 kbps ≈ 2.5 MB per 4.5 min; q4 would be ≈ 2× larger. Check that `ffmpeg -encoders` lists libvorbis.
+- The in-game level is set in config (menu −10 dB, match −18 dB); the file stays at a neutral loudness.
 
 ## See also
 - [[game-studio-2d-ui-audio-materials]] — WAV for short SFX, Ogg for music and loops (WAV supports loop points).
