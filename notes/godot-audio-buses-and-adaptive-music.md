@@ -13,11 +13,12 @@ sources:
     ref: src-gd-audio
     retrieved: 2026-11-08
 related:
+  - relates-to: "[[game-studio-sourcing-cc0-audio-with-a-logged-in-browser]]"   # where CC0 music can be found and verified
   - relates-to: "[[game-studio-loudness-targets]]"   # loudness targets
   - relates-to: "[[game-studio-2d-ui-audio-materials]]"   # audio production and import
   - relates-to: "[[godot-positional-ambient-and-footstep-audio-3d]]"   # 3D players for footsteps and room sounds
 created: 2026-11-08
-updated: 2026-11-15
+updated: 2026-11-16
 created_by_type: agent
 ---
 
@@ -43,6 +44,19 @@ Built and tested in one project; timbre and balance were not judged by ear.
 
 ## What an agent can and cannot check
 An agent can read `default_bus_layout.tres` and check that bus names used in scenes/scripts exist, and measure loudness offline. Mix balance, transition musicality and spatial feel need a human listening.
+
+## Music in a game: levels, ducking and the pause trap (run here; interpretation, unreviewed)
+- **Levels in config, in dB:** menu track −10 dB, match track −18 dB ("very light"), on top of the player's Music slider; the track itself is
+  normalised to about −24 LUFS. Per-match toggle ("music during matches") in settings.
+- **Sustained ducking helper** `set_duck(bus, db, fade)`: a `Tween` on an `AudioEffectAmplify` placed at index 0 of the bus (so the player's
+  slider is untouched); `0 dB` releases it, positive values are clamped to 0. Used: −8 dB while the game is paused, −4 dB while the balls roll
+  (attack 0.25 s), released in ~1.2 s when the player aims again; a timed `duck()` stays for short events.
+- **Pause trap:** an audio autoload with the default process mode **freezes when `get_tree().paused` is true** — its pooled players stop mid-sound,
+  its tweens stall (no fades or ducking) and the clicks of the *pause menu itself* are silent. Set `process_mode = PROCESS_MODE_ALWAYS` on the audio service.
+- Two crossfading `AudioStreamPlayer`s on the Music bus, loop set at runtime (`stream.set("loop", true)` for Ogg/MP3; `loop_mode`/`loop_begin`/`loop_end`
+  for WAV), the same track again does not restart, an empty category means silence.
+- Verified with tests using a fake catalog (levels, ducking, toggle, paused-tree sounds). **Not verified:** the real loudness in a match
+  through the menu flow, and any human judgement of the music.
 
 ## See also
 - [[game-studio-loudness-targets]] — loudness targets
