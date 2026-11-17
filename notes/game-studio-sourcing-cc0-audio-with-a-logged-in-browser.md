@@ -16,7 +16,7 @@ related:
   - relates-to: "[[game-studio-ffmpeg-sample-processing-for-cc0-game-audio]]"   # what to do with the files next
   - relates-to: "[[game-studio-categorised-audio-catalog-pattern]]"   # where the evidence ends up
 created: 2026-11-15
-updated: 2026-11-15
+updated: 2026-11-16
 created_by_type: agent
 ---
 
@@ -84,6 +84,20 @@ stated wish: playing or processing the sound as a game effect is fine; do not fe
 ## What an agent cannot do
 - Log in, solve captchas, or accept terms on the owner's behalf.
 - Judge by ear whether a sound is the one the owner meant — confirm by name and description, and let the owner listen.
+
+## Music: the Internet Archive route (run here; not verified by ear)
+A request for "very light piano / classical, 100 % free" was met with *The Open Goldberg Variations* (Bach, performed by Kimiko Ishizaka), released as CC0 1.0.
+- **Verify the licence per identifier** with the search API (one request, readable in the browser tab):
+  `https://archive.org/advancedsearch.php?q=title:(goldberg) AND creator:(ishizaka)&fl[]=identifier&fl[]=title&fl[]=licenseurl&rows=20&output=json`.
+  The identifier `OpenGoldbergVariations` returned `licenseurl = …/publicdomain/zero/1.0/`; **another upload of the same work was CC BY** (Jamendo),
+  so never trust the work's name — read the licence of the exact item you download.
+- **Listing files:** the directory page `https://archive.org/download/<id>` has a table of per-track MP3/OGG; read it with `evaluate_script`
+  (`table.directory-listing-table tr`). A page-context `fetch()` of `/metadata/<id>` failed with a network error (cross-origin redirect to a datacenter host).
+- **Downloading:** Firefox *plays* `.ogg` inline instead of saving it, so fetch public files with `curl -L -o file.ogg "https://archive.org/download/<id>/<url-encoded name>"`.
+  The source tracks were 96 kHz stereo Vorbis, 4–9 min, 3–7 MB each.
+- Processing recipe and sizes: see the ffmpeg note. OpenGameArt themes the owner liked were CC-BY-SA 3.0 (one also GPL) — excluded by a CC0-only policy;
+  the page lists them under `.field-name-field-art-licenses a` (readable in the browser tab even when a fetch tool gets HTTP 403).
+- An agent cannot hear: shortlist or ship **behind a switch** until the owner has listened.
 
 ## See also
 - [[game-studio-asset-source-catalog]] — provider classes (Freesound conditional: filter to CC0, no scraping).
