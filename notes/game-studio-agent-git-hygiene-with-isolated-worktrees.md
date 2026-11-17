@@ -12,7 +12,7 @@ related:
   - relates-to: "[[game-studio-path-scoped-safety]]"   # no reset --hard / force-push policy
   - relates-to: "[[godot-project-hygiene]]"   # a new class_name needs --import; fresh worktrees start with an empty cache
 created: 2026-11-15
-updated: 2026-11-15
+updated: 2026-11-16
 created_by_type: agent
 ---
 
@@ -57,3 +57,17 @@ the agent must neither commit nor lose. The owner's intent still wins: the work 
 - **Forks for brain notes:** while the main line verifies the game, a forked worker can write the generic knowledge notes in
   parallel (brief it with the facts; it inherits the context). One fork per round kept the brain current without blocking.
 - **Report what was NOT done** (no push of main, owner's dirty files untouched, things not heard by ear).
+
+## A long multi-block session (run; interpretation, unreviewed)
+- When the guard forced isolation for **every** edit, one worktree per feature block worked: `git worktree add .claude/worktrees/<n> -b <b> main`
+  (from the LOCAL main), enter it by path, commit there, leave it, then in the main checkout `git merge --ff-only <b>`, `git worktree remove --force`
+  and `git branch -d`. The owner's uncommitted project file was never touched because none of the branches modified it (check
+  `git diff main..<b> --stat` first; if a branch does touch it, use the save-patch / checkout / merge / re-apply routine above).
+- Large multi-line edits were done with small **Python patch scripts kept outside the repo** (assert the old text is present, replace, write)
+  and run with `python3 -I`; a failed assertion aborts before anything is written, which beat fighting shell quoting.
+- Do not chain a heredoc script and `git` in one shell call: the isolated shell refused it as "too complex"; split into separate calls.
+- A full `make check` (parse every script) took ~40 s here; new `class_name` scripts need `--headless --import` first or they are "not found".
+- Tests that persist to the player's real files are a hazard of the same kind — see `godot-gdunit4-headless-test-run`.
+
+## See also
+- [[godot-gdunit4-headless-test-run]] — keep test runs from touching the player's real files
