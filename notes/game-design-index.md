@@ -43,6 +43,7 @@ Navigational only; no claims. Engine-agnostic design principles. Evidence is mix
 
 ### Game feel, feedback and party-game randomness
 - [[game-design-game-feel-and-juice-checklist-turn-based-physics]] — checklist for juice in a turn-based physics game: anticipation → impact → reaction → settle per event, hit-stop and camera-shake rules, slow motion and replays in Godot 4.7, audio variation and voice reactions, randomness without unfairness, turn timers, accessibility switches, mobile cost (proposed; numbers mostly inference).
+- [[game-design-first-minute-onboarding-and-result-screen]] — screens around a match, run in a turn-based physics game: result summary with rematch, pause menu (live-InputMap controls, two-press restart), tabbed settings, a first-minute coach that advances by itself, touch gesture reminder, potted-ball reward, colour similarity by RGB distance (unreviewed; no playtest).
 
 ### Known gaps (no primary source read yet)
 Reward-design evidence, difficulty-curve construction beyond the Hamlet pointer, scope planning for small teams, per-genre conventions, art-bible primary sources (progression vocabulary and silhouette/animation notes now exist but are pointer-level).
