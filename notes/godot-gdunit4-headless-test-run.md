@@ -20,7 +20,7 @@ related:
   - relates-to: "[[godot-logging-and-crash-evidence]]"   # headless logs as the place test output lands
   - relates-to: "[[godot-ci-export-documented-limits]]"   # headless/CI constraints
 created: 2026-11-10
-updated: 2026-11-15
+updated: 2026-11-16
 created_by_type: agent
 ---
 
@@ -91,6 +91,18 @@ created_by_type: agent
 - Cannot: validate input-simulation tests headlessly (they need a display); confirm compatibility on Godot or
   gdUnit4 versions other than those tested above.
 
+## Tests must never touch the player's real `user://` files (run here; interpretation, unreviewed)
+In one project the settings service wrote to `user://settings.cfg`, and the test suite shared that file with the real game:
+a test that fired a shot persisted `onboarding.seen = true` (so the real game never showed its first-minute guide), other tests
+left their settings behind, and one test even **deleted** the player's file in `after()`. Nothing failed, which is why it stayed hidden.
+- **Fix:** the service chooses its path at runtime — `DisplayServer.get_name() == "headless"` → `user://settings_headless.cfg`, else the
+  real file — exposed as a static `path()`; the persistence test deletes the *headless* path. A test asserts `path() == TEST_PATH`
+  (the suite runs headless) and `path() != PATH`.
+- **Rule:** every service that persists to `user://` (settings, saves, caches) must isolate itself under headless/test runs.
+- **Check:** after a full test run, read the real file (`~/.local/share/godot/app_userdata/<project>/…`) and confirm it is unchanged.
+- Related gdUnit4 wording hit on the way: string asserts are `starts_with` / `not_contains` (not `begins_with` / `does_not_contain`).
+
 ## See also
+- [[game-studio-agent-git-hygiene-with-isolated-worktrees]] — worktree workflow used while running these suites
 - `[[godot-logging-and-crash-evidence]]` — reading headless logs/crash output
 - `[[godot-ci-export-documented-limits]]` — documented headless/CI limits
