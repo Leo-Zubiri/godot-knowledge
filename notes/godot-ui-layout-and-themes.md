@@ -13,12 +13,13 @@ sources:
     ref: src-gd-ui-layout-themes
     retrieved: 2026-11-08
 related:
+  - relates-to: "[[godot-animated-menu-background-and-single-theme]]"   # a code-built single theme and an animated background, run here
   - relates-to: "[[gs-adr-godot-final-ui-authority]]"   # Godot owns UI implementation
   - relates-to: "[[game-studio-accessibility-minimums]]"   # text and contrast minimums
   - relates-to: "[[godot-ui-focus-and-gamepad-navigation]]"   # focus and gamepad
   - relates-to: "[[godot-localization-workflow]]"   # longer strings and fonts
 created: 2026-11-08
-updated: 2026-11-13
+updated: 2026-11-16
 created_by_type: agent
 ---
 
@@ -48,6 +49,7 @@ created_by_type: agent
 Reading `.tscn`/`.tres` can verify anchors/size flags, theme references, variation names matching existing types and stretch settings versus the preset. Appearance, text fit in other languages and navigation feel need a human reviewing screenshots at several window sizes.
 
 ## See also
+- [[godot-animated-menu-background-and-single-theme]] — one code-built theme with type variations, and the traps (CanvasLayer does not inherit the theme)
 - [[gs-adr-godot-final-ui-authority]] — UI authority decision
 - [[game-studio-accessibility-minimums]] — text and contrast minimums
 - [[godot-ui-focus-and-gamepad-navigation]] — focus and gamepad
