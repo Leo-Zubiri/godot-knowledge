@@ -36,3 +36,10 @@ Background: `godot-physics-driven-impact-audio-for-rigid-body-games`, `game-stud
       config switches whose default is OFF, with the files and tests kept.
 - [ ] Tests assert the **shipped defaults** (switches, loaded `.tres`) and the behaviour with each switch on.
 - [ ] Generic findings written back to the knowledge base (`unreviewed`/`proposed`), and the plan's `active.md` updated.
+
+## Added after the music/menu round
+- [ ] The audio service keeps running while the tree is paused (`process_mode = ALWAYS`): pause-menu clicks are audible and fades/ducking finish.
+- [ ] Music has its own configured level (very light in play), a player toggle, ducking while paused and while the main action resolves, and silence when no track exists.
+- [ ] Music is CC0/public domain with the licence read **per file/identifier** (another upload of the same work may be CC BY) and recorded.
+- [ ] Persistence used by tests is isolated from the player's real `user://` files (check the real file after a full run).
+- [ ] The human has listened to music and voices before they ship on by default; until then they stay behind switches.
