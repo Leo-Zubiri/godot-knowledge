@@ -54,6 +54,26 @@ test for **each new property**.
 6. **Custom property = new script** `extends Effect`, dropped on the item's `.tres`. A test defining the effect inside the test file proves
    the core never needs to change.
 
+## Update 2026-11-17 — models must be real assets, and the object itself must do the hitting
+Code-built primitive models were rejected by the owner, and "held vertically next to the body + a small piece at the tip of a stretchy arm" did
+not read as using the item. What worked (screenshots reviewed; not play-balanced):
+- **Free models + a normalising builder.** The model Resource holds a `.glb`, `tip_axis` (model-space direction from grip to the useful end),
+  `length`, `grip_at`, `roll_deg`. `build()` computes the AABB recursively (skip the root's own transform), projects its 8 corners on the axis,
+  rotates the axis to +Y, scales to `length`, and puts the **grip at the origin**; it stores `tip_len` / `butt_len` as node meta. Any CC0 model
+  then works without editing it. The long axis differed per model (wrench Z, mallet Y, baguette/rolling pin/spoon X, carrot −Y, Kenney blasters −Z)
+  and **two came out reversed** (wrench, spoon): always review a contact sheet with the object pointing at a target and flip `tip_axis`.
+- **Hand follows the grip.** Aim target for the arm = ball − dir·(tip_len + gap), so at full reach the *tip* touches the ball; while aiming keep a
+  fixed partial reach (~0.4) so the object already points at the ball; the existing strike tween then thrusts it and `strike_reached` fires when
+  the tip arrives. Test it: dot(object +Y, direction to ball) > 0.98 while aiming and tip-to-ball distance < 0.12 at the strike.
+- **Kenney GLBs reference `Textures/colormap.png` externally** and each kit has its own colormap: keep one folder per kit with its `Textures/`.
+  **Godot also extracts embedded textures** of other GLBs as sibling PNGs on import (6 files for two tool models), which a provenance linter will
+  flag: register them (or the lint fails). The two OpenGameArt tool models weigh 18 MB with their textures; 512 px textures or a re-export would
+  shrink them (not done).
+- **Where free models were found (CC0, checked on each page):** Kenney Blaster Kit (18 toy blasters, GLB), Kenney Food Kit (baguette, carrot, spoon,
+  rolling pin, frying pan…, GLB), OpenGameArt "Tool Pack 1/2" by LonesomeDucky (adjustable wrench, rubber mallet; GLB with PBR). No CC0 slingshot,
+  curved cue or pool cue was found, so those items left the catalogue. `opengameart.org` answers 403 to the fetch tool but serves a logged-in
+  browser (Firefox MCP) fine; downloads there are limited to `~/.firefox-devtools-mcp/output/`.
+
 ## Pitfalls found
 - **Calling a builder just to ask "does it exist?" leaks nodes.** `defaults()` called `Models.build(id) != null` on every call → thousands of
   orphan nodes and gdUnit reporting 12 650 orphans. Use a constant list / `has_kind`.
