@@ -159,6 +159,14 @@ off-screen in first person. What worked:
   `attribution_credits()` list to the licences screen and a test that every CC-BY catalogue entry is credited. Don't re-run a whole audio build just to
   add one file if it re-encodes music and deletes tracked `.import` files; restore with `git checkout` and keep only the new entries.
 
+## Update 2026-11-18 — a ground-projected glow must clear the nearest occluders
+A decal-like effect drawn flat on the playing surface (the summoning circle, 0.42 m wide) was hidden by the table rails (5 cm above the felt) whenever its
+subject sat near a rail or the camera was low. Fix: give it a **config height above the surface that is greater than the tallest nearby occluder**
+(`circle_height` 0.07 m > `RAIL_HEIGHT` 0.05 m), keep it world-horizontal, and put the value in the world's config (the shared character code only
+holds a default). Verify with the worst case in a real capture — subject glued to the rail, low camera, and first person — and add a test that the
+effect's Y is ≥ surface + occluder height (and not much more, so it still reads as lying on the table). The value is a trade-off: higher clears
+more geometry but starts to look like it floats.
+
 ## Pitfalls found
 - **Calling a builder just to ask "does it exist?" leaks nodes.** `defaults()` called `Models.build(id) != null` on every call → thousands of
   orphan nodes and gdUnit reporting 12 650 orphans. Use a constant list / `has_kind`.
