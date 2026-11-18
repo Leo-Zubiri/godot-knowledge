@@ -138,6 +138,27 @@ off-screen in first person. What worked:
 - Where a baguette was found: Isa Lousberg's "Tiny Treats – Baked Goods" (OpenGameArt, CC0, glTF+bin+atlas PNG); its long axis was Z (not X) and it is
   stubby (3.3:1), so a `thickness_scale` of 0.5 made it read as a baguette.
 
+## Update 2026-11-17 (6) — a gating "summon" sequence, human-paced AI, world-space circle
+- **Make the ritual part of the turn rules, not just a visual.** The item is drawn at the turn start but the character *summons* it first:
+  idle → inhales and gathers energy (squash + lean back + hat tilted back) → hands rise (back-ease) → the circle starts drawing (sound plays *here*) →
+  burst of sparks → the item pops in. Three tweened phases (`windup`, `circle_seconds`, `duration`) live in a data Resource; `total_seconds()` is the
+  lock. While `is_summoning()`: the controller refuses aim/shoot (`locked`), the shot clock is `paused` (still shows), and the CPU waits. If the item is
+  drawn while the ball is in hand, the summon is *pending* and starts when aiming starts. Keep the item invisible (`prepare_summon`) between the draw
+  and the call, otherwise it pops in before the ritual.
+- **Provide an escape hatch for headless tests** (`summon_in_headless`, false by default): dozens of tests shoot right after `start()` and would
+  otherwise wait ~2 s. Same precedent as using another settings file when headless. Tests of the ritual itself switch it on.
+- **A human-paced CPU opponent** makes harassment mechanics playable: think time random per level *plus* extra for hard shots (cut angle and distance →
+  difficulty 0..1), then swing the aim gradually, sometimes overshoot and correct, ramp the power, show the aim for a random moment, and re-check
+  before firing (if a thrown object nudged the aim, correct again, max twice). Apply tweened changes **relatively** (`add_aim(v − previous)`) so a
+  disturbance injected mid-tween is kept; guard every callback with the turn token; use a node-owned tween so it stops with the pause.
+- **A world-space effect that must never tilt** (summoning circle under a levitating item): make it a child of the character root (not of the animated
+  model) and `top_level = true` with `global_transform = (scale only, world position)`; take the Y from the ball/felt, not from the item.
+- Audio: Freesound originals need a logged-in session; the public preview (`cdn.freesound.org/previews/<id>/<id>_<user>-hq.mp3`, ~170 kb/s) is
+  fetchable with curl and was enough here. **ffmpeg `loudnorm` upsamples its output to 192 kHz** — add `-ar 44100` after it or Godot's WAV importer
+  silently produces no resource (`load()` returns null while `ResourceLoader.exists()` is true). A CC BY sound needs a visible credit: add a small
+  `attribution_credits()` list to the licences screen and a test that every CC-BY catalogue entry is credited. Don't re-run a whole audio build just to
+  add one file if it re-encodes music and deletes tracked `.import` files; restore with `git checkout` and keep only the new entries.
+
 ## Pitfalls found
 - **Calling a builder just to ask "does it exist?" leaks nodes.** `defaults()` called `Models.build(id) != null` on every call → thousands of
   orphan nodes and gdUnit reporting 12 650 orphans. Use a constant list / `has_kind`.
