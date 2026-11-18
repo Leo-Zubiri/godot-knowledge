@@ -102,6 +102,17 @@ off-screen in first person. What worked:
   from the actual gameplay camera, not only from a contact sheet.
 - A baseball bat (CC0, OpenGameArt "Old Wooden Baseball Bat", PSX GLB of 11 KB; the 7.7 MB PBR version was not needed) gave a power/straight/no-spin item.
 
+## Update 2026-11-17 (4) — character position must agree in every phase; casting hands
+- **A fix applied to one phase of a character's placement must be applied to all of them.** The shooter stood beside the shot line while aiming (so the
+  floating cue did not pass through the body) but the *run to the shot spot* still used the on-line point, so at the shot the character re-centred and
+  the cue went through it. One function (`shooter_spot(cue, dir)`) now feeds aiming, the shot dash and the "shot started" re-target. Add a test that
+  samples the character's distance to the line *during the shot gesture*, not only while aiming.
+- **Hat/appendage deformation can be signed.** The vertex-bend that curled a hat tip forward already worked backwards with a negative parameter;
+  only the range comment and new idle animations were needed. A second idle set (curl back, shiver, wobble, quick hops) plus a slow hat sway while
+  standing added life; a standing body must *not* rock if an earlier test/decision says so (move the motion to the hat).
+- **Casting hands without new geometry:** raise both gloves, rotate the palm toward the object (`rotate_x`), splay (`rotate_z` by side), flatten
+  with a non-uniform scale, and add a bright unshaded core + three orbiting spheres tinted by the item's rarity (no alpha needed on Mobile).
+
 ## Pitfalls found
 - **Calling a builder just to ask "does it exist?" leaks nodes.** `defaults()` called `Models.build(id) != null` on every call → thousands of
   orphan nodes and gdUnit reporting 12 650 orphans. Use a constant list / `has_kind`.
