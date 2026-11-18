@@ -74,6 +74,18 @@ not read as using the item. What worked (screenshots reviewed; not play-balanced
   curved cue or pool cue was found, so those items left the catalogue. `opengameart.org` answers 403 to the fetch tool but serves a logged-in
   browser (Firefox MCP) fine; downloads there are limited to `~/.firefox-devtools-mcp/output/`.
 
+## Update 2026-11-17 (2) — look at it running, then fix proportions and the "magic" holding
+Screenshots of the real game (not a test) found what tests could not: the **default/classic item had no model at all** (the gnome aimed empty-handed),
+and the free models were **far too big** (a real-size ratio matters: table 2.54 m, ball 5.7 cm → classic cue 1.45 m, props 0.3–0.7 m). Fixes that held:
+- **Levitate instead of gripping.** If the fiction is magic, drop the arm: the object hovers ahead of the character (slight lift + sine bob), always
+  oriented at the target, and `reach` 0→1 lunges its origin along the line until the *tip* touches the ball while the lift fades to 0. Never let it move
+  backwards when the target is close (`ready_off = min(ahead, strike_off)`).
+- **Procedural default cue** (no CC0 pool cue exists): tapered cylinders (butt cap, dark butt, ring, maple shaft, white ferrule, blue tip) with real
+  thickness ×1.3; run it through the same normaliser as the `.glb` models (builder id instead of a scene).
+- **`thickness_scale`** (shrink everything perpendicular to the tip axis) turned a stubby Kenney loaf into a baguette.
+- Review loop that worked: a temporary scene driving the real game (`GnPoolGame`) with each item in first person, side view and mid-strike, saved with
+  `xvfb-run` and viewed; keep it out of the commit.
+
 ## Pitfalls found
 - **Calling a builder just to ask "does it exist?" leaks nodes.** `defaults()` called `Models.build(id) != null` on every call → thousands of
   orphan nodes and gdUnit reporting 12 650 orphans. Use a constant list / `has_kind`.
