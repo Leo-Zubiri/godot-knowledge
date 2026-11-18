@@ -86,6 +86,22 @@ and the free models were **far too big** (a real-size ratio matters: table 2.54 
 - Review loop that worked: a temporary scene driving the real game (`GnPoolGame`) with each item in first person, side view and mid-strike, saved with
   `xvfb-run` and viewed; keep it out of the commit.
 
+## Update 2026-11-17 (3) — weight is a control feel, not object wobble; always-visible held item
+Owner feedback after playing: objects that rotate/tremble to "show instability" look bad; an item that tucks close to the character is sometimes
+off-screen in first person. What worked:
+- **"Heavy" = input feel.** Effect sets `draft.aim_gain < 1` and `draft.aim_lag > 0`; `add_aim` multiplies by the gain and queues the degrees, and
+  `advance_aim(dt)` consumes the queue exponentially (`k = 1 − exp(−dt/lag)`) so it is easy to overshoot. **Pitfall:** `set_aim` ignores changes below
+  float tolerance (~1e-5 relative), so a long tail of tiny steps was silently dropped — finish the queue when the next step is imperceptible (< 0.005°).
+  "Steady" is the opposite (gain < 1, no lag) for easy straight shots. Both reset in `on_clear`.
+- **Hold the item on the shot line, not on the character.** Pass the real shot direction to the view (`cue_aim_dir`) and place the item at
+  `tip_goal − dir·tip_len − dir·pullback + side·small + up·lift`, aimed at the ball. Then any camera that orbits behind the shot sees it. Build the
+  basis from `UP` (`ox = oy × UP`, `oz = ox × oy`) so the roll is fixed and the object never spins; a `lie_flat` option rolls the model so its thinnest
+  dimension is vertical (a wrench lying on its side, not on edge).
+- **Hands up** (a vertical + forward offset of both glove parts, scaled by the summon pop) sells "levitating it" without any arm geometry.
+- Curating the catalogue by looking at it: a flat hexagonal spoon seen from above became a giant blob in first person → dropped. Check each model
+  from the actual gameplay camera, not only from a contact sheet.
+- A baseball bat (CC0, OpenGameArt "Old Wooden Baseball Bat", PSX GLB of 11 KB; the 7.7 MB PBR version was not needed) gave a power/straight/no-spin item.
+
 ## Pitfalls found
 - **Calling a builder just to ask "does it exist?" leaks nodes.** `defaults()` called `Models.build(id) != null` on every call → thousands of
   orphan nodes and gdUnit reporting 12 650 orphans. Use a constant list / `has_kind`.
