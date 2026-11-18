@@ -113,6 +113,31 @@ off-screen in first person. What worked:
 - **Casting hands without new geometry:** raise both gloves, rotate the palm toward the object (`rotate_x`), splay (`rotate_z` by side), flatten
   with a non-uniform scale, and add a bright unshaded core + three orbiting spheres tinted by the item's rarity (no alpha needed on Mobile).
 
+## Update 2026-11-17 (5) — swappable magic circle (shader), cartoon gloves, uniform draw, placing state
+- **A swappable 2D "summoning circle" as a data Resource + one shader.** `GnMagicCircle` (pattern enum, colour, accent, intensity, spin, pulse, diameter,
+  reveal seconds) drives a spatial shader that draws rings, counter-rotating dashes, 12 procedural rune glyphs and a central pattern by SDFs: pentagram,
+  yin-yang, two fish, ouroboros. No textures; a new pattern = one `pattern` branch + one enum value; a per-item `circle` slot lets a spell carry its own.
+  Lessons: (1) `TAU` is a built-in in Godot shaders — redefining it is a shader error that renders nothing (check the log, the quad just goes black);
+  (2) **additive blending turns purple into near-white on a green felt** — use `blend_mix` with alpha = mask and a brightness boost instead;
+  (3) keep it flat on the felt under the item and small (0.6 m): a big one fills the bottom of a first-person view.
+- **Hands: model a real glove in Blender, not blobs.** A script (`art-src/scripts/export_hand.py`, `blender -b --python … -- out.glb`) builds an
+  ellipsoid palm, three fat fingers fanned and curled slightly, a thumb and a flared cuff with bmesh, subdivides once, normalises to height 1 with the
+  origin at the palm and exports two materials (glove recoloured per instance by overriding surface 0 with the gnome's own hand material; cuff stays
+  white). Swap it in only for the casting pose; mirror the left hand with a negative X scale; tilt forward and splay outward, and wiggle with a sine.
+- **While the item levitates the character should look busy:** deeper breathing (×3), hat and beard sway, hat-tip curl wobble, hands bobbing — all
+  scaled by one `lev` value that drops to 0 when the item is hidden.
+- **Equal probability is a configuration, not code:** with every weight 1, rarities equal, no modifiers and `special_chance = 1`, include the default
+  item in the draw (weight 1) so it is as likely as the others; test it statistically (4000 draws, each within ±22 % of the mean). Keep pity/catch-up
+  available but off.
+- **Placing state must hide the real thing.** While the player is placing the cue ball (ball in hand, or choosing the break position) the real ball's
+  view, the floating item and the aim line must be hidden and only the ghost shown; `aiming` must exclude `placing` or both overlays fight. Capture the
+  state (top-down) to verify. Also align a floating item *parallel* to the shot line with zero lateral offset: pointing it from a lifted/offset origin
+  to the ball made it look crooked in first person.
+- A 62-item gnome suite passed alone but a per-frame-sampled test (crouch of 0.04 s at 3× speed) failed every full run once load grew: slow the clock
+  in such tests instead of retrying.
+- Where a baguette was found: Isa Lousberg's "Tiny Treats – Baked Goods" (OpenGameArt, CC0, glTF+bin+atlas PNG); its long axis was Z (not X) and it is
+  stubby (3.3:1), so a `thickness_scale` of 0.5 made it read as a baguette.
+
 ## Pitfalls found
 - **Calling a builder just to ask "does it exist?" leaks nodes.** `defaults()` called `Models.build(id) != null` on every call → thousands of
   orphan nodes and gdUnit reporting 12 650 orphans. Use a constant list / `has_kind`.
