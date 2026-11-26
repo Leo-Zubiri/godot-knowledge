@@ -8,17 +8,17 @@ aliases: [android ux godot, content_scale_factor dpi, android back button godot,
 tags: [dept/engineering, scope/mobile, scope/ui, scope/export]
 applies-to:
   min: "Godot 4.0"
-  tested: "Ginomo 4.7.2: APK exported and manifest inspected with aapt2; layouts checked with xvfb screenshots at 2400x1080 / scale 1.6; NOT run on a physical phone or emulator"
+  tested: "Ginomo 4.7.2: APK exported, installed with adb on a Galaxy S24 Ultra (Android 15/16, 1080x2340, 450 dpi, Adreno 750) and screenshotted with `adb exec-out screencap`; layouts reproduced with xvfb at 2340x1080 / content_scale_factor 1.72; touch gameplay not yet measured (fps, joystick)"
 sources: []
 related:
   - relates-to: "[[godot-virtual-joystick-multitouch-pitfalls]]"
   - relates-to: "[[game-design-input-mapping-conventions-keyboard-gamepad-touch]]"
 created: 2026-11-21
-updated: 2026-11-21
+updated: 2026-11-25
 created_by_type: agent
 ---
 
-> **Evidence status — `unreviewed`.** Measured and built in Ginomo (Godot 4.7.2); not checked against engine source; no device test yet.
+> **Evidence status — `unreviewed`.** Measured and built in Ginomo (Godot 4.7.2); first real-device run on 2026-11-25 (section 5). Not checked against engine source.
 
 ## 1. Touch size from dpi, once, globally
 - dp → px: `dp * dpi / 160`. Android recommends 48 dp, iOS 44 pt. A project designed at 1920x1080 (`canvas_items`, `expand`) puts the SAME 1080 units in
@@ -50,3 +50,18 @@ created_by_type: agent
 - Debug signing needs a keystore at the path in the editor settings (create with `keytool`, alias `androiddebugkey`, pass `android`).
 - `display/window/handheld/orientation` is an **int enum** in `project.godot` (0 landscape, 1 portrait, 2 reverse landscape, 3 reverse portrait, 4 sensor landscape, 5 sensor portrait, 6 sensor); a string value was exported as plain landscape (manifest `screenOrientation=0`); `4` gave `userLandscape` (11).
 - Check an APK without a device: `aapt2 dump badging app.apk` and `aapt2 dump xmltree app.apk --file AndroidManifest.xml`.
+
+## 5. What the first real-phone run found (all four were invisible on desktop and in headless tests)
+1. **Exported resources are remapped.** In an export, `manifest.tres` is listed by `DirAccess` as `manifest.tres.remap` (and imported assets as `*.import`/converted). A scanner that matches `name == "manifest.tres"` finds NOTHING on Android: the game booted but a data-driven menu (one card per manifest) showed no game at all. Match both names and `load()` the path with `.remap` stripped; or avoid directory scans in shipped code (explicit list/preload). Always smoke-test "the data-driven list is not empty" on the exported build.
+2. **`window_set_mode(WINDOWED)` breaks immersive mode.** `screen/immersive_mode=true` in the preset only sets the initial state. A settings autoload that applies a saved/default `fullscreen=false` as `WINDOW_MODE_WINDOWED` brings the status and navigation bars back and insets the render. On mobile always force `WINDOW_MODE_FULLSCREEN` (hide the "fullscreen" toggle there).
+3. **The scale is bigger than the example.** A 450 dpi 1080x2340 phone gives `k = 44*450/160 / 72 = 1.72`, so the layout viewport is **~1360x628**, not 1500x675. Design budget: a landscape phone menu has ~600 units of height. 5 buttons + a 86-unit title + 60 margins does not fit; use a compact density below ~760 units (title ~56, margins 16, separation 8). Make it react to `viewport.size_changed`.
+4. **`ScrollContainer > CenterContainer(custom_minimum_size = scroll.size on resized)` is fragile.** The signal can arrive with size 0 or while the panel is hidden and the content sticks to the top-left. Give the child `size_flags_horizontal/vertical = EXPAND_FILL` instead: it fills the viewport when the content fits (centred) and grows/scrolls when it does not. Add a few units of top/bottom padding so a long form does not touch the screen edge, and keep the Back/primary action outside the scrolling area on long forms.
+
+## 6. Godot mobile best practices to apply from day one (checklist; from the engine docs on multiple resolutions + this run)
+- Stretch `canvas_items` + aspect `expand`, layouts built with anchors and containers (never absolute positions), so ultra-wide (20:9, 2340x1080) just gives more width. Keep a base resolution close to the real viewport (a landscape phone is ~1280x600 units) or budget a global `content_scale_factor` as in section 1.
+- Safe area: `DisplayServer.get_display_safe_area()` is in screen coordinates; apply it only on mobile and cross it with the window position (cutouts, rounded corners, gesture bars).
+- Immersive/edge-to-edge: preset `screen/immersive_mode`, and never switch the window mode to windowed on mobile.
+- Renderer Mobile (Vulkan Mobile) with `scaling_3d_scale` ~0.75 as the default on phones, player-adjustable; ETC2/ASTC enabled; keep shadows and MSAA as settings, not constants.
+- Test loop without a phone: `xvfb-run` a probe scene with the real window size and `Window.content_scale_factor`, and force the touch theme (`force_touch`), because desktop captures use the non-touch theme and look roomier than the phone (buttons are ~15 % taller on touch).
+- Test loop with a phone: `adb install -r`, `adb shell monkey -p <pkg> -c android.intent.category.LAUNCHER 1`, `adb exec-out screencap -p > shot.png`, `adb shell input tap x y` (coordinates are physical pixels), `adb logcat -d -s godot`, `adb shell dumpsys window | grep mCurrentFocus`.
+- Samsung/One UI: **Auto Blocker** ("Bloqueador automático") blocks USB commands, so `adb devices` stays empty even with USB debugging on; turn off Auto Blocker (or its "block commands by USB cable" switch). `lsusb` showing only Audio/MIDI interfaces (no class 255/66/1) means the phone is not exposing ADB (USB mode = MIDI, debugging off, or Auto Blocker).
