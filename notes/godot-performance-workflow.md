@@ -45,6 +45,13 @@ physics-heavy scene (16 rigid bodies). What held and what did not:
 ## What an agent can and cannot check
 An agent can add monitor logging and run a scripted scene to capture numbers; render monitors in a headless run are *unverified*. Perceived smoothness needs a human. Budgets are project-defined, not invented here.
 
+## Measured on a real project (Ginomo, Mobile renderer, 2026-11-27)
+- A `scene_stats` scene that prints visible meshes/surfaces/distinct materials/triangles per top-level branch is the fastest way to see where draw calls come from: 293 meshes, **277 distinct materials** (every prop made its own `StandardMaterial3D`), 82k triangles, 2 shadow-casting spot lights.
+- **Material dedupe as a final pass** (group identical, texture-less, emission-less materials; skip any that is mutated later) cut 277 → 170 with no visual change; real draw-call cuts need merging static geometry, which breaks code/tests that hold node references, so do it only for decoration nobody references.
+- Per-frame costs a reviewer found by reading (all fixed, behaviour identical): arrays/dictionaries copied each frame (`bodies()`, `keys().duplicate()` where `keys()` already copies), lists recomputed instead of cached on events, a theme override or label text written every frame, a full flight simulation requested twice per frame, two `ArrayMesh` rebuilt per frame, a 60 Hz occlusion test for something that changes at 20 Hz, decoration animation at 60 Hz instead of 30, loops over every vertex of a mesh in GDScript each frame (quantise the driving value).
+- Mobile project settings to review: `lights_and_shadows/positional_shadow/atlas_size` (4096 default → 2048) and `soft_shadow_filter_quality` (high → medium); compare screenshots before/after.
+- xvfb frame times are NOT comparable to a phone (no DRI3 presentation: p95 ≈ 53 ms); use it for counts (draw calls, primitives, nodes), not for fps.
+
 ## See also
 - [[godot-renderer-feature-matrix]] — renderer limits affect cost
 - [[godot-level-building-blocks]] — occlusion, MultiMesh and visibility ranges
