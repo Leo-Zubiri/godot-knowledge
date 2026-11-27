@@ -25,3 +25,4 @@ created_by_type: agent
 - Output `Vector2` in [-1, 1], screen-down positive; the consumer decides "forward = −y".
 - Dead zone: `v = v.normalized() * ((len - dz) / (1 - dz))`.
 - Real-device checklist still pending: thumb overlap with the look-drag area, safe areas, latency.
+- **A finger held on a UI button must not count for pinch-zoom.** If your gesture layer treats "two fingers down" as a pinch, a thumb holding a "charge/throw" button turns the next finger (meant to aim or look) into a zoom, so the player cannot aim while charging. Let the button panel expose `owns_finger(index)` and have the gesture layer ignore those indices; also emit the held finger's drag (`ScreenDrag.relative`) so one thumb can charge **and** aim. Same for desktop: while the left mouse button is held to charge, mouse motion should keep aiming. (Found in Ginomo 2026-11-25; covered by `tests/integration/test_pool_touch.gd`.)

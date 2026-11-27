@@ -94,6 +94,15 @@ The pack page states **CC0** and lists FBX/GLB/Blend (Standard/Pro free, Source 
 ## Cost and openness (free/libre-first)
 The project prefers free, gratis and open-source resources ([[gs-adr-free-and-open-source-first]]). Mapping of this catalog to tiers: **libre-open** — Kenney, Poly Haven, ambientCG, TextureCan (CC0), Lucide/Phosphor/Tabler (ISC/MIT); **gratis-restricted** — Quaternius (QAL), Sonniss, Pixabay, Freesound (per sound), incompetech (CC BY), Font Awesome Free, OFL fonts (per family), BlenderKit Royalty Free, per-creator itch.io/OpenGameArt/Sketchfab content; **paid/closed** — paid Fab/itch.io/CGTrader listings, Mixamo (free with an Adobe ID; terms unverified). Details: [[game-studio-cost-and-openness-classification]].
 
+## 3D props for "silly throwable / table clutter" (checked 2026-11-25 for Ginomo)
+Candidates, all stated as **CC0** on their own page; the pages seldom list individual models or the file format, so **open the zip and check names, formats and the exact licence before choosing**:
+- Kenney Food Kit, Furniture Kit, Survival Kit (kenney.nl; CC0 wording confirmed on the pages; formats not stated there).
+- KayKit Restaurant Bits (140+ free models, OBJ/FBX/**glTF**), Halloween Bits (60+, glTF), Furniture/Resource Bits (itch.io; "Creative Commons Zero v1.0 Universal"; do not resell unmodified).
+- Quaternius Fantasy Props MegaKit (~200 props; CC0 on OpenGameArt) — see the Quaternius licence conflict above; page returned 403 to the fetcher, so unread.
+- Itch/OpenGameArt packs found by search and **not** yet opened: Low Poly Food Pack (Greboge, 280+ .glb), Low Poly Household Item Pack (FBX, needs conversion), Fast food collection (glb).
+- **Poly Pizza hosts mixed licences** (not uniformly CC0): filter to CC0 per model.
+Godot-side reminder: prefer `.glb`; convert FBX/OBJ in Blender; keep physics on a simple primitive (sphere/box/capsule) and use the model only for looks, which is cheaper and more stable on phones.
+
 ## See also
 - [[game-studio-asset-license-and-provenance-policy]] — policy behind the classes
 - [[game-studio-asset-discovery-and-reuse-workflow]] — providers searched in step 2
